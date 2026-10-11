@@ -44,5 +44,5 @@ Images are opted in: every figure-bearing slide, rendered per Step 1c, never a s
 - [x] BUILD_LOG.md — lecture 1 record
 - [x] SEE_ALSO.md, if a sibling KB is genuinely relevant
 - [x] verify_kb.py clean, and its review section read
-- [ ] Commit and push
-- [ ] PATCH kbUrl onto the catalog entry
+- [x] Commit and push
+- [x] PATCH kbUrl onto the catalog entry (https://github.com/chaimantec/cairn-kb-mit-15-773)
