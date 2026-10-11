@@ -1,0 +1,62 @@
+# Sources — 15.773 Hands-On Deep Learning (Spring 2024)
+
+Every course document on the MIT OpenCourseWare site (<https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/>), with its canonical URL.
+The PDFs were downloaded for the build on 2026-10-11 but are deliberately **not** committed:
+link to the URLs below. OCW publishes the course under CC BY-NC-SA 4.0; see
+[`LICENSE.md`](LICENSE.md).
+
+## Lecture slide decks
+
+OCW lists the decks under *Lecture Notes* (<https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/lists/lecture-notes/>). Their numbering does
+**not** follow the 11 lecture videos, so the "Video" column records which recording uses each
+deck. Only video 1 has been checked against its transcript so far: it covers deck 01 alone, from
+its slide 10 to its last content slide, 109. The other assignments are provisional, inferred from
+titles, and will be confirmed as each lecture is built.
+
+| Deck | Title | Video | URL |
+| ---- | ----- | ----- | --- |
+| `mit15_773_s24_lec01.pdf` | Lecture 01: Introduction to Neural Networks and Deep Learning | 1 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec01.pdf> |
+| `mit15_773_s24_lec02.pdf` | Lecture 02: Training Deep Neural Networks | 2 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec02.pdf> |
+| `mit15_773_s24_lec02_backprop_example.pdf` | Lecture 02: Backprop Example | 2 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec02_backprop_example.pdf> |
+| `mit15_773_s24_lec03a.pdf` | Lecture 03A: Lightning Introduction to Keras/TF; Training a DL Model for a Structured Data Problem | 2 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec03a.pdf> |
+| `mit15_773_s24_lec03b.pdf` | Lecture 03B: Deep Learning for Computer Vision – The Basics | 3 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec03b.pdf> |
+| `mit15_773_s24_lec04.pdf` | Lecture 04: Deep Learning for Computer Vision – Convolutional Neural Networks | 3–4 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec04.pdf> |
+| `mit15_773_s24_lec05.pdf` | Lecture 05: Text Vectorization and the Bag-of-Words Model | 5 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec05.pdf> |
+| `mit15_773_s24_lec06.pdf` | Lecture 06: Embeddings | 6 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec06.pdf> |
+| `mit15_773_s24_lec07.pdf` | Lecture 07: Transformers I | 7 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec07.pdf> |
+| `mit15_773_s24_lec08.pdf` | Lecture 08: Transformers II | 8 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec08.pdf> |
+| `mit15_773_s24_lec09.pdf` | Lecture 09: Large Language Models I | 9 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec09.pdf> |
+| `mit15_773_s24_lec10.pdf` | Lecture 10: Large Language Models II | 9–10 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec10.pdf> |
+| `mit15_773_s24_lec105.pdf` | Lecture 10.5: Finetuning | 10 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec105.pdf> |
+| `mit15_773_s24_lec11.pdf` | Lecture 11: Diffusion Models for Image Generation (Gen AI) | 11 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec11.pdf> |
+
+Lecture 04 also has a spreadsheet, *Convolution Example (XLSX)*, listed on its resource page:
+<https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/resources/mit15_773_s24_lec04_convolution_example_xlsx/>.
+
+## OCW lecture transcripts
+
+OCW also publishes a PDF transcript of each video. This KB's transcripts in
+[`raw/transcripts/`](raw/transcripts/) come from the same OCW caption files, as published on
+the YouTube videos, so these PDFs were not used.
+
+| Video | URL |
+| ----- | --- |
+| 1 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/15773-sp24-lecture-1-version-3_transcript.pdf> |
+| 2 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/15773-sp24-lecture-2-version-2_transcript.pdf> |
+| 3 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/15773-sp24-lecture-3-version-2_transcript.pdf> |
+| 4 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/15773-sp24-lecture-4-version-2_transcript.pdf> |
+| 5 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/15773-sp24-lecture-5-version-2_transcript.pdf> |
+| 6 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/15773-sp24-lecture-6-version-2_transcript.pdf> |
+| 7 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/15773-sp24-lecture-7-version-2_transcript.pdf> |
+| 8 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/15773-sp24-lecture-8-version-2_transcript.pdf> |
+| 9 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/15773-sp24-lecture-9-version-2_transcript.pdf> |
+| 10 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/15773-sp24-lecture-10-version-4_transcript.pdf> |
+| 11 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/15773-sp24-lecture-11-version-2_transcript.pdf> |
+
+## Other course pages
+
+- Syllabus: <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/pages/syllabus/>
+- Schedule: <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/pages/schedule/>
+- Assignments: <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/pages/assignments/>
+- Lecture videos: <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/video_galleries/lecture-videos/>
+
