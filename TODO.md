@@ -29,7 +29,7 @@ Images are opted in: every figure-bearing slide, rendered per Step 1c, never a s
 
 ## Slides (raw/slides/)
 - [x] 01 Introduction — mit15_773_s24_lec01.pdf (110 pages; slide N = page N; read by Sonnet; figure check on 6 rendered pages, 1 corrected)
-- [ ] 02 Training Deep NNs — mit15_773_s24_lec02.pdf (95 pages; slide N = page N, pages 50–94 print N+1)
+- [x] 02 Training Deep NNs — mit15_773_s24_lec02.pdf (95 pages; slide N = page N, pages 50–94 print N+1; read by Sonnet in three parts; figure check on 8 rendered pages incl. 2 backprop, 1 corrected)
 - [x] 02 Backprop example — mit15_773_s24_lec02_backprop_example.pdf (14 handwritten pages; not presented in the video, pointed to at 59:40)
 
 ## Wiki

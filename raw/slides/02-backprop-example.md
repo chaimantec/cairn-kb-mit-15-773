@@ -12,6 +12,8 @@ Transcription of [`mit15_773_s24_lec02_backprop_example.pdf`](https://ocw.mit.ed
 
 Colour code used throughout: green ink marks the bias $b$, red ink marks the weights $w_1$, $w_2$, black is everything else; orange marks the phrase "computational graph" and the orange-filled operation boxes in the graph.
 
+**Images.** Pages 2, 8 and 12 carry a 1400px render under their heading (saved as `backprop-N` in lecture 2's image folder): the labelled network, the bare computational graph, and the graph with every local derivative and the highlighted path to $w_1$. Pages 1, 9 and 10 are earlier states of those drawings, and the remaining pages are handwritten equations transcribed here in full.
+
 ## Numbering
 
 Headings use the PDF page number (1..14), one heading per page. Every page prints a plain number in the bottom-right corner that equals the PDF page number (the handwritten pages 1–13 and OCW's end page 14), so there is no mismatch to ignore. The PDF's text layer is OCR of the handwriting and should not be searched for content.
@@ -39,6 +41,8 @@ Below: "What are the parameters to be learned?"
 *Figure: yes — two inputs $x_1$, $x_2$ feeding one linear output node, no hidden layer*
 
 ## Slide 2 — The model and MSE loss
+
+![Slide 2 — The model and MSE loss](../images/02-training-deep-nns/backprop-2.png)
 
 The network of slide 1 again, now with labels: red $w_1$ on the arrow from $x_1$, red $w_2$ on the arrow from $x_2$, and a green $b$ above the output node (the linear slash icon is still inside it; an arrow leaves to the right).
 
@@ -156,6 +160,8 @@ Then: "OK, we are finally ready for backpropagation!!" followed by a smiley face
 
 ## Slide 8 — We will rewrite these equations as a computational graph
 
+![Slide 8 — We will rewrite these equations as a computational graph](../images/02-training-deep-nns/backprop-8.jpg)
+
 A box at top holds the four equations:
 
 $$a_1 = w_1 x_1,\quad a_2 = w_2 x_2,\quad \hat{y} = b + a_1 + a_2,\quad \text{Loss} = (\hat{y} - y)^2$$
@@ -230,6 +236,8 @@ Page number "11" bottom-right.
 *Figure: no*
 
 ## Slide 12 — To calculate ∂Loss/∂w₁, for example
+
+![Slide 12 — To calculate ∂Loss/∂w₁, for example](../images/02-training-deep-nns/backprop-12.jpg)
 
 Handwritten: "To calculate $\dfrac{\partial \text{Loss}}{\partial w_1}$, for example:" (the $w_1$ in red).
 
