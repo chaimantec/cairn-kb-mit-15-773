@@ -11,7 +11,7 @@ Images are opted in: every figure-bearing slide, rendered per Step 1c, never a s
 
 ## Transcripts
 - [x] 01 Introduction to Neural Networks and Deep Learning — video kyQ0CRkYhy4 (OCW human captions; light copy-edit, verbatim in original/)
-- [ ] 02 Training Deep NNs (cont.); Intro to Keras/TF; Tabular Data — video 3Lr8nVUDCpk
+- [x] 02 Training Deep NNs (cont.); Intro to Keras/TF; Tabular Data — video 3Lr8nVUDCpk (OCW human captions; light copy-edit; covers deck 02 slides 2–94 only)
 - [ ] 03 DL for Computer Vision – CNNs from Scratch — video 8QuyDcMIdRc
 - [ ] 04 DL for Computer Vision – Transfer Learning, Fine-Tuning; HuggingFace — video 8xh7Y0pBrCE
 - [ ] 05 DL for Natural Language – The Basics — video duBLxHjaecQ
@@ -29,15 +29,22 @@ Images are opted in: every figure-bearing slide, rendered per Step 1c, never a s
 
 ## Slides (raw/slides/)
 - [x] 01 Introduction — mit15_773_s24_lec01.pdf (110 pages; slide N = page N; read by Sonnet; figure check on 6 rendered pages, 1 corrected)
+- [ ] 02 Training Deep NNs — mit15_773_s24_lec02.pdf (95 pages; slide N = page N, pages 50–94 print N+1)
+- [x] 02 Backprop example — mit15_773_s24_lec02_backprop_example.pdf (14 handwritten pages; not presented in the video, pointed to at 59:40)
 
 ## Wiki
 - [x] wiki/01-introduction.md
 - [x] Topic pages (cross-lecture concepts) — ai-ml-dl-genai, representation-learning, neural-network-anatomy, activation-functions (lecture 1 only; extend as lectures land)
 - [x] INDEX.md table of contents
+- [ ] wiki/02-training-deep-nns.md
+- [ ] Topic pages for lecture 2 (loss functions, gradient descent, backprop, SGD, Keras; extend neural-network-anatomy, activation-functions)
+- [ ] INDEX.md — lecture 2 entries and coverage sentence
 
 ## Images
 - [x] raw/images/01-introduction/ — rank, pick, render, embed in the wiki and slide files
 - [x] INDEX.md image rules; AGENTS.md Images conventions and table row; BUILD_LOG.md; LICENSE.md attribution
+- [ ] raw/images/02-training-deep-nns/ — deck 02 as slide-N, backprop deck as backprop-N; embed
+- [ ] INDEX.md image sentence; AGENTS.md table row; BUILD_LOG.md; LICENSE.md attribution (lecture 2)
 
 ## Publish
 - [x] kb.json — coverage, materials.method, provenance caveats
@@ -46,3 +53,4 @@ Images are opted in: every figure-bearing slide, rendered per Step 1c, never a s
 - [x] verify_kb.py clean, and its review section read
 - [x] Commit and push
 - [x] PATCH kbUrl onto the catalog entry (https://github.com/chaimantec/cairn-kb-mit-15-773)
+- [ ] Lecture 2: kb.json, BUILD_LOG.md, verify_kb.py clean, commit and push
