@@ -56,3 +56,15 @@ plus the deck:
   generated with Stable Diffusion from the prompt printed on the slide (source cited there:
   mpost.io). OCW did not mark it as excluded. None of the 15 slides that carry an OCW exclusion
   notice (11, 12, 22–24, 28, 35, 37, 38, 41, 43, 44, 49, 50, 87) is rendered.
+- **Lecture 2**, `raw/images/02-training-deep-nns/` (18 images): `slide-N` files from
+  [`mit15_773_s24_lec02.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec02.pdf), and `backprop-N` files (pages 2, 8 and 12) from the
+  lecturer's handwritten [`mit15_773_s24_lec02_backprop_example.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec02_backprop_example.pdf). Third-party material
+  on the rendered slides, as credited there: slides 55–58 and 69 reproduce plots from the mlrefined
+  blog page cited on each slide (kenndanielso.github.io/mlrefined, "6.4 Gradient descent"). OCW
+  marks only slide 75, whose notice credits that page's gradient-descent figures to Jeremy
+  Watt/neonwatty on GitHub, as excluded. Slide 66 is a lithograph of Augustin-Louis Cauchy, in the
+  public domain via Wikimedia Commons, as the slide states. Slide 93 reproduces a loss-landscape
+  visualization from arXiv 1712.09913, the paper the slide cites. Slide 94 reproduces Figure 2.26
+  from page 61 of the course textbook, named on slide 2 of the next deck as François Chollet's
+  *Deep Learning with Python*, 2nd edition. Those figures remain their authors'. Slide 75, the
+  deck's only slide with an OCW exclusion notice, is not rendered.

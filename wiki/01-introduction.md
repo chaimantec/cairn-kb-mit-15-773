@@ -19,7 +19,7 @@ job-interview calls: count its 13 parameters, then run numbers through it by han
 
 The catalog titles this recording "…; Training Deep NNs", but training is not covered here. The
 video ends on the last slide of the lecture 1 deck. Loss functions, gradient descent and training
-begin with the lecture 2 deck.
+begin in [lecture 2](02-training-deep-nns.md).
 
 The recording begins at slide 10. Slides 1–9 cover course logistics and appear only in the deck;
 they are summarised at the end of this page.
@@ -399,8 +399,9 @@ one number, and the activation transforms only that. Three are introduced (slide
 - **ReLU**, the rectified linear unit, $g(a) = \max(0, a)$: positive numbers pass unchanged and
   negative ones become 0. "The ReLU is not impressed" if a million-variable linear function happens
   to output a negative number (≈43:17–44:03). He calls it "the hero of deep learning", and many
-  long-time practitioners consider it one of the key factors in deep learning's success. Its
-  properties come in the next lecture.
+  long-time practitioners consider it one of the key factors in deep learning's success. He
+  promises its properties for the next class. Lecture 2 gives one: its gradient is 1 for positive
+  inputs, so gradients pass through it unharmed ([lecture 2](02-training-deep-nns.md) ≈1:15:48).
 
 ![Slide 92: ReLU — the formula g(a) = max(0, a) above a plot that is flat at 0 for a from −5 to 0 and then rises along a straight line of slope 1 to (5, 5).](../raw/images/01-introduction/slide-92.jpg)
 
@@ -418,7 +419,8 @@ layers, you can basically get anything done" (≈44:48).
 **How to choose** (≈45:37): use ReLU in the hidden layers, because empirically it does "an amazing
 job". For the output layer you have no choice, because the kind of output dictates it. A single
 probability between 0 and 1 needs a sigmoid, and ten probabilities that must sum to 1 need a
-**softmax**, which comes in the next lecture. See [activation functions](activation-functions.md).
+**softmax**, which he promises for the next class. Lecture 2 defers it again (≈17:54 there). See
+[activation functions](activation-functions.md).
 
 ## Designing a deep neural network
 
@@ -441,7 +443,7 @@ Three follow-up questions (≈46:27–48:46):
   comes later.
 - **Who sets the weights?** The network does. Training data, a **loss function** and an optimization
   algorithm let the network find the weights that minimize prediction error. "We only have to set
-  it up, sit back — often for many hours — and watch it do its thing." The details are next lecture.
+  it up, sit back — often for many hours — and watch it do its thing." The details are in [lecture 2](02-training-deep-nns.md).
 - **What exactly is a node?** A linear function followed by a nonlinear activation: many numbers in,
   one number out.
 
@@ -473,7 +475,7 @@ meet a complex network, until it is automatic (≈51:59).
 
 ### Predicting with the trained network
 
-Suppose training, covered next lecture, has produced these values (≈51:59; slide 100):
+Suppose training, covered in [lecture 2](02-training-deep-nns.md), has produced these values (≈51:59; slide 100):
 
 ![Slide 100: the trained 2-3-1 network — weights 0.5, −0.1, 0.2 on the edges from x1 to the top, middle and bottom hidden nodes, 0.1, 0.3, −0.1 on the edges from x2, hidden biases −0.3, 0.2, 0.5, output weights −0.2, −0.3, −0.15 and output bias 0.05.](../raw/images/01-introduction/slide-100.png)
 
@@ -572,3 +574,5 @@ ML engineers, but to make you able to "build a V1.0 DL model by yourself".
 - [Anatomy of a neural network](neural-network-anatomy.md): neurons, layers, weights and biases,
   parameter counting, the forward pass.
 - [Activation functions](activation-functions.md): sigmoid, linear, ReLU, and how to choose.
+- [Lecture 2](02-training-deep-nns.md): how such a network is trained, with loss functions,
+  gradient descent, backprop and SGD.

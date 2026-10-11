@@ -17,7 +17,8 @@ otherwise stacking layers achieves nothing (≈33:58).
 - **ReLU**, the rectified linear unit: $g(a) = \max(0, a)$ (slide 92). Positive inputs pass unchanged
   and negative inputs become 0. The lecturer calls it "the hero of deep learning" and notes that
   many long-time practitioners count it among the key reasons for deep learning's success
-  (≈43:17–44:03). He defers its properties to the next lecture.
+  (≈43:17–44:03). He promised its properties for the next class. Lecture 2 gives one of them, its
+  gradient, below.
 
 ![Slide 93: three node drawings — a plain + node, a + node followed by max(0, x), and a + node followed by the sigmoid — mapped by a big arrow to three circle icons: a diagonal line (Linear Activation), a hinge (ReLU Activation) and an S-curve (Sigmoid Activation).](../raw/images/01-introduction/slide-93.png)
 
@@ -33,9 +34,29 @@ activation functions" ([lecture 1](01-introduction.md) ≈44:48).
 - **Hidden layers**: use ReLU. Empirically it does "an amazing job", and "if you just stick to the
   ReLU for your hidden layers, you can basically get anything done" (≈44:48–45:37).
 - **Output layer**: there is no free choice, because the kind of output dictates it. A single
-  probability needs a sigmoid. Several probabilities that must sum to 1 need a **softmax**, which
-  the lecture 2 deck introduces (≈45:37).
+  probability needs a sigmoid, as in lecture 2's heart-disease model. Several probabilities that
+  must sum to 1 need a **softmax**, one output unit per class (≈45:37). Lecture 1 promised softmax
+  for the next class, and lecture 2 defers it again (lecture 2 ≈17:54).
+
+## ReLU and the flow of gradients
+
+Training runs gradients backwards through every activation function (see
+[backpropagation](backpropagation.md)), and an activation must neither "squish" the gradient nor
+make it explode ([lecture 2](02-training-deep-nns.md) ≈1:15:03–1:15:48). The ReLU passes this test
+well. For positive inputs its gradient is exactly 1, so whatever gradient arrives "just gets
+multiplied by 1 and gets pushed out the other side". It "preserves the gradient while injecting
+almost the minimum amount of non-linearity", which is one reason it is so popular (≈1:15:48–1:16:34).
+Lecture 2 also cites "a mountain of empirical evidence" for ReLU as the hidden-layer default
+(≈7:50).
+
+## In Keras
+
+The activation is an argument of each layer, as in `keras.layers.Dense(16, activation="relu")`.
+Custom activation functions can be defined. Asked what Keras uses when none is given, the lecturer
+was not sure (lecture 2 ≈17:08–18:39). See [Keras](keras.md).
 
 ## Where this comes up
 
 - [Lecture 1](01-introduction.md): definition, sigmoid, linear, ReLU, and the rule of thumb.
+- [Lecture 2](02-training-deep-nns.md): ReLU hidden units and a sigmoid output for heart-disease
+  prediction, and why the ReLU's gradient makes it a good default.

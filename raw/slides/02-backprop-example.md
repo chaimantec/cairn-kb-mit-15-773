@@ -38,7 +38,7 @@ Diagram: two circled inputs, $x_1$ (upper) and $x_2$ (lower), each with an arrow
 
 Below: "What are the parameters to be learned?"
 
-*Figure: yes — two inputs $x_1$, $x_2$ feeding one linear output node, no hidden layer*
+*Figure: yes — two inputs x₁, x₂ feeding one linear output node, no hidden layer*
 
 ## Slide 2 — The model and MSE loss
 
@@ -56,7 +56,7 @@ $$\text{Loss} = (b + w_1 x_1 + w_2 x_2 - y)^2$$
 
 (In the equations $b$ is green and $w_1$, $w_2$ are red.)
 
-*Figure: yes — the two-input linear network with $w_1$, $w_2$ on the edges and bias $b$ on the node*
+*Figure: yes — the two-input linear network with w₁, w₂ on the edges and bias b on the node*
 
 ## Slide 3 — Let's calculate ∇Loss the "old-fashioned" way
 
@@ -64,11 +64,11 @@ Handwritten: "Let's calculate $\nabla \text{Loss} = \left[\dfrac{\partial \text{
 
 At left: $\text{Loss} = (b + w_1 x_1 + w_2 x_2 - y)^2$, with three arrows fanning out to the three partial derivatives on the right:
 
-$$\frac{\partial \text{Loss}}{\partial b} = 2\,(b + w_1 x_1 + w_2 x_2 - y)$$
+$$\frac{\partial \text{Loss}}{\partial b} = 2\thinspace (b + w_1 x_1 + w_2 x_2 - y)$$
 
-$$\frac{\partial \text{Loss}}{\partial w_1} = 2\,(b + w_1 x_1 + w_2 x_2 - y)\,x_1$$
+$$\frac{\partial \text{Loss}}{\partial w_1} = 2\thinspace (b + w_1 x_1 + w_2 x_2 - y)\thinspace x_1$$
 
-$$\frac{\partial \text{Loss}}{\partial w_2} = 2\,(b + w_1 x_1 + w_2 x_2 - y)\,x_2$$
+$$\frac{\partial \text{Loss}}{\partial w_2} = 2\thinspace (b + w_1 x_1 + w_2 x_2 - y)\thinspace x_2$$
 
 (Colours as before: $b$ green, $w_1$, $w_2$ red.)
 
@@ -108,7 +108,7 @@ Left, the four equations:
 
 $$\text{Loss} = (\hat{y} - y)^2,\quad \hat{y} = b + a_1 + a_2,\quad a_1 = w_1 x_1,\quad a_2 = w_2 x_2$$
 
-A double arrow ("$\Rightarrow$") points to the chain-rule expansions on the right:
+A double arrow ("⇒") points to the chain-rule expansions on the right:
 
 $$\frac{\partial \text{Loss}}{\partial b} = \frac{\partial \text{Loss}}{\partial \hat{y}} \cdot \frac{\partial \hat{y}}{\partial b}$$
 
@@ -128,13 +128,13 @@ $$\frac{\partial \text{Loss}}{\partial \hat{y}},\quad \frac{\partial \hat{y}}{\p
 
 Handwritten: "But that's easy!" Four rows, each an equation on the left, a long arrow, and its derivative on the right:
 
-$$\text{Loss} = (\hat{y} - y)^2 \;\longrightarrow\; \frac{\partial \text{Loss}}{\partial \hat{y}} = 2(\hat{y} - y)$$
+$$\text{Loss} = (\hat{y} - y)^2 \mskip{5mu}\longrightarrow\mskip{5mu} \frac{\partial \text{Loss}}{\partial \hat{y}} = 2(\hat{y} - y)$$
 
-$$\hat{y} = b + a_1 + a_2 \;\longrightarrow\; \frac{\partial \hat{y}}{\partial b} = \frac{\partial \hat{y}}{\partial a_1} = \frac{\partial \hat{y}}{\partial a_2} = 1$$
+$$\hat{y} = b + a_1 + a_2 \mskip{5mu}\longrightarrow\mskip{5mu} \frac{\partial \hat{y}}{\partial b} = \frac{\partial \hat{y}}{\partial a_1} = \frac{\partial \hat{y}}{\partial a_2} = 1$$
 
-$$a_1 = w_1 x_1 \;\longrightarrow\; \frac{\partial a_1}{\partial w_1} = x_1$$
+$$a_1 = w_1 x_1 \mskip{5mu}\longrightarrow\mskip{5mu} \frac{\partial a_1}{\partial w_1} = x_1$$
 
-$$a_2 = w_2 x_2 \;\longrightarrow\; \frac{\partial a_2}{\partial w_2} = x_2$$
+$$a_2 = w_2 x_2 \mskip{5mu}\longrightarrow\mskip{5mu} \frac{\partial a_2}{\partial w_2} = x_2$$
 
 (The final "1" is underlined.)
 
@@ -168,21 +168,21 @@ $$a_1 = w_1 x_1,\quad a_2 = w_2 x_2,\quad \hat{y} = b + a_1 + a_2,\quad \text{Lo
 
 A down arrow leads to the text "We will rewrite these equations as a computational graph" (the words "computational graph" in orange), then another down arrow to the graph, drawn left to right with inputs on the left and Loss on the right. Variables are circled (black outline); operations are orange-filled boxes.
 
-- Top left: circled $x_1$ and circled red $w_1$, both with arrows into an orange box marked "*". An arrow goes from that box to circled $a_1$.
-- Lower left: circled $x_2$ and circled red $w_2$, both with arrows into a second orange "*" box, with an arrow to circled $a_2$.
+- Top left: circled $x_1$ and circled red $w_1$, both with arrows into an orange box marked "\*". An arrow goes from that box to circled $a_1$.
+- Lower left: circled $x_2$ and circled red $w_2$, both with arrows into a second orange "\*" box, with an arrow to circled $a_2$.
 - Circled green $b$ sits above the centre with an arrow pointing down into an orange "+" box.
 - Arrows from circled $a_1$ and from circled $a_2$ also go into the "+" box.
 - An arrow from the "+" box goes to circled $\hat{y}$.
 - An arrow from $\hat{y}$ goes to an orange box marked $(\square - \square)^2$ (two empty slots, squared). Circled $y$ is below it with an arrow pointing up into that box.
 - An arrow from the box goes to circled "Loss".
 
-*Figure: yes — computational graph: $x_1$,$w_1$ → * → $a_1$; $x_2$,$w_2$ → * → $a_2$; $b$,$a_1$,$a_2$ → + → $\hat{y}$; $\hat{y}$,$y$ → $(\square-\square)^2$ → Loss*
+*Figure: yes — computational graph: x₁,w₁ → × → a₁; x₂,w₂ → × → a₂; b,a₁,a₂ → + → ŷ; ŷ,y → (□-□)² → Loss*
 
 ## Slide 9 — We can "attach" each of those little derivatives we calculated earlier to the graph
 
 Handwritten: "We can "attach" each of those little derivatives we calculated earlier to the graph."
 
-Below are three copies of the slide 8 computational graph, stacked vertically, each with one or two new magenta (pink) annotations. Magenta is the new ink on this page and marks a local derivative attached to an edge, with a magenta arrow running backwards (right to left) along that edge. The graph in each copy: circled $x_1$ and circled red $w_1$ feed an orange "*" box that feeds circled $a_1$; circled $x_2$ and circled red $w_2$ feed an orange "*" box that feeds circled $a_2$; circled green $b$ feeds down into an orange "+" box, which also receives $a_1$ and $a_2$; "+" feeds circled $\hat{y}$; $\hat{y}$ and circled $y$ (arrow up from below) feed the orange $(\square - \square)^2$ box; that box feeds circled "Loss".
+Below are three copies of the slide 8 computational graph, stacked vertically, each with one or two new magenta (pink) annotations. Magenta is the new ink on this page and marks a local derivative attached to an edge, with a magenta arrow running backwards (right to left) along that edge. The graph in each copy: circled $x_1$ and circled red $w_1$ feed an orange "\*" box that feeds circled $a_1$; circled $x_2$ and circled red $w_2$ feed an orange "\*" box that feeds circled $a_2$; circled green $b$ feeds down into an orange "+" box, which also receives $a_1$ and $a_2$; "+" feeds circled $\hat{y}$; $\hat{y}$ and circled $y$ (arrow up from below) feed the orange $(\square - \square)^2$ box; that box feeds circled "Loss".
 
 First copy: a long magenta arrow curves from circled "Loss" back over the top to circled $\hat{y}$, labelled above it in magenta:
 
@@ -198,11 +198,11 @@ Third copy: two magenta arrows leave the $\hat{y}$ end of the "+" box. One point
 
 Page number "9" bottom-right.
 
-*Figure: yes — three copies of the computational graph with magenta backward arrows labelled $\partial\text{Loss}/\partial\hat{y} = 2(\hat{y}-y)$, $\partial\hat{y}/\partial b = 1$, $\partial\hat{y}/\partial a_1 = 1$, $\partial\hat{y}/\partial a_2 = 1$*
+*Figure: yes — three copies of the computational graph with magenta backward arrows labelled ∂Loss/∂ŷ = 2(ŷ-y), ∂ŷ/∂b = 1, ∂ŷ/∂a₁ = 1, ∂ŷ/∂a₂ = 1*
 
 ## Slide 10 — Putting everything together
 
-Top: another copy of the computational graph (same nodes and edges as slide 8) with two magenta backward arrows. One curves from circled $a_1$ back along the "*" box to circled $w_1$, labelled:
+Top: another copy of the computational graph (same nodes and edges as slide 8) with two magenta backward arrows. One curves from circled $a_1$ back along the "\*" box to circled $w_1$, labelled:
 
 $$\frac{\partial a_1}{\partial w_1} = x_1$$
 
@@ -227,7 +227,7 @@ Page number "10" bottom-right.
 
 ## Slide 11 — This is called BACKPROPAGATION
 
-Handwritten: "To calculate $\dfrac{\partial \text{Loss}}{\partial\,\text{any parameter}}$, start from the loss and travel backwards to the parameter, multiplying the partial derivatives as you go." (The words "any parameter" are written in red in the denominator; "backwards" is underlined.)
+Handwritten: "To calculate $\dfrac{\partial \text{Loss}}{\partial\thinspace \text{any parameter}}$, start from the loss and travel backwards to the parameter, multiplying the partial derivatives as you go." (The words "any parameter" are written in red in the denominator; "backwards" is underlined.)
 
 Then: "This is called" followed by the word "BACKPROPAGATION" in capitals, highlighted in a pink marker band.
 
@@ -251,7 +251,7 @@ $$\frac{\partial \text{Loss}}{\partial w_1} = \frac{\partial \text{Loss}}{\parti
 
 Page number "12" bottom-right.
 
-*Figure: yes — computational graph with magenta local derivatives and the yellow-highlighted backward path Loss → $\hat{y}$ → $a_1$ → $w_1$*
+*Figure: yes — computational graph with magenta local derivatives and the yellow-highlighted backward path Loss → ŷ → a₁ → w₁*
 
 ## Slide 13 — Does this match what we calculated earlier? YES!! Backprop is very efficient
 

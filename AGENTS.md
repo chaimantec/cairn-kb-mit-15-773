@@ -37,9 +37,16 @@ printed slips, which slides were rendered and why) goes in
   Name files by the **video** number (`01-…`), and say in the transcript header which deck slides
   the recording spans. Catalog video titles can overstate coverage: video 1's mentions "Training
   Deep NNs", which it never reaches.
+- **A lecture can own a companion deck it never presents** (lecture 2's handwritten backprop
+  example). Give it its own slide file, `NN-<companion>.md`, with its own `## Slide 1..N`
+  headings. Render its pages into the lecture's single image directory with a distinct prefix
+  (`backprop-N`, via `embed_slide_images.py --prefix`), because `verify_kb.py` keys slide files and
+  image directories on the two-digit prefix. In the wiki, cite it as "page N of the …" so the embed
+  script's `slide N` anchoring cannot misplace it, and hand-place its images.
 - **Slide N = PDF page N** in every heading and citation, unless a deck's header says otherwise.
   These decks print PowerPoint numbers bottom-right, but some pages carry visibly printed **stale
-  static numbers** from an older version of the deck (lecture 1's page 13 prints "20"). Two-digit
+  static numbers** from an older version of the deck (lecture 1's page 13 prints "20"), and a
+  hidden slide makes every later printed number run ahead of the page (lecture 2, from page 50). Two-digit
   and three-digit numbers are also often split across two text spans ("1"+"0", "10"+"0").
   `slide_number_map.py` misreads both, so derive the mapping from raw span positions, check the
   outliers on page crops, and verify headings with a plain `1..N` sequence check rather than
@@ -86,6 +93,7 @@ What was rendered and why goes in `BUILD_LOG.md`.
 | Lecture | Images | Deck |
 | --- | --- | --- |
 | 1 Introduction to Neural Networks and Deep Learning | 45 of 110 pages | rendered from `mit15_773_s24_lec01.pdf` |
+| 2 Training Deep Neural Networks | 18 | 15 of `mit15_773_s24_lec02.pdf`'s 95 pages as `slide-N`, and 3 of the backprop example's 14 as `backprop-N` |
 
 ## Conventions
 

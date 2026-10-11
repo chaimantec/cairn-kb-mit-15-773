@@ -36,15 +36,15 @@ Images are opted in: every figure-bearing slide, rendered per Step 1c, never a s
 - [x] wiki/01-introduction.md
 - [x] Topic pages (cross-lecture concepts) — ai-ml-dl-genai, representation-learning, neural-network-anatomy, activation-functions (lecture 1 only; extend as lectures land)
 - [x] INDEX.md table of contents
-- [ ] wiki/02-training-deep-nns.md
-- [ ] Topic pages for lecture 2 (loss functions, gradient descent, backprop, SGD, Keras; extend neural-network-anatomy, activation-functions)
-- [ ] INDEX.md — lecture 2 entries and coverage sentence
+- [x] wiki/02-training-deep-nns.md
+- [x] Topic pages for lecture 2 (loss functions, gradient descent, backprop, SGD, Keras; extend neural-network-anatomy, activation-functions)
+- [x] INDEX.md — lecture 2 entries and coverage sentence
 
 ## Images
 - [x] raw/images/01-introduction/ — rank, pick, render, embed in the wiki and slide files
 - [x] INDEX.md image rules; AGENTS.md Images conventions and table row; BUILD_LOG.md; LICENSE.md attribution
-- [ ] raw/images/02-training-deep-nns/ — deck 02 as slide-N, backprop deck as backprop-N; embed
-- [ ] INDEX.md image sentence; AGENTS.md table row; BUILD_LOG.md; LICENSE.md attribution (lecture 2)
+- [x] raw/images/02-training-deep-nns/ — deck 02 as slide-N, backprop deck as backprop-N; embed
+- [x] INDEX.md image sentence; AGENTS.md table row; BUILD_LOG.md; LICENSE.md attribution (lecture 2)
 
 ## Publish
 - [x] kb.json — coverage, materials.method, provenance caveats
@@ -53,4 +53,4 @@ Images are opted in: every figure-bearing slide, rendered per Step 1c, never a s
 - [x] verify_kb.py clean, and its review section read
 - [x] Commit and push
 - [x] PATCH kbUrl onto the catalog entry (https://github.com/chaimantec/cairn-kb-mit-15-773)
-- [ ] Lecture 2: kb.json, BUILD_LOG.md, verify_kb.py clean, commit and push
+- [x] Lecture 2: kb.json, BUILD_LOG.md, verify_kb.py clean, commit and push

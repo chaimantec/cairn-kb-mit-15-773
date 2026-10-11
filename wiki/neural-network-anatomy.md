@@ -53,8 +53,15 @@ The input and output are fixed by the problem. You choose the **number of hidden
 **number of neurons** in each, and the **activation functions**. The output layer's activation must
 match the kind of output: a sigmoid for one probability, a softmax for several probabilities that
 sum to 1 ([lecture 1](01-introduction.md) ≈45:37–46:27; slides 94–96). The weights and biases are not
-chosen. Training finds them, using data, a loss function and an optimizer (≈48:00), which the
-lecture 2 deck covers.
+chosen. Training finds them, using data, a loss function and an optimizer (≈48:00), which
+[lecture 2](02-training-deep-nns.md) covers. See [training a neural network](training-neural-networks.md).
+
+Lecture 2 adds the meta-rule for these choices: start with the simplest network you can think of,
+and only make it more complicated if it is not good enough (≈0:45–1:33). For heart-disease
+prediction that meant one hidden layer. The lecturer tried 4, 8 and 16 neurons and kept 16, because
+more started to overfit (≈5:30–6:15). Categorical inputs are one-hot-encoded, one input per level,
+so that dataset's 13 variables become 29 input nodes (≈7:04; slide 7). Every layer is fully
+connected to the next by default for structured data (≈9:23).
 
 ## Counting parameters
 
@@ -64,6 +71,11 @@ inputs, three ReLU hidden neurons and one sigmoid output, has $2 \times 3 + 3 \t
 and $3 + 1 = 4$ biases, so **13 parameters** (≈50:19–51:59; slides 98–99). Forgetting the biases is
 the common mistake. The lecturer recommends counting by hand for the first few complex networks you
 build.
+
+Lecture 2's heart-disease network, with 29 inputs, 16 hidden units and one output, has
+$29 \times 16 + 16 + 16 \times 1 + 1 = 497$ parameters (≈9:23–10:55; slide 10). Because the
+weights between two fully connected layers of $A$ and $B$ units number about $A \times B$,
+parameters "explode" as layers widen, which has to be watched to prevent overfitting (≈10:55).
 
 ## The forward pass
 
@@ -85,3 +97,5 @@ network is far more complex than logistic regression. That complexity is where i
 
 - [Lecture 1](01-introduction.md): the whole construction, terminology, parameter counting and the
   worked forward pass.
+- [Lecture 2](02-training-deep-nns.md): designing the heart-disease network, its 497 parameters,
+  and writing it in [Keras](keras.md).

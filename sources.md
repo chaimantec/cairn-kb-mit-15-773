@@ -9,16 +9,17 @@ link to the URLs below. OCW publishes the course under CC BY-NC-SA 4.0; see
 
 OCW lists the decks under *Lecture Notes* (<https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/lists/lecture-notes/>). Their numbering does
 **not** follow the 11 lecture videos, so the "Video" column records which recording uses each
-deck. Only video 1 has been checked against its transcript so far: it covers deck 01 alone, from
-its slide 10 to its last content slide, 109. The other assignments are provisional, inferred from
-titles, and will be confirmed as each lecture is built.
+deck. Videos 1 and 2 have been checked against their transcripts. Video 1 covers deck 01 alone,
+from its slide 10 to its last content slide, 109. Video 2 covers deck 02 alone, slides 2–94, and
+points students to the backprop example without presenting it. The other assignments are
+provisional, inferred from titles, and will be confirmed as each lecture is built.
 
 | Deck | Title | Video | URL |
 | ---- | ----- | ----- | --- |
 | `mit15_773_s24_lec01.pdf` | Lecture 01: Introduction to Neural Networks and Deep Learning | 1 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec01.pdf> |
-| `mit15_773_s24_lec02.pdf` | Lecture 02: Training Deep Neural Networks | 2 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec02.pdf> |
-| `mit15_773_s24_lec02_backprop_example.pdf` | Lecture 02: Backprop Example | 2 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec02_backprop_example.pdf> |
-| `mit15_773_s24_lec03a.pdf` | Lecture 03A: Lightning Introduction to Keras/TF; Training a DL Model for a Structured Data Problem | 2 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec03a.pdf> |
+| `mit15_773_s24_lec02.pdf` | Lecture 02: Training Deep Neural Networks | 2 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec02.pdf> |
+| `mit15_773_s24_lec02_backprop_example.pdf` | Lecture 02: Backprop Example | 2 (not presented; pointed to at 59:40) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec02_backprop_example.pdf> |
+| `mit15_773_s24_lec03a.pdf` | Lecture 03A: Lightning Introduction to Keras/TF; Training a DL Model for a Structured Data Problem | 3 (provisional; video 2 does not reach it) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec03a.pdf> |
 | `mit15_773_s24_lec03b.pdf` | Lecture 03B: Deep Learning for Computer Vision – The Basics | 3 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec03b.pdf> |
 | `mit15_773_s24_lec04.pdf` | Lecture 04: Deep Learning for Computer Vision – Convolutional Neural Networks | 3–4 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec04.pdf> |
 | `mit15_773_s24_lec05.pdf` | Lecture 05: Text Vectorization and the Bag-of-Words Model | 5 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec05.pdf> |

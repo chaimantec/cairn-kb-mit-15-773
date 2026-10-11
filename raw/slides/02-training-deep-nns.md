@@ -154,7 +154,7 @@ Same drawing as slide 8. Text at bottom: "How many parameters (i.e., weights and
 
 ## Slide 12 — Typically, we define each layer from left to right
 
-The three-column drawing of slide 8 (Input Layer $x_1$...$x_{29}$; Hidden layer (16 units) with ReLU icons; Output layer with sigmoid icon and "y"), no code yet.
+The three-column drawing of slide 8 (Input Layer $x_1$ ... $x_{29}$; Hidden layer (16 units) with ReLU icons; Output layer with sigmoid icon and "y"), no code yet.
 
 *Figure: yes — input, 16-unit ReLU hidden layer and sigmoid output nodes (no edges)*
 
@@ -571,7 +571,7 @@ Formula, with the prefactor $\frac{1}{n}\sum_{i=1}^{n}$ enclosed in a red dashed
 
 $$\frac{1}{n}\sum_{i=1}^{n} -y^i \log\left(model(x^i)\right) - (1 - y^i)\log\left(1 - model(x^i)\right)$$
 
-*Build step: adds the averaging $\frac{1}{n}\sum_{i=1}^{n}$ (boxed in red dashes) to the expression of slide 47, and removes the captions.*
+*Build step: adds the averaging (1/n)Σ (boxed in red dashes) to the expression of slide 47, and removes the captions.*
 
 *Figure: no*
 
@@ -813,7 +813,7 @@ Below: "Lithograph of Augustin-Louis Cauchy is in the public domain. Source: Wik
 
 $$w \leftarrow w - \alpha \frac{dg(w)}{dw}$$
 
-"$\alpha$ is called the "learning rate" and is our way of ensuring that we increase or decrease $w$ slightly" ("learning rate" and "slightly" in red).
+"α is called the "learning rate" and is our way of ensuring that we increase or decrease $w$ slightly" ("learning rate" and "slightly" in red).
 
 "Typically set to small values (e.g., 0.1, 0.001, 0.0001) and determined by trial and error"
 
@@ -877,7 +877,7 @@ Red italic text: "The first number is the change in *g(w)* for a small increase 
 
 Footer URL: https://kenndanielso.github.io/mlrefined/blog_posts/6_First_order_methods/6_4_Gradient_descent.html
 
-*Build step: replaces "How should we interpret this?" with the $\nabla g$ notation and the red interpretation, relative to slide 70.*
+*Build step: replaces "How should we interpret this?" with the ∇g notation and the red interpretation, relative to slide 70.*
 
 *Figure: no*
 

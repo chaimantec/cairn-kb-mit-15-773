@@ -9,12 +9,12 @@
     "courseUrl": "https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/"
   },
   "coverage": {
-    "lecturesCovered": 1,
+    "lecturesCovered": 2,
     "lecturesTotal": 11,
-    "transcripts": 1,
-    "wikiLecturePages": 1,
-    "wikiTopicPages": 4,
-    "note": "Lecture 1 only. The 11 videos use 14 OCW decks whose numbering does not follow the videos; video 1 covers deck 01 alone."
+    "transcripts": 2,
+    "wikiLecturePages": 2,
+    "wikiTopicPages": 9,
+    "note": "Lectures 1-2. The 11 videos use 14 OCW decks whose numbering does not follow the videos; video 1 covers deck 01 alone, video 2 deck 02 alone plus its handwritten backprop-example deck."
   },
   "license": {
     "file": "LICENSE.md",
@@ -25,27 +25,28 @@
     "primary": "slides",
     "slideDecks": {
       "available": 14,
-      "transcribed": 1
+      "transcribed": 3
     },
     "method": "page-images",
     "figuresAudited": true,
     "figureAudit": {
-      "decksAudited": 1,
-      "decksTotal": 1,
-      "note": "decksTotal counts transcribed decks. Lecture 1 (Sonnet transcription): six figure-heavy pages (51, 59, 80, 93, 94, 100) checked against 1400px renders by the parent model; five agreed, slide 59's sigmoid description was corrected. Slides 100-104's numbers were also checked by arithmetic."
+      "decksAudited": 3,
+      "decksTotal": 3,
+      "note": "decksTotal counts transcribed decks. Each was transcribed by Sonnet and checked by the parent model against 1400px renders. Lecture 1: six pages (51, 59, 80, 93, 94, 100); slide 59's sigmoid corrected. Lecture 2 deck 02: six pages (4, 33, 42, 55, 69, 79); slide 52's minimum corrected. Lecture 2 backprop example: pages 7 and 12, both agreed. Numeric tables and worked examples were also checked by arithmetic."
     },
     "images": {
-      "lecturesWithImages": 1,
+      "lecturesWithImages": 2,
       "lecturesWithoutImages": [],
-      "lecturesTotal": 1,
-      "files": 45,
-      "megabytes": 4.87,
+      "lecturesTotal": 2,
+      "files": 63,
+      "megabytes": 6.56,
       "format": "whole slides rendered at 1400px, JPEG q85 or PNG whichever is smaller, named slide-N by PDF page number",
       "discovery": "inline in wiki/ and raw/slides/; no index file",
       "byLecture": {
-        "1": 45
+        "1": 45,
+        "2": 18
       },
-      "note": "Lecture 1: 45 of 110 pages. Not rendered: the 15 slides with an OCW exclusion notice, superseded build steps and repeats, transcribed tables, single-box text diagrams, logistics slides 1-9 and text-only slides; the list is in BUILD_LOG.md. No other lecture is in this KB yet, so no other lecture has images."
+      "note": "Lecture 1: 45 of 110 pages. Lecture 2: 15 of deck 02's 95 pages (slide-N) and 3 of the 14-page handwritten backprop example (backprop-N), in one directory. Not rendered: slides with an OCW exclusion notice, superseded build steps and repeats, transcribed tables, single-box text diagrams, logistics and text-only slides; the lists are in BUILD_LOG.md. No lecture after 2 is in this KB yet, so none has images."
     }
   },
   "provenance": {
@@ -54,10 +55,12 @@
       "claude-sonnet-5-5"
     ],
     "caveats": [
-      "Covers lecture 1 of 11 only.",
-      "Slide numbers are PDF page numbers. Some lecture 1 pages visibly print stale numbers from an older deck (page 13 prints 20); the slide file lists them.",
-      "The catalog title of video 1 mentions training deep networks, but the recording ends before training; it covers deck 01 slides 10-109 only.",
-      "Lecture 1's figure check was done by the parent model on rendered images, not by an independent agent."
+      "Covers lectures 1-2 of 11 only.",
+      "Slide numbers are PDF page numbers. Some lecture 1 pages visibly print stale numbers from an older deck (page 13 prints 20), and lecture 2's deck prints N+1 from page 50 on; the slide files list them.",
+      "Catalog video titles overstate coverage: video 1 ends before training, and video 2 shows only the four-line Keras model definition, without the fuller Keras/TensorFlow introduction or the Colab.",
+      "Lecture 2's backprop example is a handwritten deck that the video points to but does not present; it is transcribed from the handwriting in its own slide file.",
+      "Figure checks were done by the parent model on rendered images, not by an independent agent.",
+      "Lecture 2 renders slides 55-58 and 69, which reproduce plots from a web page whose gradient-descent figures OCW excludes on slide 75 only; LICENSE.md names the source."
     ]
   },
   "entryPoint": "INDEX.md",
