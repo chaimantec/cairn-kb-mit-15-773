@@ -83,15 +83,45 @@ The minibatch gradient only approximates the true one, yet SGD "works extremely 
 for reasons research has not fully settled. The approximation can even help it **escape local
 minima** of the full loss (≈1:07:24–1:08:10, ≈1:12:00; slide 92). Each minibatch gets one update,
 and the next minibatch starts from the updated weights (≈1:09:41, ≈1:14:17). SGD has many variants;
-the course's default is **Adam** (≈1:08:10). Epochs and batch sizes are promised for the Colab
-(≈1:09:41).
+the course's default is **Adam** (≈1:08:10), "because it's really good"
+([lecture 3](03-keras-and-vision-basics.md) ≈14:34–15:20). Lecture 2 promises epochs and batch sizes
+for the Colab (≈1:09:41), and lecture 3 covers them, below.
 
 The bowls and curves used to teach this are idealized. A visualization of a real network's loss
 landscape is all hills, valleys and cracks (slide 93).
+
+## Epochs and batches
+
+An **epoch** is one pass through all the training data (lecture 3 ≈3:03; deck 3A, slides 4–9). In
+gradient descent the whole training set goes through the network, the gradient is computed from all of
+it, and the weights are updated **once**, at the end of the epoch, by
+
+$$w \leftarrow w - \alpha \frac{dLoss(w)}{dw}$$
+
+with $w$ a weight, $\alpha$ the learning rate and $\frac{dLoss(w)}{dw}$ the derivative of the loss
+(deck 3A, slide 6). In SGD the training set is divided into minibatches, which the course calls simply
+**batches**. For each batch in turn, its samples go through the whole network, the gradient is computed
+on that batch, and the weights are updated, so the next batch already sees the new weights (deck 3A,
+slides 7–9; ≈3:50–5:25). One epoch therefore contains as many updates as there are batches (≈9:15).
+
+![Deck 3A, slide 9: a row of batches 1 to N across the training set, with an arrow from each batch down to its own copy of the weight-update formula, arranged as a staircase.](../raw/images/03-keras-and-vision-basics/3a-9.png)
+
+*Lecture 3, deck 3A, slide 9 — in SGD every batch gets its own weight update.*
+
+The number of batches in an epoch is the training-set size divided by the batch size, rounded up
+(deck 3A, slide 10; ≈7:44–8:30). With 194 training samples and batches of 32 that is 7: six batches of
+32 and a last one of 2. Batches need not be equal in size. The batch size is a choice. 32 is a good
+default; 64 and 128 are worth trying, and researchers' advice is "the biggest batch size that doesn't
+make your machine die". Sizes like 32 and 64 suit parallel hardware (≈7:44, ≈43:18–44:03). In Keras's
+training output, each epoch reports the batches it ran, such as "7/7" (≈45:41).
+
+How many epochs? Twenty to 30 is a good starting point, and the validation loss says whether to go on.
+See [overfitting and regularization](overfitting-and-regularization.md) (≈44:03, ≈53:30–54:17).
 
 ## Where this comes up
 
 - [Lecture 2](02-training-deep-nns.md): the derivative, the algorithm, learning rate, multi-variable
   gradients, local minima and SGD.
+- [Lecture 3](03-keras-and-vision-basics.md): epochs, batches, and batch size in practice.
 - See also [backpropagation](backpropagation.md), which computes the gradient, and
   [training a neural network](training-neural-networks.md), which puts the pieces together.

@@ -36,7 +36,23 @@ activation functions" ([lecture 1](01-introduction.md) ≈44:48).
 - **Output layer**: there is no free choice, because the kind of output dictates it. A single
   probability needs a sigmoid, as in lecture 2's heart-disease model. Several probabilities that
   must sum to 1 need a **softmax**, one output unit per class (≈45:37). Lecture 1 promised softmax
-  for the next class, and lecture 2 defers it again (lecture 2 ≈17:54).
+  for the next class, lecture 2 deferred it again (lecture 2 ≈17:54), and lecture 3 covers it, below.
+
+## Softmax, for several probabilities that sum to 1
+
+The activations above take one number and return one number. The **softmax** works on a whole layer
+instead: it "takes in $n$ arbitrary numbers and converts them to $n$ probabilities"
+([lecture 3](03-keras-and-vision-basics.md), deck 3B, slide 18; ≈1:09:00–1:09:47). Given the outputs
+$a_1, \ldots, a_{10}$ of ten linear units, the $i$-th probability is
+
+$$\frac{e^{a_i}}{e^{a_1} + e^{a_2} + \ldots + e^{a_{10}}}$$
+
+Each exponential is positive, and dividing by their total makes the ten probabilities add up to 1. Ten
+separate sigmoids would also give ten probabilities, but they need not add up to 1 (deck 3B, slide 17;
+≈1:08:15–1:09:00). Lecture 3's summary: a single number takes a linear output, a single probability a
+sigmoid, several numbers a stack of linear units, and several probabilities that must add up to 1 a
+softmax (deck 3B, slide 19; ≈1:10:33). See
+[multi-class classification and softmax](multiclass-classification.md).
 
 ## ReLU and the flow of gradients
 
@@ -60,3 +76,5 @@ was not sure (lecture 2 ≈17:08–18:39). See [Keras](keras.md).
 - [Lecture 1](01-introduction.md): definition, sigmoid, linear, ReLU, and the rule of thumb.
 - [Lecture 2](02-training-deep-nns.md): ReLU hidden units and a sigmoid output for heart-disease
   prediction, and why the ReLU's gradient makes it a good default.
+- [Lecture 3](03-keras-and-vision-basics.md): softmax for Fashion MNIST's ten classes, and 256 ReLU
+  hidden units.

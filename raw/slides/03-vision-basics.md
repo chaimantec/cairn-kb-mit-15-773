@@ -165,7 +165,7 @@ Section divider: white text "Image Classification" on a dark red band with a gre
 
 ## Slide 14 — Motivating application: Fashion MNIST
 
-![Slide 14 — Motivating application: Fashion MNIST](../images/03-keras-and-vision-basics/3b-14.jpg)
+![Deck 3B, slide 14 — Motivating application: Fashion MNIST](../images/03-keras-and-vision-basics/3b-14.jpg)
 
 Left text: "The fashion-mnist dataset consists of 70,000 images of clothing items across 10 categories." and "We will build a deep learning network <u>from scratch</u> to classify clothing into these 10 categories with over 90% accuracy!" ("from scratch" underlined).
 
@@ -183,7 +183,7 @@ Hand-drawn style slide. At left, a red handwritten underlined label "Input" abov
 
 ## Slide 16 — A simple NN to classify grayscale clothing images
 
-![Slide 16 — A simple NN to classify grayscale clothing images](../images/03-keras-and-vision-basics/3b-16.jpg)
+![Deck 3B, slide 16 — A simple NN to classify grayscale clothing images](../images/03-keras-and-vision-basics/3b-16.jpg)
 
 (Printed page number: "17".)
 
@@ -200,7 +200,7 @@ Hand-drawn network, left to right, with a pink arrow between each stage. Column 
 
 ## Slide 17 — Multi-Class Classification
 
-![Slide 17 — Multi-Class Classification](../images/03-keras-and-vision-basics/3b-17.png)
+![Deck 3B, slide 17 — Multi-Class Classification](../images/03-keras-and-vision-basics/3b-17.png)
 
 (Printed page number: "18".)
 
@@ -214,7 +214,7 @@ Top text: "Suppose the output variable is categorical with 10 levels". Below, th
 
 ## Slide 18 — The Softmax Layer
 
-![Slide 18 — The Softmax Layer](../images/03-keras-and-vision-basics/3b-18.jpg)
+![Deck 3B, slide 18 — The Softmax Layer](../images/03-keras-and-vision-basics/3b-18.jpg)
 
 (Printed page number: "19".)
 

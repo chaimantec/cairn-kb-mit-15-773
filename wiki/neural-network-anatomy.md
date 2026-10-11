@@ -99,3 +99,5 @@ network is far more complex than logistic regression. That complexity is where i
   worked forward pass.
 - [Lecture 2](02-training-deep-nns.md): designing the heart-disease network, its 497 parameters,
   and writing it in [Keras](keras.md).
+- [Lecture 3](03-keras-and-vision-basics.md): checking the 497 against Keras's `model.summary`, and a
+  Fashion-MNIST network with 784 flattened inputs, 256 ReLU units and a 10-way softmax output.

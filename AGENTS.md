@@ -43,6 +43,19 @@ printed slips, which slides were rendered and why) goes in
   (`backprop-N`, via `embed_slide_images.py --prefix`), because `verify_kb.py` keys slide files and
   image directories on the two-digit prefix. In the wiki, cite it as "page N of the …" so the embed
   script's `slide N` anchoring cannot misplace it, and hand-place its images.
+- **A video can present two decks** (lecture 3: decks 3A and 3B). Give each its own slide file
+  `NN-<deck-slug>.md`, render both into the lecture's one image directory with per-deck prefixes
+  (`3a-N`, `3b-N`), and cite "deck 3A, slide N". The embed script anchors on any "slide N", so write
+  the wiki page in one part per deck, split it at the boundary, run `embed_slide_images.py --wiki`
+  on each part with its deck's prefix, and rejoin. Keep cross-deck slide citations out of the other
+  deck's part, and check the result: an anchor sentence ending in a colon puts the image between it
+  and its displayed formula.
+- **An exclusion follows the image, not the page.** A figure OCW marks as excluded in one deck can
+  reappear without a notice in another (lecture 3's deck 3A reuses deck 3B's excluded pixel and RGB
+  matrices). Compare figure descriptions across a lecture's decks, and do not render the unmarked
+  copy.
+- **The Colab notebooks are not on OCW.** Describe a lecture's code from the narration, naming only
+  the calls and arguments the lecturer says, and say so on the page.
 - **Slide N = PDF page N** in every heading and citation, unless a deck's header says otherwise.
   These decks print PowerPoint numbers bottom-right, but some pages carry visibly printed **stale
   static numbers** from an older version of the deck (lecture 1's page 13 prints "20"), and a
@@ -79,7 +92,8 @@ in the parent's context.
 ### Images
 
 Every figure-bearing slide is rendered at 1400px, keeping the smaller of JPEG q85 and PNG, as
-`raw/images/NN-<slug>/slide-N.{jpg,png}` with N the PDF page. Not rendered: slides with an OCW
+`raw/images/NN-<slug>/slide-N.{jpg,png}` with N the PDF page (a per-deck prefix replaces `slide`
+when a lecture has more than one deck). Not rendered: slides with an OCW
 notice, build steps or repeats superseded by a rendered slide, tables the slide file reproduces
 exactly, single-box text diagrams, and course-logistics slides. `extract_slide_images.py` selects
 by *printed* number, which is unreliable on these decks (see above), so render by PDF page with a
@@ -94,6 +108,7 @@ What was rendered and why goes in `BUILD_LOG.md`.
 | --- | --- | --- |
 | 1 Introduction to Neural Networks and Deep Learning | 45 of 110 pages | rendered from `mit15_773_s24_lec01.pdf` |
 | 2 Training Deep Neural Networks | 18 | 15 of `mit15_773_s24_lec02.pdf`'s 95 pages as `slide-N`, and 3 of the backprop example's 14 as `backprop-N` |
+| 3 Keras and TensorFlow, Training the Heart-Disease Model, and Computer Vision Basics | 13 | 9 of `mit15_773_s24_lec03a.pdf`'s 44 pages as `3a-N`, and 4 of `mit15_773_s24_lec03b.pdf`'s 29 as `3b-N` |
 
 ## Conventions
 

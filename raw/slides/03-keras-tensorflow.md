@@ -82,7 +82,7 @@ Text below: "An epoch is one **pass** (red) through the full training set." Then
 
 ## Slide 6 — An epoch in Gradient Descent
 
-![Slide 6 — An epoch in Gradient Descent](../images/03-keras-and-vision-basics/3a-6.png)
+![Deck 3A, slide 6 — An epoch in Gradient Descent](../images/03-keras-and-vision-basics/3a-6.png)
 
 A blue rectangle labelled "Training set" with a dark red arrow running left to right across it. A dark red line descends from its right end to a boxed formula at the lower right:
 
@@ -114,7 +114,7 @@ $$w \leftarrow w - \alpha \frac{dLoss(w)}{dw}$$
 
 ## Slide 9 — An epoch in Stochastic Gradient Descent
 
-![Slide 9 — An epoch in Stochastic Gradient Descent](../images/03-keras-and-vision-basics/3a-9.png)
+![Deck 3A, slide 9 — An epoch in Stochastic Gradient Descent](../images/03-keras-and-vision-basics/3a-9.png)
 
 ("Stochastic" underlined.) "Training set" at left beside the row of blue boxes "Batch 1" ... "Batch N" at the top. Dark red arrows drop from the boundaries between batches (the left edge of batch 2, the left edge of batch 3, the left edge of batch 4, and the right edge of batch N) to four boxes arranged in a staircase, each stepping down and to the right, each containing the update formula $w \leftarrow w - \alpha \frac{dLoss(w)}{dw}$. A large "…" sits between the third and fourth boxes.
 
@@ -124,7 +124,7 @@ $$w \leftarrow w - \alpha \frac{dLoss(w)}{dw}$$
 
 ## Slide 10 — How many batches in an epoch when we do SGD?
 
-![Slide 10 — How many batches in an epoch when we do SGD?](../images/03-keras-and-vision-basics/3a-10.png)
+![Deck 3A, slide 10 — How many batches in an epoch when we do SGD?](../images/03-keras-and-vision-basics/3a-10.png)
 
 Red text: "# of batches in one epoch = (Training set size / Batch size) rounded up".
 
@@ -173,7 +173,7 @@ Same axes. Two series:
 
 ## Slide 15 — Recall Underfitting vs. Overfitting
 
-![Slide 15 — Recall Underfitting vs. Overfitting](../images/03-keras-and-vision-basics/3a-15.png)
+![Deck 3A, slide 15 — Recall Underfitting vs. Overfitting](../images/03-keras-and-vision-basics/3a-15.png)
 
 Same plot as slide 14 (training set purple dash-dot; validation set blue dashed) with three annotations (not additional series):
 
@@ -195,7 +195,7 @@ Same plot as slide 14 (training set purple dash-dot; validation set blue dashed)
 
 ## Slide 17 — Regularization strategy: Early Stopping
 
-![Slide 17 — Regularization strategy: Early Stopping](../images/03-keras-and-vision-basics/3a-17.png)
+![Deck 3A, slide 17 — Regularization strategy: Early Stopping](../images/03-keras-and-vision-basics/3a-17.png)
 
 Text: "Stop the training early before the training loss is minimized by monitoring the loss on a validation dataset." ("before" and "validation" underlined).
 
@@ -210,7 +210,7 @@ A vertical dark red dashed line at about the validation minimum is labelled "ear
 
 ## Slide 18 — Regularization strategy: Dropout
 
-![Slide 18 — Regularization strategy: Dropout](../images/03-keras-and-vision-basics/3a-18.jpg)
+![Deck 3A, slide 18 — Regularization strategy: Dropout](../images/03-keras-and-vision-basics/3a-18.jpg)
 
 Red text above the title: "We will cover this in Lecture 4".
 
@@ -342,7 +342,7 @@ Beneath the last bullet, a small diagram: an orange box "TensorFlow" above three
 
 ## Slide 32 — Keras "sits on top of" Tensorflow …
 
-![Slide 32 — Keras "sits on top of" Tensorflow …](../images/03-keras-and-vision-basics/3a-32.jpg)
+![Deck 3A, slide 32 — Keras "sits on top of" Tensorflow …](../images/03-keras-and-vision-basics/3a-32.jpg)
 
 A three-layer stack diagram: a red box "Keras" on top, an orange box "TensorFlow" below it, and three grey boxes side by side at the bottom, "CPU", "GPU", "TPU". Caption: "Image: Page 70 of textbook".
 
@@ -377,7 +377,7 @@ Large text: "Check out the wealth of introductory and advanced material, with ac
 
 ## Slide 36 — Let's revisit the Neural Model for Heart Disease Prediction we designed previously
 
-![Slide 36 — Let's revisit the Neural Model for Heart Disease Prediction we designed previously](../images/03-keras-and-vision-basics/3a-36.png)
+![Deck 3A, slide 36 — Let's revisit the Neural Model for Heart Disease Prediction we designed previously](../images/03-keras-and-vision-basics/3a-36.png)
 
 Network diagram in three columns. "Input Layer": circles $x_1$ (top) and $x_{29}$ (bottom) with three dark red vertical dots between. "Hidden layer (16 units)": two circles, each containing a small ReLU icon, with three vertical dots between. "Output layer": one circle containing a sigmoid (S-shaped) icon with an arrow out to the right labelled $y$. No connecting arrows are drawn between the columns.
 
@@ -443,7 +443,7 @@ Section divider: white text "Colab" on a dark red band with a grey block at the 
 
 ## Slide 43 — Colab General Instructions
 
-![Slide 43 — Colab General Instructions](../images/03-keras-and-vision-basics/3a-43.jpg)
+![Deck 3A, slide 43 — Colab General Instructions](../images/03-keras-and-vision-basics/3a-43.jpg)
 
 Three horizontal bands separated by dotted lines, each with a boxed step label, plus a footer sentence.
 

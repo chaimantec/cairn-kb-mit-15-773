@@ -9,12 +9,12 @@
     "courseUrl": "https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/"
   },
   "coverage": {
-    "lecturesCovered": 2,
+    "lecturesCovered": 3,
     "lecturesTotal": 11,
-    "transcripts": 2,
-    "wikiLecturePages": 2,
-    "wikiTopicPages": 9,
-    "note": "Lectures 1-2. The 11 videos use 14 OCW decks whose numbering does not follow the videos; video 1 covers deck 01 alone, video 2 deck 02 alone plus its handwritten backprop-example deck."
+    "transcripts": 3,
+    "wikiLecturePages": 3,
+    "wikiTopicPages": 14,
+    "note": "Lectures 1-3. The 11 videos use 14 OCW decks whose numbering does not follow the videos; video 1 covers deck 01 alone, video 2 deck 02 alone plus its handwritten backprop-example deck, video 3 decks 03a and 03b."
   },
   "license": {
     "file": "LICENSE.md",
@@ -25,28 +25,29 @@
     "primary": "slides",
     "slideDecks": {
       "available": 14,
-      "transcribed": 3
+      "transcribed": 5
     },
     "method": "page-images",
     "figuresAudited": true,
     "figureAudit": {
-      "decksAudited": 3,
-      "decksTotal": 3,
-      "note": "decksTotal counts transcribed decks. Each was transcribed by Sonnet and checked by the parent model against 1400px renders. Lecture 1: six pages (51, 59, 80, 93, 94, 100); slide 59's sigmoid corrected. Lecture 2 deck 02: six pages (4, 33, 42, 55, 69, 79); slide 52's minimum corrected. Lecture 2 backprop example: pages 7 and 12, both agreed. Numeric tables and worked examples were also checked by arithmetic."
+      "decksAudited": 5,
+      "decksTotal": 5,
+      "note": "decksTotal counts transcribed decks. Each was transcribed by Sonnet and checked by the parent model against 1400px renders. Lecture 1: six pages (51, 59, 80, 93, 94, 100); slide 59's sigmoid corrected. Lecture 2 deck 02: six pages (4, 33, 42, 55, 69, 79); slide 52's minimum corrected. Lecture 2 backprop example: pages 7 and 12, both agreed. Numeric tables and worked examples were also checked by arithmetic. Lecture 3 deck 3A: four pages (10, 15, 17, 18); deck 3B: three (6 on a scratch crop of its excluded tables, 16, 18). All agreed; one unprinted identification on deck 3B slide 6 was removed."
     },
     "images": {
-      "lecturesWithImages": 2,
+      "lecturesWithImages": 3,
       "lecturesWithoutImages": [],
-      "lecturesTotal": 2,
-      "files": 63,
-      "megabytes": 6.56,
-      "format": "whole slides rendered at 1400px, JPEG q85 or PNG whichever is smaller, named slide-N by PDF page number",
+      "lecturesTotal": 3,
+      "files": 76,
+      "megabytes": 7.97,
+      "format": "whole slides rendered at 1400px, JPEG q85 or PNG whichever is smaller, named slide-N by PDF page number, or with a per-deck prefix (backprop-N, 3a-N, 3b-N) where a lecture has more than one deck",
       "discovery": "inline in wiki/ and raw/slides/; no index file",
       "byLecture": {
         "1": 45,
-        "2": 18
+        "2": 18,
+        "3": 13
       },
-      "note": "Lecture 1: 45 of 110 pages. Lecture 2: 15 of deck 02's 95 pages (slide-N) and 3 of the 14-page handwritten backprop example (backprop-N), in one directory. Not rendered: slides with an OCW exclusion notice, superseded build steps and repeats, transcribed tables, single-box text diagrams, logistics and text-only slides; the lists are in BUILD_LOG.md. No lecture after 2 is in this KB yet, so none has images."
+      "note": "Lecture 1: 45 of 110 pages. Lecture 2: 15 of deck 02's 95 pages (slide-N) and 3 of the 14-page handwritten backprop example (backprop-N), in one directory. Lecture 3: 9 of deck 3A's 44 pages (3a-N) and 4 of deck 3B's 29 (3b-N), in one directory. Not rendered: slides with an OCW exclusion notice, deck 3A slides 24-25 (which reuse figures deck 3B excludes), superseded build steps and repeats, transcribed tables, single-box text diagrams, logistics and text-only slides; the lists are in BUILD_LOG.md. No lecture after 3 is in this KB yet, so none has images."
     }
   },
   "provenance": {
@@ -55,12 +56,14 @@
       "claude-sonnet-5-5"
     ],
     "caveats": [
-      "Covers lectures 1-2 of 11 only.",
+      "Covers lectures 1-3 of 11 only.",
       "Slide numbers are PDF page numbers. Some lecture 1 pages visibly print stale numbers from an older deck (page 13 prints 20), and lecture 2's deck prints N+1 from page 50 on; the slide files list them.",
-      "Catalog video titles overstate coverage: video 1 ends before training, and video 2 shows only the four-line Keras model definition, without the fuller Keras/TensorFlow introduction or the Colab.",
+      "Catalog video titles overstate coverage: video 1 ends before training, video 2 shows only the four-line Keras model definition, and video 3, titled for convolutional networks, never reaches them (they are in deck 04).",
       "Lecture 2's backprop example is a handwritten deck that the video points to but does not present; it is transcribed from the handwriting in its own slide file.",
       "Figure checks were done by the parent model on rendered images, not by an independent agent.",
-      "Lecture 2 renders slides 55-58 and 69, which reproduce plots from a web page whose gradient-descent figures OCW excludes on slide 75 only; LICENSE.md names the source."
+      "Lecture 2 renders slides 55-58 and 69, which reproduce plots from a web page whose gradient-descent figures OCW excludes on slide 75 only; LICENSE.md names the source.",
+      "Lecture 3 spans two decks, cited as 'deck 3A, slide N' and 'deck 3B, slide N'; deck 3B prints N+1 from page 16 where it prints a number.",
+      "The course's Colab notebooks are not published on OCW. Lecture 3's two Colab walkthroughs are described from the lecturer's narration only."
     ]
   },
   "entryPoint": "INDEX.md",

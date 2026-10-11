@@ -30,7 +30,7 @@ The catalog titles this video "Training Deep NNs (cont.); Introduction to Keras/
 Application to Tabular Data". Keras appears only as the four-line model definition. The fuller
 Keras/TensorFlow introduction and training the heart-disease model in a Colab are promised for
 later and are not in this recording. At 1:15:03 the lecturer also defers regularization and
-overfitting, for lack of time.
+overfitting, for lack of time. All three open [lecture 3](03-keras-and-vision-basics.md).
 
 **Slide numbers.** This page cites PDF pages. From PDF page 50 on, the deck prints a number one
 higher than the page (page 60 prints "61"), because a hidden slide was never exported. The
@@ -156,7 +156,8 @@ Questions about the code (≈17:08–19:25):
   flexibility, and the lecturer promises that within two or three weeks students will be thinking
   "in building blocks like LEGOs", designing networks that fork and merge.
 - **Multi-class classification**, say into 10 classes, needs 10 output units and a function called
-  **softmax**, which he defers to "Monday". This lecture stays with binary classification.
+  **softmax**, which he defers to "Monday". This lecture stays with binary classification;
+  [lecture 3](03-keras-and-vision-basics.md) covers softmax.
 - **Is there a default activation in Keras?** He believed it "might be ReLUs for hidden layers" but
   was "not 100% sure" and said he would double-check. The lecture does not return to it.
 - **A network with 100 layers** is not typed out by hand: a little loop creates the layers. The
@@ -585,7 +586,8 @@ Questions on SGD:
 - **One iteration per minibatch** (≈1:08:55–1:09:41). Take a minibatch, compute its loss and
   gradient, update the weights, and move to the next minibatch. Iterating many times on one
   minibatch would not guarantee anything, and fresh information is better. A minibatch can be
-  revisited later, which leads to **epochs and batch size**, covered with the Colab.
+  revisited later, which leads to **epochs and batch size**, covered with the Colab in
+  [lecture 3](03-keras-and-vision-basics.md#epochs-and-batches).
 - **Each minibatch continues from the previous one's weights** (≈1:14:17–1:15:03). Nothing is
   averaged across minibatches. One minibatch's gradient updates $w_1$ to $w_2$, and the next
   minibatch makes its predictions with $w_2$.
@@ -647,3 +649,5 @@ things. See [activation functions](activation-functions.md).
 - [Anatomy of a neural network](neural-network-anatomy.md): design choices and parameter counting.
 - [Activation functions](activation-functions.md): ReLU's gradient, sigmoid outputs, softmax.
 - [Lecture 1](01-introduction.md): the 2-3-1 network whose trained weights reappear on slide 33.
+- [Lecture 3](03-keras-and-vision-basics.md): epochs and batches, regularization, and training this
+  model in Keras.

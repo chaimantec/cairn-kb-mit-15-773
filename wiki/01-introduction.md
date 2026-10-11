@@ -419,8 +419,8 @@ layers, you can basically get anything done" (≈44:48).
 **How to choose** (≈45:37): use ReLU in the hidden layers, because empirically it does "an amazing
 job". For the output layer you have no choice, because the kind of output dictates it. A single
 probability between 0 and 1 needs a sigmoid, and ten probabilities that must sum to 1 need a
-**softmax**, which he promises for the next class. Lecture 2 defers it again (≈17:54 there). See
-[activation functions](activation-functions.md).
+**softmax**, which he promises for the next class. Lecture 2 defers it again (≈17:54 there), and
+[lecture 3](03-keras-and-vision-basics.md) covers it. See [activation functions](activation-functions.md).
 
 ## Designing a deep neural network
 

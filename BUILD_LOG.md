@@ -123,3 +123,74 @@ gradient-descent, backpropagation, keras). activation-functions and neural-netwo
 extended. Lecture 1's page and activation-functions had promised softmax and ReLU's properties for
 "the next lecture". Lecture 2 defers softmax again and gives ReLU's gradient only in Q&A, so both
 sentences were corrected.
+
+## Lecture 3 — Keras and TensorFlow, Training the Heart-Disease Model, and Computer Vision Basics
+
+Built 2026-10-11. Video `8QuyDcMIdRc` (77 min); decks `mit15_773_s24_lec03a.pdf` (deck 3A, 44 pages)
+and `mit15_773_s24_lec03b.pdf` (deck 3B, 29 pages).
+
+**Video ↔ deck.** The recording presents two decks. Deck 3A runs from 0:45 (slide 2, the recap that
+repeats deck 02's slide 94) to the Colab pointer and instructions (slides 41–43, ≈27:52–29:25). This
+confirms lecture 2's note that deck 3A opens video 3. The heart-disease Colab, which is not in any
+deck, runs 29:25–58:08. Deck 3B runs from 58:08 (slide 2) to its Colab pointer (slide 28, ≈1:13:36),
+and the video ends at 1:16:41 partway into the Fashion-MNIST Colab, before any model is trained. The
+catalog's "Building Convolutional Neural Networks from Scratch" is not reached. Deck 04's page 2 text
+recaps Fashion MNIST with a single-hidden-layer network ("85% +"), consistent with deck 04 opening
+video 4; confirm when building lecture 4. Neither Colab notebook is published on OCW (`sources.md`
+has none), so the wiki describes the code from the narration only.
+
+**Numbering.** Both decks: slide N = PDF page N. Deck 3A is 1:1 (pages 2–43 print their own number;
+1 and 44 none). Deck 3B has a hidden slide 16: pages 2–7 and 9–15 print their own number, pages
+16–19 and 27–28 print N+1, and pages 1, 8, 20–26 and 29 print none. `slide_number_map.py` read deck
+3B correctly this time, apart from labelling the pages that print nothing as inferred. The raw corner
+spans are clean on both decks, with no split spans or stale numbers. Heading checks 1..44 and 1..29
+pass. Each deck's last page is OCW's end page.
+
+**OCW notices (8, all in deck 3B):** slides 3 and 4 (grayscale intensity matrix © fast.ai), 6 (© unknown,
+the RGB matrices and photograph), 8 (© unknown, dog and cat photographs), 9–12 (sheep image © Nirmala
+Murali on Medium). Deck 3A has none. The agents found no drawn notices. Deck 3B's slide 14 carries a
+CC BY-SA credit (Yuzamei, Wikimedia Commons), not an exclusion. Unmarked third-party content in deck
+3A: slide 2 (Chollet Figure 2.26, page 61), slides 24–25 ("Image credit: fast.ai"; they reuse deck
+3B's excluded fast.ai matrix and RGB matrices), slide 32 (Chollet, page 70), and slide 43 (Colab
+screenshots).
+
+**Transcription.** Sonnet, one agent per deck in parallel. Neither was interrupted. One correction:
+the deck 3B agent identified slide 6's photograph as "the MIT Great Dome", which the slide does not
+print. It was rewritten to the printed filename, `killian.jpeg`, and the lecturer's "a picture of
+Killian Court".
+
+**Transcript edit.** OCW human captions, with `AUDIENCE:` labels. One restoration: "by sending a
+random seed" → setting (31:42), beside `set_random_seed`. `[Ed:]` notes at 11:32 ("the training data"
+for the held-out error), 15:20 ("Teras and KensorFlow", self-corrected), 21:42 ("9 values. 0 … 9"),
+45:41 (193 against slide 10's 194), 49:35 ("crossed the int", unclear), 55:50 (the proxy relation
+stated backwards; 56:36 has it the right way round) and 1:16:41 ("9:55" is the time of day). Checks: 100 timestamps
+identical, number inventory identical, paragraph word ratios 1.000 throughout once the notes are
+removed.
+
+**Figure check.** Done in the parent on 1400px renders: deck 3A slides 10, 15, 17 and 18, and deck 3B
+slides 16 and 18, all agreed. Deck 3B slide 6's three intensity tables, which carry a notice and are
+not rendered, were checked on a scratch crop that was not committed. All ten rows of the blue table
+and the visible rows of red and green agreed. The two agents also cross-checked each other without
+knowing it: deck 3A's slide 25 shows the same RGB matrices, and both read the same opening rows.
+
+**Printed slips.** Deck 3A: slide 10 gives the training set as 194, while the lecturer says 193
+twice in the Colab (both make 7 batches); slide 17's x-axis label wraps as "Iteration" / "s";
+slide 36 prints curly quotes in the code; slide 40 prints "adam" with mismatched quotes; slide 43's
+asterisk has no footnote. Deck 3B: slide 14 promises "over 90%", while the lecturer says "close to
+90%".
+
+**Images: 13.** Deck 3A, 9 of 44 pages as `3a-N`: 6, 9, 10, 15, 17, 18, 32, 36, 43. Not rendered:
+slide 2, the same figure as deck 02's slide 94 and linked to that render instead; build steps
+superseded by a rendered slide (5, 7, 8 → 6 and 9; 12–14 → 15; 31 → 32); slides 24–25, which reuse
+deck 3B's excluded figures; and text-only slides. Deck 3B, 4 of 29 pages as `3b-N`: 14, 16, 17, 18.
+Not rendered: the eight noticed slides (3, 4, 6, 8–12); 15 → 16; the tables on 19–27, which the slide
+file reproduces exactly; and dividers and text slides. 1.41 MB. All 13 are in the wiki lecture page.
+They were placed by `embed_slide_images.py` run once per deck on that deck's half of the page. 3a-6
+and 3b-18 were then moved below the displayed formulas their anchor sentences introduce, and every
+caption was hand-written.
+
+**Wiki.** A lecture page and five new topic pages (overfitting-and-regularization, tensors,
+data-preprocessing, images-and-vision-tasks, multiclass-classification). keras, training-neural-networks,
+gradient-descent, loss-functions, activation-functions and neural-network-anatomy were extended.
+Sentences in lectures 1–2, activation-functions, keras, loss-functions and gradient-descent that
+deferred softmax, the Keras introduction or epochs and batches "for later" now point at lecture 3.

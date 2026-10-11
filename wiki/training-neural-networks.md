@@ -41,6 +41,46 @@ disease prediction, this is how GPT was built. And this is how AlphaFold was bui
 
 *Lecture 2, slide 94 — the training loop, from page 61 of the course textbook.*
 
+In practice the data are fed in **batches**, and one pass through all of them is an **epoch**. Each
+batch gets its own weight update, so an epoch has as many updates as batches
+([lecture 3](03-keras-and-vision-basics.md) ≈3:03–9:15; deck 3A, slides 4–10). See
+[gradient descent](gradient-descent.md#epochs-and-batches).
+
+## The checklist
+
+Lecture 3 condenses creating and training a network into a checklist (deck 3A, slide 19;
+≈14:34–15:20):
+
+1. Get the data ready. See [preparing data for a network](data-preprocessing.md).
+2. Design, or "lay out", the network: the number of hidden layers, the number of neurons in each, and
+   the right output layer for the type of output.
+3. Pick a loss function that suits the type of output, and an optimizer from the many flavours of SGD,
+   with a "good" learning rate.
+4. Decide on a regularization strategy.
+5. Set it up in Keras/TensorFlow and start training.
+
+The defaults: ReLU for hidden layers, **Adam** as the optimizer "because it's really good", and early
+stopping or dropout as the regularization (≈14:34–15:20). For the heart-disease model the checklist
+reads 1 hidden layer of 16 ReLU neurons, a sigmoid output, binary cross-entropy, Adam and early
+stopping (deck 3A, slides 38–40). The output layer and the loss come as a pair, which deck 3B's slide 27
+tabulates; see [multi-class classification and softmax](multiclass-classification.md#output-layers-at-a-glance).
+
+## Training, validation and test sets
+
+Training a real model uses three sets of data (lecture 3 ≈36:16–37:52, ≈47:17–51:09):
+
+- The **test set** is split off first and locked away, and used once with the final model to estimate
+  how it will do when deployed.
+- The **validation set** is taken from the training data before training starts. The model is evaluated
+  on it at the end of every epoch, but it never contributes to a gradient. It is what reveals
+  overfitting and decides when to stop. See
+  [overfitting and regularization](overfitting-and-regularization.md).
+- The rest is the **training set**, which is divided into batches.
+
+Training involves randomness: the initial weights, the shuffle into batches, the splits, and dropout.
+Setting a random seed makes a run reproducible, mostly; bitwise reproducibility is not guaranteed
+(≈30:57–32:27).
+
 ## Starting the weights: initialization
 
 The weights start out random, but not arbitrarily random (lecture 2 ≈1:01:56–1:02:44).
@@ -57,7 +97,10 @@ Training stops when you run out of iterations, time or compute, or when the grad
 zero. That point is rarely the global minimum, and it need not be. A decent solution is usually good
 enough, and the best possible fit to the training data risks **overfitting**, because new data has
 its own loss whose minimum lies elsewhere (lecture 2 ≈50:22–51:54, ≈1:03:29–1:04:15). See
-[gradient descent](gradient-descent.md#local-minima-and-saddle-points).
+[gradient descent](gradient-descent.md#local-minima-and-saddle-points). Lecture 3 turns this into a
+procedure, **early stopping**: watch the loss on a validation set and stop when it stops improving (deck
+3A, slide 17). A run of 300 epochs on the heart-disease model shows it in practice; see
+[overfitting and regularization](overfitting-and-regularization.md#early-stopping).
 
 ## What training produces
 
@@ -70,3 +113,5 @@ smartness. When Meta made "the weights of Llama 2" available, that is what it pu
 - [Lecture 1](01-introduction.md): assumes a trained network (slide 100) and defers training.
 - [Lecture 2](02-training-deep-nns.md): the whole training story, from loss functions to SGD and the
   training loop.
+- [Lecture 3](03-keras-and-vision-basics.md): epochs and batches, the checklist, the three data sets, and
+  training the heart-disease model in Keras (83.6% test accuracy against a 72.6% baseline).

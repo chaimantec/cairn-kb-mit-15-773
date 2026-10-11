@@ -1,0 +1,72 @@
+# Images and computer-vision tasks
+
+Computer vision starts from a simple fact: to a computer an image is a table of numbers
+([lecture 3](03-keras-and-vision-basics.md) ≈58:08–1:01:12; deck 3B, slides 2–6). This page collects
+how images are represented, the main tasks deep learning solves on them, and how a basic network takes
+an image as input. Convolutional networks, the course's main tool for images, come in lecture 4 and
+are not in this knowledge base yet.
+
+## Grayscale images
+
+A grayscale (black-and-white) image is a rectangular array of **pixels**. Each pixel holds its light
+intensity, a number from 0, no light, to 255, "blinding white light". As the number rises from 0 to
+255 the pixel goes from black through gray to white (deck 3B, slides 3–4; ≈58:08–58:54). The slides'
+example is a handwritten 5 stored as a 28 × 28 table. Its black background is all zeros, and "if you
+just step back and squint at this, you can actually see the 5".
+
+The scale is relative. An analog picture is read in and mapped onto the normalized range 0 to 255. The
+lecturer does not know the exact mapping from lumens, and suspects there are "a dizzying number of
+variations" (≈59:40–1:00:26).
+
+## Colour images and channels
+
+A colour pixel is represented by three intensities, for red, green and blue light, each still between 0
+and 255 (deck 3B, slides 5–6; ≈1:00:26). A colour image is therefore three tables of numbers, and in
+deep learning these colours are called **channels**. The slide's example, which the lecturer calls a
+picture of Killian Court, shows the three 10 × 10 tables for the photograph's top-left corner. The
+three tables together are a tensor of rank 3 (≈1:01:12). See [tensors](tensors.md).
+
+## Five tasks
+
+The lecture names five of "the most prevalent and useful categories of image-processing problems" for
+deep learning (deck 3B, slides 7–12; ≈1:01:12–1:04:16). The slides illustrate them with photographs
+that OCW excludes from its licence, so they are described here in words only.
+
+- **Image classification.** Given a list of possible objects, decide which one the image contains. "The
+  Dog/Cat classification is the canonical example."
+- **Classification and localization.** Also say where the object is. The network outputs the
+  coordinates of a box around it, for example its top-left and bottom-right corners.
+- **Object detection.** Find every object in the image and put a box around each: sheep 1, sheep 2,
+  sheep 3. A self-driving car's camera system does this constantly, many times a second.
+- **Semantic segmentation.** Classify every pixel, for example as road, sheep or grass. Instead of one
+  classification for the image, there is a multi-class classification problem for each pixel.
+- **Instance segmentation.** Classify every pixel *and* tell apart different instances of the same
+  category, so that each sheep gets its own label.
+
+The course's first vision problem is image classification, on Fashion MNIST (deck 3B, slide 14). Its
+70,000 small grayscale images show clothing items in 10 balanced categories, so a naive baseline
+scores 10% (≈1:04:16–1:05:07).
+
+## Feeding an image to a basic network
+
+The networks so far take vectors, but an image is a table, a tensor of rank 2. The simplest answer is to
+**flatten** it: take each row, turn it on its side, and string the rows together into one long vector
+(lecture 3 ≈1:05:54–1:06:40). A 28 × 28 image becomes $28 \times 28 = 784$ inputs. Nothing has been
+computed, "we've literally taken the numbers and just reorganized them", and the problem is back in
+familiar territory. Lecture 3's Fashion-MNIST network then uses one hidden layer of 256 ReLU units and
+a 10-way softmax output (deck 3B, slides 15–18). See
+[multi-class classification and softmax](multiclass-classification.md).
+
+![Deck 3B, slide 16: a hand-drawn network. A 28 by 28 input square, an arrow to a column of flattened inputs x1 to x784, an arrow to a column of 256 ReLU hidden units, and in place of the output layer the question "How do we represent a 10-way output?"](../raw/images/03-keras-and-vision-basics/3b-16.jpg)
+
+*Lecture 3, deck 3B, slide 16 — flatten the 28 × 28 image into 784 inputs, then use an ordinary dense network.*
+
+In a Keras data set the images arrive stacked into one tensor. Fashion MNIST's training input is 60,000
+tables of 28 × 28, a tensor of rank 3, and its test input 10,000 more (≈1:14:22–1:15:10).
+
+## Where this comes up
+
+- [Lecture 1](01-introduction.md): images as one of the kinds of unstructured data that deep learning
+  handles.
+- [Lecture 3](03-keras-and-vision-basics.md): pixels, channels, the five tasks, and the
+  Fashion-MNIST network.

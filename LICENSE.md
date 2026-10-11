@@ -45,7 +45,8 @@ prose only and never rendered** into `raw/images/`. Its slide-file entry carries
 ## Rendered images
 
 Each image in `raw/images/NN-<slug>/slide-N.jpg` (or `.png`) is a whole-page render of page N
-of that lecture's OCW deck, at 1400px wide. Attribution for every one is the course line above,
+of that lecture's OCW deck, at 1400px wide. Where a lecture has more than one deck, a prefix names
+the deck in place of `slide` (`backprop-N`, `3a-N`, `3b-N`). Attribution for every one is the course line above,
 plus the deck:
 
 - **Lecture 1**, `raw/images/01-introduction/` (45 images), from
@@ -68,3 +69,17 @@ plus the deck:
   from page 61 of the course textbook, named on slide 2 of the next deck as François Chollet's
   *Deep Learning with Python*, 2nd edition. Those figures remain their authors'. Slide 75, the
   deck's only slide with an OCW exclusion notice, is not rendered.
+- **Lecture 3**, `raw/images/03-keras-and-vision-basics/` (13 images): `3a-N` files (pages 6, 9, 10,
+  15, 17, 18, 32, 36 and 43) from
+  [`mit15_773_s24_lec03a.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec03a.pdf),
+  and `3b-N` files (pages 14, 16, 17 and 18) from
+  [`mit15_773_s24_lec03b.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec03b.pdf).
+  Third-party material on the rendered slides, as credited there: deck 3A's slide 32 reproduces the
+  Keras/TensorFlow/hardware figure from page 70 of the course textbook (François Chollet, *Deep
+  Learning with Python*, 2nd edition). Deck 3A's slide 43 shows screenshots of the Google Colab
+  interface. Deck 3B's slide 14 contains "Sample of the Fashion MNIST images by Yuzamei", from
+  Wikimedia Commons under CC BY-SA, as credited on the slide; it remains under its own licence. None
+  of deck 3B's eight slides with an OCW exclusion notice (3, 4, 6 and 8–12: fast.ai, Nirmala Murali on
+  Medium, and unknown rights holders) is rendered. Deck 3A's slides 24–25 are not rendered either.
+  They print no notice, but they reuse the fast.ai pixel matrix and the RGB matrices that deck 3B
+  marks as excluded.

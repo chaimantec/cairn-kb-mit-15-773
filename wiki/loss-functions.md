@@ -57,10 +57,50 @@ with, "has good gradients", is well-behaved mathematically and is empirically ve
 
 Binary cross-entropy treats both kinds of error alike. To penalize one kind more, for instance
 overestimates more than underestimates, other losses exist. The lecturer points to the **pinball
-loss** (lecture 2 ≈31:40–32:25). Several probabilities that must sum to 1 need a softmax output, which
-lecture 2 defers to a later class (≈17:54).
+loss** (lecture 2 ≈31:40–32:25). Lecture 3 confirms that more complex loss functions can account for
+the asymmetry between false positives and false negatives ([lecture 3](03-keras-and-vision-basics.md)
+≈58:08).
+
+## Categorical cross-entropy: several classes
+
+When the output is one of several classes, the network ends in a softmax that produces one probability
+per class, and the loss is **categorical cross-entropy**, a generalization of binary cross-entropy with
+"roughly the same" intuition (lecture 3 ≈1:12:51). The lecture does not give its formula. In Keras the
+loss has to match how the labels are encoded (deck 3B, slides 20–26; ≈1:11:19–1:12:51):
+
+| Labels | Keras loss |
+| --- | --- |
+| Binary, 1 or 0 | `binary_crossentropy` |
+| Multi-class, integers (sparse encoded) | `sparse_categorical_crossentropy` |
+| Multi-class, one-hot encoded | `categorical_crossentropy` |
+
+"These are all equivalent things"; the choice depends only on the encoding the data arrives in. See
+[multi-class classification and softmax](multiclass-classification.md).
+
+## Matching the loss to the output layer
+
+Deck 3B's slide 27 sums up which loss goes with which output layer (lecture 3 ≈1:12:51):
+
+| Output variable | Output layer | Loss function |
+| --- | --- | --- |
+| Single number (regression) | one linear unit | Mean squared error |
+| Single probability (binary classification) | one sigmoid unit | Binary cross-entropy |
+| Vector of $n$ numbers (regression with multiple outputs) | stack of linear units | Mean squared error |
+| Vector of $n$ probabilities that add up to 1 (multi-class) | softmax | Categorical cross-entropy |
+
+## Loss versus the metric you care about
+
+A loss is chosen partly because it is mathematically convenient. What you usually care about in
+practice is closer to accuracy or error rate, so report and plot that too (lecture 3 ≈51:56). The two can
+disagree. Accuracy is discrete: a predicted probability that moves from 0.49 to 0.51 barely changes the
+binary cross-entropy but flips the prediction from wrong to right (≈55:04–55:50). So validation accuracy
+can keep improving while the validation loss rises. The lecturer calls binary cross-entropy "a beautiful
+proxy, but an imperfect proxy for the thing we actually care about in the real world, which is error
+rate and accuracy" (≈56:36).
 
 ## Where this comes up
 
 - [Lecture 2](02-training-deep-nns.md): what a loss is, MSE, and binary cross-entropy built step by
   step for the heart-disease model.
+- [Lecture 3](03-keras-and-vision-basics.md): categorical cross-entropy and the Keras losses for each
+  label encoding, the output-layer/loss table, and loss versus accuracy.
