@@ -1,0 +1,65 @@
+{
+  "kbVersion": 1,
+  "course": {
+    "code": "MIT 15.773",
+    "title": "Hands-On Deep Learning",
+    "instructor": "Rama Ramakrishnan",
+    "term": "Spring 2024",
+    "catalogId": "5935cc5f-a533-4ded-a08f-6fac61ded777",
+    "courseUrl": "https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/"
+  },
+  "coverage": {
+    "lecturesCovered": 1,
+    "lecturesTotal": 11,
+    "transcripts": 1,
+    "wikiLecturePages": 1,
+    "wikiTopicPages": 4,
+    "note": "Lecture 1 only. The 11 videos use 14 OCW decks whose numbering does not follow the videos; video 1 covers deck 01 alone."
+  },
+  "license": {
+    "file": "LICENSE.md",
+    "repositoryWide": "CC-BY-NC-SA-4.0",
+    "summary": "The course is published on MIT OpenCourseWare under CC BY-NC-SA 4.0, and this repository is offered under the same licence. Slides carrying an OCW exclusion notice are described in prose only and never rendered into raw/images/."
+  },
+  "materials": {
+    "primary": "slides",
+    "slideDecks": {
+      "available": 14,
+      "transcribed": 1
+    },
+    "method": "page-images",
+    "figuresAudited": true,
+    "figureAudit": {
+      "decksAudited": 1,
+      "decksTotal": 1,
+      "note": "decksTotal counts transcribed decks. Lecture 1 (Sonnet transcription): six figure-heavy pages (51, 59, 80, 93, 94, 100) checked against 1400px renders by the parent model; five agreed, slide 59's sigmoid description was corrected. Slides 100-104's numbers were also checked by arithmetic."
+    },
+    "images": {
+      "lecturesWithImages": 1,
+      "lecturesWithoutImages": [],
+      "lecturesTotal": 1,
+      "files": 45,
+      "megabytes": 4.87,
+      "format": "whole slides rendered at 1400px, JPEG q85 or PNG whichever is smaller, named slide-N by PDF page number",
+      "discovery": "inline in wiki/ and raw/slides/; no index file",
+      "byLecture": {
+        "1": 45
+      },
+      "note": "Lecture 1: 45 of 110 pages. Not rendered: the 15 slides with an OCW exclusion notice, superseded build steps and repeats, transcribed tables, single-box text diagrams, logistics slides 1-9 and text-only slides; the list is in BUILD_LOG.md. No other lecture is in this KB yet, so no other lecture has images."
+    }
+  },
+  "provenance": {
+    "builtBy": [
+      "claude-opus-5-5",
+      "claude-sonnet-5-5"
+    ],
+    "caveats": [
+      "Covers lecture 1 of 11 only.",
+      "Slide numbers are PDF page numbers. Some lecture 1 pages visibly print stale numbers from an older deck (page 13 prints 20); the slide file lists them.",
+      "The catalog title of video 1 mentions training deep networks, but the recording ends before training; it covers deck 01 slides 10-109 only.",
+      "Lecture 1's figure check was done by the parent model on rendered images, not by an independent agent."
+    ]
+  },
+  "entryPoint": "INDEX.md",
+  "updated": "2026-10-11"
+}

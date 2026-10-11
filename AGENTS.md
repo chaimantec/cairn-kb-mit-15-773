@@ -17,12 +17,75 @@ printed slips, which slides were rendered and why) goes in
 | `INDEX.md`          | Entry point. Course summary + annotated table of contents.    |
 | `wiki/`             | Durable pages: one per lecture, plus cross-lecture topics.    |
 | `raw/slides/`       | Full text of every slide, numbered. Slide N = PDF page N.     |
-| `raw/transcripts/`  | Lecture transcripts with `[MM:SS]` paragraph marks.           |
-| `raw/pdfs/`         | Slides and handouts downloaded from the course website.       |
+| `raw/transcripts/`  | Copy-edited transcripts with `[MM:SS]` paragraph marks — the ones to read. |
+| `raw/transcripts/original/` | The unedited OCW caption text, for reference.        |
+| `raw/pdfs/`         | Decks downloaded from OCW. **Gitignored**; cite the OCW URL.  |
 | `raw/images/`       | Rendered figure slides, if any. Linked from the pages using them. |
 | `sources.md`        | Crawl inventory: source URL → local file, fetch date.         |
 | `TODO.md`           | Build tracker. Unchecked boxes are outstanding work.          |
 | `BUILD_LOG.md`      | Per-lecture build record. Not needed to answer questions.     |
+| `LICENSE.md`        | CC BY-NC-SA 4.0, following OCW; exclusions; image attribution. |
+| `kb.json`           | Machine-readable coverage and provenance.                     |
+
+## This course
+
+- **Source.** MIT OpenCourseWare, <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/>,
+  CC BY-NC-SA 4.0. Lecturer Rama Ramakrishnan; the lecture 1 title slide credits "Farias, Ramakrishnan".
+- **Decks do not follow the videos.** OCW lists 14 decks (01, 02, 02 backprop example, 03a, 03b,
+  04–10, 10.5, 11) against 11 videos. Before reading a deck, find which slides a video actually
+  covers: compare the transcript's first and last minutes with deck titles and the text layer.
+  Name files by the **video** number (`01-…`), and say in the transcript header which deck slides
+  the recording spans. Catalog video titles can overstate coverage: video 1's mentions "Training
+  Deep NNs", which it never reaches.
+- **Slide N = PDF page N** in every heading and citation, unless a deck's header says otherwise.
+  These decks print PowerPoint numbers bottom-right, but some pages carry visibly printed **stale
+  static numbers** from an older version of the deck (lecture 1's page 13 prints "20"). Two-digit
+  and three-digit numbers are also often split across two text spans ("1"+"0", "10"+"0").
+  `slide_number_map.py` misreads both, so derive the mapping from raw span positions, check the
+  outliers on page crops, and verify headings with a plain `1..N` sequence check rather than
+  `--verify`. Each deck's last page is OCW's end page, which is not lecture content.
+- **OCW notices.** Excluded third-party material carries "© … All rights reserved. This content is
+  excluded from our Creative Commons license". Each such slide gets an `*OCW notice: …*` line in the
+  slide file and is **never rendered**. A notice may lack "All rights reserved" (lecture 1, slide 87)
+  and is still an exclusion. A CC BY-SA credit (lecture 1, slide 32) is not an exclusion; render it
+  and attribute it in `LICENSE.md`.
+
+## Transcripts
+
+The YouTube captions on these videos are OCW's **human-made** captions: punctuated, with speaker
+labels (`RAMA RAMAKRISHNAN:`, `AUDIENCE:`) and sound tags. So the edit is light, done inline: a short
+list of restorations checked against the slide file, plus `[Ed: …]` notes where the captions are
+garbled or the speaker misstates a printed number. Every change is listed in the file's header. The
+verbatim text stays in `raw/transcripts/original/`. Verify by script against `original/`: the
+`[MM:SS]` sequence must be identical, the number inventory identical once `[Ed: …]` notes are
+removed, and every paragraph's word ratio within 0.72–1.10 (with notes removed).
+
+## Slides
+
+Each deck is transcribed from page images by a Sonnet agent. The parent first decides the numbering
+and lists the OCW notices from the text layer, and hands both to the agent. The agent must look
+for notices on every page, because some are drawn rather than typed. Each slide entry ends with
+`*Figure: yes — …*` or `*Figure: no*`, which is what image selection reads. Figure descriptions are
+checked against **rendered images** (1400px renders are cheap), never against full PDF page images
+in the parent's context.
+
+### Images
+
+Every figure-bearing slide is rendered at 1400px, keeping the smaller of JPEG q85 and PNG, as
+`raw/images/NN-<slug>/slide-N.{jpg,png}` with N the PDF page. Not rendered: slides with an OCW
+notice, build steps or repeats superseded by a rendered slide, tables the slide file reproduces
+exactly, single-box text diagrams, and course-logistics slides. `extract_slide_images.py` selects
+by *printed* number, which is unreliable on these decks (see above), so render by PDF page with a
+short PyMuPDF script using the same defaults. Then run `embed_slide_images.py`. Hand-placed wiki
+images must **copy the filename from disk**, because the extension varies per slide. After
+embedding, rewrite the default captions of build-step slides that share a title, since otherwise
+several identical captions sit in a row. Images are linked relatively; the chat gets a renderable
+URL by reading the path. `grep -o 'raw/images/[^)]*' wiki/NN-*.md` lists a lecture's images.
+What was rendered and why goes in `BUILD_LOG.md`.
+
+| Lecture | Images | Deck |
+| --- | --- | --- |
+| 1 Introduction to Neural Networks and Deep Learning | 45 of 110 pages | rendered from `mit15_773_s24_lec01.pdf` |
 
 ## Conventions
 

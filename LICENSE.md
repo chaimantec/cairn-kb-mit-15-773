@@ -48,3 +48,11 @@ Each image in `raw/images/NN-<slug>/slide-N.jpg` (or `.png`) is a whole-page ren
 of that lecture's OCW deck, at 1400px wide. Attribution for every one is the course line above,
 plus the deck:
 
+- **Lecture 1**, `raw/images/01-introduction/` (45 images), from
+  [`mit15_773_s24_lec01.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec01.pdf).
+  Slide 32 (`slide-32.jpg`) contains an artificial neural network figure by Glossier.ca, licensed
+  CC BY-SA, from Wikimedia Commons (<https://en.wikipedia.org/wiki/Artificial_neural_network>), as
+  credited on the slide. That figure remains under its own licence. Slide 45's temple image was
+  generated with Stable Diffusion from the prompt printed on the slide (source cited there:
+  mpost.io). OCW did not mark it as excluded. None of the 15 slides that carry an OCW exclusion
+  notice (11, 12, 22–24, 28, 35, 37, 38, 41, 43, 44, 49, 50, 87) is rendered.

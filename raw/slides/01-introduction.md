@@ -182,11 +182,15 @@ Same photo, caption and URL as slide 11 ("https://spectrum.ieee.org/dartmouth-ai
 
 ## Slide 13 — In the decades since its founding, it has gone through several "breakthroughs"
 
+![Slide 13 — In the decades since its founding, it has gone through several "breakthroughs"](../images/01-introduction/slide-13.png)
+
 A flow diagram of four rounded boxes in a row joined by dashed block arrows pointing right: "Traditional AI" (black outline) → "Machine Learning (ML)" (red outline) → "Deep Learning (DL)" (red outline) → "Generative AI" (red outline). Shows the progression of AI approaches.
 
 *Figure: yes — flow diagram of AI → ML → DL → Generative AI*
 
 ## Slide 14 — The traditional approach to AI
+
+![Slide 14 — The traditional approach to AI](../images/01-introduction/slide-14.png)
 
 Top right: a small version of the four-box flow diagram (Traditional AI → Machine Learning (ML) → Deep Learning (DL) → Generative AI (e.g., ChatGPT)), with "Traditional AI" highlighted by a red outline.
 
@@ -223,11 +227,15 @@ The box now has the first sentence greyed out ("Instead of explicitly telling th
 
 ## Slide 18 — This is Machine Learning
 
+![Slide 18 — This is Machine Learning](../images/01-introduction/slide-18.png)
+
 A Venn-style diagram: a large dark-red ellipse labelled "Artificial Intelligence" containing a smaller orange ellipse labelled "Machine Learning" (ML is a subset of AI). To the right, text: "learn from input-output examples using statistical techniques*" (the asterisk is printed with no matching footnote on this slide).
 
 *Figure: yes — nested-ellipse (Venn) diagram, ML inside AI*
 
 ## Slide 19 — There are numerous ways* to create Machine Learning models
+
+![Slide 19 — There are numerous ways* to create Machine Learning models](../images/01-introduction/slide-19.png)
 
 A diagram: the word "Input" with a dark-red arrow into a red-outlined box labelled "Machine Learning Model" (red text), with an arrow out to "Output".
 
@@ -336,6 +344,8 @@ Below: "Figure source: https://magazine.sebastianraschka.com/p/ai-and-open-sourc
 
 ## Slide 27 — To address this problem, a different approach was developed – Deep Learning
 
+![Slide 27 — To address this problem, a different approach was developed – Deep Learning](../images/01-introduction/slide-27.png)
+
 ("Deep Learning" in the title is red.) Nested ellipses: a large dark-red ellipse "Artificial Intelligence" containing an orange ellipse "Machine Learning" containing a white ellipse with red text "Deep Learning" (DL ⊂ ML ⊂ AI).
 
 *Build step: adds the innermost "Deep Learning" ellipse to the AI/ML diagram of slide 18.*
@@ -373,6 +383,8 @@ Below: "Figure source: https://magazine.sebastianraschka.com/p/ai-and-open-sourc
 *Figure: no*
 
 ## Slide 32 — Deep Learning
+
+![Slide 32 — Deep Learning](../images/01-introduction/slide-32.jpg)
 
 Left: the three-forces text of slide 31 greyed out. A dark-red arrow points to red text on the right: "… applied to an old ML idea: Neural Networks". Below it a small network drawing: three red input circles labelled "Input" (left column), four blue hidden circles labelled "Hidden" (middle column), two green output circles labelled "Output" (right column); every input node is connected by an arrow to every hidden node, and every hidden node to every output node (fully connected, 3-4-2). Under it, small link: "https://en.wikipedia.org/wiki/Artificial_neural_network". Credit line: "Artificial neural network figure by Glossier.ca. License: CC BY-SA. Source: Wikimedia Commons." (a CC attribution, not an "all rights reserved" exclusion notice).
 
@@ -436,6 +448,8 @@ Diagram: "Structured *and* Unstructured data" (arrow) → dark-red rounded box "
 
 ## Slide 40 — With Deep Learning, we could predict/generate structured outputs easily
 
+![Slide 40 — With Deep Learning, we could predict/generate structured outputs easily](../images/01-introduction/slide-40.png)
+
 ("structured" and "outputs" are red and underlined.) Left: "Structured *and* Unstructured data" → "Deep Learning" box → arrow. Right, "<u>Examples</u>:"
 - (red) A single number
   - The probability that a borrower will repay a loan
@@ -457,6 +471,8 @@ Diagram: "Structured *and* Unstructured data" (arrow) → dark-red rounded box "
 *Figure: yes — input → Deep Learning → unstructured output types (puppy photo)*
 
 ## Slide 42 — And then Generative AI happened
+
+![Slide 42 — And then Generative AI happened](../images/01-introduction/slide-42.jpg)
 
 Nested ellipses: Artificial Intelligence (dark red) ⊃ Machine Learning (orange) ⊃ Deep Learning (white, red text) ⊃ "Gen AI" (small pale green-grey ellipse at the bottom).
 
@@ -482,11 +498,15 @@ Diagram: a photograph of two tabby cats lying on a bright pink blanket with two 
 
 ## Slide 45 — Text-to-image
 
+![Slide 45 — Text-to-image](../images/01-introduction/slide-45.jpg)
+
 Diagram: a block of grey bold prompt text → dark-red box "Gen AI" → an image of ancient stone temple ruins with columns and steps in a misty forest. The prompt text reads: "temple in ruins, forest, stairs, columns, cinematic, detailed, atmospheric, epic, concept art, Matte painting, background, mist, photo-realistic, concept art, volumetric light, cinematic epic + rule of thirds octane render, 8k, corona render, movie concept art, octane render, cinematic, trending on artstation, movie concept art, cinematic composition , ultra-detailed, realistic , hyper-realistic , volumetric lighting, 8k –ar 2:3 –test –uplight". Caption: "Image generated using Stable Diffusion AI from prompt quoted above." URL: https://mpost.io/best-100-stable-diffusion-prompts-the-most-beautiful-ai-text-to-image-prompts/
 
 *Figure: yes — text prompt → Gen AI → generated temple image*
 
 ## Slide 46 — Text-to-music
+
+![Slide 46 — Text-to-music](../images/01-introduction/slide-46.png)
 
 Diagram: prompt text "The main soundtrack of an arcade game. It is fast-paced and upbeat, with a catchy electric guitar riff. The music is repetitive and easy to remember, but with unexpected sounds, like cymbal crashes or drum rolls." → dark-red box "Gen AI" → a grey loudspeaker icon (audio output). URL: https://google-research.github.io/seanet/musiclm/examples/. Caption: "Audio generated using MusicLM from prompt the main soundtrack of an arcade game. It is fast-paced and upbeat, with a catchy electric guitar riff. The music is repetitive and easy to remember, but with unexpected sounds, like cymbal crashes or drum rolls."
 
@@ -524,6 +544,8 @@ Same as slide 49, now with the output: "text" label after the ChatGPT box and a 
 
 ## Slide 51 — The landscape
 
+![Slide 51 — The landscape](../images/01-introduction/slide-51.jpg)
+
 Nested-ellipse diagram: Artificial Intelligence (dark red) ⊃ Machine Learning (orange) ⊃ Deep Learning (white, red text) ⊃ Gen AI (pale ellipse, label partly hidden "Gen AI"). Inside Gen AI are three small circles: a dark-blue circle (arrow label "Text-to-image", left), a purple circle (arrow label "Text-to-music", right), and a red circle labelled "LLM" containing two black dots with arrows to labels "ChatGPT" and "Bard". Right-hand text: "… and the circles inside GenAI are merging!"
 
 *Figure: yes — nested-ellipse landscape diagram of Gen AI sub-areas*
@@ -556,7 +578,9 @@ Section-divider: white text on a dark-red banner (grey square at left).
 
 ## Slide 56 — Recall Logistic Regression
 
-Diagram: "[x$_1$, x$_2$, x$_3$, …, x$_n$]" → dark-red box "Logistic Regression" → "probability". Below, the formula:
+![Slide 56 — Recall Logistic Regression](../images/01-introduction/slide-56.png)
+
+Diagram: $[x_1, x_2, x_3, \ldots, x_n]$ → dark-red box "Logistic Regression" → "probability". Below, the formula:
 
 $$Pr(Y=1) = \frac{1}{1+e^{-(\beta_0+\beta_1 x_1+\beta_2 x_2+\cdots+\beta_n x_n)}}$$
 
@@ -608,6 +632,8 @@ Right: a monospaced data listing with columns "Interview", "GPA", "Experience" (
 
 ## Slide 59 — We will work with this simple classification example
 
+![Slide 59 — We will work with this simple classification example](../images/01-introduction/slide-59.jpg)
+
 Left: the same data listing as slide 58 (rows 1–16, "...", 25–29, same values). Right: "We can estimate this logistic regression model and find values for the coefficients:"
 
 $$P(Y=1) = \frac{1}{1+e^{-(0.4+0.2\cdot \text{GPA}+0.5\cdot \text{Experience})}}$$
@@ -630,6 +656,8 @@ The rest of the slide is empty (the network is built up on the following slides)
 
 ## Slide 61 — We can re-write this formula as a network with input data flowing through two functions that have been connected
 
+![Slide 61 — We can re-write this formula as a network with input data flowing through two functions that have been connected](../images/01-introduction/slide-61.jpg)
+
 ("network" red; "two" underlined.) "Model equation:" and
 
 $$P(Y=1) = \frac{1}{1+e^{-(0.4+0.2\cdot \text{GPA}+0.5\cdot \text{Experience})}}$$
@@ -641,6 +669,8 @@ Network diagram: two empty circles on the left labelled "GPA" (top) and "Experie
 *Figure: yes — logistic regression drawn as a network (GPA, Experience → + → sigmoid)*
 
 ## Slide 62 — Let's make a prediction with this "network"
+
+![Slide 62 — Let's make a prediction with this "network"](../images/01-introduction/slide-62.png)
 
 "Consider a job applicant with a GPA of 3.8 and 1.2 years of experience."
 
@@ -658,11 +688,13 @@ $$\frac{1}{1+e^{-(0.4+0.2\cdot 3.8+0.5\cdot 1.2)}}$$
 
 $$P(Y=1) = \frac{1}{1+e^{-(11+3x_1-9x_2+\cdots+17x_k)}}$$
 
-Network: input circles $x_1$, $x_2$, a vertical column of three dots, and $x_k$. Red edge labels: "$3x_1$" (from $x_1$), "$-9x_2$" (from $x_2$), "$17x_k$" (from $x_k$), all arrows into a "+" circle; a green "11" arrow also points into "+" (bias). "+" → circle with $\frac{1}{1+e^{-x}}$ → the formula $\frac{1}{1+e^{-(11+3x_1-9x_2+\cdots+17x_k)}}$. Text: "Notice how the data flows through the network from left to right".
+Network: input circles $x_1$, $x_2$, a vertical column of three dots, and $x_k$. Red edge labels: $3x_1$ (from $x_1$), $-9x_2$ (from $x_2$), $17x_k$ (from $x_k$), all arrows into a "+" circle; a green "11" arrow also points into "+" (bias). "+" → circle with $\frac{1}{1+e^{-x}}$ → the formula $\frac{1}{1+e^{-(11+3x_1-9x_2+\cdots+17x_k)}}$. Text: "Notice how the data flows through the network from left to right".
 
 *Figure: yes — general logistic regression drawn as a network*
 
 ## Slide 64 — Terminology
+
+![Slide 64 — Terminology](../images/01-introduction/slide-64.png)
 
 Same network as slide 63 (without the model-equation line): $x_1$, $x_2$, …, $x_k$ with red edge labels $3x_1$, $-9x_2$, $17x_k$, green bias 11, "+" node, sigmoid node, and final formula $\frac{1}{1+e^{-(11+3x_1-9x_2+\cdots+17x_k)}}$.
 
@@ -679,11 +711,15 @@ Section-divider: white text on a dark-red banner (grey square at left).
 
 ## Slide 66 — Recall the notion of learning smart representations of the input data
 
+![Slide 66 — Recall the notion of learning smart representations of the input data](../images/01-introduction/slide-66.png)
+
 ("learning smart representations" is red.) Network: input circles $x_1$, $x_2$, three dots, $x_k$, each with an arrow to a "+" circle; "+" → circle $\frac{1}{1+e^{-x}}$ → output arrow. No weights or biases drawn. Footnote: "*I am not showing the weights and biases to avoid clutter"
 
 *Figure: yes — logistic regression network without weights*
 
 ## Slide 67 — To learn smart representations, we would like to transform the inputs one or more times before we do the prediction
+
+![Slide 67 — To learn smart representations, we would like to transform the inputs one or more times before we do the prediction](../images/01-introduction/slide-67.png)
 
 ("transform the inputs one or more times" red; "before" underlined.) Left: input circles $x_1$, $x_2$, three dots, $x_k$. Centre: a large red "?". Right: a "+" circle → sigmoid circle $\frac{1}{1+e^{-x}}$ → output arrow. No edges from the inputs to the "+" node.
 
@@ -707,6 +743,8 @@ Same as slide 68; the question "What is the simplest thing we can do here?" is n
 
 ## Slide 70 — To learn smart representations, we would like to transform the inputs one or more times before we do the prediction
 
+![Slide 70 — To learn smart representations, we would like to transform the inputs one or more times before we do the prediction](../images/01-introduction/slide-70.png)
+
 Left: inputs $x_1$, $x_2$, dots, $x_k$ each with a dark-red arrow into a single "+" circle at the top, with red label "A linear function" above; an arrow leaves the "+" to the right. Right (unchanged): "+" → sigmoid $\frac{1}{1+e^{-x}}$ → output arrow.
 
 *Build step: adds one "+" node (a linear function) connected from all inputs.*
@@ -714,6 +752,8 @@ Left: inputs $x_1$, $x_2$, dots, $x_k$ each with a dark-red arrow into a single 
 *Figure: yes — partial network diagram, one linear function*
 
 ## Slide 71 — To learn smart representations, we would like to transform the inputs one or more times before we do the prediction
+
+![Slide 71 — To learn smart representations, we would like to transform the inputs one or more times before we do the prediction](../images/01-introduction/slide-71.png)
 
 Three "+" circles stacked vertically, each receiving an arrow from every input $x_1$, $x_2$, $x_k$ (dark-red arrows into the top "+", light-blue arrows into the middle "+", black arrows into the bottom "+"); each "+" has an output arrow to the right. Red text: "We can ”stack” as many linear functions as we want". Right (unchanged): "+" → sigmoid → output.
 
@@ -731,9 +771,11 @@ Same diagram as slide 71, with red text: "Notice that we have transformed a k-di
 
 ## Slide 73 — To learn smart representations, we would like to transform the inputs one or more times before we do the prediction
 
+![Slide 73 — To learn smart representations, we would like to transform the inputs one or more times before we do the prediction](../images/01-introduction/slide-73.png)
+
 Red text at top: "We can “flow” this 3-dimensional vector through another function". Same three "+" nodes fully connected from the inputs (red/blue/black arrows), and now each "+" has an arrow into a circle labelled $f(x)$, each with an output arrow. Right (unchanged): "+" → sigmoid → output.
 
-*Build step: adds an $f(x)$ node after each "+" node relative to slide 72.*
+Build step: adds an $f(x)$ node after each "+" node relative to slide 72.
 
 *Figure: yes — network with three "+" nodes each followed by f(x)*
 
@@ -747,6 +789,8 @@ Same as slide 73, with red text at top right: "Notice that this vector is still 
 
 ## Slide 75 — To learn smart representations, we would like to transform the inputs one or more times before we do the prediction
 
+![Slide 75 — To learn smart representations, we would like to transform the inputs one or more times before we do the prediction](../images/01-introduction/slide-75.png)
+
 Red text at top: "We can do this repeatedly". The first stage (three "+" → $f(x)$ pairs) is enclosed in a dotted rectangle; a second dotted rectangle contains a second stage of three "+" → $f(x)$ pairs. Each $f(x)$ of stage one has arrows to all three "+" nodes of stage two. Stage-two $f(x)$ nodes have output arrows to the right. Far right (unchanged): "+" → sigmoid → output, not yet connected.
 
 *Build step: adds the second dotted stage of three "+"/f(x) pairs, fully connected from stage one.*
@@ -754,6 +798,8 @@ Red text at top: "We can do this repeatedly". The first stage (three "+" → $f(
 *Figure: yes — two-stage network*
 
 ## Slide 76 — To learn smart representations, we would like to transform the inputs one or more times before we do the prediction
+
+![Slide 76 — To learn smart representations, we would like to transform the inputs one or more times before we do the prediction](../images/01-introduction/slide-76.png)
 
 Same two-stage network as slide 75, now with the three stage-two $f(x)$ outputs connected by arrows into the final "+" node, which feeds the sigmoid $\frac{1}{1+e^{-x}}$ node and an output arrow. Red text at top right: "And when we are done, we can “feed” this to logistic regression as usual!!"
 
@@ -763,11 +809,15 @@ Same two-stage network as slide 75, now with the three stage-two $f(x)$ outputs 
 
 ## Slide 77 — Key Takeaway: Instead of feeding the "raw" input to logistic regression, we feed a repeatedly transformed input
 
+![Slide 77 — Key Takeaway: Instead of feeding the "raw" input to logistic regression, we feed a repeatedly transformed input](../images/01-introduction/slide-77.jpg)
+
 Two panels separated by a vertical dark-red line: "Before" (left): the simple logistic regression network of slide 66 ($x_1$ … $x_k$ → "+" → sigmoid → output). "After" (right): the complete two-stage network of slide 76 ($x_1$ … $x_k$ → three "+"/f(x) → three "+"/f(x) → "+" → sigmoid → output).
 
 *Figure: yes — before/after network diagrams*
 
 ## Slide 78 — This is a Neural Network!
+
+![Slide 78 — This is a Neural Network!](../images/01-introduction/slide-78.jpg)
 
 The complete network of slide 76 drawn large with no annotations: inputs $x_1$, $x_2$, dots, $x_k$; first stage: three "+" nodes each followed by $f(x)$; second stage: three "+" nodes each followed by $f(x)$; then a final "+" node and a sigmoid node $\frac{1}{1+e^{-x}}$ with an output arrow. Edges as before (inputs to first stage in red/blue/black; stage one to stage two all-to-all; stage two to final "+").
 
@@ -777,7 +827,9 @@ The complete network of slide 76 drawn large with no annotations: inputs $x_1$, 
 
 ## Slide 79 — Terminology
 
-Same network as slide 78, with dashed red rectangles around each "+"/$f(x)$ pair (three in stage one, three in stage two) and around the final "+"/sigmoid pair. Red text at top right: "These are called *Neurons*".
+![Slide 79 — Terminology](../images/01-introduction/slide-79.jpg)
+
+Same network as slide 78, with dashed red rectangles around each "+"/ $f(x)$ pair (three in stage one, three in stage two) and around the final "+"/sigmoid pair. Red text at top right: "These are called *Neurons*".
 
 *Build step: adds dashed red boxes marking each "+"+function pair as a neuron, relative to slide 78.*
 
@@ -785,19 +837,25 @@ Same network as slide 78, with dashed red rectangles around each "+"/$f(x)$ pair
 
 ## Slide 80 — Aside: The "neural" connection
 
+![Slide 80 — Aside: The "neural" connection](../images/01-introduction/slide-80.jpg)
+
 A colour illustration of three biological neurons in a row: A (yellow), B (blue), C (pink), with grey neurons in the background. Dark-red arrows show an "Impulse" entering A, passing to B and onward to C and out. Labels: "A", "B", "C", "Dendrite", "Axon", "Axon Terminal", "Synapse"; a circular inset magnifies the synapse (blue terminal with vesicles above a pink receiving membrane, labelled "Synapse"). Text: "In the brain, the dendrites of one neuron connect to the axons of others at synapses, forming a <u>network</u>"
 
 *Figure: yes — illustration of biological neurons and a synapse*
 
 ## Slide 81 — Terminology
 
-Same network as slides 78–79 (inputs $x_1$, $x_2$, …, $x_k$; two stages of three "+"/$f(x)$ pairs; final "+"/sigmoid). Large dashed red rectangles enclose the whole first stage (three "+"/$f(x)$ pairs, as one vertical stack), the whole second stage, and the final "+"/sigmoid pair. Red text at top right: "A vertical stack of neurons is called a *Layer*".
+![Slide 81 — Terminology](../images/01-introduction/slide-81.jpg)
+
+Same network as slides 78–79 (inputs $x_1$, $x_2$, …, $x_k$; two stages of three "+"/ $f(x)$ pairs; final "+"/sigmoid). Large dashed red rectangles enclose the whole first stage (three "+"/ $f(x)$ pairs, as one vertical stack), the whole second stage, and the final "+"/sigmoid pair. Red text at top right: "A vertical stack of neurons is called a *Layer*".
 
 *Build step: replaces the per-neuron boxes of slide 79 with per-layer boxes.*
 
 *Figure: yes — network with layers boxed*
 
 ## Slide 82 — Terminology
+
+![Slide 82 — Terminology](../images/01-introduction/slide-82.jpg)
 
 Same network, with dashed red boxes around each $f(x)$ node (three in stage one, three in stage two) and around the final sigmoid node $\frac{1}{1+e^{-x}}$. Red text at top right: "These are called *Activation Functions*".
 
@@ -807,6 +865,8 @@ Same network, with dashed red boxes around each $f(x)$ node (three in stage one,
 
 ## Slide 83 — Terminology
 
+![Slide 83 — Terminology](../images/01-introduction/slide-83.jpg)
+
 Same network with dashed red boxes around: the input nodes (labelled "Input “Layer”" at bottom left), the first stage (labelled "Hidden Layer"), the second stage (labelled "Hidden Layer"), and the final "+"/sigmoid pair (labelled "Output Layer").
 
 *Build step: boxes and names the input, hidden and output layers.*
@@ -815,17 +875,21 @@ Same network with dashed red boxes around: the input nodes (labelled "Input “L
 
 ## Slide 84 — Terminology
 
+![Slide 84 — Terminology](../images/01-introduction/slide-84.png)
+
 Same network with dashed red boxes around the first and second stages (the two hidden stacks). Red text at the bottom: "When every neuron in a layer is connected to every neuron in the next layer, it is called Dense or Fully Connected".
 
 *Figure: yes — network with two stages boxed*
 
 ## Slide 85 — The general logistic regression model is an NN but a simple one since it has no hidden layers
 
+![Slide 85 — The general logistic regression model is an NN but a simple one since it has no hidden layers](../images/01-introduction/slide-85.jpg)
+
 ("no" is underlined.) Model equation shown at top right:
 
 $$P(Y=1) = \frac{1}{1+e^{-(11+3x_1-9x_2+\cdots+17x_k)}}$$
 
-Network: input nodes $x_1$, $x_2$, dots, $x_k$ in a dashed red box labelled "Input “Layer”"; red edge labels "$3x_1$", "$-9x_2$", "$17x_k$"; green bias "11" into a "+" node; "+" → sigmoid $\frac{1}{1+e^{-x}}$ → output arrow; the "+"/sigmoid pair is enclosed in a dashed red box labelled "Output Layer".
+Network: input nodes $x_1$, $x_2$, dots, $x_k$ in a dashed red box labelled "Input “Layer”"; red edge labels $3x_1$, $-9x_2$, $17x_k$; green bias "11" into a "+" node; "+" → sigmoid $\frac{1}{1+e^{-x}}$ → output arrow; the "+"/sigmoid pair is enclosed in a dashed red box labelled "Output Layer".
 
 *Figure: yes — logistic regression network with input and output layers boxed*
 
@@ -851,53 +915,65 @@ URL: https://arxiv.org/pdf/1512.03385.pdf
 
 ## Slide 88 — Let's now turn to Activation Functions
 
-The same network as slide 82 (inputs $x_1$…$x_k$, two stages of "+"/$f(x)$, final "+"/sigmoid) with the seven activation-function nodes (three $f(x)$ in each stage, plus the final sigmoid) boxed in dashed red.
+The same network as slide 82 (inputs $x_1 \ldots x_k$, two stages of "+"/ $f(x)$, final "+"/sigmoid) with the seven activation-function nodes (three $f(x)$ in each stage, plus the final sigmoid) boxed in dashed red.
 
 *Figure: yes — network with activation functions boxed*
 
 ## Slide 89 — Activation functions
 
-Section-style slide with a dark-red banner title "Activation functions". Text: "The activation function of a node is just a function that receives a <u>single</u> number and outputs a <u>single</u> number (i.e., scalar in -> scalar out)". Diagram: two arrows entering a "+" circle, an arrow to a red-outlined circle "$f(x)$", and an arrow out (the $f(x)$ node and its arrows in red).
+![Slide 89 — Activation functions](../images/01-introduction/slide-89.png)
+
+Section-style slide with a dark-red banner title "Activation functions". Text: "The activation function of a node is just a function that receives a <u>single</u> number and outputs a <u>single</u> number (i.e., scalar in -> scalar out)". Diagram: two arrows entering a "+" circle, an arrow to a red-outlined circle $f(x)$, and an arrow out (the $f(x)$ node and its arrows in red).
 
 *Figure: yes — "+" node followed by f(x) node*
 
 ## Slide 90 — Common Activation Functions
 
+![Slide 90 — Common Activation Functions](../images/01-introduction/slide-90.png)
+
 "Sigmoid activation function:"
 
 $$\sigma(a) = \frac{1}{1+e^{-a}}$$
 
-Chart: x-axis "$a$" from -5 to 5 (integer ticks); y-axis gridlines labelled 0, 0.5, 1. One dark-red series, an S-shaped curve: ≈0.01 at a = -5, ≈0.12 at a = -2, 0.5 at a = 0, ≈0.88 at a = 2, ≈0.99 at a = 5 (approximate; no data labels).
+Chart: x-axis $a$ from -5 to 5 (integer ticks); y-axis gridlines labelled 0, 0.5, 1. One dark-red series, an S-shaped curve: ≈0.01 at a = -5, ≈0.12 at a = -2, 0.5 at a = 0, ≈0.88 at a = 2, ≈0.99 at a = 5 (approximate; no data labels).
 
 *Figure: yes — plot of sigmoid function (1 series)*
 
 ## Slide 91 — Common Activation Functions
 
+![Slide 91 — Common Activation Functions](../images/01-introduction/slide-91.png)
+
 "Linear activation function:"
 
 $$f(a) = a$$
 
-Chart: x-axis "$a$" from -5 to 5, y-axis from -5 to 5 (integer gridlines). One dark-red series: a straight diagonal line through the origin from (-5, -5) to (5, 5).
+Chart: x-axis $a$ from -5 to 5, y-axis from -5 to 5 (integer gridlines). One dark-red series: a straight diagonal line through the origin from (-5, -5) to (5, 5).
 
 *Figure: yes — plot of linear function (1 series)*
 
 ## Slide 92 — Common Activation Functions
 
+![Slide 92 — Common Activation Functions](../images/01-introduction/slide-92.jpg)
+
 "ReLU:"
 
 $$g(a) = \max(0, a)$$
 
-("**Re**ctified **L**inear **U**nit" — the letters "Re", "L" and "U" are bold.) Chart: x-axis "$a$" from -5 to 5, y-axis from 0 to 5. One dark-red series: flat at 0 from a = -5 to 0, then a straight line rising with slope 1 to (5, 5).
+("**Re**ctified **L**inear **U**nit" — the letters "Re", "L" and "U" are bold.) Chart: x-axis $a$ from -5 to 5, y-axis from 0 to 5. One dark-red series: flat at 0 from a = -5 to 0, then a straight line rising with slope 1 to (5, 5).
 
 *Figure: yes — plot of ReLU function (1 series)*
 
 ## Slide 93 — We will use this "visual shorthand" from now on
 
-Left: three node pictures with three incoming arrows each: (1) a "+" circle with output arrow only (no activation node); (2) a "+" circle followed by an oval "$max(0, x)$"; (3) a "+" circle followed by an oval $\frac{1}{1+e^{-x}}$. A large dark-red right-pointing block arrow in the middle. Right: three small circles containing mini-icons, labelled: a diagonal straight line = "Linear Activation"; a flat-then-rising hinge = "ReLU Activation"; an S-curve = "Sigmoid Activation".
+![Slide 93 — We will use this "visual shorthand" from now on](../images/01-introduction/slide-93.png)
+
+Left: three node pictures with three incoming arrows each: (1) a "+" circle with output arrow only (no activation node); (2) a "+" circle followed by an oval $max(0, x)$; (3) a "+" circle followed by an oval $\frac{1}{1+e^{-x}}$. A large dark-red right-pointing block arrow in the middle. Right: three small circles containing mini-icons, labelled: a diagonal straight line = "Linear Activation"; a flat-then-rising hinge = "ReLU Activation"; an S-curve = "Sigmoid Activation".
 
 *Figure: yes — mapping of node diagrams to visual shorthand icons*
 
 ## Slide 94 — Recap: Designing a DNN
+
+![Slide 94 — Recap: Designing a DNN](../images/01-introduction/slide-94.png)
 
 Network diagram with column headings "Input Layer", "Hidden Layer 1", "Hidden Layer 2", "Output layer". Inputs $x_1$ … (vertical dots) … $x_k$ each with an arrow into the two circles of the input layer (labelled "…" between); the input-layer circles are fully connected to three circles of Hidden Layer 1; Hidden Layer 1 is fully connected to two circles of Hidden Layer 2; Hidden Layer 2 has outgoing arrows, followed by three dark-red dots ("●●●", meaning more layers), then a single circle (Output layer) with an output arrow.
 
@@ -938,6 +1014,8 @@ Only three column headings are shown: "Input Layer", "Hidden layer", "Output lay
 
 ## Slide 98 — Let's practice setting up a simple NN
 
+![Slide 98 — Let's practice setting up a simple NN](../images/01-introduction/slide-98.png)
+
 Network: Input Layer with two circles $x_1$ and $x_2$; Hidden layer with three circles each containing the ReLU hinge icon; Output layer with one circle containing the sigmoid S-curve icon and output arrow labelled "y". Every input is connected by an arrow to every hidden node (6 edges), and every hidden node to the output node (3 edges). Red question at bottom: "How many parameters (i.e., weights and biases) does this network have?"
 
 *Build step: adds the network drawing and the parameter-count question relative to slide 97.*
@@ -946,6 +1024,8 @@ Network: Input Layer with two circles $x_1$ and $x_2$; Hidden layer with three c
 
 ## Slide 99 — Let's practice setting up a simple NN
 
+![Slide 99 — Let's practice setting up a simple NN](../images/01-introduction/slide-99.png)
+
 Same 2-3-1 network as slide 98, now with a red "?" on each of the 9 edges (weights) and a green "?" on each of the 4 nodes with biases (three hidden nodes and the output node). Bottom: "How many parameters (i.e., weights and biases) does this network have? 13" (the answer "13" in red). (6 + 3 weights + 3 + 1 biases = 13.)
 
 *Build step: adds the weight/bias "?" markers and the answer 13.*
@@ -953,6 +1033,8 @@ Same 2-3-1 network as slide 98, now with a red "?" on each of the 9 edges (weigh
 *Figure: yes — 2-3-1 network with parameter placeholders*
 
 ## Slide 100 — Let's assume that we have trained* this network on data and have found these values for the parameters
+
+![Slide 100 — Let's assume that we have trained* this network on data and have found these values for the parameters](../images/01-introduction/slide-100.png)
 
 Same 2-3-1 network with parameter values filled in. Red = weights (edge labels), green = biases (node labels). Reading the labels by position:
 - Biases: top hidden node -0.3; middle hidden node 0.2; bottom hidden node 0.5; output node 0.05.
@@ -977,7 +1059,7 @@ The trained 2-3-1 network of slide 100 with hidden-node outputs labelled $a_1$ (
 
 (Biases in green, weights in red.)
 
-*Build step: adds node labels $a_1,a_2,a_3$ and the hidden-layer formulas to the network of slide 100.*
+Build step: adds node labels $a_1,a_2,a_3$ and the hidden-layer formulas to the network of slide 100.
 
 *Figure: yes — 2-3-1 network with parameter values and hidden-layer formulas*
 
@@ -998,6 +1080,8 @@ $$\frac{1}{1+e^{-(0.05-0.2a_1-0.3a_2-0.15a_3)}}$$
 
 ## Slide 103 — Predicting with the NN
 
+![Slide 103 — Predicting with the NN](../images/01-introduction/slide-103.png)
+
 Same network with example inputs filled in (blue): $x_1 = 2.3$, $x_2 = 10.2$. Hidden outputs shown beside the nodes: "1.87 = $a_1$", "3.03 = $a_2$", "0 = $a_3$". Weights, biases and structure as on slide 101.
 
 "Output of **hidden layer nodes**:"
@@ -1012,6 +1096,8 @@ Same network with example inputs filled in (blue): $x_1 = 2.3$, $x_2 = 10.2$. Hi
 *Figure: yes — 2-3-1 network with worked numerical forward pass (hidden layer)*
 
 ## Slide 104 — Predicting with the NN
+
+![Slide 104 — Predicting with the NN](../images/01-introduction/slide-104.jpg)
 
 Same network as slide 103 with output label "y = 0.226" (blue) on the output arrow. "Output of **output layer node**:"
 
@@ -1051,11 +1137,13 @@ Second formula (logistic regression):
 
 $$y = \frac{1}{1+e^{-(0.4+0.2x_1+0.5x_2)}}$$
 
-Text: "*y* is a much more complex function of its inputs *x$_1$* and *x$_2$* compared to (say) [small inline image of $\frac{1}{1+e^{-(0.4+0.2\cdot \text{GPA}+0.5\cdot \text{Experience})}}$] and it can capture more complex relationships between *x* and *y*."
+Text: "*y* is a much more complex function of its inputs $x_1$ and $x_2$ compared to (say) [small inline image of $\frac{1}{1+e^{-(0.4+0.2\cdot \text{GPA}+0.5\cdot \text{Experience})}}$] and it can capture more complex relationships between *x* and *y*."
 
 *Figure: no*
 
 ## Slide 108 — Summary: A Deep Neural Network
+
+![Slide 108 — Summary: A Deep Neural Network](../images/01-introduction/slide-108.jpg)
 
 Diagram: Input Layer with three circles (label "Input Layer (Independent Variables)", bold), two hidden layers of four circles each with ReLU hinge icons (label "Hidden Layers", bold), and a single output circle with a sigmoid S-curve icon and output arrow (label "Output Layer", bold). Each layer is fully connected to the next (dense dark-red edges: 3→4, 4→4, 4→1).
 
@@ -1065,6 +1153,8 @@ Diagram: Input Layer with three circles (label "Input Layer (Independent Variabl
 *Figure: yes — 3-4-4-1 feedforward network with ReLU hidden units and sigmoid output*
 
 ## Slide 109 — Summary: Designing a DNN
+
+![Slide 109 — Summary: Designing a DNN](../images/01-introduction/slide-109.png)
 
 Same diagram and boxed text as slide 94 (Input Layer with $x_1$ … $x_k$ → two input-layer circles; Hidden Layer 1 with three circles; Hidden Layer 2 with two circles; "●●●"; Output layer with one circle). Boxed text: "*User* chooses the **# of hidden layers**, **# units in each layer**, the **activation function(s)** for the hidden layers and for the output layer" (colours as slide 94: blue, olive, red).
 

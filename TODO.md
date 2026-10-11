@@ -31,18 +31,18 @@ Images are opted in: every figure-bearing slide, rendered per Step 1c, never a s
 - [x] 01 Introduction — mit15_773_s24_lec01.pdf (110 pages; slide N = page N; read by Sonnet; figure check on 6 rendered pages, 1 corrected)
 
 ## Wiki
-- [ ] wiki/01-introduction.md
-- [ ] Topic pages (cross-lecture concepts)
-- [ ] INDEX.md table of contents
+- [x] wiki/01-introduction.md
+- [x] Topic pages (cross-lecture concepts) — ai-ml-dl-genai, representation-learning, neural-network-anatomy, activation-functions (lecture 1 only; extend as lectures land)
+- [x] INDEX.md table of contents
 
 ## Images
-- [ ] raw/images/01-introduction/ — rank, pick, render, embed in the wiki and slide files
-- [ ] INDEX.md image rules; AGENTS.md Images conventions and table row; BUILD_LOG.md; LICENSE.md attribution
+- [x] raw/images/01-introduction/ — rank, pick, render, embed in the wiki and slide files
+- [x] INDEX.md image rules; AGENTS.md Images conventions and table row; BUILD_LOG.md; LICENSE.md attribution
 
 ## Publish
-- [ ] kb.json — coverage, materials.method, provenance caveats
-- [ ] BUILD_LOG.md — lecture 1 record
-- [ ] SEE_ALSO.md, if a sibling KB is genuinely relevant
-- [ ] verify_kb.py clean, and its review section read
+- [x] kb.json — coverage, materials.method, provenance caveats
+- [x] BUILD_LOG.md — lecture 1 record
+- [x] SEE_ALSO.md, if a sibling KB is genuinely relevant
+- [x] verify_kb.py clean, and its review section read
 - [ ] Commit and push
 - [ ] PATCH kbUrl onto the catalog entry
