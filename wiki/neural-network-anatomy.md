@@ -93,6 +93,18 @@ $-0.06$ to 0), then $y = 0.226$ (slides 101–104). Written as a single formula,
 network is far more complex than logistic regression. That complexity is where its power comes from
 (slides 105–107).
 
+## A convolutional filter is a neuron
+
+The convolutional filter of lecture 4 is "just a slightly modified neuron" (appendix slide 83, which
+the lecture points to without presenting; ≈27:18). A traditional neuron in the first hidden layer
+is connected to **all** the pixels of the input image. A filter neuron is connected only to the
+pixels in a small **region**. Sliding the filter across the image can be thought of as "a different
+filter for each window *but with the same weights*". So it preserves local adjacency, needs far
+fewer parameters, and detects the same pattern wherever it appears. Because it is a neuron, the
+whole machinery of layers, loss functions and gradient descent applies, and its numbers are learned
+like any other weights ([lecture 4](04-cnns-and-transfer-learning.md), slides 36–38). See
+[convolutional neural networks](convolutional-neural-networks.md).
+
 ## Where this comes up
 
 - [Lecture 1](01-introduction.md): the whole construction, terminology, parameter counting and the
@@ -101,3 +113,5 @@ network is far more complex than logistic regression. That complexity is where i
   and writing it in [Keras](keras.md).
 - [Lecture 3](03-keras-and-vision-basics.md): checking the 497 against Keras's `model.summary`, and a
   Fashion-MNIST network with 784 flattened inputs, 256 ReLU units and a 10-way softmax output.
+- [Lecture 4](04-cnns-and-transfer-learning.md): the convolutional filter as a neuron, and the
+  parameter count of a small CNN.

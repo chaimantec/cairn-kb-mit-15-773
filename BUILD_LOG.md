@@ -194,3 +194,81 @@ data-preprocessing, images-and-vision-tasks, multiclass-classification). keras, 
 gradient-descent, loss-functions, activation-functions and neural-network-anatomy were extended.
 Sentences in lectures 1–2, activation-functions, keras, loss-functions and gradient-descent that
 deferred softmax, the Keras introduction or epochs and batches "for later" now point at lecture 3.
+
+## Lecture 4 — Convolutional Neural Networks and Transfer Learning
+
+Built 2026-10-14. Video `8xh7Y0pBrCE` (76 min); deck `mit15_773_s24_lec04.pdf`, 84 pages.
+
+**Video ↔ deck.** The recording presents deck 04 alone. It opens at slide 2 (the Fashion MNIST
+recap, 0:46) and reaches slide 81 ("Back to Colab") at ≈1:10:54, then runs the transfer-learning
+Colab and the webcam demo to the end (1:15:32). The appendix (slides 82–83) is pointed to at 27:18
+and not presented; slide 1 is the title and 84 OCW's end page. This confirms lecture 3's note that
+deck 04 opens video 4. The catalog title ("Transfer Learning and Fine-Tuning; Intro to HuggingFace")
+understates the recording, whose first hour builds CNNs from scratch. Material outside the deck:
+the fast.ai convolution spreadsheet (12:29–17:13), a board example (39:04–40:37) the camera does not
+show, the Notability explanation of pooling (could not be shown; a walkthrough was promised), and
+data augmentation, in the Colab only (1:03:11–1:06:15). The lecture assumes a Fashion-MNIST
+walkthrough video posted the day before, not on OCW.
+
+**Numbering.** Slide N = PDF page N, 1:1. `slide_number_map.py` read it correctly. Pages 2–77 and
+81–83 print their own number. Pages 1, 78–80 (hub screenshots) and 84 print none. The raw corner
+spans are clean, with no split spans or stale numbers; the only extra span in the corner region was
+a "-1" belonging to slide 12's filter figure. Heading check 1..84 passes.
+
+**OCW notices (14):** 41 (Lee, Grosse, Ranganath, Ng), 52–55 (Alshuwaier, Areshey, Poon; CC
+BY-NC-ND, still "excluded from our Creative Commons license"), 58 (© unknown, handbag and shoe
+photos), 66 (© unknown, ImageNet graphic), 67–69 (Zeiler and Fergus/Springer), 70–73 (He, Zhang,
+Ren, Sun/arXiv). The agents found no drawn notices. Slide 2 carries a CC BY-SA credit (Yuzamei,
+Wikimedia Commons), not an exclusion. **Slide 77 prints no notice but redraws the ResNet 34 diagram
+of 70–73**, so it is treated as excluded. Unmarked third-party content: slides 30–32
+("Image source: deeplearning.ai"), 40 (a photograph of Fig 14-2 of *Hands-On Machine Learning*,
+linked on Amazon), 47 (CS231n notes), 78–80 (hub screenshots). The Colab links on slides 56, 59 and
+81 point to Google Drive notebooks through PDF link annotations; their targets are not recorded,
+following lecture 3.
+
+**Transcription.** Sonnet, two agents in parallel (pages 1–42 and 43–84) writing scratch files that
+the parent spliced under a hand-written header. Neither was interrupted. The parent normalized
+`<span style="color:red">` markup to plain text with a parenthetical note, and replaced the
+recorded Colab URLs with "target not printed".
+
+**Transcript edit.** OCW human captions, `AUDIENCE:` labels and one `SIRI:`. Done inline in the
+parent as a scripted list, since the parent had already read the whole transcript to map it onto
+the deck. Restorations: "that tree" → three (13:16), "image nest" → image-ness (1:00:50). `[Ed:]`
+notes at 0:46 ("did exploit" for did not), 2:17 and 15:40 (unclear), 9:21 ("three numbers" for a
+3-by-3 patch), 28:09 and 58:32 (times of day), 45:15 ("MNIST" for Fashion MNIST), 54:38 ("structured
+data … best game in town", probably "unstructured"), 58:32 ("224 to 24"), 1:07:49 ("dimension data
+set") and 1:12:26 ("7 by 7 by 224, 2,048", self-corrected). Checks: 98 timestamps identical, number
+inventory identical, paragraph word ratios 0.993–1.000 once the notes are removed.
+
+**Figure check.** Done in the parent on 1400px renders: slides 21, 31, 40, 47, 75 and 80. Five agreed.
+Slide 40's description of the dashed projections was muddled (it put a dashed rectangle on layer 2)
+and was rewritten. Arithmetic checks: slides 15–21's output (−30 → 0 for the first three rows, 30
+for the last two), slide 44's max pooling (43, 109, 105, 35), slide 45's averages (22.25 printed as
+22.2, 45.5, 70.75, 21), slide 47's max pooling (6, 8, 3, 4), and slide 70's ResNet 34 box counts
+(6 + 8 + 12 + 6 convolutions, plus the first convolution and the fc layer, make 34). The lecturer's
+spoken 43, 109, 105, 35, 22.2 and 45.5 agree with the slides.
+
+**Printed slips.** Slide 8 prints "rather learn it separately". Slide 41 prints "Lee at al". Slide
+45 prints 22.2 for 22.25. Slide 2 says "85% +" where the lecturer says the high 80s and 88%. Slide
+26's title drops slide 25's italics; slides 72–73 and 75 drop the asterisk on "ResNet 34"; slide
+70's title overflows its band. The deck pictures ResNet 34, while the Colab's narration gives 23
+million parameters and a 7 × 7 × 2,048 output without naming the variant; the wiki says only that.
+
+**Images: 16 of 84 pages.** Rendered: 14, 18, 19, 21, 24, 29, 31, 32, 40, 44, 45, 47, 75, 78, 79, 80.
+Not rendered: the 14 noticed slides and slide 77 (reuses the excluded ResNet diagram); build steps
+superseded by a rendered slide (11, 12, 23 → 14 and 24; 15–17 → 18; 20 → 21; 25–28 → 29; 30 → 18 and
+31; 46 → 45); slide 2, whose mosaic is lecture 3's `3b-14.jpg` and is linked to it; and text-only
+slides and dividers. 1.71 MB, 8 PNG and 8 JPEG. All 16 are in the wiki lecture page: 14 placed by
+hand and 78–79 by `embed_slide_images.py`, all with hand-written captions. The convolution steps
+were written as bold-led paragraphs rather than a numbered list, so that images 18 and 19 could sit
+between the steps without breaking a list.
+
+**Wiki.** A lecture page and three new topic pages (convolutional-neural-networks, transfer-learning,
+data-augmentation). images-and-vision-tasks, representation-learning, overfitting-and-regularization,
+tensors, keras and neural-network-anatomy were extended. Sentences in lectures 1 and 3,
+images-and-vision-tasks and overfitting-and-regularization that deferred CNNs or dropout to lecture 4
+were corrected: lecture 4 uses a dropout layer but defers its explanation again, to "early next week"
+(≈1:12:26). The lecture page hand-checks the Fashion-MNIST CNN's 302,000 parameters (302,026 with
+2 × 2 kernels, no padding and pooling rounding down), labelled as the page's own arithmetic.
+`SEE_ALSO.md`'s 6.7960 entry was updated to that KB's current coverage (lectures 1–19) and now
+points to its convolution, transfer-learning and data-augmentation pages.

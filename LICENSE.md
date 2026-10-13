@@ -83,3 +83,19 @@ plus the deck:
   Medium, and unknown rights holders) is rendered. Deck 3A's slides 24–25 are not rendered either.
   They print no notice, but they reuse the fast.ai pixel matrix and the RGB matrices that deck 3B
   marks as excluded.
+- **Lecture 4**, `raw/images/04-cnns-and-transfer-learning/` (16 images: pages 14, 18, 19, 21, 24, 29,
+  31, 32, 40, 44, 45, 47, 75, 78, 79 and 80) from
+  [`mit15_773_s24_lec04.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec04.pdf).
+  Third-party material on the rendered slides, as credited there: slides 31 and 32 carry figures
+  credited "Image source: deeplearning.ai". Slide 40 is a photograph of Fig 14-2 from the book the
+  slide links on Amazon, *Hands-On Machine Learning with Scikit-Learn, Keras and TensorFlow*. Slide
+  47 reproduces a figure from the CS231n notes it cites (cs231n.github.io/convolutional-networks).
+  Slides 78–80 are screenshots of the TensorFlow Hub, PyTorch Hub and Hugging Face Hub web pages.
+  OCW marks none of these as excluded; they remain their owners'. None of the deck's fourteen
+  slides with an OCW exclusion notice is rendered: 41 (Honglak Lee, Roger Grosse, Rajesh Ranganath,
+  Andrew Y. Ng), 52–55 (Faisal Alshuwaier, Ali Areshey, Josiah Poon, CC BY-NC-ND), 58 and 66
+  (unknown rights holders), 67–69 (Matthew D. Zeiler and Rob Fergus/Springer) and 70–73 (Kaiming He,
+  Xiangyu Zhang, Shaoqing Ren, Jian Sun/arXiv). Slide 77 is not rendered either. It prints no notice,
+  but it redraws the ResNet 34 diagram that slides 70–73 mark as excluded. Slide 2's Fashion MNIST
+  mosaic is the CC BY-SA image already rendered for lecture 3 (deck 3B, slide 14) and is not
+  rendered again.

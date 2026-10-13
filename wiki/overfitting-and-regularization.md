@@ -67,12 +67,31 @@ stops improving, or save the best model as training goes (≈53:30–55:04).
 
 **Dropout** randomly zeroes out the outputs of some of the nodes in a hidden layer, typically 50%, and
 is implemented as a "dropout layer" in Keras (deck 3A, slide 18). Lecture 3 only names it, calls it "a
-very, very clever strategy", and defers it to lecture 4, the first time it is used (≈14:34). Dropout is
-also a source of randomness in training, which matters for reproducibility (≈31:42).
+very, very clever strategy", and defers it to lecture 4, the first time it is used (≈14:34). Lecture 4
+does put a `Dropout` layer into its transfer-learning model, between the 256-unit hidden layer and the
+sigmoid output, but defers the explanation again, to "early next week": "Don't worry about this detail
+for the moment" ([lecture 4](04-cnns-and-transfer-learning.md) ≈1:12:26). Dropout is also a source of
+randomness in training, which matters for reproducibility (lecture 3 ≈31:42).
+
+## When there is little data
+
+A network with many parameters and few examples overfits quickly. Even Fashion MNIST's 60,000 images
+overfit "in 5, 6, 7, 8 epochs", and lecture 4's handbags-and-shoes problem has fewer than 100 training
+images per class ([lecture 4](04-cnns-and-transfer-learning.md) ≈55:25–56:11). Its CNN built from
+scratch reaches nearly 100% training accuracy but stays in the 80s on validation (≈1:02:25–1:03:11).
+Lecture 4 gives two remedies. **Data augmentation** perturbs each training image slightly, by flips,
+small rotations and zooms, to make new examples that mean the same thing; see
+[data augmentation](data-augmentation.md). **Transfer learning** starts from a network already trained
+on millions of images, so that the small network on top learns from inputs that are already at a
+high level of abstraction; see [transfer learning](transfer-learning.md). Convolutional layers themselves cut the
+parameter count that makes dense layers on images so prone to overfitting; see
+[convolutional neural networks](convolutional-neural-networks.md).
 
 ## Where this comes up
 
 - [Lecture 2](02-training-deep-nns.md): why the training loss's global minimum is not the goal.
 - [Lecture 3](03-keras-and-vision-basics.md): underfitting and overfitting, the validation set, early
   stopping in the heart-disease Colab, and dropout previewed.
+- [Lecture 4](04-cnns-and-transfer-learning.md): overfitting with little data, data augmentation,
+  transfer learning, and a dropout layer used without explanation.
 - See also [training a neural network](training-neural-networks.md).

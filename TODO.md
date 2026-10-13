@@ -47,10 +47,10 @@ Images are opted in: every figure-bearing slide, rendered per Step 1c, never a s
 - [x] wiki/03-keras-and-vision-basics.md
 - [x] Topic pages for lecture 3 — new: overfitting-and-regularization, tensors, data-preprocessing, images-and-vision-tasks, multiclass-classification; extended: keras, training-neural-networks, gradient-descent, loss-functions, activation-functions, neural-network-anatomy
 - [x] INDEX.md — lecture 3 entries and coverage sentence
-- [ ] wiki/04-cnns-and-transfer-learning.md
-- [ ] Topic pages for lecture 4 — new: convolutional-neural-networks, transfer-learning, data-augmentation; extend the pages it touches
-- [ ] Correct the earlier pages that defer CNNs or dropout to lecture 4
-- [ ] INDEX.md — lecture 4 entries and coverage sentence
+- [x] wiki/04-cnns-and-transfer-learning.md
+- [x] Topic pages for lecture 4 — new: convolutional-neural-networks, transfer-learning, data-augmentation; extend the pages it touches
+- [x] Correct the earlier pages that defer CNNs or dropout to lecture 4
+- [x] INDEX.md — lecture 4 entries and coverage sentence
 
 ## Images
 - [x] raw/images/01-introduction/ — rank, pick, render, embed in the wiki and slide files
@@ -60,7 +60,7 @@ Images are opted in: every figure-bearing slide, rendered per Step 1c, never a s
 - [x] raw/images/03-keras-and-vision-basics/ — deck 3A as 3a-N, deck 3B as 3b-N; embed
 - [x] INDEX.md image sentence; AGENTS.md table row; BUILD_LOG.md; LICENSE.md attribution (lecture 3)
 - [x] raw/images/04-cnns-and-transfer-learning/ — 16 renders; embedded in the slide file
-- [ ] Embed lecture 4 images in the wiki page; INDEX.md image sentence; AGENTS.md table row; BUILD_LOG.md; LICENSE.md attribution
+- [x] Embed lecture 4 images in the wiki page; INDEX.md image sentence; AGENTS.md table row; BUILD_LOG.md; LICENSE.md attribution
 
 ## Publish
 - [x] kb.json — coverage, materials.method, provenance caveats
@@ -71,5 +71,5 @@ Images are opted in: every figure-bearing slide, rendered per Step 1c, never a s
 - [x] PATCH kbUrl onto the catalog entry (https://github.com/chaimantec/cairn-kb-mit-15-773)
 - [x] Lecture 2: kb.json, BUILD_LOG.md, verify_kb.py clean, commit and push
 - [x] Lecture 3: kb.json, BUILD_LOG.md, verify_kb.py clean, commit and push
-- [ ] Lecture 4: kb.json, BUILD_LOG.md, verify_kb.py clean, commit and push
+- [x] Lecture 4: kb.json, BUILD_LOG.md, verify_kb.py clean, commit and push
 - [ ] Move finished sections from TODO.md to BUILD_LOG.md; TODO.md keeps only open work

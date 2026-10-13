@@ -3,15 +3,15 @@
 Computer vision starts from a simple fact: to a computer an image is a table of numbers
 ([lecture 3](03-keras-and-vision-basics.md) ≈58:08–1:01:12; deck 3B, slides 2–6). This page collects
 how images are represented, the main tasks deep learning solves on them, and how a basic network takes
-an image as input. Convolutional networks, the course's main tool for images, come in lecture 4 and
-are not in this knowledge base yet.
+an image as input. Convolutional networks, the course's main tool for images, have their own page,
+[convolutional neural networks](convolutional-neural-networks.md).
 
 ## Grayscale images
 
 A grayscale (black-and-white) image is a rectangular array of **pixels**. Each pixel holds its light
 intensity, a number from 0, no light, to 255, "blinding white light". As the number rises from 0 to
 255 the pixel goes from black through gray to white (deck 3B, slides 3–4; ≈58:08–58:54). The slides'
-example is a handwritten 5 stored as a 28 × 28 table. Its black background is all zeros, and "if you
+example is a handwritten 5 stored as a $28 \times 28$ table. Its black background is all zeros, and "if you
 just step back and squint at this, you can actually see the 5".
 
 The scale is relative. An analog picture is read in and mapped onto the normalized range 0 to 255. The
@@ -23,7 +23,7 @@ variations" (≈59:40–1:00:26).
 A colour pixel is represented by three intensities, for red, green and blue light, each still between 0
 and 255 (deck 3B, slides 5–6; ≈1:00:26). A colour image is therefore three tables of numbers, and in
 deep learning these colours are called **channels**. The slide's example, which the lecturer calls a
-picture of Killian Court, shows the three 10 × 10 tables for the photograph's top-left corner. The
+picture of Killian Court, shows the three $10 \times 10$ tables for the photograph's top-left corner. The
 three tables together are a tensor of rank 3 (≈1:01:12). See [tensors](tensors.md).
 
 ## Five tasks
@@ -43,6 +43,11 @@ that OCW excludes from its licence, so they are described here in words only.
 - **Instance segmentation.** Classify every pixel *and* tell apart different instances of the same
   category, so that each sheep gets its own label.
 
+For segmentation, the output must have the same dimensions as the input, so the output side of the
+network gets "much more complicated" than a classifier's. It needs a different architecture, such as
+one called U-Net, which the course names but does not cover
+([lecture 4](04-cnns-and-transfer-learning.md) ≈51:30–52:15).
+
 The course's first vision problem is image classification, on Fashion MNIST (deck 3B, slide 14). Its
 70,000 small grayscale images show clothing items in 10 balanced categories, so a naive baseline
 scores 10% (≈1:04:16–1:05:07).
@@ -51,7 +56,7 @@ scores 10% (≈1:04:16–1:05:07).
 
 The networks so far take vectors, but an image is a table, a tensor of rank 2. The simplest answer is to
 **flatten** it: take each row, turn it on its side, and string the rows together into one long vector
-(lecture 3 ≈1:05:54–1:06:40). A 28 × 28 image becomes $28 \times 28 = 784$ inputs. Nothing has been
+(lecture 3 ≈1:05:54–1:06:40). A $28 \times 28$ image becomes $28 \times 28 = 784$ inputs. Nothing has been
 computed, "we've literally taken the numbers and just reorganized them", and the problem is back in
 familiar territory. Lecture 3's Fashion-MNIST network then uses one hidden layer of 256 ReLU units and
 a 10-way softmax output (deck 3B, slides 15–18). See
@@ -62,7 +67,24 @@ a 10-way softmax output (deck 3B, slides 15–18). See
 *Lecture 3, deck 3B, slide 16 — flatten the 28 × 28 image into 784 inputs, then use an ordinary dense network.*
 
 In a Keras data set the images arrive stacked into one tensor. Fashion MNIST's training input is 60,000
-tables of 28 × 28, a tensor of rank 3, and its test input 10,000 more (≈1:14:22–1:15:10).
+tables of $28 \times 28$, a tensor of rank 3, and its test input 10,000 more (≈1:14:22–1:15:10).
+
+Flattening works, reaching the high 80s on Fashion MNIST, but it throws away what makes the input an
+image. It needs far too many parameters for a real photograph, about 2.7 billion to connect a phone
+photo to 100 neurons, loses which pixels are neighbours, and learns the same feature separately in
+every place it appears ([lecture 4](04-cnns-and-transfer-learning.md), slides 3–9). Convolutional layers
+fix all three; see [convolutional neural networks](convolutional-neural-networks.md). A convolutional
+layer expects a channel dimension even for grayscale, so Fashion MNIST's images become $28 \times 28 \times 1$
+(lecture 4 ≈45:15–46:01).
+
+## Loading colour images from folders
+
+Lecture 4's handbags-and-shoes data shows the usual way to organize your own images: one folder per
+class (`handbags`, `shoes`) inside each of the training, validation and test folders. You can then
+"just point Keras at it. It'll automatically figure out those are the labels"
+([lecture 4](04-cnns-and-transfer-learning.md) ≈56:11–57:46). A Keras utility, not named in the
+narration, reads the JPEGs, converts them to tensors, resizes them to a common size, since
+web-scraped images come in different shapes and sizes, and batches them. The course resizes to $224 \times 224 \times 3$ because ResNet expects that size (≈57:46–58:32). The textbook explains this in detail.
 
 ## Where this comes up
 
@@ -70,3 +92,5 @@ tables of 28 × 28, a tensor of rank 3, and its test input 10,000 more (≈1:14:
   handles.
 - [Lecture 3](03-keras-and-vision-basics.md): pixels, channels, the five tasks, and the
   Fashion-MNIST network.
+- [Lecture 4](04-cnns-and-transfer-learning.md): why flattening falls short, convolutional networks,
+  colour images from folders, and transfer learning.

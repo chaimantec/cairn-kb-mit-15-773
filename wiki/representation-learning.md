@@ -39,6 +39,28 @@ depends on training.
 
 *Lecture 1, slide 77 — the hidden layers are where the learned representation lives. The input and output are unchanged.*
 
+## Hierarchies of features
+
+In a convolutional network the learned representation is visibly **hierarchical**. Each layer sees
+more of the image than the one before, so a network trained to detect faces learns lines and edges
+in its first layer, combines them into parts in the next, and assembles whole faces after that
+([lecture 4](04-cnns-and-transfer-learning.md), slides 40–41; ≈28:56–30:29). Nobody tells it to
+do this. It is told only to minimize the loss, and the hierarchy is what peeking inside an accurate
+network reveals (≈41:23–42:09). See [convolutional neural networks](convolutional-neural-networks.md).
+
+## Reusing someone else's representation
+
+If the representation is what the hidden layers compute, a network trained on a large, general data
+set has already computed a good one. Lecture 4 takes ResNet, trained on ImageNet's millions of
+everyday images, removes its final layer, and treats what comes out as "a 'smart representation' of
+the (everyday) image", as if each image were tagged with lots of general tags (slides 72–73;
+≈1:08:37–1:09:22). A small network on top of that representation learns to tell handbags from shoes
+from fewer than 100 examples each, with 100% test accuracy, because its inputs are already at a high
+level of abstraction (slide 75; ≈1:13:14–1:14:01). This is the representation-learning idea of
+lecture 1 put to work. See [transfer learning](transfer-learning.md).
+
 ## Where this comes up
 
 - [Lecture 1](01-introduction.md): why representations matter, and how hidden layers learn them.
+- [Lecture 4](04-cnns-and-transfer-learning.md): hierarchical features in a CNN, and headless ResNet's
+  output as a reusable representation.

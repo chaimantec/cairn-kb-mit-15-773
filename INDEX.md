@@ -8,10 +8,10 @@ transfer learning) and natural language (embeddings, transformers), to generativ
 parameter-efficient fine-tuning, text-to-image diffusion). It deliberately "skips the math" and
 focuses on concepts and on coding models in Keras/TensorFlow.
 
-**Coverage: lectures 1–3 of 11.** This knowledge base is being built lecture by lecture. Only
-lectures 1, 2 and 3 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
-covering lectures 4–11. For anything after lecture 3, including convolutional networks, transfer
-learning and everything on language and generative AI, say that the KB does not cover it yet.
+**Coverage: lectures 1–4 of 11.** This knowledge base is being built lecture by lecture. Only
+lectures 1 to 4 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
+covering lectures 5–11. For anything after lecture 4, including everything on language (text
+vectorization, embeddings, transformers) and generative AI, say that the KB does not cover it yet.
 
 ## Contents
 
@@ -42,17 +42,29 @@ learning and everything on language and generative AI, say that the KB does not 
   to instance segmentation), Fashion MNIST, flattening 28 × 28 to 784, softmax, and matching the
   Keras cross-entropy loss to the label encoding. Convolutional networks are *not* reached, despite
   the catalog title.
+- [Lecture 4 — Convolutional Neural Networks and Transfer Learning](wiki/04-cnns-and-transfer-learning.md):
+  why flattening an image fails (2.7 billion weights for one phone photo into 100 neurons), the
+  convolutional filter and the convolution operation worked on a 7 × 7 example, the fast.ai
+  spreadsheet demo, convolutional layers and colour images (filters as deep as the input), learning
+  the filters as weights, later layers seeing more of the image and learning hierarchical features, max and average
+  pooling, the basic CNN architecture, and a Fashion-MNIST CNN in Colab (90.5%, with a hand check of
+  its 302,000 parameters). Then a handbags-vs-shoes classifier from under 100 images per class (87%
+  from scratch), data augmentation (Colab only), transfer learning with ImageNet and a headless
+  ResNet (100% on the test set, and a live webcam demo), fine-tuning, and the TensorFlow, PyTorch
+  and Hugging Face model hubs. Dropout is used but not explained. The catalog title ("Transfer
+  Learning and Fine-Tuning; Intro to HuggingFace") understates the CNN half.
 
 ### Topics
 
 - [AI, machine learning, deep learning and generative AI](wiki/ai-ml-dl-genai.md): the nested
   circles the course uses, what bottleneck each layer removed, and X-to-Y multimodality.
 - [Representation learning](wiki/representation-learning.md): why raw unstructured data needs a
-  representation, hand-made features versus learned ones, and hidden layers as the learned
+  representation, hand-made features versus learned ones, hidden layers as the learned
+  representation, the feature hierarchy in a CNN, and reusing a pre-trained network's
   representation.
 - [Anatomy of a neural network](wiki/neural-network-anatomy.md): the vocabulary (weight, bias,
   neuron, layer, dense, feedforward, architecture), what you design versus what training finds,
-  parameter counting, and the forward pass with numbers.
+  parameter counting, the forward pass with numbers, and the convolutional filter as a neuron.
 - [Activation functions](wiki/activation-functions.md): sigmoid, linear and ReLU with formulas and
   plots, the rule of thumb (ReLU for hidden layers, output activation dictated by the output), the
   softmax, and why ReLU's gradient of 1 keeps gradients flowing.
@@ -67,22 +79,35 @@ learning and everything on language and generative AI, say that the KB does not 
   (minibatch) gradient descent, and epochs, batches and batch size.
 - [Overfitting and regularization](wiki/overfitting-and-regularization.md): training versus validation
   error, the sweet spot, why deep networks need regularization, the validation and test sets, early
-  stopping in practice, and dropout as previewed.
+  stopping in practice, dropout (previewed, then used without explanation), and the remedies for
+  little data.
 - [Tensors](wiki/tensors.md): ranks 0 to 5 with the course's examples (scalar, vector, table, image,
-  video), and thinking of a tensor as a list of lower-rank tensors.
+  video), thinking of a tensor as a list of lower-rank tensors, and the shapes convolutional and
+  pooling layers produce.
 - [Preparing data for a network](wiki/data-preprocessing.md): class balance and a baseline model,
   one-hot encoding, standardization, splitting before standardizing, NumPy arrays, and random seeds.
 - [Images and computer-vision tasks](wiki/images-and-vision-tasks.md): pixels and 0–255 intensities,
   colour channels, classification, localization, object detection, semantic and instance
-  segmentation, and flattening an image into a vector.
+  segmentation, flattening an image into a vector and why that falls short, and loading colour
+  images from one folder per class.
+- [Convolutional neural networks](wiki/convolutional-neural-networks.md): the three problems with
+  flattening, filters and the convolution operation, layers and tensor shapes, colour images,
+  learned filters, the feature hierarchy, max and average pooling, the basic CNN architecture, and
+  the course's Keras CNN.
+- [Transfer learning](wiki/transfer-learning.md): the two research trends behind it, ImageNet and
+  ResNet, headless ResNet as a feature extractor, fine-tuning, the model hubs, and the
+  handbags-vs-shoes results.
+- [Data augmentation](wiki/data-augmentation.md): perturbing images (flips, small rotations, zooms)
+  to stretch a small data set without changing what they mean, and the Keras layers for it.
 - [Multi-class classification and softmax](wiki/multiclass-classification.md): why ten sigmoids fail,
   the softmax formula, its role in GPT-4, sparse versus one-hot labels and the matching Keras loss,
   and the table of output layers and losses.
 - [Backpropagation](wiki/backpropagation.md): computational graphs and the chain rule, why it is
   fast, GPUs, and the lecturer's handwritten worked example.
 - [Keras](wiki/keras.md): what TensorFlow and Keras each provide, why not PyTorch, the three APIs,
-  defining a model with `keras.Input`, `Dense` layers and `keras.Model`, and training it with
-  `summary`, `compile`, `fit` and `evaluate`.
+  defining a model with `keras.Input`, `Dense` layers and `keras.Model`, training it with
+  `summary`, `compile`, `fit` and `evaluate`, and the image layers (`Conv2D`, `MaxPool2D`,
+  `Rescaling`, augmentation) and `include_top=False`.
 
 ## Raw materials
 
@@ -100,8 +125,9 @@ learning and everything on language and generative AI, say that the KB does not 
   deck 3A in [`raw/slides/03-keras-tensorflow.md`](raw/slides/03-keras-tensorflow.md) and deck 3B in
   [`raw/slides/03-vision-basics.md`](raw/slides/03-vision-basics.md). Cite them as "deck 3A, slide N"
   and "deck 3B, slide N". From page 16 on, deck 3B prints a number one higher than the page where it
-  prints one. Lecture 3's heart-disease and Fashion-MNIST Colab notebooks are not published on OCW;
-  the KB knows them only from the lecturer's narration.
+  prints one. Lecture 4's deck prints its own page number wherever it prints one. The Colab
+  notebooks of lectures 3 and 4 are not published on OCW; the KB knows them only from the
+  lecturer's narration.
 - [`raw/images/`](raw/images/): rendered figure slides (see below).
 - [`sources.md`](sources.md): every course document on the OCW site with its canonical URL. The
   slide PDFs are not in this repo; link to them at their OCW URL.
@@ -111,15 +137,18 @@ learning and everything on language and generative AI, say that the KB does not 
 
 ## Images
 
-**Lectures 1, 2 and 3 have images. No other lecture does yet.** Their figure slides are rendered as
-whole slides and shown inline, both in the lecture pages ([lecture 1](wiki/01-introduction.md),
-[lecture 2](wiki/02-training-deep-nns.md), [lecture 3](wiki/03-keras-and-vision-basics.md)) and under
-the matching `## Slide N` heading in each slide file. Lecture 1 has 45. Lecture 2 has 18: 15 from its
-main deck and 3 pages of the handwritten backprop example, which are named `backprop-N` rather than
-`slide-N`. Lecture 3 has 13 in one directory: 9 from deck 3A named `3a-N` and 4 from deck 3B named
-`3b-N`. Slides whose content OCW excludes from its licence (marked `*OCW notice: …*`) are never
-rendered, and neither are deck 3A's slides 24–25, which reuse figures that deck 3B marks as
-excluded.
+**Lectures 1, 2, 3 and 4 have images. No other lecture does yet.** Their figure slides are rendered
+as whole slides and shown inline, both in the lecture pages ([lecture 1](wiki/01-introduction.md),
+[lecture 2](wiki/02-training-deep-nns.md), [lecture 3](wiki/03-keras-and-vision-basics.md),
+[lecture 4](wiki/04-cnns-and-transfer-learning.md)) and under the matching `## Slide N` heading in
+each slide file. Lecture 1 has 45. Lecture 2 has 18: 15 from its main deck and 3 pages of the
+handwritten backprop example, which are named `backprop-N` rather than `slide-N`. Lecture 3 has 13 in
+one directory: 9 from deck 3A named `3a-N` and 4 from deck 3B named `3b-N`. Lecture 4 has 16. Slides
+whose content OCW excludes from its licence (marked `*OCW notice: …*`) are never rendered, and
+neither are slides that reuse an excluded figure without a notice of their own: deck 3A's slides
+24–25 and lecture 4's slide 77, whose ResNet diagram slides 70–73 exclude. So lecture 4 has no image
+of a CNN architecture diagram, ResNet, ImageNet or the learned-feature visualizations; their slide
+entries describe them in prose.
 
 - **Use an image URL you have actually read in a file.** Never construct one from the pattern, and
   never assume a slide has an image because a neighbouring one does. The extension varies (`.jpg`

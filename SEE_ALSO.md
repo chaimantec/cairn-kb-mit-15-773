@@ -9,7 +9,7 @@ Pass the **repo URL** as the `kb` argument to `kb_read` / `kb_list`. The
 ---
 
 - **MIT 6.7960 — Deep Learning** (MIT, Phillip Isola, Sara Beery and Jeremy Bernstein, Fall 2024).
-  Partial: lectures 1–15 of 24.
+  Partial: lectures 1–19 of its 24 catalog recordings.
   KB: `https://github.com/chaimantec/cairn-kb-mit-6-7960` — pass this as `kb`.
 
   The mathematical counterpart to 15.773, which deliberately "skips the math". Where 15.773
@@ -20,8 +20,12 @@ Pass the **repo URL** as the `kb` argument to `kb_read` / `kb_list`. The
   [gradient descent](https://raw.githubusercontent.com/chaimantec/cairn-kb-mit-6-7960/main/wiki/gradient-descent.md),
   [backpropagation](https://raw.githubusercontent.com/chaimantec/cairn-kb-mit-6-7960/main/wiki/backpropagation.md)
   and [representation learning](https://raw.githubusercontent.com/chaimantec/cairn-kb-mit-6-7960/main/wiki/representation-learning.md)
-  pages. Its notation and depth differ: use 15.773's own pages first for this course's framing
-  and examples.
+  pages. For 15.773 lecture 4, its
+  [convolution](https://raw.githubusercontent.com/chaimantec/cairn-kb-mit-6-7960/main/wiki/convolution.md),
+  [transfer learning](https://raw.githubusercontent.com/chaimantec/cairn-kb-mit-6-7960/main/wiki/transfer-learning.md)
+  and [data augmentation](https://raw.githubusercontent.com/chaimantec/cairn-kb-mit-6-7960/main/wiki/data-augmentation.md)
+  pages give the more formal treatment. Its notation and depth differ: use 15.773's own pages first
+  for this course's framing and examples.
   Start at [INDEX](https://raw.githubusercontent.com/chaimantec/cairn-kb-mit-6-7960/main/INDEX.md).
 
 - **CS224N — Natural Language Processing with Deep Learning** (Stanford, Christopher Manning,

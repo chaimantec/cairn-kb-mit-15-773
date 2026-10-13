@@ -94,6 +94,33 @@ For a multi-class output, pick the cross-entropy loss that matches the label enc
 `sparse_categorical_crossentropy` for integer labels and `categorical_crossentropy` for one-hot ones
 (≈1:12:04–1:12:51). See [multi-class classification and softmax](multiclass-classification.md).
 
+## Layers for images (lecture 4)
+
+[Lecture 4](04-cnns-and-transfer-learning.md) builds convolutional networks and a transfer-learning
+model in Colab. The notebooks are not on OCW, so this lists only what the lecturer names.
+
+- **`layers.Conv2D`** is a convolutional layer. You choose the number of filters (32 in the course's
+  models), the `kernel_size` (2 by 2, "the simplest size") and the activation (ReLU). There are also
+  `Conv1D` and `Conv3D`, but for images `Conv2D` is all you need (≈46:49).
+- **`MaxPool2D`** is a max-pooling layer. You pass it the input and get the shrunken output back
+  (≈46:49–47:36).
+- A convolutional layer expects a **channel dimension**, so grayscale images become $28 \times 28 \times 1$
+  (≈45:15–46:01).
+- **`x = layer(x)`.** The lecturer feeds each layer `x` and calls its output `x` again. It is only a
+  notational convenience, and Keras tracks the graph under the hood. Numbering x1, x2, x3 would mean
+  renumbering everything to insert a layer (≈49:55–50:41).
+- **`Rescaling`** divides the pixel values inside the model instead of by hand: "Manual stuff is bad"
+  (≈58:32–59:17).
+- **Images from folders.** Put each class's images in its own folder and point Keras at the parent;
+  it takes the labels from the folder names, and a Keras utility reads, resizes and batches the
+  images (≈57:00–57:46).
+- **Data-augmentation layers** such as a random horizontal flip, a random rotation and a random zoom
+  go right after the input (≈1:04:44–1:06:15). See [data augmentation](data-augmentation.md).
+- **`include_top=False`** downloads a pre-trained network such as ResNet without its final layer
+  (≈1:10:54). See [transfer learning](transfer-learning.md).
+- A **`Dropout`** layer appears in the transfer-learning model, unexplained until a later lecture
+  (≈1:12:26).
+
 ## Answers from lecture 2
 
 - **Custom activation functions** can be defined (≈17:08).
@@ -112,5 +139,7 @@ For a multi-class output, pick the cross-entropy loss that matches the label enc
 - [Lecture 2](02-training-deep-nns.md): the four-line heart-disease model.
 - [Lecture 3](03-keras-and-vision-basics.md): TensorFlow and Keras, the functional API, and training the
   heart-disease model in a Colab.
+- [Lecture 4](04-cnns-and-transfer-learning.md): `Conv2D`, `MaxPool2D`, `Rescaling`, augmentation layers
+  and a pre-trained ResNet.
 - See also [anatomy of a neural network](neural-network-anatomy.md) for the design choices the code
   expresses.

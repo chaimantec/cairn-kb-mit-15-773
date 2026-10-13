@@ -35,8 +35,9 @@ printed slips, which slides were rendered and why) goes in
   04–10, 10.5, 11) against 11 videos. Before reading a deck, find which slides a video actually
   covers: compare the transcript's first and last minutes with deck titles and the text layer.
   Name files by the **video** number (`01-…`), and say in the transcript header which deck slides
-  the recording spans. Catalog video titles can overstate coverage: video 1's mentions "Training
-  Deep NNs", which it never reaches.
+  the recording spans. Catalog video titles misstate coverage in both directions: video 1's
+  mentions "Training Deep NNs", which it never reaches, and video 4's omits the CNNs that fill its
+  first hour.
 - **A lecture can own a companion deck it never presents** (lecture 2's handwritten backprop
   example). Give it its own slide file, `NN-<companion>.md`, with its own `## Slide 1..N`
   headings. Render its pages into the lecture's single image directory with a distinct prefix
@@ -55,7 +56,9 @@ printed slips, which slides were rendered and why) goes in
   matrices). Compare figure descriptions across a lecture's decks, and do not render the unmarked
   copy.
 - **The Colab notebooks are not on OCW.** Describe a lecture's code from the narration, naming only
-  the calls and arguments the lecturer says, and say so on the page.
+  the calls and arguments the lecturer says, and say so on the page. The decks' "Colab" links carry
+  their targets only in the PDF's link annotations: write that the target is not printed, and do not
+  record it.
 - **Slide N = PDF page N** in every heading and citation, unless a deck's header says otherwise.
   These decks print PowerPoint numbers bottom-right, but some pages carry visibly printed **stale
   static numbers** from an older version of the deck (lecture 1's page 13 prints "20"), and a
@@ -109,6 +112,7 @@ What was rendered and why goes in `BUILD_LOG.md`.
 | 1 Introduction to Neural Networks and Deep Learning | 45 of 110 pages | rendered from `mit15_773_s24_lec01.pdf` |
 | 2 Training Deep Neural Networks | 18 | 15 of `mit15_773_s24_lec02.pdf`'s 95 pages as `slide-N`, and 3 of the backprop example's 14 as `backprop-N` |
 | 3 Keras and TensorFlow, Training the Heart-Disease Model, and Computer Vision Basics | 13 | 9 of `mit15_773_s24_lec03a.pdf`'s 44 pages as `3a-N`, and 4 of `mit15_773_s24_lec03b.pdf`'s 29 as `3b-N` |
+| 4 Convolutional Neural Networks and Transfer Learning | 16 of 84 pages | rendered from `mit15_773_s24_lec04.pdf` |
 
 ## Conventions
 
@@ -121,7 +125,9 @@ What was rendered and why goes in `BUILD_LOG.md`.
 - **Cite everything.** Claims trace back to a transcript timestamp or a slide.
 - **Never invent course content.** If the transcript is unclear at some point,
   say so on the page. Do not fill the gap from outside knowledge — the chat
-  presents these pages as authoritative material from this course.
+  presents these pages as authoritative material from this course. Arithmetic the lecturer
+  invites (a parameter count to hand-check) may be worked on the page, labelled as the page's own
+  and naming every assumption the lecture does not state.
 - **Prose over fragments.** The chat quotes these pages to learners; bullet
   fragments quote badly.
 - **Math in LaTeX**: `$...$` inline, `$$...$$` displayed. Renders both in

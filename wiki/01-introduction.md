@@ -529,8 +529,8 @@ A network in which data flows only from left to right is a **feedforward neural 
 contrast to **recurrent networks**. The course skips recurrent networks because transformers have
 proven more capable (≈55:02; slide 108). The arrangement of neurons into layers, the activation
 functions and the connections between layers are together called the network's **architecture**.
-Transformers, the course's main focus later, and convolutional networks, coming soon for computer
-vision, are particular architectures (≈55:02–55:49). Slide 109 restates the design rule: inputs and
+Transformers, the course's main focus later, and convolutional networks, the subject of
+[lecture 4](04-cnns-and-transfer-learning.md), are particular architectures (≈55:02–55:49). Slide 109 restates the design rule: inputs and
 outputs are given, and you choose the hidden layers, the neurons per layer and the activations.
 
 ![Slide 108 — Summary: A Deep Neural Network](../raw/images/01-introduction/slide-108.jpg)
