@@ -14,8 +14,28 @@ Images are opted in: every figure-bearing slide, rendered per Step 1c, never a s
 This file holds **open work only**. When a run is committed and pushed, its finished lines move
 to [`BUILD_LOG.md`](BUILD_LOG.md).
 
+## Lecture 7 run (2026-10-14)
+
+Video 7 (`IeF7aATDaw4`, 76 min) presents deck 07 (`mit15_773_s24_lec07.pdf`, 78 pages; page 78 is
+OCW's end page): it opens on slide 2 (transformers across domains) and covers slides 2–76, with
+the Colab from ≈1:02:34, a return to slides 72–76 at ≈1:08:01, and the Colab again to the end
+(the model is set up but not trained). Numbering by corner spans: pages 2–9 print 2–9, pages 10–77
+print N+1 (a hidden slide); headings use the PDF page. Text-layer OCW notices: slides 23, 51, 64,
+65, 66, 67, 68, 69 ("Attention is All You Need" figures, Vaswani et al.); 65–69 share one raster.
+
+- [x] 07 DL for Natural Language – Transformers — video IeF7aATDaw4 → raw/transcripts/07-transformers.md (+ original/)
+- [x] Slides 07 → raw/slides/07-transformers.md (Sonnet, two agents; slide 17's hidden "see" noted)
+- [x] 07 figure check on rendered images (33, 42, 51, 53, 61, 64, 75 and slide 1; slide 59's "sit" → "sat" added, slide 51's line description cut back to what the render settles)
+- [ ] raw/images/07-transformers/ — render, embed in slide file and wiki
+- [ ] wiki/07-transformers.md
+- [ ] Topic pages for lecture 7
+- [ ] INDEX.md — lecture 7 entries, coverage and image sentences
+- [ ] kb.json, BUILD_LOG.md lecture 7 record, AGENTS.md image row, LICENSE.md attribution, sources.md
+- [ ] verify_kb.py clean (with check_math and --github), review section read
+- [ ] Commit and push
+- [ ] Move this section to BUILD_LOG.md
+
 ## Transcripts
-- [ ] 07 DL for Natural Language – Transformers — video IeF7aATDaw4
 - [ ] 08 DL for Natural Language – Transformers, Self-Supervised Learning — video v-lHsawHyaI
 - [ ] 09 Generative AI – LLMs and RAG — video KGDe1QvfKJ8
 - [ ] 10 Generative AI – Adapting LLMs with PEFT — video d-tngNnaG4U
