@@ -5,9 +5,9 @@ Catalog id `5935cc5f-a533-4ded-a08f-6fac61ded777`. Course site:
 `lists/lecture-notes/` as `mit15_773_s24_lecNN.pdf`, and their numbering does **not** follow the
 11 videos: there are decks 01, 02, 02-backprop-example, 03a, 03b, 04–10, 10.5 and 11. Work out
 which deck(s) each video covers from the transcript before reading anything. Video 1 covers deck 01
-only (it ends on deck 01's last slide; deck 02 opens video 2). Videos 1–4 are built (see BUILD_LOG.md);
-video 4 ended on deck 04's slide 81, so deck 05 (its page 1 is a roadmap of the NLP lectures) should
-open video 5. Confirm from the transcript.
+only (it ends on deck 01's last slide; deck 02 opens video 2). Videos 1–5 are built (see BUILD_LOG.md);
+video 5 presented deck 05 whole (slides 1–66), so deck 06 (Embeddings) should open video 6. Confirm
+from the transcript.
 
 Images are opted in: every figure-bearing slide, rendered per Step 1c, never a slide with an OCW notice.
 
