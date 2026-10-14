@@ -36,6 +36,6 @@ deck 09 (slides 58–60); dropout is finally explained (≈1:11:38–1:14:44) wi
 - [x] Topic pages for lecture 5 (new NLP pages; extend dropout, keras, overfitting, multiclass); correct pages that defer dropout
 - [x] INDEX.md — lecture 5 entries, coverage and image sentences
 - [x] kb.json, BUILD_LOG.md lecture 5 record, AGENTS.md image row, LICENSE.md attribution, sources.md
-- [ ] verify_kb.py clean (with check_math), review section read
-- [ ] Commit and push
+- [x] verify_kb.py clean (with check_math), review section read
+- [x] Commit and push
 - [ ] Move this section to BUILD_LOG.md

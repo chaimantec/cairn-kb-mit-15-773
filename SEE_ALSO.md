@@ -33,7 +33,12 @@ Pass the **repo URL** as the `kb` argument to `kb_read` / `kb_list`. The
   KB: `https://github.com/chaimantec/cairn-kb-cs224n` — pass this as `kb`.
 
   A second, more technical treatment of the language half of 15.773 (embeddings, transformers,
-  pretraining, fine-tuning), which this KB does not cover yet. For lecture 1's material it has an
+  pretraining, fine-tuning), which this KB covers only as far as lecture 5's bag of words. For
+  lecture 5, its
+  [subword modeling](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/wiki/subword-modeling.md)
+  page explains the byte-pair encoding that lecture 5 defers, and its
+  [lecture 1](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/wiki/01-intro-and-word-vectors.md)
+  page explains why one-hot word vectors fall short. For lecture 1's material it has an
   [activation functions](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/wiki/activation-functions.md)
   page and derives neural-network gradients by hand. Its examples come from NLP.
   Start at [INDEX](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/INDEX.md).
