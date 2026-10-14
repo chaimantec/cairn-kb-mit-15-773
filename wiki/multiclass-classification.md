@@ -38,6 +38,15 @@ Why not train the network to output exactly 1 for the right class and 0 for the 
 force the network to give you 1's or 0's. It's going to produce what it's going to produce." The best
 you can do is to tame its output into the range you want (≈1:10:33–1:11:19).
 
+## Why softmax, and not the maximum?
+
+In [lecture 5](05-text-vectorization-and-bag-of-words.md) a student asks why a classifier cannot just output one number
+per class and take the largest (≈43:35–45:08). The maximum of a bunch of numbers "is not very friendly
+for differentiation". The network's output goes through a loss such as cross-entropy and then through
+backpropagation, which "is just differentiation" and needs everything in it to have well-behaved
+gradients. The max function does not, "which is why we have a soft version of it, softmax". It is
+the same reason the course minimizes cross-entropy rather than maximizing accuracy directly.
+
 ## Softmax and language models
 
 When GPT-4 emits each word ("it's actually a token, but we'll get to that later"), it does so through a
@@ -55,7 +64,9 @@ with a single 1 in the class's position. A binary label is simply 1 or 0.
 The Keras cross-entropy loss must match the encoding (deck 3B, slides 23–26; ≈1:12:04–1:12:51):
 `binary_crossentropy` for 1/0 labels, `sparse_categorical_crossentropy` for integer labels, and
 `categorical_crossentropy` for one-hot labels. "These are all equivalent things"; the choice depends
-only on how the data happens to be encoded. Fashion MNIST comes sparse encoded. Categorical
+only on how the data happens to be encoded. Fashion MNIST comes sparse encoded. Lecture 5's song genres are one-hot encoded with
+pandas' `get_dummies`, so its three-way softmax is trained with plain `categorical_crossentropy`
+([lecture 5](05-text-vectorization-and-bag-of-words.md) ≈54:25, ≈1:02:10). Categorical
 cross-entropy generalizes binary cross-entropy with "roughly the same" intuition, and the lecture does
 not give its formula. See [loss functions](loss-functions.md).
 
@@ -77,4 +88,6 @@ cross-entropy to match the labels.
   output for several probabilities that must sum to 1.
 - [Lecture 3](03-keras-and-vision-basics.md): softmax for Fashion MNIST, the GPT-4 connection, and the
   three cross-entropy losses.
+- [Lecture 5](05-text-vectorization-and-bag-of-words.md): a three-way softmax for hip-hop, rock and pop, and why
+  softmax rather than the maximum.
 - See also [activation functions](activation-functions.md).

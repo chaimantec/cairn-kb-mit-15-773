@@ -37,7 +37,7 @@ Networks from Scratch". Convolutional networks are not reached. They are in the 
 `mit15_773_s24_lec04.pdf`, and open [lecture 4](04-cnns-and-transfer-learning.md). Dropout is also
 only named here; deck 3A's slide on it says "We will cover this in Lecture 4". Lecture 4 uses a
 dropout layer in its transfer-learning Colab but defers the explanation again, to "early next week"
-(lecture 4, ≈1:12:26).
+(lecture 4, ≈1:12:26). [Lecture 5](05-text-vectorization-and-bag-of-words.md) finally explains it (≈1:11:38–1:14:44).
 
 Neither Colab notebook is published on OCW, and neither is in this knowledge base. Everything said
 below about the code follows the lecturer's narration, and only the functions and arguments he names
@@ -144,14 +144,15 @@ honest" (≈15:20–16:06).
 
 **Dropout** (deck 3A, slide 18) is deferred to the next lecture, the first time it will be used
 (≈14:34). In the event, [lecture 4](04-cnns-and-transfer-learning.md) uses a dropout layer without
-explaining it and defers the explanation again (≈1:12:26). The lecturer calls it "a very, very clever strategy" but does not explain it. The slide
+explaining it and defers the explanation again (≈1:12:26). [Lecture 5](05-text-vectorization-and-bag-of-words.md) finally
+explains it (≈1:11:38–1:14:44). The lecturer calls it "a very, very clever strategy" but does not explain it. The slide
 itself says to randomly zero out the output of some of the nodes in a hidden layer, typically 50%,
 implemented as a "dropout layer" in Keras, and draws a dropout layer that passes $u_1$, $u_3$ and
 $u_5$ through and replaces $u_2$ and $u_4$ with 0.0.
 
 ![Deck 3A, slide 18 — Regularization strategy: Dropout](../raw/images/03-keras-and-vision-basics/3a-18.jpg)
 
-*Deck 3A, slide 18 — a dropout layer zeroes some of a hidden layer's outputs (here u2 and u4); lecture 4 uses one but defers the explanation again. [Deck](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec03a.pdf)*
+*Deck 3A, slide 18 — a dropout layer zeroes some of a hidden layer's outputs (here u2 and u4); lecture 4 uses one, and lecture 5 explains it. [Deck](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec03a.pdf)*
 
 See [overfitting and regularization](overfitting-and-regularization.md).
 

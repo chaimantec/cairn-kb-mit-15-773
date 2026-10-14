@@ -90,7 +90,11 @@ and lists the OCW notices from the text layer, and hands both to the agent. The 
 for notices on every page, because some are drawn rather than typed. Each slide entry ends with
 `*Figure: yes — …*` or `*Figure: no*`, which is what image selection reads. Figure descriptions are
 checked against **rendered images** (1400px renders are cheap), never against full PDF page images
-in the parent's context.
+in the parent's context. The text layer can hold text that the rendered page hides under a shape (lecture 5's
+slide 37 table header, slides 22–25's `f(x, w)`): describe what the render shows, and note the
+hidden text. **Do not ask an agent to copy creative text a slide prints**, such as song lyrics or
+poems. Have it describe them instead. A content filter stopped an agent mid-deck when it was told
+to copy lyrics verbatim, and the KB should not reproduce them anyway.
 
 ### Images
 
@@ -113,6 +117,7 @@ What was rendered and why goes in `BUILD_LOG.md`.
 | 2 Training Deep Neural Networks | 18 | 15 of `mit15_773_s24_lec02.pdf`'s 95 pages as `slide-N`, and 3 of the backprop example's 14 as `backprop-N` |
 | 3 Keras and TensorFlow, Training the Heart-Disease Model, and Computer Vision Basics | 13 | 9 of `mit15_773_s24_lec03a.pdf`'s 44 pages as `3a-N`, and 4 of `mit15_773_s24_lec03b.pdf`'s 29 as `3b-N` |
 | 4 Convolutional Neural Networks and Transfer Learning | 16 of 84 pages | rendered from `mit15_773_s24_lec04.pdf` |
+| 5 Text Vectorization and the Bag-of-Words Model | 7 of 67 pages | rendered from `mit15_773_s24_lec05.pdf` |
 
 ## Conventions
 

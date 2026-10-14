@@ -99,3 +99,13 @@ plus the deck:
   but it redraws the ResNet 34 diagram that slides 70–73 mark as excluded. Slide 2's Fashion MNIST
   mosaic is the CC BY-SA image already rendered for lecture 3 (deck 3B, slide 14) and is not
   rendered again.
+- **Lecture 5**, `raw/images/05-text-vectorization-and-bag-of-words/` (7 images: pages 21, 27, 43,
+  47, 50, 56 and 65) from
+  [`mit15_773_s24_lec05.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec05.pdf).
+  The rendered slides are the course's own diagrams; slide 21 quotes Frederick Jelinek. Neither of
+  the deck's two slides with an OCW exclusion notice is rendered: 15 ("various AI logos",
+  respective copyright holders, with the LMSYS Chatbot Arena leaderboard) and 17 (Einstein GPT,
+  Salesforce). Slides 3, 4 and 16 are not rendered either. They print no notice, but they are
+  third-party screenshots and logo graphics of the same kind (Google autocomplete, a ChatGPT
+  exchange, and the Y Combinator W23 Generative AI Landscape credited to Truewind). Slide 63's song
+  lyrics are copyrighted and are neither rendered nor reproduced in the slide file.

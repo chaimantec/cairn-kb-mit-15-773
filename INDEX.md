@@ -8,10 +8,11 @@ transfer learning) and natural language (embeddings, transformers), to generativ
 parameter-efficient fine-tuning, text-to-image diffusion). It deliberately "skips the math" and
 focuses on concepts and on coding models in Keras/TensorFlow.
 
-**Coverage: lectures 1–4 of 11.** This knowledge base is being built lecture by lecture. Only
-lectures 1 to 4 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
-covering lectures 5–11. For anything after lecture 4, including everything on language (text
-vectorization, embeddings, transformers) and generative AI, say that the KB does not cover it yet.
+**Coverage: lectures 1–5 of 11.** This knowledge base is being built lecture by lecture. Only
+lectures 1 to 5 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
+covering lectures 6–11. On language it covers only lecture 5 (text vectorization and the Bag of
+Words model). For anything after lecture 5, including embeddings, transformers, LLMs, byte-pair
+encoding and generative AI, say that the KB does not cover it yet.
 
 ## Contents
 
@@ -51,8 +52,18 @@ vectorization, embeddings, transformers) and generative AI, say that the KB does
   its 302,000 parameters). Then a handbags-vs-shoes classifier from under 100 images per class (87%
   from scratch), data augmentation (Colab only), transfer learning with ImageNet and a headless
   ResNet (100% on the test set, and a live webcam demo), fine-tuning, and the TensorFlow, PyTorch
-  and Hugging Face model hubs. Dropout is used but not explained. The catalog title ("Transfer
-  Learning and Fine-Tuning; Intro to HuggingFace") understates the CNN half.
+  and Hugging Face model hubs. Dropout is used but not explained until lecture 5. The catalog title
+  ("Transfer Learning and Fine-Tuning; Intro to HuggingFace") understates the CNN half.
+- [Lecture 5 — Text Vectorization and the Bag-of-Words Model](wiki/05-text-vectorization-and-bag-of-words.md):
+  the start of the NLP sequence. Why text matters and what "text in, text out" covers (classification,
+  extraction, summarization, generation, code, question-answering, call centers), the arc of NLP from
+  hand-crafted rules through statistics and RNNs to transformers, and text as "fancy regression".
+  Then text vectorization in four steps, STIE (standardize, tokenize, index, encode), the vocabulary,
+  the `<UNK>` token and one-hot vectors; "the cat sat on the mat" as a 6 × 100 table; count and
+  multi-hot encoding, which make the Bag of Words model, and its shortcomings. In Colab, Keras's text
+  vectorization layer and a song-genre classifier (hip-hop, rock or pop) with eight ReLUs and a
+  softmax: 72% on the test set against a 55% baseline, 75% with bigrams. Dropout is finally
+  explained. Byte-pair encoding is deferred to the LLM lectures.
 
 ### Topics
 
@@ -79,8 +90,8 @@ vectorization, embeddings, transformers) and generative AI, say that the KB does
   (minibatch) gradient descent, and epochs, batches and batch size.
 - [Overfitting and regularization](wiki/overfitting-and-regularization.md): training versus validation
   error, the sweet spot, why deep networks need regularization, the validation and test sets, early
-  stopping in practice, dropout (previewed, then used without explanation), and the remedies for
-  little data.
+  stopping in practice, dropout (previewed in lecture 3, used in lecture 4, explained in lecture 5),
+  the remedies for little data, and why a longer input overfits.
 - [Tensors](wiki/tensors.md): ranks 0 to 5 with the course's examples (scalar, vector, table, image,
   video), thinking of a tensor as a list of lower-rank tensors, and the shapes convolutional and
   pooling layers produce.
@@ -100,14 +111,24 @@ vectorization, embeddings, transformers) and generative AI, say that the KB does
 - [Data augmentation](wiki/data-augmentation.md): perturbing images (flips, small rotations, zooms)
   to stretch a small data set without changing what they mean, and the Keras layers for it.
 - [Multi-class classification and softmax](wiki/multiclass-classification.md): why ten sigmoids fail,
-  the softmax formula, its role in GPT-4, sparse versus one-hot labels and the matching Keras loss,
-  and the table of output layers and losses.
+  the softmax formula, why softmax rather than the maximum, its role in GPT-4, sparse versus one-hot
+  labels and the matching Keras loss, and the table of output layers and losses.
 - [Backpropagation](wiki/backpropagation.md): computational graphs and the chain rule, why it is
   fast, GPUs, and the lecturer's handwritten worked example.
 - [Keras](wiki/keras.md): what TensorFlow and Keras each provide, why not PyTorch, the three APIs,
   defining a model with `keras.Input`, `Dense` layers and `keras.Model`, training it with
-  `summary`, `compile`, `fit` and `evaluate`, and the image layers (`Conv2D`, `MaxPool2D`,
-  `Rescaling`, augmentation) and `include_top=False`.
+  `summary`, `compile`, `fit` and `evaluate`, the image layers (`Conv2D`, `MaxPool2D`,
+  `Rescaling`, augmentation) and `include_top=False`, and the text vectorization layer (`adapt`,
+  `get_vocabulary`, `max_tokens`, `ngrams`), `Dropout` and KerasTuner.
+- [Natural language processing](wiki/natural-language-processing.md): why text matters, the range
+  of "text in, text out" applications, how to represent text, the arc of NLP progress from rules to
+  transformers, and the course's NLP roadmap (lectures 5–10).
+- [Text vectorization](wiki/text-vectorization.md): standardize, tokenize, index, encode (STIE);
+  stop words and stemming; the vocabulary and the `<UNK>` token; one-hot vectors and the vocabulary
+  size; choosing `max_tokens`; and Keras's text vectorization layer.
+- [The Bag of Words model](wiki/bag-of-words.md): why a sentence's table is not flattened, count
+  versus multi-hot encoding, what the bag throws away, bigrams and n-grams, and the song-genre
+  results.
 
 ## Raw materials
 
@@ -125,9 +146,9 @@ vectorization, embeddings, transformers) and generative AI, say that the KB does
   deck 3A in [`raw/slides/03-keras-tensorflow.md`](raw/slides/03-keras-tensorflow.md) and deck 3B in
   [`raw/slides/03-vision-basics.md`](raw/slides/03-vision-basics.md). Cite them as "deck 3A, slide N"
   and "deck 3B, slide N". From page 16 on, deck 3B prints a number one higher than the page where it
-  prints one. Lecture 4's deck prints its own page number wherever it prints one. The Colab
-  notebooks of lectures 3 and 4 are not published on OCW; the KB knows them only from the
-  lecturer's narration.
+  prints one. The decks of lectures 4 and 5 print their own page number wherever they print one.
+  The Colab notebooks of lectures 3, 4 and 5 are not published on OCW; the KB knows them only from
+  the lecturer's narration.
 - [`raw/images/`](raw/images/): rendered figure slides (see below).
 - [`sources.md`](sources.md): every course document on the OCW site with its canonical URL. The
   slide PDFs are not in this repo; link to them at their OCW URL.
@@ -137,13 +158,17 @@ vectorization, embeddings, transformers) and generative AI, say that the KB does
 
 ## Images
 
-**Lectures 1, 2, 3 and 4 have images. No other lecture does yet.** Their figure slides are rendered
+**Lectures 1 to 5 have images. No other lecture does yet.** Their figure slides are rendered
 as whole slides and shown inline, both in the lecture pages ([lecture 1](wiki/01-introduction.md),
 [lecture 2](wiki/02-training-deep-nns.md), [lecture 3](wiki/03-keras-and-vision-basics.md),
-[lecture 4](wiki/04-cnns-and-transfer-learning.md)) and under the matching `## Slide N` heading in
+[lecture 4](wiki/04-cnns-and-transfer-learning.md),
+[lecture 5](wiki/05-text-vectorization-and-bag-of-words.md)) and under the matching `## Slide N` heading in
 each slide file. Lecture 1 has 45. Lecture 2 has 18: 15 from its main deck and 3 pages of the
 handwritten backprop example, which are named `backprop-N` rather than `slide-N`. Lecture 3 has 13 in
-one directory: 9 from deck 3A named `3a-N` and 4 from deck 3B named `3b-N`. Lecture 4 has 16. Slides
+one directory: 9 from deck 3A named `3a-N` and 4 from deck 3B named `3b-N`. Lecture 4 has 16.
+Lecture 5 has 7, mostly hand-drawn diagrams (the one-hot table, count and multi-hot encoding, the
+song classifier); its third-party screenshots and logo graphics (slides 3, 4, 15–17) are not
+rendered. Slides
 whose content OCW excludes from its licence (marked `*OCW notice: …*`) are never rendered, and
 neither are slides that reuse an excluded figure without a notice of their own: deck 3A's slides
 24–25 and lecture 4's slide 77, whose ResNet diagram slides 70–73 exclude. So lecture 4 has no image

@@ -102,6 +102,12 @@ procedure, **early stopping**: watch the loss on a validation set and stop when 
 3A, slide 17). A run of 300 epochs on the heart-disease model shows it in practice; see
 [overfitting and regularization](overfitting-and-regularization.md#early-stopping).
 
+How many neurons, then? "It tends to be trial and error", which is how the lecturer chose the eight
+hidden ReLUs of lecture 5's song classifier. To be more systematic, try many values with the Python
+package KerasTuner. Choosing the number of neurons, the activation, the learning rate and the rest
+this way is called **hyperparameter optimization** ([lecture 5](05-text-vectorization-and-bag-of-words.md) ≈45:08,
+≈1:15:30–1:16:18).
+
 ## What training produces
 
 The output of training is the weights, "the crown jewel", the result of a lot of money, time and
@@ -115,3 +121,4 @@ smartness. When Meta made "the weights of Llama 2" available, that is what it pu
   training loop.
 - [Lecture 3](03-keras-and-vision-basics.md): epochs and batches, the checklist, the three data sets, and
   training the heart-disease model in Keras (83.6% test accuracy against a 72.6% baseline).
+- [Lecture 5](05-text-vectorization-and-bag-of-words.md): choosing hyperparameters by trial and error or with KerasTuner.

@@ -118,8 +118,31 @@ model in Colab. The notebooks are not on OCW, so this lists only what the lectur
   go right after the input (≈1:04:44–1:06:15). See [data augmentation](data-augmentation.md).
 - **`include_top=False`** downloads a pre-trained network such as ResNet without its final layer
   (≈1:10:54). See [transfer learning](transfer-learning.md).
-- A **`Dropout`** layer appears in the transfer-learning model, unexplained until a later lecture
-  (≈1:12:26).
+- A **`Dropout`** layer appears in the transfer-learning model, unexplained until
+  [lecture 5](05-text-vectorization-and-bag-of-words.md) (≈1:12:26).
+
+## Layers for text (lecture 5)
+
+[Lecture 5](05-text-vectorization-and-bag-of-words.md) classifies song lyrics in Colab. The notebook is not on OCW, so
+this lists only what the lecturer names.
+
+- **The text vectorization layer** does all four steps of
+  [text vectorization](text-vectorization.md) (standardize, tokenize, index, encode) "as a single,
+  simple layer" (≈45:53). Its settings include the standardization (default: lowercase and strip
+  punctuation), the split (default: whitespace), the output mode (multi-hot in the course's models),
+  **`max_tokens`** (keep only the most frequent tokens; 5,000, then 20,000) and **`ngrams`** (2 for
+  bigrams; 1 is the default) (≈45:53–46:40, ≈56:44, ≈1:06:03).
+- **`adapt`** builds the layer's vocabulary from a list of strings, and **`get_vocabulary`** returns
+  it, `<UNK>` first and the rest sorted by frequency. Calling the adapted layer on text returns its
+  vector (≈46:40–51:19).
+- **One-hot labels** made with pandas' `get_dummies` go with **`categorical_crossentropy`**, not the
+  sparse version (≈54:25, ≈1:02:10).
+- **A validation set you already have** can be passed to `fit` directly, instead of asking Keras to
+  hold out 20% of the training data (≈1:02:10–1:02:57).
+- **`Dropout`** is "just another layer you can insert"; lecture 5 explains it (≈1:08:28,
+  ≈1:11:38). See [overfitting and regularization](overfitting-and-regularization.md#dropout).
+- **KerasTuner**, a Python package, tries many values of hyperparameters such as the number of
+  neurons, the activation and the learning rate (≈1:15:30–1:16:18).
 
 ## Answers from lecture 2
 
@@ -141,5 +164,7 @@ model in Colab. The notebooks are not on OCW, so this lists only what the lectur
   heart-disease model in a Colab.
 - [Lecture 4](04-cnns-and-transfer-learning.md): `Conv2D`, `MaxPool2D`, `Rescaling`, augmentation layers
   and a pre-trained ResNet.
+- [Lecture 5](05-text-vectorization-and-bag-of-words.md): the text vectorization layer, `adapt`, `get_vocabulary`,
+  `ngrams`, and `Dropout`.
 - See also [anatomy of a neural network](neural-network-anatomy.md) for the design choices the code
   expresses.

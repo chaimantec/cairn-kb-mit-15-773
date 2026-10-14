@@ -1,0 +1,113 @@
+# Text vectorization
+
+A network only takes numbers, so before a sentence can go into one it has to become a vector. The
+course calls the process **text vectorization**: "we are essentially taking text and creating vectors
+of numbers out of them" ([lecture 5](05-text-vectorization-and-bag-of-words.md), slide 27; ≈13:57).
+It has four steps, which the lecturer keeps in his head as **STIE**: Standardize, Tokenize, Index,
+Encode.
+
+![Slide 27: four dark red boxes joined by arrows — Standardize, Tokenize, Index, Encode — over the caption "This process is called text vectorization".](../raw/images/05-text-vectorization-and-bag-of-words/slide-27.png)
+
+*Lecture 5, slide 27 — the four steps of text vectorization. [Deck](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec05.pdf)*
+
+The first two steps run over the **training corpus**, the list of text documents the system learns
+from, "a big list of strings" whether each is a novel or a sentence. The last two work only on the
+vocabulary those steps produce (slides 28, 34–35; ≈14:46–15:32, ≈23:19).
+
+## 1. Standardize
+
+Standardization removes differences that should not matter (slide 29; ≈15:32–18:39):
+
+| Standardization | How often |
+| --- | --- |
+| Strip capitalization, and often punctuation and accents | almost always |
+| Strip stop words such as "a", "the", "it" | often |
+| Stemming: map ate, eaten, eating to one form, "eats" | sometimes |
+
+The reason is the same as in vision. A convolutional network should recognize a vertical line
+wherever it appears instead of learning separately that two lines are the same, "because you would
+have wasted valuable capacity". Lowercasing is the easiest way to tell the model that the upper- and
+lowercase versions of a word "are not different. They're actually the same", and stemming does the
+same for a word's forms. Stop words go for a different reason: they probably do not affect, for
+instance, the sentiment of a movie review. In Keras the default standardization only lowercases and
+strips punctuation, and the lecturer's current practice is not to bother with stemming or stop words
+at all: "It's going to work well enough" (≈59:51–1:00:37).
+
+## 2. Tokenize
+
+Tokenization splits standardized text into **tokens**. The common default makes each word a token by
+splitting on whitespace; how many consecutive words make up a token is a design choice (slides
+31–32; ≈19:24–20:11). Taking adjacent pairs as well gives **bigrams**, and in general **n-grams**; see
+[the Bag of Words model](bag-of-words.md#n-grams-putting-some-order-back).
+
+Splitting on spaces loses word order, splits compound words and names (Puerto Vallarta,
+father-in-law), fails in languages that do not put spaces between words, and copes badly with
+languages that have very long words (≈20:11–22:34). It is good enough for many tasks, text
+classification among them, but not for generating text (slide 33; ≈22:34–23:19). ChatGPT writes with
+punctuation and capitals, so neither was stripped, and it will use a word you have just made up.
+LLMs therefore use other schemes, such as **byte-pair encoding**, which lecture 5 defers to the LLM
+lectures (≈23:19, ≈1:14:44); its slides are deck 09's 58–60.
+
+## 3. Index: the vocabulary and `<UNK>`
+
+The distinct tokens found in the training corpus form the **vocabulary**. **Indexing** gives each one
+a unique integer (slides 34–36; ≈23:19–24:52). Slide 36 numbers an English vocabulary from 1 ("a") to
+50,000 ("zebra"), the figure chosen because the GPT family uses about 50,000 tokens.
+
+A special token, **`<UNK>`** for "unknown", gets the integer 0. A word that arrives later and is not
+in the vocabulary is replaced by `<UNK>`. That happens whenever a vocabulary is cut down to its most
+frequent words: drop "Hamlet" as too rare, and "Hamlet was a bad prince" reaches the model with
+`<UNK>` in its place. Every unseen word becomes the same `<UNK>`, so Romeo, Juliet and Hamlet become
+indistinguishable (≈37:25–38:55). LLMs avoid this with a tokenization that "can handle anything you
+throw at it" (≈38:55).
+
+## 4. Encode: one-hot vectors
+
+**Encoding** maps each integer to a vector, and the vectors of different words should look different.
+The simplest way is **one-hot encoding**, treating the tokens as the levels of a categorical variable:
+a vector of zeros with a single 1 at the token's index, so `<UNK>` has a 1 in the first position and
+"a" in the second (slides 37–43; ≈24:52–27:54). The length of the vector is the number of distinct
+tokens in the training corpus plus one for `<UNK>`, called the **vocabulary size**.
+
+![Slide 43: the one-hot column vectors for <UNK> (1, 0, 0, …, 0) and "a" (0, 1, 0, …, 0), with the bullets "Dimension of encoding vector = # of distinct tokens in the text + one for <UNK>" and "This is called the vocabulary size".](../raw/images/05-text-vectorization-and-bag-of-words/slide-43.png)
+
+*Lecture 5, slide 43 — one-hot vectors, one per vocabulary entry, as long as the vocabulary. [Deck](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec05.pdf)*
+
+Run a sentence through all four steps and it becomes a table with one one-hot row per token: "the cat
+sat on the mat" against a 100-entry vocabulary is a $6 \times 100$ table (slides 47–50). Turning that
+table into a single vector is the job of [the Bag of Words model](bag-of-words.md). The next lecture
+replaces one-hot vectors with **embeddings**, which the lecturer says "form the core atomic unit of
+all modern natural language processing" (lecture 5, ≈0:00).
+
+## How big a vocabulary?
+
+The vocabulary size is the input length, and the first layer has roughly input size times hidden
+size weights. A vocabulary ten times as long means ten times as many parameters, and with a finite
+amount of data, more parameters overfit (≈57:31–58:17; slide 61). English has roughly 500,000 words,
+but the 50,000 most frequent cover "just about everything you're going to see, ever" (≈36:39–37:25).
+So keep only the most frequent words. To choose the cutoff, build the vocabulary without one, look at
+how often the rarest words occur, and cut where the frequency falls off dramatically
+(≈1:02:57–1:03:44).
+
+## In Keras
+
+Keras implements all four steps "as a single, simple layer called the text vectorization layer"
+(≈45:53). Lecture 5's Colab is not on OCW; what follows is what the lecturer names.
+
+- **Settings.** The standardization (default: lowercase and strip punctuation), the split (default:
+  whitespace), the output mode (multi-hot in the course's models), **`max_tokens`** (keep only the
+  most frequent tokens: 5,000 for single words, 20,000 with bigrams) and **`ngrams`** (1 by default;
+  2 for bigrams).
+- **`adapt`** builds the vocabulary from a training corpus, a list of strings. Afterwards "the
+  training corpus you fed it is forgotten", and only the vocabulary survives (≈46:40–47:28, ≈49:45).
+- **`get_vocabulary`** returns the vocabulary, with `<UNK>` first and the other tokens sorted by
+  frequency. That ordering is what makes `max_tokens` easy (≈47:28–49:45).
+- **Calling the layer** on a sentence returns its vector, as long as the vocabulary
+  (≈50:31–52:07).
+
+## Where this comes up
+
+- [Lecture 5](05-text-vectorization-and-bag-of-words.md): STIE, one-hot encoding, `<UNK>` and the
+  Keras layer, used to classify song lyrics.
+- See also [natural language processing](natural-language-processing.md) and
+  [Keras](keras.md).

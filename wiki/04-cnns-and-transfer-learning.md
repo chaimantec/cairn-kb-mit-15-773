@@ -610,7 +610,7 @@ stored. Each of the 98 training images is now a **$7 \times 7 \times 2{,}048$** 
 The new model takes that tensor as its input, flattens it immediately, and passes it through a
 dense layer of 256 ReLU neurons, a `Dropout` layer and a sigmoid output (≈1:12:26). Dropout is
 used here without explanation, deferred again to "early next week": "Don't worry about this detail
-for the moment." It is trained for 10 epochs and finishes almost at once, because ResNet's outputs
+for the moment." [Lecture 5](05-text-vectorization-and-bag-of-words.md) explains it (≈1:11:38–1:14:44). It is trained for 10 epochs and finishes almost at once, because ResNet's outputs
 were computed once up front and are not recomputed every epoch (≈1:13:14). The training curves
 show "something bad" in the tenth epoch, so perhaps it should have stopped at nine. On the test set
 it scores **100%** accuracy: "It's unbelievable" (≈1:13:14–1:14:01).

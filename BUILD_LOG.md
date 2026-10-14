@@ -8,8 +8,8 @@ needed to answer questions**: every fact a learner needs is on the wiki page,
 slide file or transcript it concerns. The rules every build follows are in
 [`AGENTS.md`](AGENTS.md).
 
-One section per run: lectures 1, 2 and 3 (built 2026-10-11), lecture 4 (2026-10-14), and at the
-end the ticked build checklists of those runs, moved from `TODO.md`.
+One section per run: lectures 1, 2 and 3 (built 2026-10-11), lecture 4 (2026-10-14), lecture 5
+(2026-10-14), and at the end the ticked build checklists of those runs, moved from `TODO.md`.
 
 ## Lecture 1 — Introduction to Neural Networks and Deep Learning
 
@@ -275,6 +275,84 @@ were corrected: lecture 4 uses a dropout layer but defers its explanation again,
 2 × 2 kernels, no padding and pooling rounding down), labelled as the page's own arithmetic.
 `SEE_ALSO.md`'s 6.7960 entry was updated to that KB's current coverage (lectures 1–19) and now
 points to its convolution, transfer-learning and data-augmentation pages.
+
+## Lecture 5 — Text Vectorization and the Bag-of-Words Model
+
+Built 2026-10-14. Video `duBLxHjaecQ` (77 min); deck `mit15_773_s24_lec05.pdf`, 67 pages.
+
+**Video ↔ deck.** The recording presents deck 05 whole: slide 1 (the roadmap of the NLP lectures,
+0:00) to slide 66 (Colab, ≈45:08), then runs the Colab to the end (≈45:53–1:16:18). Slide 67 is
+OCW's end page. This confirms lecture 4's note that deck 05 opens video 5. The catalog title
+("Deep Learning for Natural Language – The Basics") is accurate. Material outside the deck: the
+Gemini 1.5 Pro aside (≈6:57–9:19); the song classifier drawn on the board (slide 64 says
+"Blackboard"; slide 65 is the drawing); dropout, explained at ≈1:11:38–1:14:44 with no deck-05
+slide (its slide is deck 3A's 18); the whole Colab. Byte-pair encoding is promised "at the end"
+(≈23:19) and deferred (≈1:14:44); its slides are deck 09's 58–60, found by a text-layer grep of all
+decks.
+
+**Numbering.** Slide N = PDF page N, 1:1. `slide_number_map.py` read it correctly and `--verify`
+passes. Pages 1, 15–17, 19–21 and 67 print no number; the corner spans are otherwise clean.
+
+**OCW notices (2):** 15 ("Various AI logos © respective copyright holders", with the LMSYS Chatbot
+Arena leaderboard) and 17 (Einstein GPT © Salesforce). The agents found no drawn notices. Unmarked
+third-party content: slide 3 (Google autocomplete screenshots), 4 (a ChatGPT exchange), 16 (the
+Y Combinator W23 Generative AI Landscape, "Created by your friends at Truewind"), and 63 (eight
+lines of song lyrics). The Colab link on slide 66 is a PDF link annotation; its target is not
+recorded.
+
+**Transcription.** Sonnet, two agents in parallel (pages 1–33 and 34–67) writing scratch files that
+the parent spliced under a hand-written header. The second agent was stopped by an output content
+filter after writing slides 34–50, almost certainly on slide 63's lyrics, which its prompt had
+said it could copy from the text layer. A third agent wrote 51–67 with the instruction to describe
+the lyrics and not reproduce them. Nothing was lost: the first two agents appended chunk by chunk.
+The parent changed slide 1's figure line to "no" (a logo only), and added notes on text the
+rendered page hides: slide 37's table header ("Token, Integer, Encoding"), its `<UNK> 0*` row and
+"aardvark", and the $f(x, w)$ inside slides 22–25's box. Both exist only in the text layer.
+
+**Transcript edit.** OCW human captions, `AUDIENCE:` labels and `[MUTED]`, done inline in the parent
+as a scripted list. Restorations (11 replacements): "routed" → routing (4:36, slide 7); "marketing,
+copy sales, emails" → marketing copy, sales emails (5:23, slide 10); "the cats are on the mat" → the
+cat sat on the mat (32:45); "order them" → OR them (33:31, slide 57); "text vectorization array" and
+"textualization layer" → text vectorization layer (45:53, 46:40); "singlular" (41:59); three
+"one hot-encoded" hyphenations (54:25); "Jeff" → Geoff Hinton (1:13:58, as in lecture 3's captions).
+`[Ed:]` notes at 8:33 ("Kalimpong", the language's name as captioned and not in the deck), 20:11,
+27:09 ("zero-hot"), 27:54, 34:18 ("two 2s" for two 1s), 37:25 ("the other 50,000" for about
+450,000), 59:51 ("D-E-A"), 1:01:24 (twice: "Keras' write input"; "a 50 max_tokens long vector"),
+1:03:44 (baseline "around 50%" against 55% at 53:38), 1:06:51 ("are going to show up", where the sense
+needs "are not") and 1:16:18 ("Keras" for KerasTuner). Checks: 99 timestamps identical, number
+inventory identical once notes are removed, paragraph word ratios 1.000–1.007.
+
+**Figure check.** Done in the parent on 1400px renders: slides 21, 37, 40, 50, 56 and 65. All six
+agree with the slide file. Slide 37 first looked wrong, because the text layer prints a header and
+an `<UNK>` row that the agent omitted, but the render shows them hidden; the agent had described
+the visible page correctly. Slide 56's count and multi-hot rows were checked cell by cell (1s under
+cat, mat, on and sat; 2 and 1 under "the"). The lecturer's 40,008 parameters (5,000 × 8 + 8) are
+consistent with the narration.
+
+**Printed slips.** Slides 19–21 print "Hand-crated". Slide 29 lists "eaten" twice. Slides 49, 51
+and 52 call the sentence's table 6 x 100 and slides 53–55 and 57 call it 8 x 100. Slide 7's box
+says "LLM" where slides 8–14 say "NLP". Spoken: the rock baseline is 55% at 53:38 and "around 50%"
+at 1:03:44.
+
+**Images: 7 of 67 pages.** Rendered: 21, 27, 43, 47, 50, 56, 65 (0.71 MB; 3 PNG, 4 JPEG). Not
+rendered: the two noticed slides (15, 17); slides 3, 4 and 16, unmarked third-party screenshots and
+logo graphics of the kind OCW excluded on 15 and 17, whose text the slide file transcribes; slide 63
+(copyrighted lyrics, described only); the single-box diagrams 6–14 and 22–25; build steps
+superseded by a rendered slide (19–20 → 21; 28, 34, 35, 44 → 27; 29–32 and 36–42, whose pipeline
+icon is 27's and whose vectors are 43's; 46, 48, 49 → 47; 51, 52 → 50); slides 30, 32, 36 and 37,
+examples and tables the slide file reproduces exactly; and text-only slides and dividers. All seven
+are in the wiki lecture page, hand-placed with hand-written captions; slides 21, 27, 43 and 56 also
+appear on the new topic pages.
+
+**Wiki.** A lecture page and three new topic pages (natural-language-processing,
+text-vectorization, bag-of-words). Extended: overfitting-and-regularization (dropout explained; a
+short input keeps parameters down), keras (layers for text), multiclass-classification (softmax
+rather than the maximum), data-preprocessing, training-neural-networks (hyperparameter choice,
+KerasTuner), loss-functions, activation-functions and representation-learning. Sentences in
+lectures 1, 3 and 4 and INDEX.md that left dropout unexplained now point to lecture 5. The lecture
+page totals both song classifiers' parameters (40,035 and 160,035) as its own arithmetic and names
+its assumptions. `sources.md`'s deck table had kept decks 3A, 3B and 04 "provisional" after lectures
+3 and 4 confirmed them; those rows and the paragraph above them were corrected with deck 05's.
 
 ## Build checklists, lectures 1–4
 

@@ -440,7 +440,7 @@ Three follow-up questions (≈46:27–48:46):
   number of layers between passes over the data during training is not done, because of how the
   optimization works. The closest thing is **dropout**, which randomly drops some nodes of a layer
   on each pass through the network. It is "a very effective technique to prevent overfitting" and
-  comes later.
+  comes later; [lecture 5](05-text-vectorization-and-bag-of-words.md) explains it.
 - **Who sets the weights?** The network does. Training data, a **loss function** and an optimization
   algorithm let the network find the weights that minimize prediction error. "We only have to set
   it up, sit back — often for many hours — and watch it do its thing." The details are in [lecture 2](02-training-deep-nns.md).

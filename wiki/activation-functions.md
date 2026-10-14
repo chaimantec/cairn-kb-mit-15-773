@@ -68,6 +68,10 @@ Lecture 2 also cites "a mountain of empirical evidence" for ReLU as the hidden-l
 ## In Keras
 
 The activation is an argument of each layer, as in `keras.layers.Dense(16, activation="relu")`.
+The name is apt. Taking the largest output directly would not work in training, because the maximum
+"is not very friendly for differentiation" and backpropagation needs well-behaved gradients; the
+softmax is "a soft version of it" ([lecture 5](05-text-vectorization-and-bag-of-words.md) ≈43:35–45:08).
+
 Custom activation functions can be defined. Asked what Keras uses when none is given, the lecturer
 was not sure (lecture 2 ≈17:08–18:39). See [Keras](keras.md).
 
@@ -78,3 +82,5 @@ was not sure (lecture 2 ≈17:08–18:39). See [Keras](keras.md).
   prediction, and why the ReLU's gradient makes it a good default.
 - [Lecture 3](03-keras-and-vision-basics.md): softmax for Fashion MNIST's ten classes, and 256 ReLU
   hidden units.
+- [Lecture 5](05-text-vectorization-and-bag-of-words.md): eight ReLU hidden units and a three-way softmax for song genres,
+  and softmax as a differentiable maximum.

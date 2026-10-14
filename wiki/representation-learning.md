@@ -59,8 +59,19 @@ from fewer than 100 examples each, with 100% test accuracy, because its inputs a
 level of abstraction (slide 75; ≈1:13:14–1:14:01). This is the representation-learning idea of
 lecture 1 put to work. See [transfer learning](transfer-learning.md).
 
+## Representing text
+
+For language the question returns in its sharpest form. An image can go in as its pixel values, but
+"when a sentence comes in, like, 'I love deep learning', what do you do? How do you actually represent
+it?" ([lecture 5](05-text-vectorization-and-bag-of-words.md), slides 22–25; ≈12:23–13:57). Lecture 5's answer involves no
+learning: one-hot vectors from a vocabulary, combined into a [bag of words](bag-of-words.md). The next
+lecture takes up **embeddings**, which the lecturer says "form the core atomic unit of all modern
+natural language processing, and for that matter, vision processing as well" (lecture 5 ≈0:00).
+
 ## Where this comes up
 
 - [Lecture 1](01-introduction.md): why representations matter, and how hidden layers learn them.
 - [Lecture 4](04-cnns-and-transfer-learning.md): hierarchical features in a CNN, and headless ResNet's
   output as a reusable representation.
+- [Lecture 5](05-text-vectorization-and-bag-of-words.md): how to represent text, and one-hot vectors and the bag of words as
+  the first answer.

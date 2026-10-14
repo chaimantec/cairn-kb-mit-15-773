@@ -98,9 +98,16 @@ can keep improving while the validation loss rises. The lecturer calls binary cr
 proxy, but an imperfect proxy for the thing we actually care about in the real world, which is error
 rate and accuracy" (≈56:36).
 
+Why not optimize accuracy directly, then? For the same reason a classifier uses a softmax rather than
+the maximum of its outputs: backpropagation "is just differentiation" and needs functions with
+well-behaved gradients, and accuracy, like the maximum, is not one ([lecture 5](05-text-vectorization-and-bag-of-words.md)
+≈43:35–45:08).
+
 ## Where this comes up
 
 - [Lecture 2](02-training-deep-nns.md): what a loss is, MSE, and binary cross-entropy built step by
   step for the heart-disease model.
 - [Lecture 3](03-keras-and-vision-basics.md): categorical cross-entropy and the Keras losses for each
   label encoding, the output-layer/loss table, and loss versus accuracy.
+- [Lecture 5](05-text-vectorization-and-bag-of-words.md): `categorical_crossentropy` for one-hot genre labels, and why not
+  maximize accuracy directly.

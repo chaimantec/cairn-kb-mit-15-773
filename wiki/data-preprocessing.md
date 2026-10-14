@@ -16,7 +16,8 @@ first check whether the classes are balanced. Here 72.6% of the patients do not 
 That gives a **baseline model**: predict the majority class for everyone. It is right 72.6% of the time,
 "and so any fancy model we build, it's got to do better than this" (≈33:58–34:43). The trained network
 later scores 83.6% on the test set (≈57:22). For Fashion MNIST's ten balanced classes the same baseline
-gets 10% (≈1:04:16–1:05:07).
+gets 10% (≈1:04:16–1:05:07). In [lecture 5](05-text-vectorization-and-bag-of-words.md)'s song-genre data, rock is 55%
+of the songs, so always guessing rock is right 55% of the time (≈53:38).
 
 ## Categorical inputs: one-hot encoding
 
@@ -57,7 +58,8 @@ the 29 inputs of the network, with vectors of 242 and 61 targets (≈39:25–40:
 ## Labels for multi-class problems
 
 Labels for several classes can be **sparse encoded**, as integers, or **one-hot encoded**, and the Keras
-loss has to match the encoding (deck 3B, slides 20–26). See
+loss has to match the encoding (deck 3B, slides 20–26). Lecture 5 one-hot encodes its genre labels with
+pandas' `get_dummies` (≈54:25). See
 [multi-class classification and softmax](multiclass-classification.md).
 
 ## Randomness and reproducibility
@@ -67,11 +69,23 @@ batches, and dropout. To let someone else reproduce your results, set a random s
 `set_random_seed`. Even then "bitwise reproducibility" is not guaranteed, because of hardware and device
 drivers (≈30:57–32:27).
 
+Asked whether rerunning the same notebook gives the same accuracy, the lecturer says roughly, with
+minute differences from hardware and device drivers; on his own machine it also depends on what else
+has run in the notebook ([lecture 5](05-text-vectorization-and-bag-of-words.md) ≈1:09:13–1:10:00).
+
 The preprocessing done here in Pandas can also be done inside Keras, which has preprocessing layers for
 it (≈57:22).
+
+## Text
+
+Text has to be turned into numbers before a network can use it, by standardizing, tokenizing,
+indexing and encoding it. See [text vectorization](text-vectorization.md) and
+[the Bag of Words model](bag-of-words.md).
 
 ## Where this comes up
 
 - [Lecture 2](02-training-deep-nns.md): the heart-disease data, and one-hot encoding to 29 inputs.
 - [Lecture 3](03-keras-and-vision-basics.md): the heart-disease Colab's preprocessing, and label
   encodings for Fashion MNIST.
+- [Lecture 5](05-text-vectorization-and-bag-of-words.md): the song-genre baseline, one-hot labels with `get_dummies`, and
+  text vectorization.

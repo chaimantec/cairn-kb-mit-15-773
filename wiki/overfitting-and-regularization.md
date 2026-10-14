@@ -70,8 +70,23 @@ is implemented as a "dropout layer" in Keras (deck 3A, slide 18). Lecture 3 only
 very, very clever strategy", and defers it to lecture 4, the first time it is used (≈14:34). Lecture 4
 does put a `Dropout` layer into its transfer-learning model, between the 256-unit hidden layer and the
 sigmoid output, but defers the explanation again, to "early next week": "Don't worry about this detail
-for the moment" ([lecture 4](04-cnns-and-transfer-learning.md) ≈1:12:26). Dropout is also a source of
-randomness in training, which matters for reproducibility (lecture 3 ≈31:42).
+for the moment" ([lecture 4](04-cnns-and-transfer-learning.md) ≈1:12:26).
+
+[Lecture 5](05-text-vectorization-and-bag-of-words.md) finally explains it, without a slide (≈1:11:38–1:14:44). A dropout layer takes
+each number coming in from the previous layer and randomly replaces it with zero: "toss a coin. If the
+coin comes up heads, zero. If it comes up tails, let it through." Overfitting happens, in the
+lecturer's words, because the neurons of a layer "collude with each other": spurious correlations in
+the data get picked up by neurons becoming correlated themselves. Dropping neurons at random means "no
+neuron can depend on another neuron being available", which breaks the collusion. He passes on, as
+possibly apocryphal, the story that Geoff Hinton got the idea from his bank branch, whose staff kept
+changing, perhaps so that no employee could collude with a customer in fraud. Asked whether checking
+for multicollinearity, as in classical models, would be sharper, he answers that these networks are
+massive and non-linear, so there is no easy fix of that kind, and dropout solves the problem "in one
+shot". Lecture 5's bigram model has a dropout layer between its hidden layer and its output; lecture 5
+does not say what rate it uses.
+
+Dropout is also a source of randomness in training, which matters for reproducibility (lecture 3
+≈31:42).
 
 ## When there is little data
 
@@ -87,6 +102,14 @@ high level of abstraction; see [transfer learning](transfer-learning.md). Convol
 parameter count that makes dense layers on images so prone to overfitting; see
 [convolutional neural networks](convolutional-neural-networks.md).
 
+## Keeping the input short
+
+The number of weights in a network's first layer is roughly the length of its input times the size
+of its first hidden layer, so a longer input means more parameters, "and given a finite amount of
+data, the more parameters you have, the worse it's going to do … It's going to overfit heavily"
+([lecture 5](05-text-vectorization-and-bag-of-words.md) ≈57:31–58:17). For text, the input length is the vocabulary size, which is why
+lecture 5 keeps only the most frequent words (slide 61). See [text vectorization](text-vectorization.md).
+
 ## Where this comes up
 
 - [Lecture 2](02-training-deep-nns.md): why the training loss's global minimum is not the goal.
@@ -94,4 +117,6 @@ parameter count that makes dense layers on images so prone to overfitting; see
   stopping in the heart-disease Colab, and dropout previewed.
 - [Lecture 4](04-cnns-and-transfer-learning.md): overfitting with little data, data augmentation,
   transfer learning, and a dropout layer used without explanation.
+- [Lecture 5](05-text-vectorization-and-bag-of-words.md): dropout explained, and capping the vocabulary to keep the input,
+  and the parameter count, down.
 - See also [training a neural network](training-neural-networks.md).
