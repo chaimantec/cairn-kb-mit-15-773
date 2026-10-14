@@ -621,3 +621,29 @@ embeddings, 72%). Text-layer OCW notices: slides 14, 15, 17, 18, 19 (Cohere embe
 - [x] verify_kb.py clean (with check_math and --github), review section read
 - [x] Commit and push
 - [x] Move this section to BUILD_LOG.md
+
+## Build checklist, lecture 7
+
+The ticked lines of `TODO.md` for the lecture 7 run, moved here verbatim on 2026-10-14 once it was
+committed and pushed.
+
+### Lecture 7 run (2026-10-14)
+
+Video 7 (`IeF7aATDaw4`, 76 min) presents deck 07 (`mit15_773_s24_lec07.pdf`, 78 pages; page 78 is
+OCW's end page): it opens on slide 2 (transformers across domains) and covers slides 2–76, with
+the Colab from ≈1:02:34, a return to slides 72–76 at ≈1:08:01, and the Colab again to the end
+(the model is set up but not trained). Numbering by corner spans: pages 2–9 print 2–9, pages 10–77
+print N+1 (a hidden slide); headings use the PDF page. Text-layer OCW notices: slides 23, 51, 64,
+65, 66, 67, 68, 69 ("Attention is All You Need" figures, Vaswani et al.); 65–69 share one raster.
+
+- [x] 07 DL for Natural Language – Transformers — video IeF7aATDaw4 → raw/transcripts/07-transformers.md (+ original/)
+- [x] Slides 07 → raw/slides/07-transformers.md (Sonnet, two agents; slide 17's hidden "see" noted)
+- [x] 07 figure check on rendered images (33, 42, 51, 53, 61, 64, 75 and slide 1; slide 59's "sit" → "sat" added, slide 51's line description cut back to what the render settles)
+- [x] raw/images/07-transformers/ — render, embed in slide file and wiki (rendered 33, 35, 43, 47, 49, 53, 75; slide file by script, wiki hand-placed with hand-written captions)
+- [x] wiki/07-transformers.md
+- [x] Topic pages for lecture 7 (new: transformers; extended word-embeddings, NLP, multiclass, text-vectorization, keras, representation-learning, CNNs; lecture 6 links forward)
+- [x] INDEX.md — lecture 7 entries, coverage and image sentences
+- [x] kb.json, BUILD_LOG.md lecture 7 record, AGENTS.md image row, LICENSE.md attribution, sources.md
+- [x] verify_kb.py clean (with check_math and --github), review section read (slide file's math in Figure lines made plain text, `\hat{w}_N` → `\hat w_N` for github.com)
+- [x] Commit and push
+- [x] Move this section to BUILD_LOG.md
