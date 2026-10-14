@@ -109,3 +109,15 @@ plus the deck:
   third-party screenshots and logo graphics of the same kind (Google autocomplete, a ChatGPT
   exchange, and the Y Combinator W23 Generative AI Landscape credited to Truewind). Slide 63's song
   lyrics are copyrighted and are neither rendered nor reproduced in the slide file.
+- **Lecture 6**, `raw/images/06-word-embeddings/` (8 images: pages 37, 49, 51, 55, 59, 61, 67 and
+  68) from
+  [`mit15_773_s24_lec06.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec06.pdf).
+  Slides 49 and 51 reproduce a two-dimensional plot of GloVe word vectors for ten male/female word
+  pairs that the deck does not credit; the deck cites the GloVe paper
+  (<https://nlp.stanford.edu/pubs/glove.pdf>) on its GloVe slides, and the plot appears to be one of
+  the GloVe project's own visualizations. OCW does not mark it as excluded; it remains its authors'.
+  The other rendered slides are the course's own diagrams and handwritten drawings. None of the
+  deck's six slides with an OCW exclusion notice is rendered: 14, 15, 17, 18 and 19 (embedding
+  quizzes, Cohere) and 47 (one-hot word vector and word embedding figures, François Chollet).
+  Slide 3 is not rendered either: its handwritten one-hot table is the image already rendered for
+  lecture 5 (slide 50 of that deck).

@@ -77,9 +77,16 @@ songs, so always guessing rock is the baseline (≈53:38).
 The figures are from ≈53:38, ≈1:03:44 and ≈1:10:00. The lecturer calls the jump from 72% to 75% "a
 meaningful jump, just by using bigrams", and suggests ten epochs might do better.
 
+[Lecture 6](06-word-embeddings.md) reruns the task with [word embeddings](word-embeddings.md) in
+place of the bag's multi-hot vectors: 63% with frozen GloVe embeddings, almost 69% with GloVe
+trained further, and 72% with embeddings learned from scratch (≈1:08:17, ≈1:13:39, ≈1:16:47). The
+lecturer notes that the frozen-GloVe model is not as good as lecture 5's model trained from scratch
+(≈1:08:17).
+
 ## Where this comes up
 
 - [Lecture 5](05-text-vectorization-and-bag-of-words.md): count and multi-hot encoding, the model's
   shortcomings, bigrams, and the song-genre classifier.
-- See also [text vectorization](text-vectorization.md) and
+- [Lecture 6](06-word-embeddings.md): the same task on word embeddings.
+- See also [text vectorization](text-vectorization.md), [word embeddings](word-embeddings.md) and
   [natural language processing](natural-language-processing.md).

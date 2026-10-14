@@ -9,7 +9,8 @@ slide file or transcript it concerns. The rules every build follows are in
 [`AGENTS.md`](AGENTS.md).
 
 One section per run: lectures 1, 2 and 3 (built 2026-10-11), lecture 4 (2026-10-14), lecture 5
-(2026-10-14), and at the end the ticked build checklists of those runs, moved from `TODO.md`.
+(2026-10-14), lecture 6 (2026-10-14), and at the end the ticked build checklists of those runs,
+moved from `TODO.md`.
 
 ## Lecture 1 — Introduction to Neural Networks and Deep Learning
 
@@ -353,6 +354,81 @@ lectures 1, 3 and 4 and INDEX.md that left dropout unexplained now point to lect
 page totals both song classifiers' parameters (40,035 and 160,035) as its own arithmetic and names
 its assumptions. `sources.md`'s deck table had kept decks 3A, 3B and 04 "provisional" after lectures
 3 and 4 confirmed them; those rows and the paragraph above them were corrected with deck 05's.
+
+## Lecture 6 — Word Embeddings
+
+Built 2026-10-14. Video `LqFc0z-pQTg` (78 min); deck `mit15_773_s24_lec06.pdf`, 70 pages.
+
+**Video ↔ deck.** The recording presents deck 06 from slide 2 (the recap of one-hot vectors, 0:49)
+to slide 68 (the overall flow in Keras, ≈55:09), then runs the Colab to the end (≈55:09–1:17:33).
+Slide 1 is the roadmap, not discussed; slide 69 is the Colab divider and 70 OCW's end page. This
+confirms lecture 5's note that deck 06 opens video 6. The catalog title ("Deep Learning for Natural
+Language – Embeddings") is accurate. Material outside the deck: the iPad drawing of two
+co-occurrence rows, apple and banana (≈29:28–34:11); the worked "deep"/"learning" example on the
+board (≈37:19–39:45); the double-descent aside (≈41:17); and the whole Colab (frozen GloVe 63%,
+GloVe trained further almost 69%, 64-dimensional embeddings from scratch 72%). The lecturer does
+not say which split the accuracies are on; the wiki page says so.
+
+**Numbering.** Slide N = PDF page N, 1:1. The corner spans were clean (no split or stale numbers),
+`slide_number_map.py` read them correctly and `--verify` passes. Pages 1 and 70 print no number.
+
+**OCW notices (6):** 14, 15, 17, 18 and 19 ("Embeddings quizzes © Cohere") and 47 ("One-hot word
+vectors and word embeddings figures © François Chollet"). The parent's text-layer scan found all
+six, but the brief to the first agent listed only 14, 15, 17 and 18, because the list was retyped
+by hand; the agent found slide 19's typed notice itself. `AGENTS.md` now says to copy the script's
+page list. The agents found no drawn notices. Unmarked third-party content: slides 48–51, a plot of
+GloVe vectors for ten male/female word pairs that the deck does not credit (rendered; see Images).
+The Colab link on slide 69 is a PDF link annotation; its target is not recorded.
+
+**Transcription.** Sonnet, two agents in parallel (pages 1–35 and 36–70), reading 1400px PNGs the
+parent pre-rendered into the scratchpad rather than PDF pages, and appending to scratch files that
+the parent spliced under a hand-written header. Both finished. Parent fixes: slide 2's footnote,
+whose text layer ends in a stray backslash, escaped so it does not become a markdown line break;
+the agent's note about slide 19's notice removed; slide 37's last handwritten matrix label, which
+the agent read as "book", marked hard to read. Hidden text noted by the agents: slides 12–13 hold
+later bullets in the text layer, slide 16's text layer says "geometric distance" and "semantic
+distance" where the render says "relationship", and slide 53's text layer stops at "fairly gen".
+
+**Transcript edit.** OCW human captions with `AUDIENCE:` labels, done inline in the parent as a
+scripted list. Restorations (8): "So FR" → So far (0:00, slide 2); "just do or" → OR (2:21, as
+lecture 5); "inferrential" (12:23); "deep end learning" → deep and learning (23:20); "bi, by" → bi,
+bj (25:38, slides 41–43); "B2" → b2 (38:06); "incoming centers" → sentences (51:18, slide 58); "GloVe
+assist" → GloVe as is (1:16:00). `[Ed:]` notes at 3:54 ("the SD"), 4:42 (a student's name), 21:03
+("We went with word", meaning GloVe), 23:20 ("under embedding"), 1:12:53 and 1:16:47 (unclear).
+Checks: 101 timestamps identical, number inventory identical once notes are removed, paragraph word
+ratios 1.000–1.007. No restored proper noun needed a deck check beyond John Firth (slide 28) and
+GloVe/word2vec, which the captions already spell correctly.
+
+**Figure check.** Done in the parent on 1400px renders: slides 37, 45, 48, 59, 63, 67 and 68. All
+agree with the slide file. Slide 45's two equations are exact; slide 48's twenty word positions
+were read against the axes; slide 59's indices (2 9 7 14 17; 23 62 5 0 0) and slide 63's row
+colours match. The one uncertainty is slide 37's handwritten label, now marked as such. The
+lecturer's parameter counts (500,835 total, 835 trainable) check by arithmetic: $5{,}000 \times 100$
+plus $100 \times 8 + 8$ plus $8 \times 3 + 3$.
+
+**Printed slips.** Slide 59 gives "love" the index 62; slides 62–68 give it 9 in the same sentence.
+Slides 22 and 23 print "the the". Spoken: the training set is "roughly 49,000" songs at 55:55 and
+"50,000" later, a rounding.
+
+**Images: 8 of 70 pages.** Rendered: 37, 49, 51, 55, 59, 61, 67, 68 (0.8 MB; 1 PNG, 7 JPEG). Not
+rendered: the six noticed slides (14, 15, 17, 18, 19, 47); slide 3, whose handwritten one-hot table
+is the same embedded raster as lecture 5's slide 50 (found by hashing the decks' images), and slide
+2, its build step; build steps superseded by a rendered slide (48, 50 → 49, 51; 56, 60 → 55; 62–65
+→ 68, which assembles 62, 63, 64 and 67); slides 57–58, code screenshots the slide file reproduces
+exactly; and text-only slides and dividers. Slides 49 and 51 are the uncredited GloVe plot, rendered
+under the lecture 2 and 4 precedent for unmarked academic figures, with `LICENSE.md` saying the deck
+does not credit it. All eight are in the wiki lecture page, hand-placed with hand-written captions;
+slides 37 and 51 also appear on the new word-embeddings topic page.
+
+**Wiki.** A lecture page and one new topic page (word-embeddings). Extended: text-vectorization
+(integer output and padding), bag-of-words (lecture 6's results beside lecture 5's), keras (a
+"Layers for embeddings" section), natural-language-processing (stand-alone and contextual
+embeddings; coverage now lectures 5 and 6), representation-learning, transfer-learning (pretrained
+word embeddings), gradient-descent (fitting a model that is not a network) and
+overfitting-and-regularization (noise without a test set); lecture 5's page now links forward. The
+lecture page checks the frozen model's 835 trainable parameters and counts the from-scratch model
+(320,547) as its own arithmetic, naming its assumptions. `sources.md`'s row for deck 06 is no longer
+provisional.
 
 ## Build checklists, lectures 1–4
 

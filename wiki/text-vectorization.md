@@ -75,9 +75,11 @@ tokens in the training corpus plus one for `<UNK>`, called the **vocabulary size
 
 Run a sentence through all four steps and it becomes a table with one one-hot row per token: "the cat
 sat on the mat" against a 100-entry vocabulary is a $6 \times 100$ table (slides 47–50). Turning that
-table into a single vector is the job of [the Bag of Words model](bag-of-words.md). The next lecture
-replaces one-hot vectors with **embeddings**, which the lecturer says "form the core atomic unit of
-all modern natural language processing" (lecture 5, ≈0:00).
+table into a single vector is the job of [the Bag of Words model](bag-of-words.md). [Lecture 6](06-word-embeddings.md) replaces one-hot vectors with
+**[word embeddings](word-embeddings.md)**, which the lecturer says "form the core atomic unit of all
+modern natural language processing" (lecture 5, ≈0:00). One-hot vectors are as long as the
+vocabulary, and any two of them are the same distance apart, $\sqrt{2}$, whatever the words mean
+(lecture 6, slides 4–10).
 
 ## How big a vocabulary?
 
@@ -105,9 +107,16 @@ Keras implements all four steps "as a single, simple layer called the text vecto
 - **Calling the layer** on a sentence returns its vector, as long as the vocabulary
   (≈50:31–52:07).
 
+- **Integer output and padding** (lecture 6). With `output_mode="int"` the layer stops after indexing
+  and returns the integers, for an `Embedding` layer to encode, and `output_sequence_length` pads
+  short inputs with the token 0 and truncates long ones to a fixed length. Index 0 then belongs to the
+  pad token and `<UNK>` moves to 1 (lecture 6, slides 57–59; ≈51:18–52:51, ≈58:59).
+
 ## Where this comes up
 
 - [Lecture 5](05-text-vectorization-and-bag-of-words.md): STIE, one-hot encoding, `<UNK>` and the
   Keras layer, used to classify song lyrics.
-- See also [natural language processing](natural-language-processing.md) and
+- [Lecture 6](06-word-embeddings.md): why one-hot vectors fall short, and the layer's integer output
+  and padding for an Embedding layer.
+- See also [word embeddings](word-embeddings.md), [natural language processing](natural-language-processing.md) and
   [Keras](keras.md).

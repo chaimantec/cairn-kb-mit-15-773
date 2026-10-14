@@ -72,7 +72,19 @@ Pre-trained models are on the TensorFlow Hub, the PyTorch Hub and the Hugging Fa
 One caution came up in questions: weights that everyone can download carry "some adversarial risk"
 (≈1:10:09–1:10:54).
 
+## Pretrained word embeddings
+
+The same logic carries over to text. [Lecture 6](06-word-embeddings.md) downloads GloVe's word
+embeddings, trained on Wikipedia, and builds a song-genre classifier on top of them, first frozen and
+then trained further (≈1:02:07, ≈1:09:04). The lecturer draws the parallel with handbags and shoes
+himself: "when your data is really small, try to use a pre-trained model" (≈1:07:32). With about
+50,000 songs, though, embeddings learned from scratch did best. A general-purpose tool like GloVe is
+"a good starting point" when you do not have a lot of data, "but when you have a lot of data, you
+should always try to do your own thing and see if it's any better" (≈1:16:47). See
+[word embeddings](word-embeddings.md#pretrained-or-your-own).
+
 ## Where this comes up
 
 - [Lecture 4](04-cnns-and-transfer-learning.md): the idea, ResNet, the Colab and the live demo.
+- [Lecture 6](06-word-embeddings.md): pretrained GloVe embeddings, frozen and fine-tuned.
 - See also [data augmentation](data-augmentation.md), the other remedy for a small data set.

@@ -144,6 +144,28 @@ this lists only what the lecturer names.
 - **KerasTuner**, a Python package, tries many values of hyperparameters such as the number of
   neurons, the activation and the learning rate (≈1:15:30–1:16:18).
 
+## Layers for embeddings (lecture 6)
+
+[Lecture 6](06-word-embeddings.md) rebuilds the song classifier on [word embeddings](word-embeddings.md).
+Its notebook is not on OCW either; what follows is what the lecturer and the slides name.
+
+- **`TextVectorization` with `output_mode="int"`** stops after standardize, tokenize and index and
+  returns the integers, and **`output_sequence_length`** pads or truncates every input to that
+  length: 300 in the Colab, enough for 90% of the songs (slides 57–59; ≈51:18–52:51, ≈57:28). Index 0
+  is now the pad token, which Keras prints as the empty string, and the unknown token is 1 (≈58:59).
+- **`keras.layers.Embedding(max_tokens, embedding_dim)`** is a lookup table with one row of
+  `embedding_dim` numbers per token (slide 61; ≈52:51). It turns each input into a table of shape
+  (`max_length`, `embedding_dim`). It can be initialized with a matrix of pretrained vectors such as
+  GloVe's and frozen, so that backpropagation leaves it alone, or made trainable with
+  `trainable=True` (≈1:02:07, ≈1:09:04). The Colab also sets a mask-zero option, which the lecture
+  does not explain (≈1:02:07).
+- **`keras.layers.GlobalAveragePooling1D()`** averages each column of that table into one vector for
+  the dense layers (slide 67; ≈54:22).
+- **`model.layers`** lists a model's layers, and any layer's weights can be inspected from there
+  (≈1:05:59).
+- **Frozen weights are parameters, but not trainable ones.** With frozen GloVe embeddings the song
+  model's summary reports 500,835 parameters, of which 835 are trainable (≈1:02:53–1:03:41).
+
 ## Answers from lecture 2
 
 - **Custom activation functions** can be defined (≈17:08).
@@ -166,5 +188,7 @@ this lists only what the lecturer names.
   and a pre-trained ResNet.
 - [Lecture 5](05-text-vectorization-and-bag-of-words.md): the text vectorization layer, `adapt`, `get_vocabulary`,
   `ngrams`, and `Dropout`.
+- [Lecture 6](06-word-embeddings.md): `TextVectorization` with integer output and padding, `Embedding`,
+  `GlobalAveragePooling1D`, and freezing pretrained embeddings.
 - See also [anatomy of a neural network](neural-network-anatomy.md) for the design choices the code
   expresses.

@@ -86,7 +86,8 @@ removed, and every paragraph's word ratio within 0.72–1.10 (with notes removed
 ## Slides
 
 Each deck is transcribed from page images by a Sonnet agent. The parent first decides the numbering
-and lists the OCW notices from the text layer, and hands both to the agent. The agent must look
+and lists the OCW notices from the text layer by script, and hands both to the agent, copying the
+script's page list rather than retyping it. The agent must look
 for notices on every page, because some are drawn rather than typed. Each slide entry ends with
 `*Figure: yes — …*` or `*Figure: no*`, which is what image selection reads. Figure descriptions are
 checked against **rendered images** (1400px renders are cheap), never against full PDF page images
@@ -109,6 +110,8 @@ images must **copy the filename from disk**, because the extension varies per sl
 embedding, rewrite the default captions of build-step slides that share a title, since otherwise
 several identical captions sit in a row. Images are linked relatively; the chat gets a renderable
 URL by reading the path. `grep -o 'raw/images/[^)]*' wiki/NN-*.md` lists a lecture's images.
+A deck can reuse an earlier deck's figure without saying so (lecture 6's slide 3 is lecture 5's
+slide 50): compare the hashes of the embedded rasters across decks, and do not render the repeat.
 What was rendered and why goes in `BUILD_LOG.md`.
 
 | Lecture | Images | Deck |
@@ -118,6 +121,7 @@ What was rendered and why goes in `BUILD_LOG.md`.
 | 3 Keras and TensorFlow, Training the Heart-Disease Model, and Computer Vision Basics | 13 | 9 of `mit15_773_s24_lec03a.pdf`'s 44 pages as `3a-N`, and 4 of `mit15_773_s24_lec03b.pdf`'s 29 as `3b-N` |
 | 4 Convolutional Neural Networks and Transfer Learning | 16 of 84 pages | rendered from `mit15_773_s24_lec04.pdf` |
 | 5 Text Vectorization and the Bag-of-Words Model | 7 of 67 pages | rendered from `mit15_773_s24_lec05.pdf` |
+| 6 Word Embeddings | 8 of 70 pages | rendered from `mit15_773_s24_lec06.pdf` |
 
 ## Conventions
 

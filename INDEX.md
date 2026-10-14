@@ -8,11 +8,12 @@ transfer learning) and natural language (embeddings, transformers), to generativ
 parameter-efficient fine-tuning, text-to-image diffusion). It deliberately "skips the math" and
 focuses on concepts and on coding models in Keras/TensorFlow.
 
-**Coverage: lectures 1–5 of 11.** This knowledge base is being built lecture by lecture. Only
-lectures 1 to 5 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
-covering lectures 6–11. On language it covers only lecture 5 (text vectorization and the Bag of
-Words model). For anything after lecture 5, including embeddings, transformers, LLMs, byte-pair
-encoding and generative AI, say that the KB does not cover it yet.
+**Coverage: lectures 1–6 of 11.** This knowledge base is being built lecture by lecture. Only
+lectures 1 to 6 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
+covering lectures 7–11. On language it covers lectures 5 (text vectorization and the Bag of Words
+model) and 6 (word embeddings and GloVe). For anything after lecture 6, including transformers,
+contextual embeddings beyond lecture 6's preview, LLMs, byte-pair encoding and generative AI, say
+that the KB does not cover it yet.
 
 ## Contents
 
@@ -64,6 +65,18 @@ encoding and generative AI, say that the KB does not cover it yet.
   vectorization layer and a song-genre classifier (hip-hop, rock or pop) with eight ReLUs and a
   softmax: 72% on the test set against a 55% baseline, 75% with bigrams. Dropout is finally
   explained. Byte-pair encoding is deferred to the LLM lectures.
+- [Lecture 6 — Word Embeddings](wiki/06-word-embeddings.md): why one-hot vectors fail (as long as the
+  vocabulary; any two are $\sqrt{2}$ apart), what word vectors should do (close for related words,
+  directions for relationships; the apple and cow quizzes), and why context needs transformers
+  (stand-alone versus contextual embeddings). Then GloVe built from scratch: "You shall know a word
+  by the company it keeps", the word-word co-occurrence matrix from Wikipedia's sentences, the model
+  $\log(X_{ij}) = b_i + b_j + w_i^T w_j$ fitted by least squares and stochastic gradient descent, the
+  embedding length as a hyperparameter, t-SNE plots and word vector algebra,
+  $(\text{brother} - \text{man}) + \text{woman} = \text{sister}$, and pretrained versus your own
+  embeddings. In Keras, `TextVectorization` with
+  integer output and padding, the `Embedding` lookup table and `GlobalAveragePooling1D`; in Colab, the
+  song-genre classifier on frozen GloVe (63%, 835 of 500,835 parameters trainable), GloVe trained
+  further (almost 69%) and 64-dimensional embeddings from scratch (72%).
 
 ### Topics
 
@@ -71,8 +84,8 @@ encoding and generative AI, say that the KB does not cover it yet.
   circles the course uses, what bottleneck each layer removed, and X-to-Y multimodality.
 - [Representation learning](wiki/representation-learning.md): why raw unstructured data needs a
   representation, hand-made features versus learned ones, hidden layers as the learned
-  representation, the feature hierarchy in a CNN, and reusing a pre-trained network's
-  representation.
+  representation, the feature hierarchy in a CNN, reusing a pre-trained network's
+  representation, and word embeddings as the learned representation of words.
 - [Anatomy of a neural network](wiki/neural-network-anatomy.md): the vocabulary (weight, bias,
   neuron, layer, dense, feedforward, architecture), what you design versus what training finds,
   parameter counting, the forward pass with numbers, and the convolutional filter as a neuron.
@@ -87,11 +100,13 @@ encoding and generative AI, say that the KB does not cover it yet.
   encoding, the output-layer/loss table, and why accuracy and loss can disagree.
 - [Gradient descent](wiki/gradient-descent.md): the derivative's three cases, the update rule, the
   learning rate, gradients in many variables, local minima and saddle points, stochastic
-  (minibatch) gradient descent, and epochs, batches and batch size.
+  (minibatch) gradient descent, epochs, batches and batch size, and fitting models that are not
+  neural networks, such as GloVe.
 - [Overfitting and regularization](wiki/overfitting-and-regularization.md): training versus validation
   error, the sweet spot, why deep networks need regularization, the validation and test sets, early
   stopping in practice, dropout (previewed in lecture 3, used in lecture 4, explained in lecture 5),
-  the remedies for little data, and why a longer input overfits.
+  the remedies for little data, why a longer input overfits, and why noise matters even without a
+  test set.
 - [Tensors](wiki/tensors.md): ranks 0 to 5 with the course's examples (scalar, vector, table, image,
   video), thinking of a tensor as a list of lower-rank tensors, and the shapes convolutional and
   pooling layers produce.
@@ -106,8 +121,8 @@ encoding and generative AI, say that the KB does not cover it yet.
   learned filters, the feature hierarchy, max and average pooling, the basic CNN architecture, and
   the course's Keras CNN.
 - [Transfer learning](wiki/transfer-learning.md): the two research trends behind it, ImageNet and
-  ResNet, headless ResNet as a feature extractor, fine-tuning, the model hubs, and the
-  handbags-vs-shoes results.
+  ResNet, headless ResNet as a feature extractor, fine-tuning, the model hubs, the
+  handbags-vs-shoes results, and pretrained word embeddings (GloVe) as the same idea for text.
 - [Data augmentation](wiki/data-augmentation.md): perturbing images (flips, small rotations, zooms)
   to stretch a small data set without changing what they mean, and the Keras layers for it.
 - [Multi-class classification and softmax](wiki/multiclass-classification.md): why ten sigmoids fail,
@@ -118,17 +133,25 @@ encoding and generative AI, say that the KB does not cover it yet.
 - [Keras](wiki/keras.md): what TensorFlow and Keras each provide, why not PyTorch, the three APIs,
   defining a model with `keras.Input`, `Dense` layers and `keras.Model`, training it with
   `summary`, `compile`, `fit` and `evaluate`, the image layers (`Conv2D`, `MaxPool2D`,
-  `Rescaling`, augmentation) and `include_top=False`, and the text vectorization layer (`adapt`,
-  `get_vocabulary`, `max_tokens`, `ngrams`), `Dropout` and KerasTuner.
+  `Rescaling`, augmentation) and `include_top=False`, the text vectorization layer (`adapt`,
+  `get_vocabulary`, `max_tokens`, `ngrams`), `Dropout` and KerasTuner, and the layers for
+  embeddings (`output_mode="int"` with `output_sequence_length`, `Embedding`,
+  `GlobalAveragePooling1D`, freezing a layer).
 - [Natural language processing](wiki/natural-language-processing.md): why text matters, the range
-  of "text in, text out" applications, how to represent text, the arc of NLP progress from rules to
-  transformers, and the course's NLP roadmap (lectures 5–10).
+  of "text in, text out" applications, how to represent text, from one-hot vectors to stand-alone
+  and contextual embeddings, the arc of NLP progress from rules to transformers, and the course's
+  NLP roadmap (lectures 5–10).
 - [Text vectorization](wiki/text-vectorization.md): standardize, tokenize, index, encode (STIE);
   stop words and stemming; the vocabulary and the `<UNK>` token; one-hot vectors and the vocabulary
-  size; choosing `max_tokens`; and Keras's text vectorization layer.
+  size; choosing `max_tokens`; and Keras's text vectorization layer, including integer output,
+  padding and truncation.
 - [The Bag of Words model](wiki/bag-of-words.md): why a sentence's table is not flattened, count
   versus multi-hot encoding, what the bag throws away, bigrams and n-grams, and the song-genre
-  results.
+  results, with lecture 6's embedding models alongside.
+- [Word embeddings](wiki/word-embeddings.md): what is wrong with one-hot vectors, what embeddings
+  should do, GloVe (the co-occurrence matrix, the model, the least-squares fit), word vector algebra,
+  the embedding length, pretrained versus your own, the Keras layers, and stand-alone versus
+  contextual embeddings.
 
 ## Raw materials
 
@@ -146,8 +169,8 @@ encoding and generative AI, say that the KB does not cover it yet.
   deck 3A in [`raw/slides/03-keras-tensorflow.md`](raw/slides/03-keras-tensorflow.md) and deck 3B in
   [`raw/slides/03-vision-basics.md`](raw/slides/03-vision-basics.md). Cite them as "deck 3A, slide N"
   and "deck 3B, slide N". From page 16 on, deck 3B prints a number one higher than the page where it
-  prints one. The decks of lectures 4 and 5 print their own page number wherever they print one.
-  The Colab notebooks of lectures 3, 4 and 5 are not published on OCW; the KB knows them only from
+  prints one. The decks of lectures 4, 5 and 6 print their own page number wherever they print one.
+  The Colab notebooks of lectures 3 to 6 are not published on OCW; the KB knows them only from
   the lecturer's narration.
 - [`raw/images/`](raw/images/): rendered figure slides (see below).
 - [`sources.md`](sources.md): every course document on the OCW site with its canonical URL. The
@@ -158,17 +181,21 @@ encoding and generative AI, say that the KB does not cover it yet.
 
 ## Images
 
-**Lectures 1 to 5 have images. No other lecture does yet.** Their figure slides are rendered
+**Lectures 1 to 6 have images. No other lecture does yet.** Their figure slides are rendered
 as whole slides and shown inline, both in the lecture pages ([lecture 1](wiki/01-introduction.md),
 [lecture 2](wiki/02-training-deep-nns.md), [lecture 3](wiki/03-keras-and-vision-basics.md),
 [lecture 4](wiki/04-cnns-and-transfer-learning.md),
-[lecture 5](wiki/05-text-vectorization-and-bag-of-words.md)) and under the matching `## Slide N` heading in
+[lecture 5](wiki/05-text-vectorization-and-bag-of-words.md),
+[lecture 6](wiki/06-word-embeddings.md)) and under the matching `## Slide N` heading in
 each slide file. Lecture 1 has 45. Lecture 2 has 18: 15 from its main deck and 3 pages of the
 handwritten backprop example, which are named `backprop-N` rather than `slide-N`. Lecture 3 has 13 in
 one directory: 9 from deck 3A named `3a-N` and 4 from deck 3B named `3b-N`. Lecture 4 has 16.
 Lecture 5 has 7, mostly hand-drawn diagrams (the one-hot table, count and multi-hot encoding, the
 song classifier); its third-party screenshots and logo graphics (slides 3, 4, 15–17) are not
-rendered. Slides
+rendered. Lecture 6 has 8: the co-occurrence matrix, the GloVe word-pair plot (twice, with its two
+arrows), and the Keras diagrams (the layer split, padding, the Embedding table, average pooling and
+the overall flow). Its Cohere embedding quizzes (slides 14–19) and Chollet's one-hot and embedding
+figure (slide 47) are excluded by OCW and described in prose only. Slides
 whose content OCW excludes from its licence (marked `*OCW notice: …*`) are never rendered, and
 neither are slides that reuse an excluded figure without a notice of their own: deck 3A's slides
 24–25 and lecture 4's slide 77, whose ResNet diagram slides 70–73 exclude. So lecture 4 has no image

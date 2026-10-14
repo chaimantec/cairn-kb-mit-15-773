@@ -29,7 +29,7 @@ in this one's bigram model.
 The catalog titles the video "Deep Learning for Natural Language – The Basics"; the deck's roadmap
 calls the lecture "Text Vectorization and the Bag-of-Words Model" (slide 1). The recording presents
 the whole deck, slides 1–66, then spends its last half hour in Colab (from ≈45:53). Embeddings are
-next (lecture 6), then two lectures on transformers and two on LLMs (slide 1; ≈0:00–0:46).
+next ([lecture 6](06-word-embeddings.md)), then two lectures on transformers and two on LLMs (slide 1; ≈0:00–0:46).
 Byte-pair encoding, the tokenization LLMs use, is deferred twice (≈23:19, ≈1:14:44); its slides are
 in deck 09 (slides 58–60), not this deck.
 
@@ -535,5 +535,7 @@ neurons, the activation, the learning rate and so on are all varied and tried (�
 - [Preparing data for a network](data-preprocessing.md): the baseline and one-hot labels.
 - [Representation learning](representation-learning.md): representing text is the open question
   that lecture 6's embeddings take up.
+- [Lecture 6](06-word-embeddings.md): word embeddings replace one-hot vectors, and the song classifier
+  is rebuilt on them.
 - [Lecture 4](04-cnns-and-transfer-learning.md): the vertical-line argument that standardization
   borrows, and the dropout layer this lecture finally explains.

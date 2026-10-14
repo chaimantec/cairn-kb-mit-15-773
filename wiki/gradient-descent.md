@@ -118,10 +118,20 @@ training output, each epoch reports the batches it ran, such as "7/7" (≈45:41)
 How many epochs? Twenty to 30 is a good starting point, and the validation loss says whether to go on.
 See [overfitting and regularization](overfitting-and-regularization.md) (≈44:03, ≈53:30–54:17).
 
+## Not only for neural networks
+
+Gradient descent "doesn't care what the function is, as long as you can calculate a derivative from
+it". [Lecture 6](06-word-embeddings.md) uses stochastic gradient descent to fit GloVe, a
+least-squares model of word co-occurrence counts that is not a neural network: start from random
+values for the embedding vectors and biases, and step downhill on the squared error
+(≈34:59–37:19). See [word embeddings](word-embeddings.md#glove).
+
 ## Where this comes up
 
 - [Lecture 2](02-training-deep-nns.md): the derivative, the algorithm, learning rate, multi-variable
   gradients, local minima and SGD.
 - [Lecture 3](03-keras-and-vision-basics.md): epochs, batches, and batch size in practice.
+- [Lecture 6](06-word-embeddings.md): stochastic gradient descent fitting GloVe, which is not a neural
+  network.
 - See also [backpropagation](backpropagation.md), which computes the gradient, and
   [training a neural network](training-neural-networks.md), which puts the pieces together.

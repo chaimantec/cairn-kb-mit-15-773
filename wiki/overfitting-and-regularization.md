@@ -110,6 +110,15 @@ data, the more parameters you have, the worse it's going to do … It's going to
 ([lecture 5](05-text-vectorization-and-bag-of-words.md) ≈57:31–58:17). For text, the input length is the vocabulary size, which is why
 lecture 5 keeps only the most frequent words (slide 61). See [text vectorization](text-vectorization.md).
 
+## Overfitting without a test set
+
+The length of a word embedding is a hyperparameter: longer vectors have more parameters and more
+risk of overfitting, so start small and grow them until performance flattens out
+([lecture 6](06-word-embeddings.md) ≈39:45, ≈46:40). Asked why overfitting matters when GloVe is
+never tested on new data, the lecturer answers that every data set has noise, and a model that
+captures the noise along with the signal gives flawed insights, whatever it is used for
+(≈47:26–48:12). See [word embeddings](word-embeddings.md).
+
 ## Where this comes up
 
 - [Lecture 2](02-training-deep-nns.md): why the training loss's global minimum is not the goal.
@@ -119,4 +128,6 @@ lecture 5 keeps only the most frequent words (slide 61). See [text vectorization
   transfer learning, and a dropout layer used without explanation.
 - [Lecture 5](05-text-vectorization-and-bag-of-words.md): dropout explained, and capping the vocabulary to keep the input,
   and the parameter count, down.
+- [Lecture 6](06-word-embeddings.md): the embedding length as a hyperparameter, and noise without a
+  test set.
 - See also [training a neural network](training-neural-networks.md).

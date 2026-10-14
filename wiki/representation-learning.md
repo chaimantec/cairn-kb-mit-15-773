@@ -64,9 +64,14 @@ lecture 1 put to work. See [transfer learning](transfer-learning.md).
 For language the question returns in its sharpest form. An image can go in as its pixel values, but
 "when a sentence comes in, like, 'I love deep learning', what do you do? How do you actually represent
 it?" ([lecture 5](05-text-vectorization-and-bag-of-words.md), slides 22–25; ≈12:23–13:57). Lecture 5's answer involves no
-learning: one-hot vectors from a vocabulary, combined into a [bag of words](bag-of-words.md). The next
-lecture takes up **embeddings**, which the lecturer says "form the core atomic unit of all modern
-natural language processing, and for that matter, vision processing as well" (lecture 5 ≈0:00).
+learning: one-hot vectors from a vocabulary, combined into a [bag of words](bag-of-words.md). [Lecture 6](06-word-embeddings.md) takes up **[word embeddings](word-embeddings.md)**, which the
+lecturer says "form the core atomic unit of all modern natural language processing, and for that
+matter, vision processing as well" (lecture 5 ≈0:00). They are a learned representation of words.
+GloVe learns a vector for every word such that the vectors reproduce how often words share a
+sentence, and related words end up close together, with relationships as directions (lecture 6,
+slides 36–51). Nobody can say what an embedding's individual dimensions mean (≈1:10:36). A network
+can also learn its own embeddings as part of a task, and on lecture 6's 50,000 songs those beat
+pretrained GloVe (≈1:16:47).
 
 ## Where this comes up
 
@@ -75,3 +80,5 @@ natural language processing, and for that matter, vision processing as well" (le
   output as a reusable representation.
 - [Lecture 5](05-text-vectorization-and-bag-of-words.md): how to represent text, and one-hot vectors and the bag of words as
   the first answer.
+- [Lecture 6](06-word-embeddings.md): word embeddings, learned from co-occurrence counts or from the
+  task itself.

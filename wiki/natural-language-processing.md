@@ -4,7 +4,7 @@
 The course's NLP sequence starts in [lecture 5](05-text-vectorization-and-bag-of-words.md) and, by
 the roadmap on its first slide, runs through embeddings (lecture 6), transformers in theory
 (lecture 7) and in applications with self-supervised learning (lecture 8), to LLMs (lectures 9–10)
-(lecture 5, slide 1; ≈0:00–0:46). This knowledge base so far covers lecture 5 only.
+(lecture 5, slide 1; ≈0:00–0:46). This knowledge base so far covers lectures 5 and 6.
 
 ## Why text
 
@@ -32,8 +32,21 @@ numbers (slides 22–23; ≈12:23–13:10). Two questions follow (slides 24–25
 
 1. **How do you represent $x$?** Images could be fed in as pixel values; a sentence cannot.
    Lecture 5 answers with [text vectorization](text-vectorization.md) and
-   [the Bag of Words model](bag-of-words.md), and lecture 6 with embeddings.
+   [the Bag of Words model](bag-of-words.md), and [lecture 6](06-word-embeddings.md) with
+   [word embeddings](word-embeddings.md).
 2. **Which network architecture is best for processing text?** Lectures 7 and 8, with transformers.
+
+## From one-hot vectors to contextual embeddings
+
+Lecture 5's one-hot vectors are as long as the vocabulary and say nothing about meaning: any two of
+them are the same distance apart. [Lecture 6](06-word-embeddings.md) replaces them with
+[word embeddings](word-embeddings.md), short dense vectors learned from data in which related words
+sit close together and directions carry relationships. GloVe learns them from how often words share
+a sentence in Wikipedia. These are **stand-alone** embeddings, one vector per word whatever the
+sentence, so a word with several meanings, like "bank", gets an average of them. **Contextual**
+embeddings take the surrounding words into account, and "the key to calculating contextual word
+embeddings" is the transformer, the subject of lectures 7 and 8 (lecture 6, slides 22–25;
+≈12:23–14:48).
 
 ## The arc of NLP progress
 
@@ -62,6 +75,8 @@ been trained on it (lecture 5, ≈7:46–9:19).
 
 - [Lecture 5](05-text-vectorization-and-bag-of-words.md): why NLP, its applications, the arc of
   progress, text vectorization and the Bag of Words model.
-- See also [representation learning](representation-learning.md) and
+- [Lecture 6](06-word-embeddings.md): word embeddings, GloVe, and why contextual embeddings need
+  transformers.
+- See also [word embeddings](word-embeddings.md), [representation learning](representation-learning.md) and
   [multi-class classification and softmax](multiclass-classification.md), whose softmax lecture 3
   connects to how GPT-4 emits words.
