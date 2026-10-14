@@ -121,3 +121,12 @@ plus the deck:
   quizzes, Cohere) and 47 (one-hot word vector and word embedding figures, François Chollet).
   Slide 3 is not rendered either: its handwritten one-hot table is the image already rendered for
   lecture 5 (slide 50 of that deck).
+- **Lecture 7**, `raw/images/07-transformers/` (7 images: pages 33, 35, 43, 47, 49, 53 and 75) from
+  [`mit15_773_s24_lec07.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec07.pdf).
+  The rendered slides are the course's own diagrams; slide 53 reuses a picture of the course's own
+  attention diagram from slide 52. None of the deck's eight slides with an OCW exclusion notice is
+  rendered: 23, 51 and 64–69, figures from "Attention Is All You Need" (Ashish Vaswani, Noam
+  Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones, Aidan N. Gomez, Lukasz Kaiser, Illia
+  Polosukhin). Slides 21–22 are not rendered either. They print no notice, but they are screenshots
+  of Google search results from Google's blog post on BERT
+  (<https://blog.google/products/search/search-language-understanding-bert/>).

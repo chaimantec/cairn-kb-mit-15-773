@@ -22,7 +22,7 @@ formula, the two biases plus the dot product of the two vectors, reproduces the 
 count. That is least-squares regression, solved by stochastic gradient descent (slides 36–46;
 ≈18:43–39:45). These are **stand-alone** embeddings: one vector per word, whatever the sentence.
 A word like "bank" needs **contextual** embeddings, and computing those is what transformers are
-for, which is where the next lecture goes (slides 22–25; ≈12:23–14:48).
+for, which is where [the next lecture](07-transformers.md) goes (slides 22–25; ≈12:23–14:48).
 
 The last part puts embeddings to work in Keras. The text vectorization layer now stops at the
 integers and pads or truncates every input to the same length, an **Embedding layer** looks up one
@@ -601,3 +601,5 @@ $64 \times 8 + 8 = 520$ in the dense layer and 27 in the output, 320,547 in all,
   hyperparameter, and why noise matters without a test set.
 - [Lecture 5](05-text-vectorization-and-bag-of-words.md): one-hot vectors, the Bag of Words model and
   the song-genre task this lecture revisits.
+- [Lecture 7](07-transformers.md): transformers, which turn stand-alone embeddings into contextual
+  ones.

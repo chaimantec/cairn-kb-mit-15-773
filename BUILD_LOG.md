@@ -9,7 +9,7 @@ slide file or transcript it concerns. The rules every build follows are in
 [`AGENTS.md`](AGENTS.md).
 
 One section per run: lectures 1, 2 and 3 (built 2026-10-11), lecture 4 (2026-10-14), lecture 5
-(2026-10-14), lecture 6 (2026-10-14), and at the end the ticked build checklists of those runs,
+(2026-10-14), lecture 6 (2026-10-14), lecture 7 (2026-10-14), and at the end the ticked build checklists of those runs,
 moved from `TODO.md`.
 
 ## Lecture 1 — Introduction to Neural Networks and Deep Learning
@@ -429,6 +429,87 @@ overfitting-and-regularization (noise without a test set); lecture 5's page now 
 lecture page checks the frozen model's 835 trainable parameters and counts the from-scratch model
 (320,547) as its own arithmetic, naming its assumptions. `sources.md`'s row for deck 06 is no longer
 provisional.
+
+## Lecture 7 — Transformers
+
+Built 2026-10-14. Video `IeF7aATDaw4` (76 min); deck `mit15_773_s24_lec07.pdf`, 78 pages.
+
+**Video ↔ deck.** The recording presents deck 07 from slide 2 (transformers across domains, 0:00) to
+slide 71 (≈1:01:01), opens the Colab at ≈1:02:34, goes back to slides 72–76 at ≈1:08:01 ("I forgot
+about doing this"), and returns to the Colab at ≈1:11:06 until the end. Slide 1 is the roadmap,
+calling the lecture "Transformers (1/2)"; slide 77 is the Colab divider and 78 OCW's end page. The
+catalog title ("Deep Learning for Natural Language – Transformers") is accurate. Material outside the
+deck: three iPad drawings, the dot product as lengths times cosine (≈28:42–31:00, behind slide 40,
+which prints only "iPad"), concatenate and project (≈41:44–44:47), and the feed-forward ReLU layer four
+times as wide (≈45:34–46:20); and the Colab, which sets up the ATIS slot-filling model (888-token
+vocabulary, 125 output tags, 512-dimensional embeddings, five heads, `dense_dim` 64, about 5.3
+million encoder parameters) but stops before training, at 9:45 by the lecturer's clock.
+
+**Numbering.** Slide N = PDF page N. The corner spans are clean, one span per page at the same
+position: pages 2–9 print 2–9 and pages 10–77 print 11–78, so a hidden slide 10 was not exported.
+`slide_number_map.py` read this correctly (one absent number, 10); the headings were checked with a
+plain 1..78 sequence check. Pages 1 and 78 print none.
+
+**OCW notices (8):** 23 (the paper's title block and Figure 1, the transformer architecture), 51 (two
+attention heads on "The Law will never be perfect …") and 64–69 (the paper's encoder block; 65–69
+share one raster), all "Attention is All You Need" © Vaswani, Shazeer, Parmar, Uszkoreit, Jones,
+Gomez, Kaiser, Polosukhin. The script's page list went to the agents verbatim; they found no drawn
+notices. Unmarked third-party content: slides 21–22, screenshots of Google search results from
+Google's BERT blog post (not rendered, following lecture 5's slides 3, 4 and 16). The raster that
+slides 53–56 and 62–63 share is a picture of the course's own slide-52 diagram, checked on the
+render, not a copy of the paper's figure. The Colab link on slide 77 is a PDF link annotation; its
+target is not recorded.
+
+**Transcription.** Sonnet, two agents in parallel (pages 1–39 and 40–78), reading 1400px PNGs the
+parent pre-rendered into the scratchpad, appending to scratch files that the parent spliced under a
+hand-written header. Both finished. Parent fixes: slide 17's empty Word cell noted as holding a hidden
+"see" in the text layer; slide 26's "rendering artefacts" remark on three textured cells reworded;
+slide 40's placeholder note replaced with what the video shows; slide 59 now says its table renames
+"sit" to "sat" (the agent wrote "every other value is unchanged"); slide 51's line-by-line account of
+the attention panels cut back to what the render settles.
+
+**Transcript edit.** OCW human captions with `AUDIENCE:` labels, done inline in the parent as a
+scripted list. Restorations (12 strings): "Bert" → BERT (13:55, twice; 14:40; slides 21–22's URL);
+"glove" → GloVe (11:36, 47:05, 50:58, 1:11:06; slides 16–17); "these links" → lengths (29:28); "the
+eighth test data set" → ATIS (1:02:34; slide 7); a full stop (17:02); two unbalanced quotations (4:38,
+50:58). `[Ed:]` notes (11) at 26:19 ("added as H2"), 31:00 ("Input."), 48:38 ("dot reduction"), 52:31
+(spoken "0.571", "1.33.9"), 53:18 ("0.681"), 57:55 (the self-contradicting punctuation sentence),
+1:03:20 ("raw box", presumably Dropbox; "top view"), 1:07:14 ("uncompared", the garbled answer to 125
+vs 123) and 1:08:01 ("0, 0" for the slot label O). Checks: 99 timestamps identical, number inventory
+identical once notes are removed, paragraph word ratios 0.992–1.000. Restored names checked against
+the deck: GloVe and ATIS print there; BERT only in slides 21–22's URL.
+
+**Figure check.** Done in the parent on 1400px renders: slides 1, 33, 42, 51, 53, 61, 64 and 75. All
+agree except the two fixes above (59's renamed word, found on 61's render; 51's over-specific line
+description). The positional-encoding tables of slides 58–61 also match the text layer cell for cell,
+and their sums check by arithmetic.
+
+**Printed slips.** Slide 58 lists "sit" where slides 59–61 have "sat" with the same numbers. Slide 17's
+first row shows no word (the text layer holds "see"). Slides 72–76 cut "B-toloc.city_name" at the
+right edge. The slides and narration attach a 123-way softmax per word; the Colab's output vocabulary
+has 125 entries. Spoken: "53 million — sorry, 5.3 million"; a dataset query read as "8:38 AM" and
+then "8:30 AM".
+
+**Images: 7 of 78 pages.** Rendered: 33, 35, 43, 47, 49, 53, 75 (0.75 MB; 5 PNG, 2 JPEG). Not
+rendered: the eight noticed slides (23, 51, 64–69); slides 21–22 (Google screenshots); slide 11, a
+list of slot labels transcribed in the slide file; build steps and repeats superseded by a rendered
+slide (26–32 → 33; 34 → 35; 36, 41, 42 → 43; 44–46 → 47; 48 → 49; 52, 54–56, 62, 63 → 53; 72–74, 76 →
+75); the positional-encoding tables (58–61), reproduced exactly; and text-only slides and dividers.
+All seven are in the wiki lecture page, hand-placed with hand-written captions; slides 43 and 53 also
+appear on the new transformers topic page. **For lecture 8:** deck 08 reuses deck 07's rasters on
+its slot-filling pages (07's 73–76) and its page-43 images, by hash; check the repeats before
+rendering.
+
+**Wiki.** A lecture page and one new topic page (transformers). Extended: word-embeddings
+(contextual embeddings by self-attention), natural-language-processing (the encoder and ATIS slot
+filling; coverage now lectures 5–7), multiclass-classification (the softmax in attention and per word),
+text-vectorization (standardization off for labels), keras (a "Layers for transformers" section),
+representation-learning, convolutional-neural-networks; lecture 6's page now links forward. The
+lecture page counts the encoder's 5,319,232 parameters as its own arithmetic, under named
+assumptions (query, key and value projections of 512 per head, which lecture 8 introduces; a 512 →
+64 → 512 feed-forward block; two layer normalizations), matching the lecture's "5.3 million", and
+the whole model's 5,871,037, which the lecture does not report. `sources.md`'s row for deck 07 is no
+longer provisional.
 
 ## Build checklists, lectures 1–4
 

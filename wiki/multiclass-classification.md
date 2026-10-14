@@ -54,6 +54,16 @@ softmax with one output for every possible word, which the lecturer describes as
 It picks the most probable word and emits it. "This notion of a softmax is actually very powerful. But
 we'll come back to that later" (≈1:09:47–1:10:33).
 
+## Softmax inside a transformer, and a softmax per word
+
+[Lecture 7](07-transformers.md) uses the softmax twice more. Inside self-attention it turns dot
+products, which can be negative, into weights that are non-negative and add up to 1 — "When was the
+last time you had to take a bunch of numbers which could be anything, and then somehow make sure that
+they are going to be positive, non-negative, and they add up to 1?" (lecture 7, slides 41–43;
+≈31:47–32:32; see [transformers](transformers.md)). And for slot filling, where every word of a query
+needs its own label, a separate 123-way softmax sits on each of the transformer's outputs, one
+classification per word (lecture 7, slides 13 and 75; ≈9:17–10:05).
+
 ## Encoding the labels, and choosing the loss
 
 A multi-class label can arrive in two forms (deck 3B, slides 20–22; ≈1:11:19). **Sparse encoding**
@@ -90,4 +100,6 @@ cross-entropy to match the labels.
   three cross-entropy losses.
 - [Lecture 5](05-text-vectorization-and-bag-of-words.md): a three-way softmax for hip-hop, rock and pop, and why
   softmax rather than the maximum.
+- [Lecture 7](07-transformers.md): the softmax that makes attention weights, and a softmax per word for
+  slot filling.
 - See also [activation functions](activation-functions.md).

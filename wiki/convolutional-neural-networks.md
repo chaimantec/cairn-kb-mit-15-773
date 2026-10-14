@@ -134,4 +134,8 @@ classifies colour photos of handbags and shoes at 87% from fewer than 100 traini
 - [Lecture 3](03-keras-and-vision-basics.md): images as pixel tables, and the flattened network
   this replaces.
 - [Lecture 4](04-cnns-and-transfer-learning.md): everything above, plus the Colab walkthroughs.
-- See also [images and computer-vision tasks](images-and-vision-tasks.md).
+- [Lecture 7](07-transformers.md): a transformer's attention heads are compared to a convolutional
+  layer's filters, each learning its own pattern, and stacked encoders to the hierarchy of layers
+  (slide 49; ≈37:55, ≈1:02:34). Transformers now also do well on computer-vision problems (≈0:46).
+- See also [images and computer-vision tasks](images-and-vision-tasks.md) and
+  [transformers](transformers.md).

@@ -5,9 +5,10 @@ Catalog id `5935cc5f-a533-4ded-a08f-6fac61ded777`. Course site:
 `lists/lecture-notes/` as `mit15_773_s24_lecNN.pdf`, and their numbering does **not** follow the
 11 videos: there are decks 01, 02, 02-backprop-example, 03a, 03b, 04–10, 10.5 and 11. Work out
 which deck(s) each video covers from the transcript before reading anything. Video 1 covers deck 01
-only (it ends on deck 01's last slide; deck 02 opens video 2). Videos 1–6 are built (see BUILD_LOG.md);
-video 6 presented deck 06 from slide 2 to slide 68 and then its Colab, so deck 07 (Transformers)
-should open video 7. Confirm from the transcript.
+only (it ends on deck 01's last slide; deck 02 opens video 2). Videos 1–7 are built (see BUILD_LOG.md);
+video 7 presented deck 07 to its slide 76 and ended in the Colab before training the slot-filling
+model, so video 8 probably opens by finishing that Colab before deck 08 (Transformers II). Confirm
+from the transcript. Deck 08 reuses deck 07's slot-filling rasters (see BUILD_LOG.md, lecture 7).
 
 Images are opted in: every figure-bearing slide, rendered per Step 1c, never a slide with an OCW notice.
 
@@ -26,12 +27,12 @@ print N+1 (a hidden slide); headings use the PDF page. Text-layer OCW notices: s
 - [x] 07 DL for Natural Language – Transformers — video IeF7aATDaw4 → raw/transcripts/07-transformers.md (+ original/)
 - [x] Slides 07 → raw/slides/07-transformers.md (Sonnet, two agents; slide 17's hidden "see" noted)
 - [x] 07 figure check on rendered images (33, 42, 51, 53, 61, 64, 75 and slide 1; slide 59's "sit" → "sat" added, slide 51's line description cut back to what the render settles)
-- [ ] raw/images/07-transformers/ — render, embed in slide file and wiki
-- [ ] wiki/07-transformers.md
-- [ ] Topic pages for lecture 7
-- [ ] INDEX.md — lecture 7 entries, coverage and image sentences
-- [ ] kb.json, BUILD_LOG.md lecture 7 record, AGENTS.md image row, LICENSE.md attribution, sources.md
-- [ ] verify_kb.py clean (with check_math and --github), review section read
+- [x] raw/images/07-transformers/ — render, embed in slide file and wiki (rendered 33, 35, 43, 47, 49, 53, 75; slide file by script, wiki hand-placed with hand-written captions)
+- [x] wiki/07-transformers.md
+- [x] Topic pages for lecture 7 (new: transformers; extended word-embeddings, NLP, multiclass, text-vectorization, keras, representation-learning, CNNs; lecture 6 links forward)
+- [x] INDEX.md — lecture 7 entries, coverage and image sentences
+- [x] kb.json, BUILD_LOG.md lecture 7 record, AGENTS.md image row, LICENSE.md attribution, sources.md
+- [x] verify_kb.py clean (with check_math and --github), review section read (slide file's math in Figure lines made plain text, `\hat{w}_N` → `\hat w_N` for github.com)
 - [ ] Commit and push
 - [ ] Move this section to BUILD_LOG.md
 

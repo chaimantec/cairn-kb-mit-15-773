@@ -111,6 +111,11 @@ Keras implements all four steps "as a single, simple layer called the text vecto
   and returns the integers, for an `Embedding` layer to encode, and `output_sequence_length` pads
   short inputs with the token 0 and truncates long ones to a fixed length. Index 0 then belongs to the
   pad token and `<UNK>` moves to 1 (lecture 6, slides 57–59; ≈51:18–52:51, ≈58:59).
+- **Labels are text too** (lecture 7). For slot filling, the outputs are sequences of tags such as
+  B-fromloc.city_name, and they are vectorized like the queries. But the default standardization
+  would strip the periods and underscores and lowercase the tags, so it is set to none for the output
+  side (lecture 7, ≈1:06:29–1:07:14). On the input side the ATIS queries give a vocabulary of 888
+  tokens, and every query is padded or truncated to 30 (≈1:05:41, ≈1:12:41).
 
 ## Where this comes up
 
@@ -118,5 +123,7 @@ Keras implements all four steps "as a single, simple layer called the text vecto
   Keras layer, used to classify song lyrics.
 - [Lecture 6](06-word-embeddings.md): why one-hot vectors fall short, and the layer's integer output
   and padding for an Embedding layer.
+- [Lecture 7](07-transformers.md): vectorizing both the queries and their slot labels, with
+  standardization turned off for the labels.
 - See also [word embeddings](word-embeddings.md), [natural language processing](natural-language-processing.md) and
   [Keras](keras.md).

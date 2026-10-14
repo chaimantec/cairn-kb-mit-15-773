@@ -91,8 +91,10 @@ script's page list rather than retyping it. The agent must look
 for notices on every page, because some are drawn rather than typed. Each slide entry ends with
 `*Figure: yes — …*` or `*Figure: no*`, which is what image selection reads. Figure descriptions are
 checked against **rendered images** (1400px renders are cheap), never against full PDF page images
-in the parent's context. The text layer can hold text that the rendered page hides under a shape (lecture 5's
-slide 37 table header, slides 22–25's `f(x, w)`): describe what the render shows, and note the
+in the parent's context. When build steps repeat a table, diff each step's cells against the
+previous page's text layer: an agent that writes "every other value is unchanged" can miss a
+renamed row (lecture 7, slide 59). The text layer can hold text that the rendered page hides under
+a shape (lecture 5's slide 37 table header, slides 22–25's `f(x, w)`): describe what the render shows, and note the
 hidden text. **Do not ask an agent to copy creative text a slide prints**, such as song lyrics or
 poems. Have it describe them instead. A content filter stopped an agent mid-deck when it was told
 to copy lyrics verbatim, and the KB should not reproduce them anyway.
@@ -122,6 +124,7 @@ What was rendered and why goes in `BUILD_LOG.md`.
 | 4 Convolutional Neural Networks and Transfer Learning | 16 of 84 pages | rendered from `mit15_773_s24_lec04.pdf` |
 | 5 Text Vectorization and the Bag-of-Words Model | 7 of 67 pages | rendered from `mit15_773_s24_lec05.pdf` |
 | 6 Word Embeddings | 8 of 70 pages | rendered from `mit15_773_s24_lec06.pdf` |
+| 7 Transformers | 7 of 78 pages | rendered from `mit15_773_s24_lec07.pdf` |
 
 ## Conventions
 

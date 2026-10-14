@@ -166,6 +166,25 @@ Its notebook is not on OCW either; what follows is what the lecturer and the sli
 - **Frozen weights are parameters, but not trainable ones.** With frozen GloVe embeddings the song
   model's summary reports 500,835 parameters, of which 835 are trainable (≈1:02:53–1:03:41).
 
+## Layers for transformers (lecture 7)
+
+[Lecture 7](07-transformers.md) sets up a slot-filling model on the ATIS travel queries. Its notebook
+is not on OCW; what follows is what the lecturer names.
+
+- **The course's "HODL library"** packages the transformer-related Keras code: "calling it a library is
+  overstating it", it is a file of code, from which the notebook imports a **transformer encoder** and a
+  **positional embedding layer** (≈1:04:08–1:04:55).
+- **The positional embedding layer** packages two distinct tables, the word embeddings and the position
+  embeddings (888 tokens and 30 positions, each by 512, in the Colab), and its weights start untrained,
+  "an empty shell", like a text vectorization layer before `adapt` (≈1:09:34, ≈1:13:28).
+- **The transformer encoder** needs three things: the embedding dimension (512), `dense_dim`, the size
+  of its feed-forward ReLU layer (64), and the number of attention heads (5) (≈1:11:53–1:14:14).
+- **After the encoder**, ordinary layers: a dense ReLU layer of 128 `units`, dropout, and a dense
+  softmax over the 125-entry output vocabulary (≈1:14:14).
+- **Text vectorization for labels** sets standardization to none, so that the slot tags keep their
+  periods, underscores and capitals (≈1:07:14).
+- **A layer's weights attribute** shows its weights, before or after training (≈1:15:02–1:15:49).
+
 ## Answers from lecture 2
 
 - **Custom activation functions** can be defined (≈17:08).
@@ -188,6 +207,8 @@ Its notebook is not on OCW either; what follows is what the lecturer and the sli
   and a pre-trained ResNet.
 - [Lecture 5](05-text-vectorization-and-bag-of-words.md): the text vectorization layer, `adapt`, `get_vocabulary`,
   `ngrams`, and `Dropout`.
+- [Lecture 7](07-transformers.md): the HODL transformer encoder and positional embedding layer, and
+  the slot-filling model.
 - [Lecture 6](06-word-embeddings.md): `TextVectorization` with integer output and padding, `Embedding`,
   `GlobalAveragePooling1D`, and freezing pretrained embeddings.
 - See also [anatomy of a neural network](neural-network-anatomy.md) for the design choices the code

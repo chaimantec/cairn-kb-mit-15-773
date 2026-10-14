@@ -129,8 +129,15 @@ further (≈1:02:07, ≈1:09:04). See [Keras](keras.md#layers-for-embeddings-lec
 GloVe gives each word one vector, whatever the sentence. Words with several meanings, like "bank",
 then get an average of their meanings, which is not very good. **Contextual word embeddings** take
 the other words of the sentence into account, and computing them is what transformers do (lecture 6,
-slides 22–25; ≈12:23–14:48). The course turns to transformers in lecture 7, which this knowledge
-base does not yet cover.
+slides 22–25; ≈12:23–14:48).
+
+[Lecture 7](07-transformers.md) computes them with **self-attention**. The contextual embedding of a
+word is a weighted average of the stand-alone embeddings of every word in the sentence, with weights
+from a softmax over their dot products with that word's embedding. In "The train slowly left the
+station", "train" pulls the embedding of "station" towards the world of trains, while "radio", which
+is not in the sentence, gets no weight (lecture 7, slides 26–47; ≈16:15–34:50). Stand-alone embeddings
+are the input to that process: random ones, GloVe, it "doesn't matter" (lecture 7, ≈47:05). See
+[transformers](transformers.md).
 
 ## Where this comes up
 
@@ -138,6 +145,8 @@ base does not yet cover.
   matrix, word vector algebra, embeddings in Keras, and the song-genre Colab.
 - [Lecture 5](05-text-vectorization-and-bag-of-words.md): one-hot vectors and the Bag of Words model,
   which embeddings replace.
+- [Lecture 7](07-transformers.md): contextual embeddings by self-attention, and position embeddings
+  added to word embeddings.
 - See also [text vectorization](text-vectorization.md),
-  [representation learning](representation-learning.md) and
-  [natural language processing](natural-language-processing.md).
+  [representation learning](representation-learning.md),
+  [natural language processing](natural-language-processing.md) and [transformers](transformers.md).

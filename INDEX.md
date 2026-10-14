@@ -8,12 +8,14 @@ transfer learning) and natural language (embeddings, transformers), to generativ
 parameter-efficient fine-tuning, text-to-image diffusion). It deliberately "skips the math" and
 focuses on concepts and on coding models in Keras/TensorFlow.
 
-**Coverage: lectures 1–6 of 11.** This knowledge base is being built lecture by lecture. Only
-lectures 1 to 6 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
-covering lectures 7–11. On language it covers lectures 5 (text vectorization and the Bag of Words
-model) and 6 (word embeddings and GloVe). For anything after lecture 6, including transformers,
-contextual embeddings beyond lecture 6's preview, LLMs, byte-pair encoding and generative AI, say
-that the KB does not cover it yet.
+**Coverage: lectures 1–7 of 11.** This knowledge base is being built lecture by lecture. Only
+lectures 1 to 7 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
+covering lectures 8–11. On language it covers lectures 5 (text vectorization and the Bag of Words
+model), 6 (word embeddings and GloVe) and 7 (the transformer encoder: self-attention, multi-head
+attention, positional encoding, applied to slot filling). For anything after lecture 7, including
+the parts of the encoder that lecture 7 leaves for lecture 8 (the projections that give attention its
+weights, residual connections, layer normalization), BERT beyond lecture 7's mention, self-supervised
+learning, LLMs, byte-pair encoding and generative AI, say that the KB does not cover it yet.
 
 ## Contents
 
@@ -77,6 +79,18 @@ that the KB does not cover it yet.
   integer output and padding, the `Embedding` lookup table and `GlobalAveragePooling1D`; in Colab, the
   song-genre classifier on frozen GloVe (63%, 835 of 500,835 parameters trainable), GloVe trained
   further (almost 69%) and 64-dimensional embeddings from scratch (72%).
+- [Lecture 7 — Transformers](wiki/07-transformers.md): transformers across domains, and the task that
+  motivates them: turning a travel query into a structured query by tagging every word of ATIS queries
+  with one of 123 slots (B-, I- and O labels), a 123-way softmax per word. The three requirements
+  (output as long as the input, context, order); BERT's effect on Google search. Self-attention built
+  step by step on "The train slowly left the station": weights on the other words, the weighted
+  average $\hat w_6$, dot products as relatedness, the softmax that makes them weights. Multi-head
+  attention (concatenate and project), feed-forward ReLU layers, why self-attention ignores order,
+  positional encoding worked on "cat sat mat", the transformer encoder and stacking. Slot filling with
+  an encoder, and the Colab set-up (888-token vocabulary, 512-dimensional embeddings, five heads,
+  about 5.3 million encoder parameters, hand-checked on the page); the model is not trained in this
+  lecture. Attention's learned projections, residual connections and layer normalization are left for
+  lecture 8.
 
 ### Topics
 
@@ -136,11 +150,12 @@ that the KB does not cover it yet.
   `Rescaling`, augmentation) and `include_top=False`, the text vectorization layer (`adapt`,
   `get_vocabulary`, `max_tokens`, `ngrams`), `Dropout` and KerasTuner, and the layers for
   embeddings (`output_mode="int"` with `output_sequence_length`, `Embedding`,
-  `GlobalAveragePooling1D`, freezing a layer).
+  `GlobalAveragePooling1D`, freezing a layer), and lecture 7's transformer encoder and positional
+  embedding layer.
 - [Natural language processing](wiki/natural-language-processing.md): why text matters, the range
   of "text in, text out" applications, how to represent text, from one-hot vectors to stand-alone
-  and contextual embeddings, the arc of NLP progress from rules to transformers, and the course's
-  NLP roadmap (lectures 5–10).
+  and contextual embeddings, the transformer encoder and ATIS slot filling, the arc of NLP progress
+  from rules to transformers, and the course's NLP roadmap (lectures 5–10).
 - [Text vectorization](wiki/text-vectorization.md): standardize, tokenize, index, encode (STIE);
   stop words and stemming; the vocabulary and the `<UNK>` token; one-hot vectors and the vocabulary
   size; choosing `max_tokens`; and Keras's text vectorization layer, including integer output,
@@ -151,7 +166,10 @@ that the KB does not cover it yet.
 - [Word embeddings](wiki/word-embeddings.md): what is wrong with one-hot vectors, what embeddings
   should do, GloVe (the co-occurrence matrix, the model, the least-squares fit), word vector algebra,
   the embedding length, pretrained versus your own, the Keras layers, and stand-alone versus
-  contextual embeddings.
+  contextual embeddings, which lecture 7 computes by self-attention.
+- [Transformers](wiki/transformers.md): self-attention as a softmax-weighted average of embeddings,
+  multi-head attention, feed-forward layers, positional encoding, the transformer encoder and
+  stacking, and an encoder applied to slot filling.
 
 ## Raw materials
 
@@ -170,7 +188,8 @@ that the KB does not cover it yet.
   [`raw/slides/03-vision-basics.md`](raw/slides/03-vision-basics.md). Cite them as "deck 3A, slide N"
   and "deck 3B, slide N". From page 16 on, deck 3B prints a number one higher than the page where it
   prints one. The decks of lectures 4, 5 and 6 print their own page number wherever they print one.
-  The Colab notebooks of lectures 3 to 6 are not published on OCW; the KB knows them only from
+  From page 10 on, lecture 7's deck prints a number one higher than the page.
+  The Colab notebooks of lectures 3 to 7 are not published on OCW; the KB knows them only from
   the lecturer's narration.
 - [`raw/images/`](raw/images/): rendered figure slides (see below).
 - [`sources.md`](sources.md): every course document on the OCW site with its canonical URL. The
@@ -181,12 +200,13 @@ that the KB does not cover it yet.
 
 ## Images
 
-**Lectures 1 to 6 have images. No other lecture does yet.** Their figure slides are rendered
+**Lectures 1 to 7 have images. No other lecture does yet.** Their figure slides are rendered
 as whole slides and shown inline, both in the lecture pages ([lecture 1](wiki/01-introduction.md),
 [lecture 2](wiki/02-training-deep-nns.md), [lecture 3](wiki/03-keras-and-vision-basics.md),
 [lecture 4](wiki/04-cnns-and-transfer-learning.md),
 [lecture 5](wiki/05-text-vectorization-and-bag-of-words.md),
-[lecture 6](wiki/06-word-embeddings.md)) and under the matching `## Slide N` heading in
+[lecture 6](wiki/06-word-embeddings.md), [lecture 7](wiki/07-transformers.md)) and under the
+matching `## Slide N` heading in
 each slide file. Lecture 1 has 45. Lecture 2 has 18: 15 from its main deck and 3 pages of the
 handwritten backprop example, which are named `backprop-N` rather than `slide-N`. Lecture 3 has 13 in
 one directory: 9 from deck 3A named `3a-N` and 4 from deck 3B named `3b-N`. Lecture 4 has 16.
@@ -195,7 +215,13 @@ song classifier); its third-party screenshots and logo graphics (slides 3, 4, 15
 rendered. Lecture 6 has 8: the co-occurrence matrix, the GloVe word-pair plot (twice, with its two
 arrows), and the Keras diagrams (the layer split, padding, the Embedding table, average pooling and
 the overall flow). Its Cohere embedding quizzes (slides 14–19) and Chollet's one-hot and embedding
-figure (slide 47) are excluded by OCW and described in prose only. Slides
+figure (slide 47) are excluded by OCW and described in prose only. Lecture 7 has 7: self-attention as
+a weighted sum and as softmax weights, the stand-alone and contextual vectors of "station", the pull
+of "train" on "station", two attention heads concatenated and projected, the encoder stack before
+positional encoding, and the slot-filling pipeline. Its figures from "Attention Is All You Need"
+(slides 23, 51 and 64–69), including the paper's transformer architecture diagram, are excluded by
+OCW, and its Google search screenshots (slides 21–22) are not rendered; their slide entries describe
+them in prose. Slides
 whose content OCW excludes from its licence (marked `*OCW notice: …*`) are never rendered, and
 neither are slides that reuse an excluded figure without a notice of their own: deck 3A's slides
 24–25 and lecture 4's slide 77, whose ResNet diagram slides 70–73 exclude. So lecture 4 has no image

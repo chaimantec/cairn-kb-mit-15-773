@@ -4,7 +4,8 @@
 The course's NLP sequence starts in [lecture 5](05-text-vectorization-and-bag-of-words.md) and, by
 the roadmap on its first slide, runs through embeddings (lecture 6), transformers in theory
 (lecture 7) and in applications with self-supervised learning (lecture 8), to LLMs (lectures 9–10)
-(lecture 5, slide 1; ≈0:00–0:46). This knowledge base so far covers lectures 5 and 6.
+(lecture 5, slide 1; ≈0:00–0:46). Lecture 7's own roadmap calls lectures 7 and 8 "Transformers (1/2)"
+and "(2/2)" (lecture 7, slide 1). This knowledge base so far covers lectures 5, 6 and 7.
 
 ## Why text
 
@@ -48,6 +49,13 @@ embeddings take the surrounding words into account, and "the key to calculating 
 embeddings" is the transformer, the subject of lectures 7 and 8 (lecture 6, slides 22–25;
 ≈12:23–14:48).
 
+[Lecture 7](07-transformers.md) builds the [transformer](transformers.md) encoder: self-attention
+for context, several attention heads, feed-forward layers, and position embeddings for word order.
+Its task is one where every word needs its own answer: **slot filling** on the ATIS travel queries,
+tagging each word of "I want to fly from boston at 7 am …" with one of 123 slots such as
+B-fromloc.city_name, so that a natural-language query can be turned into a structured one such as
+SQL (lecture 7, slides 3–13; ≈1:33–10:05).
+
 ## The arc of NLP progress
 
 Lecture 5 tells the history in four eras (slides 19–21; ≈10:06–12:23). **Hand-crafted rules** written
@@ -77,6 +85,8 @@ been trained on it (lecture 5, ≈7:46–9:19).
   progress, text vectorization and the Bag of Words model.
 - [Lecture 6](06-word-embeddings.md): word embeddings, GloVe, and why contextual embeddings need
   transformers.
-- See also [word embeddings](word-embeddings.md), [representation learning](representation-learning.md) and
+- [Lecture 7](07-transformers.md): transformers for search queries, the ATIS slot-filling task, and
+  the transformer encoder.
+- See also [word embeddings](word-embeddings.md), [transformers](transformers.md), [representation learning](representation-learning.md) and
   [multi-class classification and softmax](multiclass-classification.md), whose softmax lecture 3
   connects to how GPT-4 emits words.

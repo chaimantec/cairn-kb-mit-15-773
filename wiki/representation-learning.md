@@ -73,6 +73,12 @@ slides 36–51). Nobody can say what an embedding's individual dimensions mean (
 can also learn its own embeddings as part of a task, and on lecture 6's 50,000 songs those beat
 pretrained GloVe (≈1:16:47).
 
+[Lecture 7](07-transformers.md) makes the representation depend on the sentence. A
+[transformer](transformers.md) encoder takes stand-alone embeddings in and returns **contextual**
+ones, the same number and the same length, so that encoders can be stacked; as the vectors flow up
+the stack they get "more and more and more contextualized" (lecture 7, ≈27:09), and deeper encoders
+work at higher levels of abstraction, as later layers of a convolutional network do (≈1:02:34).
+
 ## Where this comes up
 
 - [Lecture 1](01-introduction.md): why representations matter, and how hidden layers learn them.
@@ -82,3 +88,4 @@ pretrained GloVe (≈1:16:47).
   the first answer.
 - [Lecture 6](06-word-embeddings.md): word embeddings, learned from co-occurrence counts or from the
   task itself.
+- [Lecture 7](07-transformers.md): contextual embeddings from a transformer encoder.

@@ -31,7 +31,7 @@ Headings use the PDF page number. The deck's printed numbers (bottom right) agre
 | 7–13 | The ATIS data set and slot filling: each word gets one of 123 slot types (B-, I- and O labels); 18 words, 18 outputs, a 123-way softmax on each |
 | 14–18 | What the model must take into account: output as long as the input, context ("see", "bank", "it", "station"), word order |
 | 19–23 | The transformer architecture (2017); its effect on Google search; "Attention Is All You Need" |
-| 24–36 | Taking context into account: "The train slowly left the station", weights on the other words, the weighted average as the contextual embedding $\hat{w}_6$ |
+| 24–36 | Taking context into account: "The train slowly left the station", weights on the other words, the weighted average as the contextual embedding $\hat w_6$ |
 | 37–43 | Choosing the weights: relatedness, dot products (drawn on the iPad), exponentiate and normalize (softmax); summary formulas |
 | 44–48 | Why it works ('train' pulls 'station'; 'radio' gets no weight); the self-attention layer |
 | 49–51 | Multi-head attention: concatenate and project; different heads learn different patterns |
@@ -293,7 +293,7 @@ Six words in italics across the top, each with a subscripted symbol below it: "T
 
 - We can easily get stand-alone embeddings for all the words ("stand-alone embeddings" in red)
 
-*Figure: yes — six words $w_1$ to $w_6$ ("The train slowly left the station"), each above a four-cell grey vector*
+*Figure: yes — six words w1 to w6 ("The train slowly left the station"), each above a four-cell grey vector*
 
 ## Slide 27 — From embeddings to contextual embeddings
 
@@ -302,43 +302,43 @@ The same six words and four-cell grey vectors as slide 26 ("The" $w_1$, "train" 
 - We can easily get stand-alone embeddings for all the words (greyed out)
 - How can we modify station's embedding so that it incorporates the other words? (new; red text and red bullet)
 
-*Figure: yes — six words $w_1$ to $w_6$, each above a four-cell grey vector*
+*Figure: yes — six words w1 to w6, each above a four-cell grey vector*
 
 ## Slide 28 — From embeddings to contextual embeddings
 
 The six words and their grey four-cell vectors are shown again, spaced slightly wider than before (the word labels now sit a little higher, with more space between the words and the $w_i$ symbols). The bullets from slide 27 are gone. New: a narrow red text block at the far left, running down the left edge: "Imagine that we somehow know how much <u>attention</u> to give the other words i.e., how much <u>weight</u> to give the other words" ("attention" and "weight" underlined).
 
-*Figure: yes — six words $w_1$ to $w_6$, each above a four-cell grey vector*
+*Figure: yes — six words w1 to w6, each above a four-cell grey vector*
 
 ## Slide 29 — From embeddings to contextual embeddings
 
 Same diagram and the same left-hand block of text as slide 28; the left-hand text is now black (still with "attention" and "weight" underlined). New, in the lower middle in red: "<u>Intuitively</u>: *Which word(s) should get the most weight, which word(s) the least?*" ("Intuitively" underlined, followed by a colon in plain red; the question in red italics).
 
-*Figure: yes — six words $w_1$ to $w_6$, each above a four-cell grey vector*
+*Figure: yes — six words w1 to w6, each above a four-cell grey vector*
 
 ## Slide 30 — From embeddings to contextual embeddings
 
 Same diagram and left-hand black text block as slide 29. The red "Intuitively" question is replaced by: "We should give a lot of weight to 'train', a little to 'slowly' and 'left', and hardly anything to 'the'." (red)
 
-*Figure: yes — six words $w_1$ to $w_6$, each above a four-cell grey vector*
+*Figure: yes — six words w1 to w6, each above a four-cell grey vector*
 
 ## Slide 31 — From embeddings to contextual embeddings
 
 The left-hand text block is gone and the six words and vectors are as in slides 28 to 30. New: a light grey horizontal strip under the vectors holding one number under each word, in the order of the words: 0.05 (The), 0.3 (train), 0.12 (slowly), 0.08 (left), 0.05 (the), 0.4 (station). Below the strip, in red: "Maybe something like this?"
 
-*Figure: yes — six words $w_1$ to $w_6$ with a four-cell vector each and a strip of weights 0.05, 0.3, 0.12, 0.08, 0.05, 0.4*
+*Figure: yes — six words w1 to w6 with a four-cell vector each and a strip of weights 0.05, 0.3, 0.12, 0.08, 0.05, 0.4*
 
 ## Slide 32 — From embeddings to contextual embeddings
 
 Same diagram and weight strip as slide 31 (0.05, 0.3, 0.12, 0.08, 0.05, 0.4). The red text now reads: "How can we use these weights to "contextualize" the stand-alone embedding w₆ for "station"?" (red, with a subscript 6 on w).
 
-*Figure: yes — six words $w_1$ to $w_6$ with a four-cell vector each and a strip of weights 0.05, 0.3, 0.12, 0.08, 0.05, 0.4*
+*Figure: yes — six words w1 to w6 with a four-cell vector each and a strip of weights 0.05, 0.3, 0.12, 0.08, 0.05, 0.4*
 
 ## Slide 33 — From embeddings to contextual embeddings
 
 ![Slide 33 — From embeddings to contextual embeddings](../images/07-transformers/slide-33.png)
 
-The six words, symbols $w_1$ to $w_6$ and four-cell grey vectors again, with the weight strip (0.05, 0.3, 0.12, 0.08, 0.05, 0.4) underneath. New: each weight is also printed beside its vector in the row of cells, joined into a sum — "0.05" to the left of $w_1$'s vector, then "+ 0.3" between $w_1$'s and $w_2$'s vectors, "+ 0.12", "+ 0.08", "+ 0.05", and "+0.4" just before $w_6$'s vector, so each weight reads as multiplying the vector to its right. A large dark red curved arrow at the far left starts at the weight strip and sweeps up and to the right, pointing at the row of vectors. At the right, in red: "<u>Idea</u>: For each word, we can calculate a <u>weighted average</u> of the stand-alone embeddings of *all* the words in the sentence" ("Idea" and "weighted average" underlined, "all" italic).
+The six words, symbols $w_1$ to $w_6$ and four-cell grey vectors again, with the weight strip (0.05, 0.3, 0.12, 0.08, 0.05, 0.4) underneath. New: each weight is also printed beside its vector in the row of cells, joined into a sum — "0.05" to the left of the vector of $w_1$, then "+ 0.3" between the vectors of $w_1$ and $w_2$, "+ 0.12", "+ 0.08", "+ 0.05", and "+0.4" just before the vector of $w_6$, so each weight reads as multiplying the vector to its right. A large dark red curved arrow at the far left starts at the weight strip and sweeps up and to the right, pointing at the row of vectors. At the right, in red: "<u>Idea</u>: For each word, we can calculate a <u>weighted average</u> of the stand-alone embeddings of *all* the words in the sentence" ("Idea" and "weighted average" underlined, "all" italic).
 
 *Figure: yes — vectors for "The train slowly left the station" with weights 0.05, 0.3, 0.12, 0.08, 0.05, 0.4 written beside them as a weighted sum, and a large curved arrow*
 
@@ -346,7 +346,7 @@ The six words, symbols $w_1$ to $w_6$ and four-cell grey vectors again, with the
 
 Same words, vectors and "weight +" annotations as slide 33. The weight strip, the large curved arrow and the red text are gone. New: a thin dark red arrow runs down from $w_6$'s grey vector to a blue four-cell vector below it (at the lower right).
 
-*Figure: yes — weighted-sum annotation over the six word vectors, with an arrow from the $w_6$ vector down to a blue four-cell vector*
+*Figure: yes — weighted-sum annotation over the six word vectors, with an arrow from the w6 vector down to a blue four-cell vector*
 
 ## Slide 35 — From embeddings to contextual embeddings
 
@@ -354,19 +354,19 @@ Same words, vectors and "weight +" annotations as slide 33. The weight strip, th
 
 Same as slide 34. New: a red dashed rounded rectangle enclosing the $w_6$ column and the blue vector at the right side. Inside it, red labels: "Stand-alone embedding" next to the grey $w_6$ vector, and "Contextual version of $w_6$" next to the blue vector.
 
-*Figure: yes — the grey stand-alone vector of $w_6$ with an arrow to the blue contextual vector, both labelled and boxed by a red dashed outline*
+*Figure: yes — the grey stand-alone vector of w6 with an arrow to the blue contextual vector, both labelled and boxed by a red dashed outline*
 
 ## Slide 36 — Let's write it more formally
 
-The six words "The train slowly left the station" with $w_1$ to $w_6$ beneath them. Six dark red lines run from the $w_i$ symbols down and to the right, converging at a point near the bottom right marked $\hat{w}_6$. Each line carries a label: $s_{1,6}$ (on the line from $w_1$), $s_{2,6}$, $s_{3,6}$, $s_{4,6}$, $s_{5,6}$ and $s_{6,6}$ (the last line is vertical, from $w_6$). To the right of the $w_i$ row, in red: "Stand-alone embedding".
+The six words "The train slowly left the station" with $w_1$ to $w_6$ beneath them. Six dark red lines run from the $w_i$ symbols down and to the right, converging at a point near the bottom right marked $\hat w_6$. Each line carries a label: $s_{1,6}$ (on the line from $w_1$), $s_{2,6}$, $s_{3,6}$, $s_{4,6}$, $s_{5,6}$ and $s_{6,6}$ (the last line is vertical, from $w_6$). To the right of the $w_i$ row, in red: "Stand-alone embedding".
 
 Below, in a dark red rectangle, the equation:
 
-$$\hat{w}_6 = s_{1,6}w_1 + s_{2,6}w_2 + s_{3,6}w_3 + s_{4,6}w_4 + s_{5,6}w_5 + s_{6,6}w_6$$
+$$\hat w_6 = s_{1,6}w_1 + s_{2,6}w_2 + s_{3,6}w_3 + s_{4,6}w_4 + s_{5,6}w_5 + s_{6,6}w_6$$
 
 To the right of the box, in red: "Contextual version of $w_6$".
 
-*Figure: yes — six lines from $w_1 \ldots w_6$, labelled $s_{1,6} \ldots s_{6,6}$, converging on $\hat{w}_6$, with the weighted-sum equation boxed below*
+*Figure: yes — six lines from w1 … w6, labelled s1,6 … s6,6, converging on ŵ6, with the weighted-sum equation boxed below*
 
 ## Slide 37 — For a given word (e.g., 'station'), how should the weights be chosen?
 
@@ -399,33 +399,33 @@ The body holds only the word "iPad" at top left, followed by empty space. In the
 
 ## Slide 41 — Dot-products between embeddings are a key ingredient but we need to do one more thing to make them proper* weights
 
-A sentence is laid out left to right in black italics: "The", "train", "slowly", "left", "the", "station". Beneath each word is its stand-alone embedding in LaTeX-style italics: $w_1$, $w_2$, $w_3$, $w_4$, $w_5$, $w_6$. From the bottom of each $w_i$ a thin dark-red line runs diagonally down and to the right, and all six lines converge on a single point at lower right, labelled $\hat{w}_6$. Each line carries a score label near its start: $s_{1,6}$, $s_{2,6}$, $s_{3,6}$, $s_{4,6}$, $s_{5,6}$, $s_{6,6}$. The line from $w_6$ is vertical. In large red text at lower left: "How should we do this?"
+A sentence is laid out left to right in black italics: "The", "train", "slowly", "left", "the", "station". Beneath each word is its stand-alone embedding in LaTeX-style italics: $w_1$, $w_2$, $w_3$, $w_4$, $w_5$, $w_6$. From the bottom of each $w_i$ a thin dark-red line runs diagonally down and to the right, and all six lines converge on a single point at lower right, labelled $\hat w_6$. Each line carries a score label near its start: $s_{1,6}$, $s_{2,6}$, $s_{3,6}$, $s_{4,6}$, $s_{5,6}$, $s_{6,6}$. The line from $w_6$ is vertical. In large red text at lower left: "How should we do this?"
 
 Footnote: \* non-negative, and summing to 1.0
 
-*Figure: yes — six words $w_1 \ldots w_6$ of "The train slowly left the station" with lines labelled $s_{1,6} \ldots s_{6,6}$ converging on $\hat{w}_6$*
+*Figure: yes — six words w1 … w6 of "The train slowly left the station" with lines labelled s1,6 … s6,6 converging on ŵ6*
 
 ## Slide 42 — Since dot-products can be negative, we can exponentiate them and then normalize (remember softmax?)
 
-Same diagram as slide 41 (words, $w_1 \ldots w_6$, lines labelled $s_{1,6} \ldots s_{6,6}$ converging on $\hat{w}_6$), without the red question. New at lower left, the formula:
+Same diagram as slide 41 (words, $w_1 \ldots w_6$, lines labelled $s_{1,6} \ldots s_{6,6}$ converging on $\hat w_6$), without the red question. New at lower left, the formula:
 
 $$s_{1,6} = \frac{\exp\langle w_1, w_6 \rangle}{\sum_{i=1}^{6} \exp\langle w_i, w_6 \rangle}$$
 
 (The title runs off the right edge of the page image: it reads "…we can exponentiat" and the rest of the word is cut off.)
 
-*Figure: yes — the same six-word fan diagram with the softmax formula for $s_{1,6}$*
+*Figure: yes — the same six-word fan diagram with the softmax formula for s1,6*
 
 ## Slide 43 — Summary: From embeddings to *contextual* embeddings
 
 ![Slide 43 — Summary: from embeddings to contextual embeddings](../images/07-transformers/slide-43.png)
 
-Same diagram and formula as slide 42, now with additions on the right and bottom. New: $w_6$ is circled with a dashed light-blue ellipse, labelled in light blue "Stand-alone embedding"; $\hat{w}_6$ is circled with a dashed red ellipse, labelled in red "Contextual embedding"; between the two labels a large dark-red arrow points downward from the stand-alone to the contextual embedding. Below the diagram, in a dark-red outlined box, the equation:
+Same diagram and formula as slide 42, now with additions on the right and bottom. New: $w_6$ is circled with a dashed light-blue ellipse, labelled in light blue "Stand-alone embedding"; $\hat w_6$ is circled with a dashed red ellipse, labelled in red "Contextual embedding"; between the two labels a large dark-red arrow points downward from the stand-alone to the contextual embedding. Below the diagram, in a dark-red outlined box, the equation:
 
-$$\hat{w}_6 = s_{1,6} w_1 + s_{2,6} w_2 + s_{3,6} w_3 + s_{4,6} w_4 + s_{5,6} w_5 + s_{6,6} w_6$$
+$$\hat w_6 = s_{1,6} w_1 + s_{2,6} w_2 + s_{3,6} w_3 + s_{4,6} w_4 + s_{5,6} w_5 + s_{6,6} w_6$$
 
 The formula for $s_{1,6}$ is the same as on slide 42 (shifted slightly up).
 
-*Figure: yes — the fan diagram with $w_6$ (blue, stand-alone) and $\hat{w}_6$ (red, contextual) circled, a downward arrow between them, and the weighted-sum equation in a box*
+*Figure: yes — the fan diagram with w6 (blue, stand-alone) and ŵ6 (red, contextual) circled, a downward arrow between them, and the weighted-sum equation in a box*
 
 ## Slide 44 — By choosing weights in this manner, the embedding of a word moves closer to the embeddings of the other words in the current context, in proportion to how related they are
 
@@ -469,15 +469,15 @@ Same diagram as slide 44. Build step: all three earlier bullets are greyed out a
 
 ## Slide 48 — This operation is referred to as a 'Self Attention' layer and can be done very efficiently with matrix operations
 
-A large rounded gold box in the centre containing a white label "Self-Attention". Six dark-red arrows enter it from below, from the stand-alone embeddings $w_1 \ldots w_6$ (row labelled at left "Stand-alone embeddings"), and six arrows leave it upward to the contextual embeddings $\hat{w}_1 \ldots \hat{w}_6$ (row labelled at left "Contextual embeddings").
+A large rounded gold box in the centre containing a white label "Self-Attention". Six dark-red arrows enter it from below, from the stand-alone embeddings $w_1 \ldots w_6$ (row labelled at left "Stand-alone embeddings"), and six arrows leave it upward to the contextual embeddings $\hat w_1 \ldots \hat w_6$ (row labelled at left "Contextual embeddings").
 
-*Figure: yes — Self-Attention box taking $w_1 \ldots w_6$ in and producing $\hat{w}_1 \ldots \hat{w}_6$*
+*Figure: yes — Self-Attention box taking w1 … w6 in and producing ŵ1 … ŵ6*
 
 ## Slide 49 — Key Tweak: Multi*-Head Attention
 
 ![Slide 49 — Key Tweak: Multi-Head Attention](../images/07-transformers/slide-49.png)
 
-Two gold boxes side by side at the bottom, each labelled "Self-Attention", each with six arrows in from $w_1 \ldots w_6$ below and six arrows out to $\hat{w}_1 \ldots \hat{w}_6$ above. Two diagonal dark-red arrows run from the tops of the two outputs up and inward to a smaller gold box at top centre labelled "Concatenate and Project". Six arrows leave its top, to $\hat{w}_1 \ldots \hat{w}_6$.
+Two gold boxes side by side at the bottom, each labelled "Self-Attention", each with six arrows in from $w_1 \ldots w_6$ below and six arrows out to $\hat w_1 \ldots \hat w_6$ above. Two diagonal dark-red arrows run from the tops of the two outputs up and inward to a smaller gold box at top centre labelled "Concatenate and Project". Six arrows leave its top, to $\hat w_1 \ldots \hat w_6$.
 
 Footnote: \*Similar to having multiple filters in a convolutional layer
 
@@ -507,9 +507,9 @@ In both panels the two "<pad>" tokens are joined by a vertical line. The figure 
 
 ## Slide 52 — Key Tweak: Inject some non-linearity with feed-forward layers at the end
 
-The multi-head diagram of slide 49, shrunk and placed at the bottom: two "Self-Attention" boxes, each taking $w_1 \ldots w_6$ in and giving $\hat{w}_1 \ldots \hat{w}_6$ out, joined by diagonal arrows into a small "Concatenate and Project" box, which outputs six arrows to $\hat{w}_1 \ldots \hat{w}_6$. New: above that, a larger gold box labelled "Feed-Forward Layers" takes a single arrow from the Concatenate and Project outputs and sends six arrows up to a top row $\hat{w}_1 \ldots \hat{w}_6$.
+The multi-head diagram of slide 49, shrunk and placed at the bottom: two "Self-Attention" boxes, each taking $w_1 \ldots w_6$ in and giving $\hat w_1 \ldots \hat w_6$ out, joined by diagonal arrows into a small "Concatenate and Project" box, which outputs six arrows to $\hat w_1 \ldots \hat w_6$. New: above that, a larger gold box labelled "Feed-Forward Layers" takes a single arrow from the Concatenate and Project outputs and sends six arrows up to a top row $\hat w_1 \ldots \hat w_6$.
 
-*Figure: yes — two Self-Attention blocks into "Concatenate and Project", then a "Feed-Forward Layers" box producing $\hat{w}_1 \ldots \hat{w}_6$*
+*Figure: yes — two Self-Attention blocks into "Concatenate and Project", then a "Feed-Forward Layers" box producing ŵ1 … ŵ6*
 
 ## Slide 53 — The story so far
 
@@ -653,7 +653,7 @@ Worked tables at right, all three now filled (blank header cells; they run off t
 
 ## Slide 62 — We have satisfied all 3 requirements
 
-The same stack diagram as slide 54 (two Self-Attention boxes into Concatenate and Project, then Feed-Forward Layers, outputs $\hat{w}_1 \ldots \hat{w}_6$) at right, now captioned beneath in red "Positional Input Embeddings". At left, all three checklist items in red with check marks:
+The same stack diagram as slide 54 (two Self-Attention boxes into Concatenate and Project, then Feed-Forward Layers, outputs $\hat w_1 \ldots \hat w_6$) at right, now captioned beneath in red "Positional Input Embeddings". At left, all three checklist items in red with check marks:
 
 - ✓ Takes the surrounding context of each word into account
 - ✓ Takes the order of the words into account
@@ -669,7 +669,7 @@ The same stack diagram, moved to the left of the slide and captioned in red "Pos
 
 ## Slide 64 — This is called a Transformer Encoder\*
 
-The left-hand stack from slide 63 (outputs $\hat{w}_1 \ldots \hat{w}_6$, "Feed-Forward Layers", "Concatenate and Project", two "Self-Attention" boxes, inputs $w_1 \ldots w_6$), now with a red dash-dot rounded outline around the two Self-Attention boxes and the Concatenate and Project box, and the caption "Positional Input Embeddings" in red at the bottom. At right, a block diagram of the transformer encoder from the paper: from bottom to top, "Inputs" with an upward arrow to a pink "Input Embedding" box; a circled "+" fed by a circled sine-wave symbol labelled "Positional Encoding"; then a grey rounded container, labelled "N×" at its left, holding an orange "Multi-Head Attention" box (three arrows enter it from below, with a residual arrow bypassing it) topped by a pale-yellow "Add & Norm" box, then a blue "Feed Forward" box (with a residual bypass) topped by a second pale-yellow "Add & Norm" box; a black arrow leaves the container's top. Three dark-red arrows link the two figures: from the "Feed-Forward Layers" box to the "Feed Forward" box, from the red dash-dot outline to the "Multi-Head Attention" box, and from the "Positional Input Embeddings" caption to the "Input Embedding"/positional-encoding region.
+The left-hand stack from slide 63 (outputs $\hat w_1 \ldots \hat w_6$, "Feed-Forward Layers", "Concatenate and Project", two "Self-Attention" boxes, inputs $w_1 \ldots w_6$), now with a red dash-dot rounded outline around the two Self-Attention boxes and the Concatenate and Project box, and the caption "Positional Input Embeddings" in red at the bottom. At right, a block diagram of the transformer encoder from the paper: from bottom to top, "Inputs" with an upward arrow to a pink "Input Embedding" box; a circled "+" fed by a circled sine-wave symbol labelled "Positional Encoding"; then a grey rounded container, labelled "N×" at its left, holding an orange "Multi-Head Attention" box (three arrows enter it from below, with a residual arrow bypassing it) topped by a pale-yellow "Add & Norm" box, then a blue "Feed Forward" box (with a residual bypass) topped by a second pale-yellow "Add & Norm" box; a black arrow leaves the container's top. Three dark-red arrows link the two figures: from the "Feed-Forward Layers" box to the "Feed Forward" box, from the red dash-dot outline to the "Multi-Head Attention" box, and from the "Positional Input Embeddings" caption to the "Input Embedding"/positional-encoding region.
 
 Footnote at bottom left: \*with layernorm and residual connections (details in the next lecture). Also, at bottom: https://arxiv.org/abs/1706.03762
 
