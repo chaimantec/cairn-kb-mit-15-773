@@ -34,11 +34,14 @@ encoder, a dense ReLU layer and a softmax for every word (slides 71–76; ≈1:0
 the model is set up on ATIS, with 512-dimensional embeddings, five attention heads and about 5.3
 million parameters in the encoder, but it is **not trained in this recording**: the lecturer stops at
 9:45 because training takes a few minutes, and continues "on Wednesday" (≈1:15:49).
+[Lecture 8](08-transformers-and-self-supervised-learning.md) reports the trained result: 99% test accuracy, and 93% on the words whose slot is
+not O (≈3:53–5:25).
 
 Three pieces are deliberately left for the next lecture: the linear projections that give
 self-attention something to learn, residual connections and layer normalization (slide 70;
 ≈1:01:01). Until then the self-attention box, as described here, has **no parameters at all**, a
-point a student raises and the lecturer defers (≈40:58–41:44).
+point a student raises and the lecturer defers (≈40:58–41:44). [Lecture 8](08-transformers-and-self-supervised-learning.md) supplies all
+three.
 
 The catalog titles the video "Deep Learning for Natural Language – Transformers"; the deck's roadmap
 calls the lecture "Transformers (1/2)" (slide 1). The recording presents slides 2–71, opens the Colab
@@ -306,7 +309,8 @@ so far, the self-attention box **has no parameters**, no coefficients, nothing t
 neither of two heads is learning anything, "what's the point?" The answer comes in the next lecture: slide 70 lists "linear projections
 of the incoming embeddings into three different spaces before the self-attention operation is carried
 out" among the elements still to be covered. "And if you can't stand the suspense, read the book"
-(≈41:44).
+(≈41:44). [Lecture 8](08-transformers-and-self-supervised-learning.md#part-3--making-self-attention-tunable) gives the answer: each head gets its
+own key, query and value matrices, started from different random values.
 
 ## Part 4 — Multi-head attention and the feed-forward layers
 
@@ -485,7 +489,7 @@ circles of earlier layers into a face.
 Left for the next lecture (slide 70; ≈1:01:01): the linear projections of the incoming embeddings into
 three different spaces before self-attention, which answer the "nothing to learn" question; residual
 connections; and layer normalization. The footnote: "please see the textbook if you can't stand the
-suspense".
+suspense". All three are in [lecture 8](08-transformers-and-self-supervised-learning.md), Parts 3–5.
 
 ## Part 7 — Slot filling with a transformer encoder
 
@@ -596,6 +600,10 @@ choice.
   output layer is 125-way (see Part 8).
 
 ## Related pages
+
+- [Lecture 8](08-transformers-and-self-supervised-learning.md): the second half of the transformer
+  (tunable attention, residual connections, layer normalization), this lecture's model trained, and
+  BERT.
 
 - [Transformers](transformers.md): self-attention, multi-head attention, the feed-forward layers,
   positional encoding and the encoder, gathered as a topic.

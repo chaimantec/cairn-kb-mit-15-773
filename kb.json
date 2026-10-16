@@ -9,12 +9,12 @@
     "courseUrl": "https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/"
   },
   "coverage": {
-    "lecturesCovered": 7,
+    "lecturesCovered": 8,
     "lecturesTotal": 11,
-    "transcripts": 7,
-    "wikiLecturePages": 7,
-    "wikiTopicPages": 22,
-    "note": "Lectures 1-7. The 11 videos use 14 OCW decks whose numbering does not follow the videos; video 1 covers deck 01 alone, video 2 deck 02 alone plus its handwritten backprop-example deck, video 3 decks 03a and 03b, video 4 deck 04 alone, video 5 deck 05 alone, video 6 deck 06 alone, video 7 deck 07 alone."
+    "transcripts": 8,
+    "wikiLecturePages": 8,
+    "wikiTopicPages": 23,
+    "note": "Lectures 1-8. The 11 videos use 14 OCW decks whose numbering does not follow the videos; video 1 covers deck 01 alone, video 2 deck 02 alone plus its handwritten backprop-example deck, video 3 decks 03a and 03b, video 4 deck 04 alone, video 5 deck 05 alone, video 6 deck 06 alone, video 7 deck 07 alone, video 8 deck 08 alone (slides 2-93; its contrastive-learning section, slides 94-98, is not presented)."
   },
   "license": {
     "file": "LICENSE.md",
@@ -25,21 +25,21 @@
     "primary": "slides",
     "slideDecks": {
       "available": 14,
-      "transcribed": 9
+      "transcribed": 10
     },
     "method": "page-images",
     "figuresAudited": true,
     "figureAudit": {
-      "decksAudited": 9,
-      "decksTotal": 9,
-      "note": "decksTotal counts transcribed decks. Each was transcribed by Sonnet and checked by the parent model against 1400px renders. Lecture 1: six pages (51, 59, 80, 93, 94, 100); slide 59's sigmoid corrected. Lecture 2 deck 02: six pages (4, 33, 42, 55, 69, 79); slide 52's minimum corrected. Lecture 2 backprop example: pages 7 and 12, both agreed. Numeric tables and worked examples were also checked by arithmetic. Lecture 3 deck 3A: four pages (10, 15, 17, 18); deck 3B: three (6 on a scratch crop of its excluded tables, 16, 18). All agreed; one unprinted identification on deck 3B slide 6 was removed. Lecture 4 deck 04: six pages (21, 31, 40, 47, 75, 80); slide 40's description of the dashed projections corrected. The pooling grids (slides 44-47) and the worked convolution (slides 15-21) were also checked by arithmetic. Lecture 5 deck 05: six pages (21, 37, 40, 50, 56, 65), all agreed; slide 37's table and slides 22-25's box hide text-layer text under shapes, which the slide file notes. Lecture 6 deck 06: seven pages (37, 45, 48, 59, 63, 67, 68), all agreed; one handwritten label on slide 37 is marked hard to read. Lecture 7 deck 07: seven pages (33, 42, 51, 53, 61, 64, 75) and slide 1; slide 59's change of 'sit' to 'sat' was added and slide 51's line-by-line description was cut back to what the render settles. The positional-encoding tables (slides 58-61) were also checked against the text layer and by arithmetic."
+      "decksAudited": 10,
+      "decksTotal": 10,
+      "note": "decksTotal counts transcribed decks. Each was transcribed by Sonnet and checked by the parent model against 1400px renders. Lecture 1: six pages (51, 59, 80, 93, 94, 100); slide 59's sigmoid corrected. Lecture 2 deck 02: six pages (4, 33, 42, 55, 69, 79); slide 52's minimum corrected. Lecture 2 backprop example: pages 7 and 12, both agreed. Numeric tables and worked examples were also checked by arithmetic. Lecture 3 deck 3A: four pages (10, 15, 17, 18); deck 3B: three (6 on a scratch crop of its excluded tables, 16, 18). All agreed; one unprinted identification on deck 3B slide 6 was removed. Lecture 4 deck 04: six pages (21, 31, 40, 47, 75, 80); slide 40's description of the dashed projections corrected. The pooling grids (slides 44-47) and the worked convolution (slides 15-21) were also checked by arithmetic. Lecture 5 deck 05: six pages (21, 37, 40, 50, 56, 65), all agreed; slide 37's table and slides 22-25's box hide text-layer text under shapes, which the slide file notes. Lecture 6 deck 06: seven pages (37, 45, 48, 59, 63, 67, 68), all agreed; one handwritten label on slide 37 is marked hard to read. Lecture 7 deck 07: seven pages (33, 42, 51, 53, 61, 64, 75) and slide 1; slide 59's change of 'sit' to 'sat' was added and slide 51's line-by-line description was cut back to what the render settles. The positional-encoding tables (slides 58-61) were also checked against the text layer and by arithmetic. Lecture 8 deck 08: eleven pages (18, 20, 24, 29, 47, 69, 80, 81, 86, 91, and a zoomed crop of 93); slide 20's claimed cut-off sentence corrected, formulas on slides 26, 28 and 29 repaired, slide 93's review text read from the crop, and slide 81's notice found to sit over the course's own diagram from slide 38."
     },
     "images": {
-      "lecturesWithImages": 7,
+      "lecturesWithImages": 8,
       "lecturesWithoutImages": [],
-      "lecturesTotal": 7,
-      "files": 114,
-      "megabytes": 11.93,
+      "lecturesTotal": 8,
+      "files": 133,
+      "megabytes": 14.2,
       "format": "whole slides rendered at 1400px, JPEG q85 or PNG whichever is smaller, named slide-N by PDF page number, or with a per-deck prefix (backprop-N, 3a-N, 3b-N) where a lecture has more than one deck",
       "discovery": "inline in wiki/ and raw/slides/; no index file",
       "byLecture": {
@@ -49,9 +49,10 @@
         "4": 16,
         "5": 7,
         "6": 8,
-        "7": 7
+        "7": 7,
+        "8": 19
       },
-      "note": "Lecture 1: 45 of 110 pages. Lecture 2: 15 of deck 02's 95 pages (slide-N) and 3 of the 14-page handwritten backprop example (backprop-N), in one directory. Lecture 3: 9 of deck 3A's 44 pages (3a-N) and 4 of deck 3B's 29 (3b-N), in one directory. Lecture 4: 16 of deck 04's 84 pages. Lecture 5: 7 of deck 05's 67 pages. Lecture 6: 8 of deck 06's 70 pages. Lecture 7: 7 of deck 07's 78 pages. Not rendered: slides with an OCW exclusion notice, slides that reuse an excluded figure without a notice (deck 3A slides 24-25; lecture 4 slide 77), superseded build steps and repeats, transcribed tables, unmarked third-party screenshots and logo graphics (lecture 5 slides 3, 4, 16; lecture 7 slides 21-22, Google search results), a figure already rendered for an earlier lecture (lecture 6 slide 3, lecture 5's slide 50), single-box text diagrams, logistics and text-only slides; the lists are in BUILD_LOG.md. No lecture after 7 is in this KB yet, so none has images."
+      "note": "Lecture 1: 45 of 110 pages. Lecture 2: 15 of deck 02's 95 pages (slide-N) and 3 of the 14-page handwritten backprop example (backprop-N), in one directory. Lecture 3: 9 of deck 3A's 44 pages (3a-N) and 4 of deck 3B's 29 (3b-N), in one directory. Lecture 4: 16 of deck 04's 84 pages. Lecture 5: 7 of deck 05's 67 pages. Lecture 6: 8 of deck 06's 70 pages. Lecture 7: 7 of deck 07's 78 pages. Lecture 8: 19 of deck 08's 99 pages. Not rendered: slides with an OCW exclusion notice, slides that reuse an excluded figure without a notice (deck 3A slides 24-25; lecture 4 slide 77), superseded build steps and repeats, transcribed tables, unmarked third-party screenshots and logo graphics (lecture 5 slides 3, 4, 16; lecture 7 slides 21-22, Google search results; lecture 8 slides 84 and 86, the Sentence-Transformers logo and a Hugging Face Hub screenshot), a figure already rendered for an earlier lecture (lecture 6 slide 3, lecture 5's slide 50; lecture 8 slides 10, 13 and 29, lecture 7's 75, 43 and 76; lecture 8 slides 42, 43 and 57, lecture 4's 75), single-box text diagrams, logistics and text-only slides; the lists are in BUILD_LOG.md. No lecture after 8 is in this KB yet, so none has images."
     }
   },
   "provenance": {
@@ -60,24 +61,27 @@
       "claude-sonnet-5-5"
     ],
     "caveats": [
-      "Covers lectures 1-7 of 11 only.",
+      "Covers lectures 1-8 of 11 only.",
       "Slide numbers are PDF page numbers. Some lecture 1 pages visibly print stale numbers from an older deck (page 13 prints 20), lecture 2's deck prints N+1 from page 50 on, and lecture 7's from page 10 on; the slide files list them.",
       "Catalog video titles misstate coverage: video 1 ends before training, video 2 shows only the four-line Keras model definition, video 3, titled for convolutional networks, never reaches them, and video 4, titled for transfer learning and Hugging Face, spends its first hour building CNNs from scratch.",
       "Lecture 2's backprop example is a handwritten deck that the video points to but does not present; it is transcribed from the handwriting in its own slide file.",
       "Figure checks were done by the parent model on rendered images, not by an independent agent.",
       "Lecture 2 renders slides 55-58 and 69, which reproduce plots from a web page whose gradient-descent figures OCW excludes on slide 75 only; LICENSE.md names the source.",
       "Lecture 3 spans two decks, cited as 'deck 3A, slide N' and 'deck 3B, slide N'; deck 3B prints N+1 from page 16 where it prints a number.",
-      "The course's Colab notebooks are not published on OCW. The Colab walkthroughs of lectures 3 to 7 are described from the lecturer's narration only.",
+      "The course's Colab notebooks are not published on OCW. The Colab walkthroughs of lectures 3 to 8 are described from the lecturer's narration only.",
       "Lecture 4 renders slides whose figures OCW does not mark as excluded but which credit third parties: deeplearning.ai (31, 32), Fig 14-2 of Hands-On Machine Learning (40), the CS231n notes (47), and screenshots of the TensorFlow, PyTorch and Hugging Face hubs (78-80); LICENSE.md names them.",
       "Lecture 4's wiki page checks the Fashion-MNIST CNN's 302,000 parameters by its own arithmetic, under assumptions (no padding, pooling rounding down) that the lecture does not state; the page labels it as such.",
       "Lecture 5's slide 63 prints copyrighted song lyrics; the slide file describes them and does not reproduce them.",
       "Lecture 5's wiki page totals the song classifiers' parameters by its own arithmetic (40,035 and 160,035), extending the lecturer's 40,008 for the first layer under assumptions it names (a dense three-unit softmax output; a dropout layer with no weights).",
       "Lecture 6 renders slides 49 and 51, a plot of GloVe word vectors that the deck does not credit and OCW does not mark as excluded; LICENSE.md says so. Its Cohere embedding quizzes (slides 14-19) and Chollet's figure (slide 47) are excluded and described in prose only.",
       "Lecture 6's wiki page checks the frozen-GloVe model's 835 trainable parameters by its own arithmetic and counts the from-scratch model (320,547) under assumptions it names (a 5,000-word vocabulary and the same eight-ReLU and softmax layers); the lecture does not say which data split its accuracies (63%, almost 69%, 72%) are measured on.",
-      "Lecture 7's figures from 'Attention Is All You Need' (slides 23, 51, 64-69, including the transformer architecture diagram) are excluded by OCW and described in prose only; its Colab sets up the slot-filling model but does not train it in the recording.",
-      "Lecture 7's wiki page counts the transformer encoder's parameters (5,319,232, matching the lecture's 'about 5.3 million') by its own arithmetic, under assumptions it names (query, key and value projections of 512 per head, from lecture 8's material; two layer normalizations); the lecture does not give the breakdown."
+      "Lecture 7's figures from 'Attention Is All You Need' (slides 23, 51, 64-69, including the transformer architecture diagram) are excluded by OCW and described in prose only; its Colab sets up the slot-filling model but does not train it in the recording; lecture 8 reports the trained accuracy.",
+      "Lecture 7's wiki page counts the transformer encoder's parameters (5,319,232, matching the lecture's 'about 5.3 million') by its own arithmetic, under assumptions it names (query, key and value projections of 512 per head; two layer normalizations); neither lecture gives the breakdown, and lecture 8 adds that value matrices are often smaller than the embeddings when several heads are concatenated.",
+      "Lecture 8's figures from the BERT, Vision Transformer and SimCLR papers, 'Attention Is All You Need', the ResNet-34 diagram, two learned-feature visualisations and a Wayfair product photo (slides 28, 41, 50, 51, 56, 79-83, 90, 93, 96-98) are excluded by OCW and described in prose only. Slide 81's notice names a BERT figure, but the page shows the course's own CLS-token diagram, which is rendered from slide 38, where it carries no notice.",
+      "Lecture 8's video does not present its deck's contrastive-learning section (slides 94-98); the wiki summarizes it from the slides and says so. Its matrix derivation of self-attention was drawn on an iPad and is not in the deck; the wiki describes it from the narration.",
+      "Lecture 8 renders slide 91, the TabTransformer paper's Figure 1, which the slide marks 'Figure license: CC0 1.0'; LICENSE.md says so."
     ]
   },
   "entryPoint": "INDEX.md",
-  "updated": "2026-10-14"
+  "updated": "2026-10-16"
 }

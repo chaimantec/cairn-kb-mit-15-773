@@ -85,7 +85,8 @@ removed, and every paragraph's word ratio within 0.72–1.10 (with notes removed
 
 ## Slides
 
-Each deck is transcribed from page images by a Sonnet agent. The parent first decides the numbering
+Each deck is transcribed from page images by a Sonnet agent. Have it append with a quoted heredoc
+(`<<'EOF'`), and grep its output for `$ to $`-style gaps, because an unquoted heredoc eats `$w_1$`. The parent first decides the numbering
 and lists the OCW notices from the text layer by script, and hands both to the agent, copying the
 script's page list rather than retyping it. The agent must look
 for notices on every page, because some are drawn rather than typed. Each slide entry ends with
@@ -113,7 +114,11 @@ embedding, rewrite the default captions of build-step slides that share a title,
 several identical captions sit in a row. Images are linked relatively; the chat gets a renderable
 URL by reading the path. `grep -o 'raw/images/[^)]*' wiki/NN-*.md` lists a lecture's images.
 A deck can reuse an earlier deck's figure without saying so (lecture 6's slide 3 is lecture 5's
-slide 50): compare the hashes of the embedded rasters across decks, and do not render the repeat.
+slide 50): compare the hashes of the embedded rasters across decks, and do not render the repeat. A shared hash
+can also be a PowerPoint shape mask (a solid shadow or fill) that every diagram in a deck reuses:
+extract and look at a shared raster before treating it as a reused figure. A notice can also name a
+figure its page does not show (lecture 8's slide 81). Keep the notice and leave that page unrendered,
+but check the render before letting the notice exclude the same diagram on a page that has none.
 What was rendered and why goes in `BUILD_LOG.md`.
 
 | Lecture | Images | Deck |
@@ -125,6 +130,7 @@ What was rendered and why goes in `BUILD_LOG.md`.
 | 5 Text Vectorization and the Bag-of-Words Model | 7 of 67 pages | rendered from `mit15_773_s24_lec05.pdf` |
 | 6 Word Embeddings | 8 of 70 pages | rendered from `mit15_773_s24_lec06.pdf` |
 | 7 Transformers | 7 of 78 pages | rendered from `mit15_773_s24_lec07.pdf` |
+| 8 Transformers (2/2) and Self-Supervised Learning | 19 of 99 pages | rendered from `mit15_773_s24_lec08.pdf` |
 
 ## Conventions
 

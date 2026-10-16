@@ -184,6 +184,11 @@ is not on OCW; what follows is what the lecturer names.
 - **Text vectorization for labels** sets standardization to none, so that the slot tags keep their
   periods, underscores and capitals (≈1:07:14).
 - **A layer's weights attribute** shows its weights, before or after training (≈1:15:02–1:15:49).
+- **Training it**, in [lecture 8](08-transformers-and-self-supervised-learning.md): 10 epochs with a batch size of 64 ("I just arbitrarily
+  chose 64"), evaluated on the test set, give 99% accuracy, 93% on the words whose slot is not O
+  (≈3:53–5:25). The narration names no functions here.
+- **Layer normalization**, inside the encoder, is documented as Keras's layer normalization layer, which
+  slide 25 of lecture 8 points to.
 
 ## Answers from lecture 2
 
@@ -209,6 +214,8 @@ is not on OCW; what follows is what the lecturer names.
   `ngrams`, and `Dropout`.
 - [Lecture 7](07-transformers.md): the HODL transformer encoder and positional embedding layer, and
   the slot-filling model.
+- [Lecture 8](08-transformers-and-self-supervised-learning.md): the slot-filling model trained. Its Hugging Face Colab uses the Transformers
+  library's `pipeline` function rather than Keras.
 - [Lecture 6](06-word-embeddings.md): `TextVectorization` with integer output and padding, `Embedding`,
   `GlobalAveragePooling1D`, and freezing pretrained embeddings.
 - See also [anatomy of a neural network](neural-network-anatomy.md) for the design choices the code

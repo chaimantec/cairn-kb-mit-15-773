@@ -130,3 +130,23 @@ plus the deck:
   Polosukhin). Slides 21–22 are not rendered either. They print no notice, but they are screenshots
   of Google search results from Google's blog post on BERT
   (<https://blog.google/products/search/search-language-understanding-bert/>).
+- **Lecture 8**, `raw/images/08-transformers-and-self-supervised-learning/` (19 images: pages 8, 21,
+  23, 25, 27, 30, 35, 38, 45, 47, 60, 62, 63, 69, 70, 71, 74, 77 and 91) from
+  [`mit15_773_s24_lec08.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec08.pdf).
+  Third-party material on the rendered slides, as credited there: slide 91 reproduces Figure 1 of the
+  TabTransformer paper (<http://arxiv.org/abs/2012.06678>), which the slide marks "Figure license: CC0
+  1.0". Slides 71 and 74 quote MIT Sloan's mission statement. The other rendered slides are the
+  course's own diagrams. None of the deck's fifteen slides with an OCW exclusion notice is rendered:
+  28 ("Attention Is All You Need", Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion
+  Jones, Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin), 41 and 56 (ResNet-34, Kaiming He, Xiangyu
+  Zhang, Shaoqing Ren, Jian Sun/arXiv), 50 (an ImageNet training image, unknown rights holder), 51
+  (Honglak Lee, Roger Grosse, Rajesh Ranganath, Andrew Y. Ng), 79–83 (the BERT paper and figures,
+  Jacob Devlin, Ming-Wei Chang, Kenton Lee, Kristina Toutanova/ArXiv; slide 79 also credits a BERT
+  cartoon to Jay Alammar under CC BY-NC-SA), 90 (the Vision Transformer figure, Alexey Dosovitskiy and
+  co-authors/ArXiv), 93 (a desk-chair image, Wayfair LLC) and 96–98 (dog images, Ting Chen, Simon
+  Kornblith, Mohammad Norouzi, Geoffrey Hinton/ArXiv). Slide 81's notice names a BERT figure, but the
+  page shows the course's own diagram from slide 38, which carries no notice and is rendered from
+  slide 38. Slides 84 and 86 are not rendered either: they print no notice, but they are the
+  Sentence-Transformers logo and a screenshot of the Hugging Face Hub. Slides 42, 43 and 57 repeat the
+  network diagram already rendered for lecture 4 (slide 75 of that deck), and slides 10, 13 and 29
+  repeat lecture 7's slides 75, 43 and 76; none is rendered again.

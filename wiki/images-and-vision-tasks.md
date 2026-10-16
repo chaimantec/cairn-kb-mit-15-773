@@ -86,6 +86,16 @@ class (`handbags`, `shoes`) inside each of the training, validation and test fol
 narration, reads the JPEGs, converts them to tensors, resizes them to a common size, since
 web-scraped images come in different shapes and sizes, and batches them. The course resizes to $224 \times 224 \times 3$ because ResNet expects that size (≈57:46–58:32). The textbook explains this in detail.
 
+## An image as a sequence of patches
+
+[Lecture 8](08-transformers-and-self-supervised-learning.md)'s **Vision Transformer** hands an image to a transformer by chopping it into small
+squares, nine in the lecture's example (slide 90; ≈1:07:40–1:10:45). Each patch is three tables of RGB
+numbers, flattened into one long vector and run through a dense layer, a "linear projection", to give
+the patch's embedding. Because a top-left patch is not a middle one, each of the nine positions gets a
+position embedding, added just as with words, and a `<CLS>` token's output is classified. Unlike words,
+patches have no vocabulary: every image simply gives nine embeddings (≈1:11:31). See
+[transformers](transformers.md#beyond-text).
+
 ## Where this comes up
 
 - [Lecture 1](01-introduction.md): images as one of the kinds of unstructured data that deep learning
@@ -94,3 +104,4 @@ web-scraped images come in different shapes and sizes, and batches them. The cou
   Fashion-MNIST network.
 - [Lecture 4](04-cnns-and-transfer-learning.md): why flattening falls short, convolutional networks,
   colour images from folders, and transfer learning.
+- [Lecture 8](08-transformers-and-self-supervised-learning.md): the Vision Transformer, which treats an image as a sequence of patches.

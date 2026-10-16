@@ -8,14 +8,16 @@ transfer learning) and natural language (embeddings, transformers), to generativ
 parameter-efficient fine-tuning, text-to-image diffusion). It deliberately "skips the math" and
 focuses on concepts and on coding models in Keras/TensorFlow.
 
-**Coverage: lectures 1–7 of 11.** This knowledge base is being built lecture by lecture. Only
-lectures 1 to 7 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
-covering lectures 8–11. On language it covers lectures 5 (text vectorization and the Bag of Words
-model), 6 (word embeddings and GloVe) and 7 (the transformer encoder: self-attention, multi-head
-attention, positional encoding, applied to slot filling). For anything after lecture 7, including
-the parts of the encoder that lecture 7 leaves for lecture 8 (the projections that give attention its
-weights, residual connections, layer normalization), BERT beyond lecture 7's mention, self-supervised
-learning, LLMs, byte-pair encoding and generative AI, say that the KB does not cover it yet.
+**Coverage: lectures 1–8 of 11.** This knowledge base is being built lecture by lecture. Only
+lectures 1 to 8 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
+covering lectures 9–11. On language it covers lectures 5 (text vectorization and the Bag of Words
+model), 6 (word embeddings and GloVe), 7 (the transformer encoder: self-attention, multi-head
+attention, positional encoding, applied to slot filling) and 8 (the encoder completed with key, query
+and value matrices, residual connections and layer normalization; the `<CLS>` token; self-supervised
+learning and BERT; Hugging Face pipelines; the Vision Transformer and TabTransformer). For anything
+after lecture 8, including causal (decoder) transformers, large language models, decoding and
+sampling, byte-pair encoding, retrieval-augmented generation, parameter-efficient fine-tuning and
+text-to-image models, say that the KB does not cover it yet.
 
 ## Contents
 
@@ -91,6 +93,18 @@ learning, LLMs, byte-pair encoding and generative AI, say that the KB does not c
   about 5.3 million encoder parameters, hand-checked on the page); the model is not trained in this
   lecture. Attention's learned projections, residual connections and layer normalization are left for
   lecture 8.
+- [Lecture 8 — Transformers (2/2) and Self-Supervised Learning](wiki/08-transformers-and-self-supervised-learning.md):
+  lecture 7's slot-filling model trained (99% test accuracy, 93% on the non-O slots); self-attention
+  as matrix multiplication, $\text{softmax}(XX^T)X$, drawn on an iPad; making it tunable with key,
+  query and value matrices $A^K$, $A^Q$, $A^V$, each head with its own, up to the paper's
+  $\text{softmax}(QK^T/\sqrt{d_k})\thinspace V$; residual connections; layer normalization; the
+  complete, stackable encoder and what backpropagation optimizes. Then sequence classification,
+  labeling and generation, and the `<CLS>` token; neural networks as representation learners and the
+  transfer-learning recipe; self-supervised learning by masking, which gives BERT (BERT-Base 12
+  layers, 768, 12 heads; BERT-Large 24, 1024, 16); the Hugging Face Hub and a Colab of `pipeline`
+  sentiment, named-entity and question-answering demos; and transformers beyond text: the Vision
+  Transformer, the TabTransformer and a multi-modal classifier. The deck's contrastive-learning slides
+  (94–98) are not presented and are summarized from the slides alone.
 
 ### Topics
 
@@ -99,7 +113,8 @@ learning, LLMs, byte-pair encoding and generative AI, say that the KB does not c
 - [Representation learning](wiki/representation-learning.md): why raw unstructured data needs a
   representation, hand-made features versus learned ones, hidden layers as the learned
   representation, the feature hierarchy in a CNN, reusing a pre-trained network's
-  representation, and word embeddings as the learned representation of words.
+  representation, word embeddings as the learned representation of words, and a deep network as
+  many encoders whose representations capture general knowledge.
 - [Anatomy of a neural network](wiki/neural-network-anatomy.md): the vocabulary (weight, bias,
   neuron, layer, dense, feedforward, architecture), what you design versus what training finds,
   parameter counting, the forward pass with numbers, and the convolutional filter as a neuron.
@@ -125,20 +140,23 @@ learning, LLMs, byte-pair encoding and generative AI, say that the KB does not c
   video), thinking of a tensor as a list of lower-rank tensors, and the shapes convolutional and
   pooling layers produce.
 - [Preparing data for a network](wiki/data-preprocessing.md): class balance and a baseline model,
-  one-hot encoding, standardization, splitting before standardizing, NumPy arrays, and random seeds.
+  one-hot encoding, standardization (and layer normalization, its counterpart inside a transformer),
+  splitting before standardizing, NumPy arrays, and random seeds.
 - [Images and computer-vision tasks](wiki/images-and-vision-tasks.md): pixels and 0–255 intensities,
   colour channels, classification, localization, object detection, semantic and instance
-  segmentation, flattening an image into a vector and why that falls short, and loading colour
-  images from one folder per class.
+  segmentation, flattening an image into a vector and why that falls short, loading colour
+  images from one folder per class, and the Vision Transformer's patches.
 - [Convolutional neural networks](wiki/convolutional-neural-networks.md): the three problems with
   flattening, filters and the convolution operation, layers and tensor shapes, colour images,
   learned filters, the feature hierarchy, max and average pooling, the basic CNN architecture, and
   the course's Keras CNN.
 - [Transfer learning](wiki/transfer-learning.md): the two research trends behind it, ImageNet and
   ResNet, headless ResNet as a feature extractor, fine-tuning, the model hubs, the
-  handbags-vs-shoes results, and pretrained word embeddings (GloVe) as the same idea for text.
+  handbags-vs-shoes results, pretrained word embeddings (GloVe) as the same idea for text, why it
+  works and the general recipe, and pretrained language models (BERT, Hugging Face pipelines).
 - [Data augmentation](wiki/data-augmentation.md): perturbing images (flips, small rotations, zooms)
-  to stretch a small data set without changing what they mean, and the Keras layers for it.
+  to stretch a small data set without changing what they mean, the Keras layers for it, and augmented
+  pairs in contrastive learning.
 - [Multi-class classification and softmax](wiki/multiclass-classification.md): why ten sigmoids fail,
   the softmax formula, why softmax rather than the maximum, its role in GPT-4, sparse versus one-hot
   labels and the matching Keras loss, and the table of output layers and losses.
@@ -151,11 +169,12 @@ learning, LLMs, byte-pair encoding and generative AI, say that the KB does not c
   `get_vocabulary`, `max_tokens`, `ngrams`), `Dropout` and KerasTuner, and the layers for
   embeddings (`output_mode="int"` with `output_sequence_length`, `Embedding`,
   `GlobalAveragePooling1D`, freezing a layer), and lecture 7's transformer encoder and positional
-  embedding layer.
+  embedding layer, trained in lecture 8.
 - [Natural language processing](wiki/natural-language-processing.md): why text matters, the range
   of "text in, text out" applications, how to represent text, from one-hot vectors to stand-alone
-  and contextual embeddings, the transformer encoder and ATIS slot filling, the arc of NLP progress
-  from rules to transformers, and the course's NLP roadmap (lectures 5–10).
+  and contextual embeddings, the transformer encoder and ATIS slot filling, sequence classification,
+  labeling and generation, BERT and Hugging Face pipelines, the arc of NLP progress from rules to
+  transformers, and the course's NLP roadmap (lectures 5–10).
 - [Text vectorization](wiki/text-vectorization.md): standardize, tokenize, index, encode (STIE);
   stop words and stemming; the vocabulary and the `<UNK>` token; one-hot vectors and the vocabulary
   size; choosing `max_tokens`; and Keras's text vectorization layer, including integer output,
@@ -167,9 +186,15 @@ learning, LLMs, byte-pair encoding and generative AI, say that the KB does not c
   should do, GloVe (the co-occurrence matrix, the model, the least-squares fit), word vector algebra,
   the embedding length, pretrained versus your own, the Keras layers, and stand-alone versus
   contextual embeddings, which lecture 7 computes by self-attention.
-- [Transformers](wiki/transformers.md): self-attention as a softmax-weighted average of embeddings,
-  multi-head attention, feed-forward layers, positional encoding, the transformer encoder and
-  stacking, and an encoder applied to slot filling.
+- [Transformers](wiki/transformers.md): self-attention as a softmax-weighted average of embeddings
+  and as matrix multiplication, key, query and value matrices and the paper's attention formula,
+  multi-head attention, feed-forward layers, positional encoding, residual connections and layer
+  normalization, the transformer encoder and stacking, slot filling, the `<CLS>` token, BERT, and
+  transformers for images, tables and multi-modal data.
+- [Self-supervised learning](wiki/self-supervised-learning.md): why text needs labels it does not
+  have, masking ("fill in the blanks"), why it learns a representation, masked learning as sequence
+  labeling with a transformer, BERT, and contrastive learning for images (from lecture 8's slides
+  only).
 
 ## Raw materials
 
@@ -187,9 +212,9 @@ learning, LLMs, byte-pair encoding and generative AI, say that the KB does not c
   deck 3A in [`raw/slides/03-keras-tensorflow.md`](raw/slides/03-keras-tensorflow.md) and deck 3B in
   [`raw/slides/03-vision-basics.md`](raw/slides/03-vision-basics.md). Cite them as "deck 3A, slide N"
   and "deck 3B, slide N". From page 16 on, deck 3B prints a number one higher than the page where it
-  prints one. The decks of lectures 4, 5 and 6 print their own page number wherever they print one.
+  prints one. The decks of lectures 4, 5, 6 and 8 print their own page number wherever they print one.
   From page 10 on, lecture 7's deck prints a number one higher than the page.
-  The Colab notebooks of lectures 3 to 7 are not published on OCW; the KB knows them only from
+  The Colab notebooks of lectures 3 to 8 are not published on OCW; the KB knows them only from
   the lecturer's narration.
 - [`raw/images/`](raw/images/): rendered figure slides (see below).
 - [`sources.md`](sources.md): every course document on the OCW site with its canonical URL. The
@@ -200,12 +225,13 @@ learning, LLMs, byte-pair encoding and generative AI, say that the KB does not c
 
 ## Images
 
-**Lectures 1 to 7 have images. No other lecture does yet.** Their figure slides are rendered
+**Lectures 1 to 8 have images. No other lecture does yet.** Their figure slides are rendered
 as whole slides and shown inline, both in the lecture pages ([lecture 1](wiki/01-introduction.md),
 [lecture 2](wiki/02-training-deep-nns.md), [lecture 3](wiki/03-keras-and-vision-basics.md),
 [lecture 4](wiki/04-cnns-and-transfer-learning.md),
 [lecture 5](wiki/05-text-vectorization-and-bag-of-words.md),
-[lecture 6](wiki/06-word-embeddings.md), [lecture 7](wiki/07-transformers.md)) and under the
+[lecture 6](wiki/06-word-embeddings.md), [lecture 7](wiki/07-transformers.md),
+[lecture 8](wiki/08-transformers-and-self-supervised-learning.md)) and under the
 matching `## Slide N` heading in
 each slide file. Lecture 1 has 45. Lecture 2 has 18: 15 from its main deck and 3 pages of the
 handwritten backprop example, which are named `backprop-N` rather than `slide-N`. Lecture 3 has 13 in
@@ -221,7 +247,15 @@ of "train" on "station", two attention heads concatenated and projected, the enc
 positional encoding, and the slot-filling pipeline. Its figures from "Attention Is All You Need"
 (slides 23, 51 and 64–69), including the paper's transformer architecture diagram, are excluded by
 OCW, and its Google search screenshots (slides 21–22) are not rendered; their slide entries describe
-them in prose. Slides
+them in prose. Lecture 8 has 19, all the course's own diagrams except the TabTransformer figure (slide
+91, CC0): positional input embeddings, attention heads with their own matrices, the residual
+connection, layer normalization, the stackable encoder, the three use cases, a sentence embedding and
+the `<CLS>` token, representations and encoders, chopping off and fine-tuning a network, masking (three
+slides), extracting an encoder, and masked learning as sequence labeling. Its figures from "Attention Is All You Need" and the BERT,
+Vision Transformer and SimCLR papers, the ResNet-34 diagram, the learned-feature grids and a product
+photo (slides 28, 41, 50, 51, 56, 79–83, 90, 93, 96–98) are excluded by OCW, and its Hugging Face Hub
+screenshot (slide 86) is not rendered. For lecture 8's slot-filling and self-attention review slides
+(10, 13, 29), use lecture 7's images, which they repeat. Slides
 whose content OCW excludes from its licence (marked `*OCW notice: …*`) are never rendered, and
 neither are slides that reuse an excluded figure without a notice of their own: deck 3A's slides
 24–25 and lecture 4's slide 77, whose ResNet diagram slides 70–73 exclude. So lecture 4 has no image

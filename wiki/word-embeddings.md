@@ -147,6 +147,8 @@ are the input to that process: random ones, GloVe, it "doesn't matter" (lecture 
   which embeddings replace.
 - [Lecture 7](07-transformers.md): contextual embeddings by self-attention, and position embeddings
   added to word embeddings.
+- [Lecture 8](08-transformers-and-self-supervised-learning.md): the stand-alone and positional embeddings as weights trained with the whole
+  transformer, and BERT's 768-long embeddings.
 - See also [text vectorization](text-vectorization.md),
   [representation learning](representation-learning.md),
   [natural language processing](natural-language-processing.md) and [transformers](transformers.md).

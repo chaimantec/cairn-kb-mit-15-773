@@ -33,7 +33,10 @@ network's 29 inputs ([lecture 2](02-training-deep-nns.md), slides 3–10; lectur
 Networks work best when the numeric inputs all lie in a relatively small range (≈35:29). The standard
 practice is to **standardize** each numeric variable: subtract its mean and divide by its standard
 deviation (≈36:16). Afterwards the values are "all very smallish — 0, 1, minus 1, around that range",
-which is "kind of ideal for neural network training" (≈37:52).
+which is "kind of ideal for neural network training" (≈37:52). [Lecture 8](08-transformers-and-self-supervised-learning.md) applies the
+same discipline inside a transformer: **layer normalization** standardizes each embedding after the
+attention and feed-forward layers, because backpropagation works well only when no numbers get too big
+(slides 24–25; ≈31:57–34:19).
 
 ## Split first
 
@@ -89,3 +92,4 @@ indexing and encoding it. See [text vectorization](text-vectorization.md) and
   encodings for Fashion MNIST.
 - [Lecture 5](05-text-vectorization-and-bag-of-words.md): the song-genre baseline, one-hot labels with `get_dummies`, and
   text vectorization.
+- [Lecture 8](08-transformers-and-self-supervised-learning.md): layer normalization, standardization inside a transformer.

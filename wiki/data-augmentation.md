@@ -38,6 +38,13 @@ Augmentation is one answer to overfitting on a small data set; see
 gives is to start from a network already trained on far more data; see
 [transfer learning](transfer-learning.md).
 
+Augmentation also drives **contrastive learning**, the image counterpart of self-supervised learning in
+the last, unpresented section of [lecture 8](08-transformers-and-self-supervised-learning.md)'s deck (slides 94–98). Two augmented versions of one
+image are passed through the same network, which is trained to make their representations agree. Slide
+97 shows the augmentations: crops, flips, colour distortion, rotation, cutout, noise, blur and Sobel
+filtering. See [self-supervised learning](self-supervised-learning.md#images-contrastive-learning).
+
 ## Where this comes up
 
 - [Lecture 4](04-cnns-and-transfer-learning.md): the handbags-and-shoes Colab.
+- [Lecture 8](08-transformers-and-self-supervised-learning.md): augmented pairs in contrastive learning (slides only).

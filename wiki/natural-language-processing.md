@@ -5,7 +5,7 @@ The course's NLP sequence starts in [lecture 5](05-text-vectorization-and-bag-of
 the roadmap on its first slide, runs through embeddings (lecture 6), transformers in theory
 (lecture 7) and in applications with self-supervised learning (lecture 8), to LLMs (lectures 9–10)
 (lecture 5, slide 1; ≈0:00–0:46). Lecture 7's own roadmap calls lectures 7 and 8 "Transformers (1/2)"
-and "(2/2)" (lecture 7, slide 1). This knowledge base so far covers lectures 5, 6 and 7.
+and "(2/2)" (lecture 7, slide 1). This knowledge base so far covers lectures 5 to 8.
 
 ## Why text
 
@@ -56,6 +56,18 @@ tagging each word of "I want to fly from boston at 7 am …" with one of 123 slo
 B-fromloc.city_name, so that a natural-language query can be turned into a structured one such as
 SQL (lecture 7, slides 3–13; ≈1:33–10:05).
 
+[Lecture 8](08-transformers-and-self-supervised-learning.md) completes the encoder and names three common uses of it (slide 30): **sequence
+classification**, one label for a whole text, such as a review's sentiment or the department a
+call-center email should go to; **sequence labeling**, one label per word, such as slot filling; and
+**sequence generation**, continuing the text, which lecture 9 takes up. For classification an
+artificial `<CLS>` token at the start of the sentence collects the sentence's meaning (slide 38). Then
+[self-supervised learning](self-supervised-learning.md) pretrains an encoder on unlabeled text by
+masking words and predicting them, which gives **BERT** (slides 68–80). For any classification or
+labeling problem on text, a model like BERT can be fine-tuned on "a few hundred" labelled examples, and
+for a "standard" NLP problem a pretrained model from a hub may need no fine-tuning at all (slide 85). In
+the Colab, the Hugging Face `pipeline` function classifies sentiment, extracts named entities and
+answers a question about a letter, out of the box (≈1:01:27–1:06:53).
+
 ## The arc of NLP progress
 
 Lecture 5 tells the history in four eras (slides 19–21; ≈10:06–12:23). **Hand-crafted rules** written
@@ -87,6 +99,9 @@ been trained on it (lecture 5, ≈7:46–9:19).
   transformers.
 - [Lecture 7](07-transformers.md): transformers for search queries, the ATIS slot-filling task, and
   the transformer encoder.
+- [Lecture 8](08-transformers-and-self-supervised-learning.md): sequence classification, labeling and generation, the `<CLS>` token,
+  self-supervised pretraining, BERT, and Hugging Face pipelines for sentiment, named entities and
+  question answering.
 - See also [word embeddings](word-embeddings.md), [transformers](transformers.md), [representation learning](representation-learning.md) and
   [multi-class classification and softmax](multiclass-classification.md), whose softmax lecture 3
   connects to how GPT-4 emits words.

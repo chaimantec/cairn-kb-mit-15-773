@@ -28,11 +28,11 @@ equals its page; 38 pages print none. Text-layer OCW notices: 28, 41, 50, 51, 56
 - [x] Slides 08 → raw/slides/08-transformers-and-self-supervised-learning.md (Sonnet, three agents)
 - [x] 08 figure check on rendered images (18, 20, 24, 29, 47, 69, 80, 81, 86, 91, 93 crop)
 - [x] raw/images/08-transformers-and-self-supervised-learning/ — render, embed in slide file (19 slides)
-- [ ] wiki/08-transformers-and-self-supervised-learning.md, with images hand-placed
-- [ ] Topic pages for lecture 8
-- [ ] INDEX.md — lecture 8 entries, coverage and image sentences
-- [ ] kb.json, BUILD_LOG.md lecture 8 record, AGENTS.md image row, LICENSE.md attribution, sources.md
-- [ ] verify_kb.py clean (with check_math and --github), review section read
+- [x] wiki/08-transformers-and-self-supervised-learning.md, with images hand-placed (17 of 19, hand-written captions)
+- [x] Topic pages for lecture 8 (new: self-supervised-learning; extended transformers, transfer-learning, representation-learning, NLP, data-preprocessing, images, data-augmentation, keras, word-embeddings, CNNs; lecture 7 links forward)
+- [x] INDEX.md — lecture 8 entries, coverage and image sentences
+- [x] kb.json, BUILD_LOG.md lecture 8 record, AGENTS.md image row, LICENSE.md attribution, sources.md
+- [x] verify_kb.py clean (with check_math and --github), review section read (three formulas on transformers.md repaired after a Python-escape slip; one BUILD_LOG line de-mathed)
 - [ ] Commit and push
 - [ ] Move this section to BUILD_LOG.md
 

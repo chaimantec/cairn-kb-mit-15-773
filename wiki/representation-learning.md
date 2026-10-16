@@ -59,6 +59,24 @@ from fewer than 100 examples each, with 100% test accuracy, because its inputs a
 level of abstraction (slide 75; ≈1:13:14–1:14:01). This is the representation-learning idea of
 lecture 1 put to work. See [transfer learning](transfer-learning.md).
 
+[Lecture 8](08-transformers-and-self-supervised-learning.md) states the idea in general form (slides
+44–57; ≈48:11–51:19). The output of every layer of a deep network is a **representation** of the raw
+input, so a network trained with supervised learning learns many representations and a final regression
+model. If a representation is an encoding of the input, the part of the network that produces it is an
+**encoder**, and "a DNN 'contains' many encoders" (slide 47). These representations turn out to capture
+**general** knowledge about the input rather than only what the original task needed, which is why
+they can be reused: a face-detection network's representations could plausibly serve an
+emotion-detection network (slides 48–53).
+
+![Slide 47 of lecture 8: four rose-coloured layer bars, a plus sign and a separate "Regression" bar; nested dashed outlines enclose the first layer, the first two and the first three, labelled "Encoder".](../raw/images/08-transformers-and-self-supervised-learning/slide-47.png)
+
+*Lecture 8, slide 47 — a deep network contains many encoders, followed by a final regression model. [Deck](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec08.pdf)*
+
+For text, the general representation has to be learned without labels. Lecture 8's answer is
+[self-supervised learning](self-supervised-learning.md): a network trained to fill in masked words "has
+to learn how the variables are related to each other", and so learns a good representation of the input
+(slides 72–73).
+
 ## Representing text
 
 For language the question returns in its sharpest form. An image can go in as its pixel values, but
@@ -89,3 +107,5 @@ work at higher levels of abstraction, as later layers of a convolutional network
 - [Lecture 6](06-word-embeddings.md): word embeddings, learned from co-occurrence counts or from the
   task itself.
 - [Lecture 7](07-transformers.md): contextual embeddings from a transformer encoder.
+- [Lecture 8](08-transformers-and-self-supervised-learning.md): networks as representation learners,
+  encoders, and representations learned by self-supervised learning.

@@ -9,7 +9,7 @@ slide file or transcript it concerns. The rules every build follows are in
 [`AGENTS.md`](AGENTS.md).
 
 One section per run: lectures 1, 2 and 3 (built 2026-10-11), lecture 4 (2026-10-14), lecture 5
-(2026-10-14), lecture 6 (2026-10-14), lecture 7 (2026-10-14), and at the end the ticked build checklists of those runs,
+(2026-10-14), lecture 6 (2026-10-14), lecture 7 (2026-10-14), lecture 8 (2026-10-16), and at the end the ticked build checklists of those runs,
 moved from `TODO.md`.
 
 ## Lecture 1 — Introduction to Neural Networks and Deep Learning
@@ -509,6 +509,93 @@ lecture page counts the encoder's 5,319,232 parameters as its own arithmetic, un
 assumptions (query, key and value projections of 512 per head, which lecture 8 introduces; a 512 →
 64 → 512 feed-forward block; two layer normalizations), matching the lecture's "5.3 million", and
 the whole model's 5,871,037, which the lecture does not report. `sources.md`'s row for deck 07 is no
+longer provisional.
+
+## Lecture 8 — Transformers (2/2) and Self-Supervised Learning
+
+Built 2026-10-16. Video `v-lHsawHyaI` (76 min); deck `mit15_773_s24_lec08.pdf`, 99 pages.
+
+**Video ↔ deck.** The recording reviews slides 2–11 (0:00–3:53), then spends ≈3:53–5:25 on lecture 7's
+Colab, reporting the trained result without re-running it (10 epochs, batch size 64, 99% test accuracy,
+93% on the non-O slots). It resumes at slides 12–13 and moves to an iPad at ≈7:46. The iPad covers
+self-attention as softmax of X X-transpose times X on "I love HODL", then the tunable version with AK,
+AQ and AV, and the paper's formula, shown from the paper itself at ≈22:31. That runs to ≈24:08 in
+place of slides 15–19, "from last year", which the lecturer says to read afterwards. Slides 20–93
+follow in order, with the Hugging Face Colab at slide 87 (≈59:53–1:06:53), and the lecture ends on
+slide 93 at 1:16:13. The "Contrastive Learning (time permitting)" section, slides 94–98, is not
+reached. Slide 1 is the roadmap ("Lecture 8: Transformers (2/2)"); 99 is OCW's end page. The catalog
+title is accurate. Material outside the deck: the iPad drawings and both Colabs. Slide 15 points to a
+handout, "HODL-SP24-Section-A-The Self-Attention Layer.pdf", that is not on OCW.
+
+**Numbering.** Slide N = PDF page N. Every page that prints a corner number prints its own page
+number (one span each, no splits); 38 pages print none. `slide_number_map.py` reported 1:1 correctly,
+and `--verify` passed on the finished file.
+
+**OCW notices (15):** 28 ("Attention is All You Need"), 41 and 56 (ResNet-34, He et al.), 50 ("ImageNet
+training image © unknown", the Zeiler and Fergus feature grids), 51 (Lee et al.), 79–83 (BERT paper and
+figures, Devlin et al.; 79 also credits Jay Alammar's BERT cartoon, CC BY-NC-SA), 90 (Vision Transformer,
+Dosovitskiy et al.), 93 (desk chair, Wayfair LLC), 96–98 (SimCLR dog images, Chen et al.). The script's
+list went to the agents verbatim; they found no drawn notices. **Slide 81's notice names a "BERT
+figure", but the page shows only the course's own `<CLS>` diagram from slide 38 under a new title**,
+checked on the render. Its large rasters sit at the same positions as slide 38's but are re-encoded.
+The hashes that slides 35–38 share with 81 and 93 belong to solid black shape masks (extracted and
+viewed), not to a figure. So 81 keeps its notice and is not rendered, and slide 38, which has no
+notice, is rendered. Unmarked third-party content: 84 (Sentence-Transformers logo) and 86 (Hugging
+Face Hub screenshot), not rendered, following lectures 5 and 7. Slide 91 prints "Figure license: CC0
+1.0" for the TabTransformer figure, which is rendered and attributed. The "Huggingface Colab" link on
+slide 87 is a PDF link annotation; its target is not recorded.
+
+**Transcription.** Sonnet, three agents in parallel (pages 1–33, 34–66, 67–99), reading 1400px PNGs
+pre-rendered into the scratchpad and appending to scratch files that the parent spliced under a
+hand-written header. All three finished in about two minutes each. Parent fixes: "w_1 to w_6", written as
+math, lost both symbols on slides 26 and 28, and slide 29's A^K lost its opening dollar sign, to an
+unquoted shell heredoc (lesson in `AGENTS.md`); slide 20's claim that its sentence is cut off at the right edge was
+wrong; slide 93's review text, which the agent quoted while calling it unreliable, was confirmed on a
+4× crop and given in full; slide 81's entry notes the notice-content mismatch; footnote asterisks were
+escaped and slide 82's heading puts `<CLS>` in backticks so github.com does not swallow it as a tag.
+
+**Transcript edit.** OCW human captions with `AUDIENCE:` labels, done inline in the parent as a
+scripted list. Restorations (12 strings): GPT3 → GPT-3 (2:21, 35:52) and GPT4 → GPT-4 (1:15:26), as
+lectures 2, 3 and 7's captions spell them; "transfer" → transpose (10:08); "attention rates" →
+attention heads (27:17); a stray apostrophe (48:59); six missing full stops. `[Ed:]` notes (8) at
+8:38 ("W1s, Ws-2, W3"), 18:40 ("by 1", presumably V), 19:28 ("50%"), 30:23 ("under 100"), 36:38
+("normalized", presumably optimized), 41:17 ("connects", presumably converts), 57:36 (BERT's
+feed-forward size: said 4,096 for H = 768; slide 80's footnote gives 3072, and 4096 for H = 1024) and
+1:13:08 ("correct", presumably collect). Checks: 99 timestamps identical, number inventory identical
+once notes are removed, paragraph word ratios 1.000 throughout. No proper noun was restored.
+
+**Figure check.** Done in the parent on renders and crops: slides 18 (the superscript K and Q on
+bold A confirmed), 20 (the cut-off claim, wrong), 24, 29 (the list), 47 (outline colours confirmed), 69, 80 (the
+BERT sizes and footnote 3, confirmed), 81 (notice over the course's diagram), 86 (525,416 confirmed), 91
+and a 4× crop of 93.
+
+**Printed slips.** Slide 70 "We then use train"; slide 72 a doubled closing quote; slide 92 "turns out
+to very useful"; slide 91 "The Tab Transformer: :"; slide 51 "Lee at al"; slide 81's notice; slide 29
+cuts "B-toloc.city_name" and slides 77–78 "management" at the right edge. Spoken: "4,096" for
+BERT-Base's feed-forward layer; "125 possibilities" per word (lecture 7's slides say 123; its Colab has
+125); "100 examples" and "200 examples" for handbags and shoes.
+
+**Images: 19 of 99 pages.** Rendered: 8, 21, 23, 25, 27, 30, 35, 38, 45, 47, 60, 62, 63, 69, 70, 71,
+74, 77, 91 (2.2 MB; 11 PNG, 8 JPEG). Not rendered: the fifteen noticed slides; 84 and 86
+(third-party logo and screenshot); repeats of earlier lectures' rendered figures, found by raster
+hash and checked by description: 10 (lecture 7's 75), 13 (lecture 7's 43), 29 (lecture 7's 76 plus a
+transcribed list) and 42, 43, 57 (lecture 4's 75); build steps and repeats superseded by a rendered
+slide (4–7 → 8; 14 → 21; 22, 24, 26 → 27; 31–32 → 30; 34, 36–37 → 35; 46 → 47; 58–59 → 60; 61 → 62;
+75 → 63; 76 → 71; 78 → 77); 9, 11 and 33, single-box encoder drawings; text-only slides and dividers.
+The wiki lecture page hand-places 17 of the 19 with hand-written captions (not 62 and 70, which sit in
+the slide file beside 63 and 71). Lecture 8's 27 is also on the transformers topic page, 47 on
+representation learning, 63 on transfer learning, and 69 and 77 on the new self-supervised-learning
+page.
+
+**Wiki.** A lecture page and one new topic page (self-supervised learning). Extended: transformers
+(matrix form, keys, queries and values, residual connections and layer normalization, `<CLS>`, BERT,
+beyond text; its "lecture 7 only" sentence rewritten), transfer learning (why it works, the general
+recipe, pretrained language models), representation learning, natural language processing (coverage
+now lectures 5–8), data preprocessing (layer normalization), images and vision tasks (patches), data
+augmentation (contrastive learning, slides only), Keras, word embeddings, convolutional neural
+networks; lecture 7's page now links forward in four places, including the trained result. The
+lecture page notes, without recomputing, that lecture 7's parameter count assumed 512-to-512 value
+matrices, while lecture 8 says value matrices are often smaller. `sources.md`'s row for deck 08 is no
 longer provisional.
 
 ## Build checklists, lectures 1–4

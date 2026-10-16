@@ -83,8 +83,47 @@ himself: "when your data is really small, try to use a pre-trained model" (≈1:
 should always try to do your own thing and see if it's any better" (≈1:16:47). See
 [word embeddings](word-embeddings.md#pretrained-or-your-own).
 
+## Why it works, and the general recipe
+
+[Lecture 8](08-transformers-and-self-supervised-learning.md) asks why the handbags-and-shoes classifier
+worked so well "with only 100 examples" (slides 41–43; ≈47:26–48:11). Neural networks are
+**representation learners**: every layer's output is a representation of the input, so a deep network
+is many encoders followed by a final regression model, and those representations capture general
+knowledge about the input, not only what the original task needed (slides 44–51; see
+[representation learning](representation-learning.md)). Because the pretrained network has already
+"spent" its data learning them, "your training data is everything that the pre-trained model was
+trained on plus your little 200 examples" (slides 54–57; ≈50:34–51:19).
+
+The recipe, in general form (slides 58–63; ≈51:19–52:06): find a deep network built on **similar
+inputs but different outputs**; take what comes out of its last layer before the output layer as the
+representation; chop off the output layer and use the headless model as an **encoder**; attach a new
+output layer for the labels you care about; then either keep the encoder fixed and learn only the new
+layer's weights, or fine-tune all the layers.
+
+![Slide 63 of lecture 8: a red dashed box encloses "Input", five light-green layer bars joined by arrows, and "New Output" — every layer, the reused ones included, is trained.](../raw/images/08-transformers-and-self-supervised-learning/slide-63.png)
+
+*Lecture 8, slide 63 — the last step of the recipe: fine-tune all the layers, the new output layer included. [Deck](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec08.pdf)*
+
+## Pretrained language models
+
+ResNet could be built because ImageNet's images come labelled. Text is plentiful, but what would a
+sentence's label be (lecture 8, slides 64–67)? [Self-supervised learning](self-supervised-learning.md)
+answers it: mask some words and train a network to fill them in. A transformer encoder trained that way
+on massive amounts of English text is **BERT**, and the recipe above applies to it. For any sequence
+classification or labeling problem on natural-language text, "Label 'a few hundred' examples, attach
+the right final layers to BERT and fine-tune" (slide 85; ≈59:07).
+
+For a "standard" NLP problem even that may be unnecessary: the hubs hold pretrained models for the
+standard tasks that work without any fine-tuning (slide 85). The Hugging Face Hub had over 500,000
+models on February 27, 2024 (slide 86), and lecture 8's Colab uses the Hugging Face Transformers
+library's `pipeline` function to classify sentiment, extract named entities and answer a question
+straight out of the box. "If it's a standard task, do not reinvent the wheel" (≈1:01:27; see
+[lecture 8, Part 9](08-transformers-and-self-supervised-learning.md#part-9--the-hugging-face-colab)).
+
 ## Where this comes up
 
 - [Lecture 4](04-cnns-and-transfer-learning.md): the idea, ResNet, the Colab and the live demo.
 - [Lecture 6](06-word-embeddings.md): pretrained GloVe embeddings, frozen and fine-tuned.
+- [Lecture 8](08-transformers-and-self-supervised-learning.md): why transfer learning works, the general
+  recipe, BERT, and the Hugging Face pipelines.
 - See also [data augmentation](data-augmentation.md), the other remedy for a small data set.

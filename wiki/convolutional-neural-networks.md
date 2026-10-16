@@ -137,5 +137,8 @@ classifies colour photos of handbags and shoes at 87% from fewer than 100 traini
 - [Lecture 7](07-transformers.md): a transformer's attention heads are compared to a convolutional
   layer's filters, each learning its own pattern, and stacked encoders to the hierarchy of layers
   (slide 49; ≈37:55, ≈1:02:34). Transformers now also do well on computer-vision problems (≈0:46).
+- [Lecture 8](08-transformers-and-self-supervised-learning.md): ResNet, the Residual Net, named for the residual connections that transformers
+  also use (≈31:12); more attention heads compared to more filters (≈28:04); and the Vision
+  Transformer, which classifies an image from its patches with a transformer.
 - See also [images and computer-vision tasks](images-and-vision-tasks.md) and
   [transformers](transformers.md).
