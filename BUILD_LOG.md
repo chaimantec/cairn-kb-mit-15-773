@@ -734,3 +734,29 @@ print N+1 (a hidden slide); headings use the PDF page. Text-layer OCW notices: s
 - [x] verify_kb.py clean (with check_math and --github), review section read (slide file's math in Figure lines made plain text, `\hat{w}_N` → `\hat w_N` for github.com)
 - [x] Commit and push
 - [x] Move this section to BUILD_LOG.md
+
+## Build checklist, lecture 8
+
+The ticked lines of `TODO.md` for the lecture 8 run, moved here verbatim on 2026-10-16 once it was
+committed and pushed.
+
+### Lecture 8 run (2026-10-16)
+
+Video 8 (`v-lHsawHyaI`, 76 min) presents deck 08 (`mit15_773_s24_lec08.pdf`, 99 pages; page 99 is
+OCW's end page) from slide 2 to slide 93, after finishing lecture 7's Colab (≈3:53–5:25) and with an
+iPad derivation in place of slides 15–19 (≈7:46–24:08) and the Hugging Face Colab at slide 87. Slides
+94–98 (contrastive learning, "time permitting") are not presented. Numbering: every printed number
+equals its page; 38 pages print none. Text-layer OCW notices: 28, 41, 50, 51, 56, 79, 80, 81, 82, 83,
+90, 93, 96, 97, 98 (81's names a BERT figure but shows the course's slide-38 diagram).
+
+- [x] 08 DL for Natural Language – Transformers, Self-Supervised Learning — video v-lHsawHyaI → raw/transcripts/08-transformers-and-self-supervised-learning.md (+ original/)
+- [x] Slides 08 → raw/slides/08-transformers-and-self-supervised-learning.md (Sonnet, three agents)
+- [x] 08 figure check on rendered images (18, 20, 24, 29, 47, 69, 80, 81, 86, 91, 93 crop)
+- [x] raw/images/08-transformers-and-self-supervised-learning/ — render, embed in slide file (19 slides)
+- [x] wiki/08-transformers-and-self-supervised-learning.md, with images hand-placed (17 of 19, hand-written captions)
+- [x] Topic pages for lecture 8 (new: self-supervised-learning; extended transformers, transfer-learning, representation-learning, NLP, data-preprocessing, images, data-augmentation, keras, word-embeddings, CNNs; lecture 7 links forward)
+- [x] INDEX.md — lecture 8 entries, coverage and image sentences
+- [x] kb.json, BUILD_LOG.md lecture 8 record, AGENTS.md image row, LICENSE.md attribution, sources.md
+- [x] verify_kb.py clean (with check_math and --github), review section read (three formulas on transformers.md repaired after a Python-escape slip; one BUILD_LOG line de-mathed)
+- [x] Commit and push
+- [x] Move this section to BUILD_LOG.md

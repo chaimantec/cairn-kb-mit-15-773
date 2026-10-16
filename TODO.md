@@ -5,36 +5,17 @@ Catalog id `5935cc5f-a533-4ded-a08f-6fac61ded777`. Course site:
 `lists/lecture-notes/` as `mit15_773_s24_lecNN.pdf`, and their numbering does **not** follow the
 11 videos: there are decks 01, 02, 02-backprop-example, 03a, 03b, 04–10, 10.5 and 11. Work out
 which deck(s) each video covers from the transcript before reading anything. Video 1 covers deck 01
-only (it ends on deck 01's last slide; deck 02 opens video 2). Videos 1–7 are built (see BUILD_LOG.md);
-video 7 presented deck 07 to its slide 76 and ended in the Colab before training the slot-filling
-model, so video 8 probably opens by finishing that Colab before deck 08 (Transformers II). Confirm
-from the transcript. Deck 08 reuses deck 07's slot-filling rasters (see BUILD_LOG.md, lecture 7).
+only (it ends on deck 01's last slide; deck 02 opens video 2). Videos 1–8 are built (see BUILD_LOG.md);
+video 8 presented deck 08 to its slide 93 and skipped its contrastive-learning section (94–98). Deck 09
+(LLMs 1/2) opens with a review of masking, so video 9 probably starts there; confirm from the transcript,
+and work out how videos 9–10 split decks 09, 10 and 10.5. Deck 09 shares rasters with deck 08 on its
+pages 2–4 (deck 08's masking diagram, 70–71 and 76), 26 (encoder pieces of 14, 21, 22) and 37 (the use
+cases, 30–32): check those on renders before rendering.
 
 Images are opted in: every figure-bearing slide, rendered per Step 1c, never a slide with an OCW notice.
 
 This file holds **open work only**. When a run is committed and pushed, its finished lines move
 to [`BUILD_LOG.md`](BUILD_LOG.md).
-
-## Lecture 8 run (2026-10-16)
-
-Video 8 (`v-lHsawHyaI`, 76 min) presents deck 08 (`mit15_773_s24_lec08.pdf`, 99 pages; page 99 is
-OCW's end page) from slide 2 to slide 93, after finishing lecture 7's Colab (≈3:53–5:25) and with an
-iPad derivation in place of slides 15–19 (≈7:46–24:08) and the Hugging Face Colab at slide 87. Slides
-94–98 (contrastive learning, "time permitting") are not presented. Numbering: every printed number
-equals its page; 38 pages print none. Text-layer OCW notices: 28, 41, 50, 51, 56, 79, 80, 81, 82, 83,
-90, 93, 96, 97, 98 (81's names a BERT figure but shows the course's slide-38 diagram).
-
-- [x] 08 DL for Natural Language – Transformers, Self-Supervised Learning — video v-lHsawHyaI → raw/transcripts/08-transformers-and-self-supervised-learning.md (+ original/)
-- [x] Slides 08 → raw/slides/08-transformers-and-self-supervised-learning.md (Sonnet, three agents)
-- [x] 08 figure check on rendered images (18, 20, 24, 29, 47, 69, 80, 81, 86, 91, 93 crop)
-- [x] raw/images/08-transformers-and-self-supervised-learning/ — render, embed in slide file (19 slides)
-- [x] wiki/08-transformers-and-self-supervised-learning.md, with images hand-placed (17 of 19, hand-written captions)
-- [x] Topic pages for lecture 8 (new: self-supervised-learning; extended transformers, transfer-learning, representation-learning, NLP, data-preprocessing, images, data-augmentation, keras, word-embeddings, CNNs; lecture 7 links forward)
-- [x] INDEX.md — lecture 8 entries, coverage and image sentences
-- [x] kb.json, BUILD_LOG.md lecture 8 record, AGENTS.md image row, LICENSE.md attribution, sources.md
-- [x] verify_kb.py clean (with check_math and --github), review section read (three formulas on transformers.md repaired after a Python-escape slip; one BUILD_LOG line de-mathed)
-- [ ] Commit and push
-- [ ] Move this section to BUILD_LOG.md
 
 ## Transcripts
 - [ ] 09 Generative AI – LLMs and RAG — video KGDe1QvfKJ8
