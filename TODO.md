@@ -5,42 +5,17 @@ Catalog id `5935cc5f-a533-4ded-a08f-6fac61ded777`. Course site:
 `lists/lecture-notes/` as `mit15_773_s24_lecNN.pdf`, and their numbering does **not** follow the
 11 videos: there are decks 01, 02, 02-backprop-example, 03a, 03b, 04–10, 10.5 and 11. Work out
 which deck(s) each video covers from the transcript before reading anything. Video 1 covers deck 01 only
-(it ends on deck 01's last slide; deck 02 opens video 2). Videos 1–9 are built (see BUILD_LOG.md);
-video 9 presented deck 09 to its slide 66 and did not reach the RAG of its catalog title. Deck 10
-("LLMs (2/2)", 115 pages) opens by reviewing video 9 (slide 2) and correcting its "Dense (ReLU)" layer to
-linear activations (slide 3), so video 10 probably starts there; confirm from the transcript. Deck 10 runs
-through prompting, RAG (slides 76–82) and fine-tuning, and deck 10.5 ("Finetuning") repeats some of its
-fine-tuning slides: work out how videos 10 and 11 split decks 10, 10.5 and 11 before reading any of them.
-Lecture 9's wiki page, the large-language-models page and the deck 09 slide file cite deck 10's slide 3 by
-URL; once deck 10 is transcribed, point those citations at its slide file.
+(it ends on deck 01's last slide; deck 02 opens video 2). Videos 1–10 are built (see BUILD_LOG.md);
+video 10 presented deck 10's slides 2–112, and deck 10.5 is lecture 10's unpresented companion deck.
+Video 11 ("Generative AI – Text-to-Image Models", 75 min) opens on deck 11 ("Lecture 11: Diffusion
+Models for Image Generation", 90 pages; page 90 is OCW's end page) with the ChatGPT-generated classroom
+image of its slide 2, and calls itself "the last lecture of the class". Confirm from the transcript which
+slide it ends on, and check deck 11's credits (slide 5 credits a Sora video to OpenAI) for OCW notices.
 
 Images are opted in: every figure-bearing slide, rendered per Step 1c, never a slide with an OCW notice.
 
 This file holds **open work only**. When a run is committed and pushed, its finished lines move
 to [`BUILD_LOG.md`](BUILD_LOG.md).
-
-## Lecture 10 run (2026-10-16)
-
-Video 10 (`d-tngNnaG4U`, 77 min) presents deck 10 (`mit15_773_s24_lec10.pdf`, 115 pages; 115 is OCW's
-end page) from slide 2 (the review) and slide 3 (the ReLU correction) to slide 112 (the LoRA Colab,
-deferred to a video walkthrough). Video 11 opens on deck 11, so no video presents deck 10.5
-(`mit15_773_s24_lec105.pdf`, 33 pages), a variant of deck 10's slides 82–114; it is lecture 10's
-companion deck. Numbering: slide N = PDF page N in both. Deck 10 prints numbers only on 2, 3, 67 and
-76–114, and from 76 on they run one ahead (a hidden slide between 67 and 76). Text-layer OCW notices,
-deck 10: 59, 70–73, 78, 80, 87–89, 92, 93, 95, 113 (114 is a CC BY credit); deck 10.5: none, though it
-reuses deck 10's excluded rasters.
-
-- [x] 10 Generative AI – Adapting LLMs with PEFT — video d-tngNnaG4U → raw/transcripts/10-adapting-llms.md (+ original/)
-- [x] Slides 10 → raw/slides/10-adapting-llms.md (Sonnet, three agents); deck 10.5 → raw/slides/10-finetuning.md (one agent)
-- [x] 10 figure check on rendered images (3, 20, 31, 33, 39, 58, 77, 85, 103, 109, 111, 114; crops of 98 and 100)
-- [x] raw/images/10-adapting-llms/ — render, embed in slide file (13 slides; none from deck 10.5)
-- [x] wiki/10-adapting-llms.md, with images hand-placed (13 of 13, hand-written captions)
-- [x] Topic pages for lecture 10 (new: instruction-tuning, adapting-llms, retrieval-augmented-generation; extended large-language-models, transfer-learning, loss-functions, decoding-and-sampling, NLP, word-embeddings, transformers, self-supervised-learning); deck 10 slide 3 citations repointed (lecture 9 page, large-language-models, deck 09 slide file)
-- [x] INDEX.md — lecture 10 entries, coverage and image sentences
-- [x] kb.json, BUILD_LOG.md lecture 10 record, AGENTS.md image row and two lessons, LICENSE.md attribution, sources.md, SEE_ALSO.md (CS224N post-training pages)
-- [ ] verify_kb.py clean (with check_math and --github), review section read
-- [ ] Commit and push
-- [ ] Move this section to BUILD_LOG.md
 
 ## Transcripts
 - [ ] 11 Generative AI – Text-to-Image Models — video NQBhhRG-Pe4
