@@ -108,6 +108,19 @@ the maximum of its outputs: backpropagation "is just differentiation" and needs 
 well-behaved gradients, and accuracy, like the maximum, is not one ([lecture 5](05-text-vectorization-and-bag-of-words.md)
 ≈43:35–45:08).
 
+## A loss for rankings: the Reward Model
+
+[Lecture 10](10-adapting-llms.md) trains a model from rankings rather than labels. Shown an instruction
+with a preferred answer and another answer, the **Reward Model** gives each a rating, $r_P$ and $r_O$, and
+is trained to rate the preferred answer higher with
+
+$$\text{Loss} = -\log(\sigma(r_p - r_O))$$
+
+where $\sigma$ is the sigmoid (lecture 10, slide 31; ≈13:13–14:00). The loss is near 0 when $r_p$ is well
+above $r_O$ and large when it is below. The lecturer leaves that check to the students; it is worked on the
+[lecture 10 page](10-adapting-llms.md#the-reward-model-and-its-loss). See
+[instruction tuning](instruction-tuning.md).
+
 ## Where this comes up
 
 - [Lecture 2](02-training-deep-nns.md): what a loss is, MSE, and binary cross-entropy built step by
@@ -117,3 +130,4 @@ well-behaved gradients, and accuracy, like the maximum, is not one ([lecture 5](
 - [Lecture 5](05-text-vectorization-and-bag-of-words.md): `categorical_crossentropy` for one-hot genre labels, and why not
   maximize accuracy directly.
 - [Lecture 9](09-large-language-models.md): cross-entropy averaged over the positions of a next-word-prediction model.
+- [Lecture 10](10-adapting-llms.md): the Reward Model's loss on a preferred and another answer.

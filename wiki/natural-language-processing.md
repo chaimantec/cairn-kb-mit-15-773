@@ -5,7 +5,7 @@ The course's NLP sequence starts in [lecture 5](05-text-vectorization-and-bag-of
 the roadmap on its first slide, runs through embeddings (lecture 6), transformers in theory
 (lecture 7) and in applications with self-supervised learning (lecture 8), to LLMs (lectures 9–10)
 (lecture 5, slide 1; ≈0:00–0:46). Lecture 7's own roadmap calls lectures 7 and 8 "Transformers (1/2)"
-and "(2/2)" (lecture 7, slide 1). This knowledge base so far covers lectures 5 to 9.
+and "(2/2)" (lecture 7, slide 1). This knowledge base covers lectures 5 to 10.
 
 ## Why text
 
@@ -111,6 +111,8 @@ been trained on it (lecture 5, ≈7:46–9:19).
   question answering.
 - [Lecture 9](09-large-language-models.md): sequence generation with causal language models, decoding, and byte pair
   encoding.
+- [Lecture 10](10-adapting-llms.md): instruction tuning and ChatGPT, and adapting LLMs to a task by
+  zero-shot and few-shot prompting, retrieval-augmented generation and fine-tuning with LoRA.
 - See also [large language models](large-language-models.md), [word embeddings](word-embeddings.md), [transformers](transformers.md), [representation learning](representation-learning.md) and
   [multi-class classification and softmax](multiclass-classification.md), whose softmax lecture 3
   connects to how GPT-4 emits words.

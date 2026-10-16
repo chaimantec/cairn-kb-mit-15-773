@@ -222,6 +222,9 @@ question (slides 92–93; ≈1:13:54–1:16:13). See
   Transformer and TabTransformer.
 - [Lecture 6](06-word-embeddings.md): stand-alone embeddings, and why contextual ones need transformers.
 - [Lecture 9](09-large-language-models.md): causal self-attention, the Transformer Causal Encoder (the decoder), and GPT.
+- [Lecture 10](10-adapting-llms.md): the dense layer after a causal encoder is linear, not ReLU (slide 3);
+  sliding-window attention, mentioned in answer to a question (≈23:17); and LoRA, which fine-tunes only
+  low-rank changes to the attention matrices $A^K$, $A^Q$, $A^V$ (slides 104–111).
 - See also [large language models](large-language-models.md),
   [self-supervised learning](self-supervised-learning.md),
   [natural language processing](natural-language-processing.md),

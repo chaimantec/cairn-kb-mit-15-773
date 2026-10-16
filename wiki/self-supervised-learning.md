@@ -101,5 +101,8 @@ masking (slide 98).
 - [Lecture 8](08-transformers-and-self-supervised-learning.md): representations, the transfer-learning
   recipe, masking, BERT, and the unpresented contrastive-learning slides.
 - [Lecture 9](09-large-language-models.md): next word prediction, and the causal language models trained on it.
+- [Lecture 10](10-adapting-llms.md): next word prediction reused for fine-tuning: on instruction-answer
+  pairs in supervised fine-tuning, or on a company's own text to make a model "generally smart about the
+  company's business details" (≈1:08:08).
 - See also [transfer learning](transfer-learning.md), [representation learning](representation-learning.md),
   [transformers](transformers.md) and [large language models](large-language-models.md).

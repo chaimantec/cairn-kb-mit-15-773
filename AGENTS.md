@@ -40,7 +40,8 @@ printed slips, which slides were rendered and why) goes in
   first hour.
 - **A lecture can own a companion deck it never presents** (lecture 2's handwritten backprop
   example). Give it its own slide file, `NN-<companion>.md`, with its own `## Slide 1..N`
-  headings. Render its pages into the lecture's single image directory with a distinct prefix
+  headings. When the companion is a variant of part of the main deck (lecture 10's deck 10.5), map its
+  pages to the main deck's in its header, list what differs, and render none of the repeats. Render its pages into the lecture's single image directory with a distinct prefix
   (`backprop-N`, via `embed_slide_images.py --prefix`), because `verify_kb.py` keys slide files and
   image directories on the two-digit prefix. In the wiki, cite it as "page N of the …" so the embed
   script's `slide N` anchoring cannot misplace it, and hand-place its images.
@@ -69,6 +70,10 @@ printed slips, which slides were rendered and why) goes in
   `--verify`. Each deck's last page is OCW's end page, which is not lecture content. A slide the lecturer
   says he hid can still be in the export (lecture 9's slide 11, "unhidden" at 10:58), so narration about
   hidden slides is no evidence of a numbering gap.
+- **The published deck can be a later revision than the one shown in class.** Compare every number
+  the lecturer reads off the screen with the printed one. Mark each difference in the transcript with
+  an `[Ed: …]` note giving the printed number, and on the wiki give the printed number and note the
+  spoken one. An unpresented variant deck may keep the class version (lecture 10's LoRA count).
 - **A later deck can correct an earlier lecture.** Deck 10's slide 3 corrects lecture 9's "Dense (ReLU)"
   layer. Before writing a lecture page, read the next deck's first few titles in the text layer, and
   carry any correction into the page, cited to that deck.
@@ -137,6 +142,7 @@ What was rendered and why goes in `BUILD_LOG.md`.
 | 7 Transformers | 7 of 78 pages | rendered from `mit15_773_s24_lec07.pdf` |
 | 8 Transformers (2/2) and Self-Supervised Learning | 19 of 99 pages | rendered from `mit15_773_s24_lec08.pdf` |
 | 9 Large Language Models (1/2) | 10 of 68 pages | rendered from `mit15_773_s24_lec09.pdf` |
+| 10 Large Language Models (2/2) | 13 | 13 of `mit15_773_s24_lec10.pdf`'s 115 pages as `slide-N`, and none of `mit15_773_s24_lec105.pdf`'s 33 |
 
 ## Conventions
 

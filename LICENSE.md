@@ -163,3 +163,24 @@ plus the deck:
   and slides 47–50 are screenshots of the OpenAI Playground; their slide entries transcribe them. Slides
   2 and 37 repeat lecture 8's slides 71 and 30, and slide 59 repeats lecture 5's slide 27; none is
   rendered again.
+- **Lecture 10**, `raw/images/10-adapting-llms/` (13 images: pages 3, 20, 31, 33, 39, 40, 52, 58, 77, 84,
+  85, 109 and 114) from
+  [`mit15_773_s24_lec10.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec10.pdf).
+  Twelve are the course's own diagrams. Slide 114 is the "How LLMs Are Built?" flow chart from "Large
+  Language Models: A Survey" by Shervin Minaee, Tomas Mikolov, Narjes Nikzad, Meysam Chenaghlu, Richard
+  Socher, Xavier Amatriain and Jianfeng Gao, which the slide credits under CC BY, with the course's red
+  outlines added. None of the deck's fourteen slides with an OCW exclusion notice is rendered: 59
+  (Wayfair LLC), 70–73 (prompt examples from the GPT-3 paper, Tom B. Brown et al./ArXiv), 78 (a ChatGPT
+  conversation, benjedwards on Twitter), 80 (a retrieval-augmented generation figure, Sebastian Raschka),
+  87, 88 and 92 (rag & bone), 89 and 93 (Urban Outfitters), 95 (Llama 2 screenshots, Meta) and 113 (an
+  effort-benefit curve, Andrej Karpathy on Twitter). Slide 96 repeats slide 95's Llama 2 screenshot
+  without a notice and is not rendered either. Unmarked third-party material is transcribed and not
+  rendered: a GPT-3 completion posted on Twitter (5–6), GPT-3, InstructGPT and ChatGPT screenshots (9–10,
+  42, 44–45, 48–50, 63–64), the InstructGPT paper's title block (15), a LinkedIn post (55), OpenAI
+  Playground screenshots (60–61), a figure from the "Let's think step by step" paper (65), a table from
+  the "Take a deep breath" paper (66), the first page of a prompt-engineering survey (67), and an
+  instruction-tuning dataset of product descriptions and reviews (91). The companion deck
+  [`mit15_773_s24_lec105.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec105.pdf)
+  has no images here: it prints no exclusion notices, but its rag & bone, Urban Outfitters, Llama 2 and
+  effort-benefit pages reuse the material deck 10 marks as excluded, and its other figures repeat deck
+  10's.

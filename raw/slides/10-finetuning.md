@@ -344,7 +344,7 @@ Printed page number 21. (Figures as printed: "8096", not 8192.)
 
 Title (two lines): "An update to $A^K$ can be thought of as the sum of the original $A^K$ and the change $\Delta A^K$".
 
-Two 5x5 tables of numbers, side by side, with large labels beneath: "$A^K$" under the left one, "+" between, "$\Delta A^K$" under the right one.
+Two 5x5 tables of numbers, side by side, with large labels beneath: $A^K$ under the left one, "+" between, $\Delta A^K$ under the right one.
 
 Left table ($A^K$):
 

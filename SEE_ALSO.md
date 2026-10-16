@@ -40,5 +40,13 @@ Pass the **repo URL** as the `kb` argument to `kb_read` / `kb_list`. The
   [lecture 1](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/wiki/01-intro-and-word-vectors.md)
   page explains why one-hot word vectors fall short. For lecture 1's material it has an
   [activation functions](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/wiki/activation-functions.md)
-  page and derives neural-network gradients by hand. Its examples come from NLP.
+  page and derives neural-network gradients by hand. For 15.773 lecture 10, its lecture 11
+  ([post-training](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/wiki/11-post-training.md))
+  covers prompting, instruction finetuning and RLHF, with topic pages on
+  [prompting and in-context learning](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/wiki/prompting.md),
+  [instruction finetuning](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/wiki/instruction-finetuning.md),
+  [RLHF](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/wiki/rlhf.md) (the objective,
+  with its penalty for drifting from the starting model) and
+  [LoRA](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/wiki/lora.md), developed in
+  full there. Its examples come from NLP.
   Start at [INDEX](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/INDEX.md).

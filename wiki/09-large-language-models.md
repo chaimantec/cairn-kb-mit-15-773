@@ -30,7 +30,7 @@ GPT's **byte pair encoding** keeps case and punctuation and can spell any new wo
 vocabulary of characters, frequent words and frequent word fragments (slides 58–66).
 
 The catalog title, "Generative AI – Large Language Models (LLMs) and Retrieval Augmented Generation
-(RAG)", overstates the video: retrieval-augmented generation is not reached (it is in deck 10). The
+(RAG)", overstates the video: retrieval-augmented generation is not reached (it is in [lecture 10](10-adapting-llms.md)). The
 deck's roadmap calls this lecture "Large Language Models (1/2)" (slide 1). The recording presents
 slides 2–66 in order and ends on the token-visualizer demo. Three parts of it are not in the deck, and
 are described below from the narration: temperature, which the lecturer derives on an iPad (slide 56
@@ -81,10 +81,11 @@ softmax**, whose number of categories is the vocabulary size. For now the vocabu
 words, roughly 50,000 of them, so each softmax is "like a 50,000 way softmax", which is "exactly what we
 did for BERT" (≈5:30). Tokens come later in the lecture (Part 9).
 
-The next lecture's deck corrects this layer. Its slide 3 is titled "Correction: The contextual embeddings
+The next lecture corrects this layer. Its slide 3 is titled "Correction: The contextual embeddings
 flow into a Dense layer with linear activations (not ReLU) followed by a Softmax", and it notes that the
-dimension of those vectors is the vocabulary size ([deck 10](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec10.pdf), slides 2–3). Deck 10 is not yet transcribed in
-this knowledge base. Every slide of lecture 9 still labels the box "Dense (ReLU)".
+dimension of those vectors is the vocabulary size ([lecture 10](10-adapting-llms.md), slides 2–3;
+≈0:47–1:32; [slide file](../raw/slides/10-adapting-llms.md)). Every slide of lecture 9 still labels the
+box "Dense (ReLU)".
 
 ![Slide 10: the next-word-prediction pipeline from left to right. The input words "the cat sat on the" each have a row of four grey squares (positional input embeddings), which feed a dark red box "TS" (transformer stack); out come five rows of four blue squares (contextual embeddings), which feed a box "Dense (ReLU)"; out come five rows of three yellow squares, each with its own small "SM" (softmax) box, and each SM box points to an output word: cat, sat, on, the, mat.](../raw/images/09-large-language-models/slide-10.jpg)
 
@@ -520,8 +521,9 @@ hyperlinks whose targets are not printed.
 - Slide 11's loss formula has a factor of $1/7$ and seven terms from "the" to an end marker `<E>`, while
   its diagram shows five output words (cat, sat, on, the, mat). Neither slide nor narration reconciles
   them.
-- The "Dense (ReLU)" box on slides 9–12, 14–16, 30–31, 34, 36 and 43: the next lecture's deck corrects it
-  to "a Dense layer with linear activations (not ReLU) followed by a Softmax" ([deck 10](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec10.pdf), slide 3). See Part 1.
+- The "Dense (ReLU)" box on slides 9–12, 14–16, 30–31, 34, 36 and 43: the next lecture corrects it
+  to "a Dense layer with linear activations (not ReLU) followed by a Softmax" ([lecture 10](10-adapting-llms.md),
+  slide 3). See Part 1.
 - Slide 43 prints "TCE\*" with no footnote for the asterisk.
 - Slide 61 prints the starting corpus as "[t,h,e,\_,c,a,t,\_,s,a,t,\_o,n,\_t,h,e\_m,a,t]", with commas
   missing; slides 63–64 repeat it in full. Their "corpus after 1st merge" also reads "t,h,e\_,m".
@@ -534,6 +536,8 @@ hyperlinks whose targets are not printed.
 
 ## Related pages
 
+- [Lecture 10](10-adapting-llms.md): the second LLM lecture: the dense-layer correction, instruction
+  tuning and ChatGPT, prompting, retrieval-augmented generation, fine-tuning and LoRA.
 - [Large language models](large-language-models.md): next word prediction, causal self-attention, the
   Transformer Causal Encoder, generating text and GPT-3, gathered as a topic.
 - [Decoding and sampling](decoding-and-sampling.md): greedy decoding, random sampling, top-K, top-P and

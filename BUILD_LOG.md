@@ -9,7 +9,7 @@ slide file or transcript it concerns. The rules every build follows are in
 [`AGENTS.md`](AGENTS.md).
 
 One section per run: lectures 1, 2 and 3 (built 2026-10-11), lecture 4 (2026-10-14), lecture 5
-(2026-10-14), lecture 6 (2026-10-14), lecture 7 (2026-10-14), lecture 8 (2026-10-16), lecture 9 (2026-10-16), and at the end the ticked build checklists of those runs,
+(2026-10-14), lecture 6 (2026-10-14), lecture 7 (2026-10-14), lecture 8 (2026-10-16), lecture 9 (2026-10-16), lecture 10 (2026-10-16), and at the end the ticked build checklists of those runs,
 moved from `TODO.md`.
 
 ## Lecture 1 — Introduction to Neural Networks and Deep Learning
@@ -680,6 +680,110 @@ and GenAI (a link). Lectures 5, 7 and 8 now link forward to lecture 9 where they
 encoding or the causal transformer. SEE_ALSO's CS224N entry no longer says this KB covers language only as
 far as lecture 5, a sentence stale since lecture 6. Anchors of the new section links were checked by
 script.
+
+## Lecture 10 — Large Language Models (2/2): Instruction Tuning, Prompting, RAG and Fine-Tuning
+
+Built 2026-10-16. Video `d-tngNnaG4U` (77 min); deck `mit15_773_s24_lec10.pdf`, 115 pages, and the
+companion deck `mit15_773_s24_lec105.pdf` ("Lecture 10.5: Finetuning"), 33 pages.
+
+**Video ↔ deck.** The recording presents deck 10's slides 2–112 in order, from the review of lecture 9 and
+the ReLU correction (0:00–≈1:32) to the LoRA Colab slide (≈1:16:35), which the lecturer defers to a video
+walkthrough ("9:54, time does not permit"). Slides 113 (effort-benefit curve) and 114 (topics covered) are
+not reached; slide 1 is the roadmap and 115 OCW's end page. Video 11 opens on deck 11 (diffusion), so no
+video presents deck 10.5. It is a variant of deck 10's fine-tuning section (slides 82–114). 26 of its 33
+pages match deck 10 nearly word for word by the text layer, and raster hashes confirm most. It is
+transcribed as lecture 10's companion deck, `raw/slides/10-finetuning.md`, with a page map to deck 10 in its
+header. The catalog title's "PEFT" is never said or printed. Material outside the deck: the RAG Colab
+(slide 81; ≈41:50–1:02:40), described from the narration.
+
+**The published deck is later than the one shown in class.** Numbers the lecturer reads off the screen
+differ from the PDF. For memory he gives a "3 to 4" multiplier ("should really be 1 to 6"), 420–560 GB and
+6 to 7 GPUs; the PDF has ~3-6, 420-840GB and 6 to 11 (slide 97). He gives 7 GPUs and 8,000 days; the PDF
+has 11 GPUs and 5,261 days (slide 98). He gives an optimizer state of "2x" and a total of 560 GB; the PDF
+has 1-4x and 420-840GB (slide 102). For LoRA he gives "16,192 parameters, 0.02%"; slide 109 has 4 x 8192 =
+32,768, 0.05%. He also says the fine-tuning diagram still shows a ReLU; slide 83 prints a plain Dense box.
+Deck 10.5 is an intermediate version. It already has the corrected memory numbers, but its LoRA slides use
+8096 and "2 x 8096 = 16,192 … 0.02%" (slides 21, 24–25), its pipeline keeps "Dense (ReLU)" (slide 3), and
+its list of updated weights has seven items (slide 5). Its slide 8 names the marketing-copy model, "Alpaca,
+running off of Llama 7B". The lesson went into AGENTS.md in general form.
+
+**Numbering.** Slide N = PDF page N in both decks. Deck 10 prints numbers only on 2, 3, 67 and 76–114.
+2, 3 and 67 print their own, and 76–114 print N+1, so a hidden slide sits somewhere in 68–75 (which print
+nothing). `slide_number_map.py` reported printed 76 absent and pages 68–75 ambiguous. The headings were
+checked with a plain 1..N sequence check (115 and 33, both in order). In deck 10.5 every printed number
+equals its page.
+
+**OCW notices.** Deck 10 has 14: 59 (Wayfair LLC), 70–73 (prompt examples from the GPT-3 paper, Tom B.
+Brown et al./ArXiv), 78 (benjedwards on Twitter), 80 (Sebastian Raschka's RAG figure), 87, 88, 92 (rag &
+bone), 89, 93 (Urban Outfitters), 95 (Llama 2 screenshots, Meta) and 113 (Karpathy's effort-benefit curve).
+114 carries a CC BY credit (Minaee et al., "Large Language Models: A Survey"). It is not an exclusion, and
+it is rendered. Deck 10.5 prints no notice anywhere, typed or drawn. Its pages 7, 8 and 30 (rag & bone),
+9 and 29 (Urban Outfitters), 11 and 12 (Llama 2) and 31 (Karpathy) reuse deck 10's excluded material, and
+its page 32 has the survey flow chart without the credit line. Deck 10's slide 96 repeats 95's Llama 2
+screenshot without a notice. None of these is rendered. Unmarked third-party content, transcribed and not
+rendered: 5–6 (a GPT-3 continuation from Twitter; the continuation is described, not copied), 9–10, 42,
+44–45, 48–50, 63–64 (GPT-3, InstructGPT and ChatGPT screenshots), 15 (the InstructGPT paper's title block),
+55 (the lecturer's LinkedIn post), 60–61 (Playground), 65–67 (paper figure, table and first page) and 91 (a
+dataset screenshot). Hyperlinks whose targets are not printed: 81 (Colab), 109 (LoRA paper), 114 (survey),
+and deck 10.5's 28.
+
+**Shared rasters.** Deck 10 shares only PowerPoint shape masks (168×76, 60×59, used across every deck) with
+earlier decks; no figure is a repeat by hash. A pixel diff shows slide 2 close to, but not identical with,
+lecture 9's slide 10. It is superseded by slide 3 and not rendered.
+
+**Transcription.** Sonnet, four agents in parallel: deck 10 pages 1–38, 39–76 and 77–115, and deck 10.5
+1–33. They read 1400px PNGs pre-rendered into the scratchpad and appended with quoted heredocs; each took
+2.5–3.5 minutes. No `$` gaps. Parent fixes: slide 31's formula subscript ($r_p - r_O$, as printed, not
+$r_o$); slide 111's cell "Roughly zero by computing these 'just in time'" (both agents dropped "these");
+slide 114's unverified "(added by the lecturer)"; slide 113's curve values (re-read off the render); dollar
+amounts escaped as `\$` (check_math passes them); quotes removed before inline math on slides 30 and 106
+and deck 10.5's 22, which github.com would not render. The agent's claim that "2 x 108" on slides 100–101
+has no superscript was checked on a crop: true, it is printed flat, where slide 98's $10^{12}$ is
+superscripted.
+
+**Transcript edit.** OCW human captions, done inline in the parent as a scripted list of 18 changes.
+Restorations (5): "And the reason, So" (3:55); "very Creative" (9:21); "Chat-GPT" → ChatGPT (21:45,
+27:05); "a new and updated element" → LLM (1:05:47). `[Ed:]` notes (13) at 1:32 (slide 4's "GPT and
+GPT-2"), 26:19 (garbled), 45:44 ("GPT-3-turbo"), 52:38 ("0.934" for 0.9934), 56:32 ("1,600 something" for
+16,385), 1:02:40 (the ReLU the published slide no longer has), 1:09:39, 1:10:26 (two), 1:12:43, 1:13:29
+(two) and 1:15:49 (the published deck's numbers). Left as captioned: "embedding-ada-002", "Carhart",
+"LORA" (as slide 109 prints it), "a Sloany". Checks: 100 timestamps identical, number inventory (416)
+identical once notes are removed, paragraph word ratios 1.00–1.007.
+
+**Figure check.** In the parent on renders: deck 10's slides 3, 20, 31, 33, 39, 58, 77, 85, 103, 109,
+111 and 114, plus crops of the printed powers of ten on 98 and 100; deck 10.5's 3 and 25. Fixes as above;
+the rest agreed. Deck 10.5's seven-item list (slide 5) and its 8096 numbers were confirmed against the text
+layer and render.
+
+**Printed slips.** Slides 100–101's "2 x 108" for 2×10^8; slide 109's stray "8096" label among 8192s, and
+"LORA"; slide 110's "ΔA^v" and its unfinished last bullet; slide 111's "can be comfortably be finetuned" and
+footnote-less asterisks; slide 57's "base (aka foundation or base)"; slide 60's "in being described"; "Open
+AI" on 28–29; slide 55's attached document dated January 10, 2023. Deck 10.5: "Bit first…" (slide 6), "Lets
+get better at Fake Reviews" (slide 10), "8096x8096" (slide 21). Spoken: see the deck-version paragraph
+above, and the `[Ed:]` notes.
+
+**Images: 13 of 115 pages.** Rendered: 3, 20, 31, 33, 39, 40, 52, 58, 77, 84, 85, 109, 114 (1.24 MB; 10
+PNG, 3 JPEG). None from deck 10.5. Not rendered: the 14 noticed slides and 96; unmarked third-party
+screenshots and paper figures (above); 2 (lecture 9's pipeline, superseded by 3); build steps and repeats
+superseded by a rendered slide (16, 46, 47, 51 → 40; 30, 32 → 31; 35–38 → 39; 53, 54 → 52; 68, 74, 75,
+82 → 58; 83, 104 → 85; 108 → 109); 106 (two number tables, transcribed exactly); 14 and 110
+(single-shape drawings); text-only slides. The wiki lecture page hand-places all 13 with hand-written
+captions. Slides 39 and 52 are also on the instruction-tuning page, 58, 85 and 109 on adapting-llms, and 77
+on retrieval-augmented-generation.
+
+**Wiki.** A lecture page and three new topic pages: instruction-tuning, adapting-llms (the ladder,
+prompting, in-context learning, fine-tuning, Llama-2-70b's cost, LoRA) and retrieval-augmented-generation.
+Extended: large-language-models (the correction, now cited to lecture 10; GPT/GPT-2/GPT-3 scale and
+in-context learning; base model to assistant; context window and hallucination; its "second lecture is not
+yet in this knowledge base" sentence replaced), transfer-learning (fine-tuning LLMs), loss-functions (the
+Reward Model's loss), decoding-and-sampling (sampling several answers to rank), NLP (coverage now lectures
+5–10), word-embeddings, transformers and self-supervised-learning ("where this comes up"). Lecture 9's page
+and deck 09's slide file now cite deck 10's slide 3 and RAG through the new slide file and lecture page. The
+lecture page works two checks the lecturer invites or the slide prints, labelled as its own: the Reward
+Model loss's behaviour, and 32,768 = 2 × 2 × 8192 ≈ 0.05% of 64M. SEE_ALSO's CS224N entry now points to
+its post-training, prompting, instruction-finetuning, RLHF and LoRA pages, each confirmed tracked in that
+repo. Four plain-text "×" in the new pages were rewritten in words; verify_kb's math-warning list is capped
+and did not show them.
 
 ## Build checklists, lectures 1–4
 

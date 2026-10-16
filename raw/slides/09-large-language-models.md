@@ -21,7 +21,7 @@ autoregressive language models such as GPT-3 (31–41, ≈20:19–30:26), decodi
 slide 57), and byte pair encoding (58–66, ≈1:00:45 to the end). It ends on the token-visualizer demo
 of slide 66. Slide 67, a sidebar, is not mentioned. The catalog's title for this video, "Generative AI –
 Large Language Models (LLMs) and Retrieval Augmented Generation (RAG)", overstates it: retrieval-augmented
-generation is in deck 10, not here. Cite these slides as "slide N", where N is the PDF page number.
+generation is in deck 10 ([`10-adapting-llms.md`](10-adapting-llms.md), slides 75–81), not here. Cite these slides as "slide N", where N is the PDF page number.
 Diagrams, tables and screenshots are described in prose since the KB is read as text.
 
 Slides marked with an `*OCW notice: …*` line (27, 29, 41 and 67) carry material that OCW excludes from
@@ -36,7 +36,7 @@ two "Link" hyperlinks on slide 67 do not print their targets. Words the slides p
 given plainly, with a note in parentheses. The next lecture's deck corrects the "Dense (ReLU)" box of this
 deck's pipeline diagrams: its slide 3 is titled "Correction: The contextual embeddings flow into a Dense
 layer with linear activations (not ReLU) followed by a Softmax"
-([`mit15_773_s24_lec10.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec10.pdf)).
+([`10-adapting-llms.md`](10-adapting-llms.md), slide 3).
 
 **Images.** Ten figure slides carry a 1400px render under their heading: 3, 10, 16, 19, 20, 26, 36,
 43, 52 and 54. The other figure-bearing slides are not rendered. Slides 27, 29, 41 and 67 carry OCW

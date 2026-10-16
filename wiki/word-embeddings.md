@@ -149,6 +149,9 @@ are the input to that process: random ones, GloVe, it "doesn't matter" (lecture 
   added to word embeddings.
 - [Lecture 8](08-transformers-and-self-supervised-learning.md): the stand-alone and positional embeddings as weights trained with the whole
   transformer, and BERT's 768-long embeddings.
+- [Lecture 10](10-adapting-llms.md): contextual embeddings of document chunks and of a question,
+  compared by cosine similarity, to retrieve passages for an LLM (see
+  [retrieval-augmented generation](retrieval-augmented-generation.md)); OpenAI's embeddings are 1536 long.
 - See also [text vectorization](text-vectorization.md),
   [representation learning](representation-learning.md),
   [natural language processing](natural-language-processing.md) and [transformers](transformers.md).

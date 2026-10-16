@@ -120,10 +120,25 @@ library's `pipeline` function to classify sentiment, extract named entities and 
 straight out of the box. "If it's a standard task, do not reinvent the wheel" (≈1:01:27; see
 [lecture 8, Part 9](08-transformers-and-self-supervised-learning.md#part-9--the-hugging-face-colab)).
 
+## Fine-tuning large language models
+
+[Lecture 10](10-adapting-llms.md) applies the same idea to LLMs. Fine-tuning a causal LLM on
+domain-specific input-output examples "is basically fine-tuning exactly like we saw with BERT and so on.
+And even with ResNet" (slides 82–85; ≈1:02:40–1:03:26). The model is trained further by next word
+prediction on the examples, and its weights change. A few hundred examples can be enough: a model
+fine-tuned on a few hundred product descriptions and real reviews stops writing marketing copy and writes
+reviews that read like a customer's (slides 86–93). "It took billions of sentences for pre-training …
+to make it work for your narrow business use case, you only had to spend a couple of hundred examples"
+(≈1:06:34). The [instruction tuning](instruction-tuning.md) that turned GPT-3 into ChatGPT began with the
+same step, supervised fine-tuning. For a 70-billion-parameter model, updating every weight needs hundreds
+of gigabytes of memory, so the lecture fine-tunes only low-rank changes to the attention matrices,
+**LoRA** (see [adapting LLMs](adapting-llms.md#lora-low-rank-adaptation)).
+
 ## Where this comes up
 
 - [Lecture 4](04-cnns-and-transfer-learning.md): the idea, ResNet, the Colab and the live demo.
 - [Lecture 6](06-word-embeddings.md): pretrained GloVe embeddings, frozen and fine-tuned.
 - [Lecture 8](08-transformers-and-self-supervised-learning.md): why transfer learning works, the general
   recipe, BERT, and the Hugging Face pipelines.
+- [Lecture 10](10-adapting-llms.md): fine-tuning LLMs, supervised fine-tuning, and LoRA.
 - See also [data augmentation](data-augmentation.md), the other remedy for a small data set.

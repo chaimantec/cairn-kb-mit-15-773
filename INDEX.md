@@ -8,18 +8,19 @@ transfer learning) and natural language (embeddings, transformers), to generativ
 parameter-efficient fine-tuning, text-to-image diffusion). It deliberately "skips the math" and
 focuses on concepts and on coding models in Keras/TensorFlow.
 
-**Coverage: lectures 1–9 of 11.** This knowledge base is being built lecture by lecture. Only
-lectures 1 to 9 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
-covering lectures 10–11. On language it covers lectures 5 (text vectorization and the Bag of Words
+**Coverage: lectures 1–10 of 11.** This knowledge base is being built lecture by lecture. Only
+lectures 1 to 10 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
+covering lecture 11. On language it covers lectures 5 (text vectorization and the Bag of Words
 model), 6 (word embeddings and GloVe), 7 (the transformer encoder: self-attention, multi-head
 attention, positional encoding, applied to slot filling), 8 (the encoder completed with key, query
 and value matrices, residual connections and layer normalization; the `<CLS>` token; self-supervised
 learning and BERT; Hugging Face pipelines; the Vision Transformer and TabTransformer) and 9 (the first
 of two lectures on large language models: next word prediction, causal self-attention and the
-decoder, text generation and GPT-3, decoding and sampling, byte pair encoding). Retrieval-augmented
-generation is in the title of video 9 but not in the lecture; it belongs to lecture 10. For anything
-after lecture 9, including adapting LLMs (prompting, retrieval-augmented generation, fine-tuning),
-parameter-efficient fine-tuning and text-to-image models, say that the KB does not cover it yet.
+decoder, text generation and GPT-3, decoding and sampling, byte pair encoding) and 10 (the second:
+instruction tuning, the Reward Model and RLHF behind ChatGPT, and adapting LLMs by zero-shot and few-shot
+prompting, retrieval-augmented generation and fine-tuning with LoRA). Retrieval-augmented generation is in
+the title of video 9 but is taught in lecture 10. For lecture 11, text-to-image (diffusion) models, say
+that the KB does not cover it yet.
 
 ## Contents
 
@@ -116,6 +117,19 @@ parameter-efficient fine-tuning and text-to-image models, say that the KB does n
   (nucleus) sampling, temperature (with the formula) and the OpenAI Playground demo; and byte pair
   encoding worked through on "the cat sat on the mat", with the token visualizer. RAG, in the video's
   catalog title, is not in this lecture.
+- [Lecture 10 — Large Language Models (2/2): Instruction Tuning, Prompting, RAG and Fine-Tuning](wiki/10-adapting-llms.md):
+  the dense layer after the causal encoder is linear, not ReLU; GPT, GPT-2 and GPT-3 (117 million, 1.5
+  billion, 175 billion parameters); why GPT-3 did not follow instructions; instruction tuning: supervised
+  fine-tuning on 12,500 human-written answers, ranking sampled answers, the Reward Model and its loss
+  $-\log(\sigma(r_p - r_O))$, RLHF with about 31,000 questions, InstructGPT and ChatGPT, helper LLMs. Then
+  the ladder of adaptation: zero-shot prompting and prompt engineering ("Let's think step by step"),
+  few-shot prompting and in-context learning, retrieval-augmented generation (the context window,
+  chunks, embeddings and cosine similarity) with a Colab on the 2022 Winter Olympics, fine-tuning for
+  synthetic product reviews, why Llama-2-70b is hard to fine-tune (memory and GPUs), and LoRA (low-rank
+  adaptation, 32,768 parameters instead of 64 million per matrix). Several numbers said in class come
+  from an earlier version of the deck than OCW's; the page gives the printed ones. Also summarises the
+  unpresented companion deck 10.5, "Finetuning". The catalog title's "PEFT" is never said; LoRA is the
+  method taught.
 
 ### Topics
 
@@ -137,7 +151,8 @@ parameter-efficient fine-tuning and text-to-image models, say that the KB does n
   validation and test sets, weight initialization, and what the weights are worth.
 - [Loss functions](wiki/loss-functions.md): what a loss measures, mean squared error, binary
   cross-entropy derived step by step, categorical cross-entropy and the Keras loss for each label
-  encoding, the output-layer/loss table, and why accuracy and loss can disagree.
+  encoding, the output-layer/loss table, why accuracy and loss can disagree, and the Reward Model's loss
+  for ranked answers.
 - [Gradient descent](wiki/gradient-descent.md): the derivative's three cases, the update rule, the
   learning rate, gradients in many variables, local minima and saddle points, stochastic
   (minibatch) gradient descent, epochs, batches and batch size, and fitting models that are not
@@ -164,7 +179,8 @@ parameter-efficient fine-tuning and text-to-image models, say that the KB does n
 - [Transfer learning](wiki/transfer-learning.md): the two research trends behind it, ImageNet and
   ResNet, headless ResNet as a feature extractor, fine-tuning, the model hubs, the
   handbags-vs-shoes results, pretrained word embeddings (GloVe) as the same idea for text, why it
-  works and the general recipe, and pretrained language models (BERT, Hugging Face pipelines).
+  works and the general recipe, pretrained language models (BERT, Hugging Face pipelines), and
+  fine-tuning large language models.
 - [Data augmentation](wiki/data-augmentation.md): perturbing images (flips, small rotations, zooms)
   to stretch a small data set without changing what they mean, the Keras layers for it, and augmented
   pairs in contrastive learning.
@@ -208,13 +224,24 @@ parameter-efficient fine-tuning and text-to-image models, say that the KB does n
   labeling with a transformer, BERT, next word prediction (the task behind GPT), and contrastive
   learning for images (from lecture 8's slides only).
 - [Large language models](wiki/large-language-models.md): next word prediction, why the plain encoder
-  cheats, causal self-attention and the Transformer Causal Encoder (decoder), generating text one word
-  at a time, autoregressive language models, GPT-3's size and training data, what an LLM's answer is
-  and is not, and tokens rather than words.
+  cheats, causal self-attention and the Transformer Causal Encoder (decoder), the linear dense layer
+  before the softmax, generating text one word at a time, autoregressive language models, GPT, GPT-2 and
+  GPT-3's scale and in-context learning, what an LLM's answer is and is not, from base model to assistant,
+  the context window and hallucination, and tokens rather than words.
+- [Instruction tuning](wiki/instruction-tuning.md): why GPT-3 did not follow instructions, supervised
+  fine-tuning, ranking sampled answers, the Reward Model and its loss, reinforcement learning from human
+  feedback, InstructGPT and ChatGPT, thumbs up and down, and helper LLMs.
+- [Adapting LLMs: prompting, fine-tuning and LoRA](wiki/adapting-llms.md): the ladder of adaptation,
+  zero-shot prompting and prompt engineering, few-shot prompting and in-context learning, fine-tuning
+  (what it updates, the product-review example), why Llama-2-70b is hard to fine-tune, LoRA, and the
+  effort-benefit curve.
+- [Retrieval-augmented generation](wiki/retrieval-augmented-generation.md): the context window, why
+  conversations use it up, chunking, embedding and retrieving by cosine similarity, the 2022 Winter
+  Olympics Colab (hallucination, context, token budgets), and RAG inside chat products.
 - [Decoding and sampling](wiki/decoding-and-sampling.md): choosing the next token from the softmax:
   greedy decoding versus random sampling and when to use each, the head and the tail of the
   distribution, top-K and top-P (nucleus) sampling with the slides' worked numbers, temperature and its
-  formula, and the OpenAI Playground's settings.
+  formula, the OpenAI Playground's settings, and sampling several answers for people to rank.
 
 ## Raw materials
 
@@ -233,8 +260,11 @@ parameter-efficient fine-tuning and text-to-image models, say that the KB does n
   [`raw/slides/03-vision-basics.md`](raw/slides/03-vision-basics.md). Cite them as "deck 3A, slide N"
   and "deck 3B, slide N". From page 16 on, deck 3B prints a number one higher than the page where it
   prints one. The decks of lectures 4, 5, 6, 8 and 9 print their own page number wherever they print one.
-  From page 10 on, lecture 7's deck prints a number one higher than the page.
-  The Colab notebooks of lectures 3 to 8 are not published on OCW; the KB knows them only from
+  From page 10 on, lecture 7's deck prints a number one higher than the page, and from page 76 on so
+  does lecture 10's. Lecture 10 also has a companion deck that no video presents, deck 10.5
+  ("Finetuning"), in its own file, [`raw/slides/10-finetuning.md`](raw/slides/10-finetuning.md); cite
+  it as "deck 10.5, slide N".
+  The Colab notebooks of lectures 3 to 8 and 10 are not published on OCW; the KB knows them only from
   the lecturer's narration.
 - [`raw/images/`](raw/images/): rendered figure slides (see below).
 - [`sources.md`](sources.md): every course document on the OCW site with its canonical URL. The
@@ -245,14 +275,14 @@ parameter-efficient fine-tuning and text-to-image models, say that the KB does n
 
 ## Images
 
-**Lectures 1 to 9 have images. No other lecture does yet.** Their figure slides are rendered
+**Lectures 1 to 10 have images. Lecture 11 does not yet.** Their figure slides are rendered
 as whole slides and shown inline, both in the lecture pages ([lecture 1](wiki/01-introduction.md),
 [lecture 2](wiki/02-training-deep-nns.md), [lecture 3](wiki/03-keras-and-vision-basics.md),
 [lecture 4](wiki/04-cnns-and-transfer-learning.md),
 [lecture 5](wiki/05-text-vectorization-and-bag-of-words.md),
 [lecture 6](wiki/06-word-embeddings.md), [lecture 7](wiki/07-transformers.md),
 [lecture 8](wiki/08-transformers-and-self-supervised-learning.md),
-[lecture 9](wiki/09-large-language-models.md)) and under the
+[lecture 9](wiki/09-large-language-models.md), [lecture 10](wiki/10-adapting-llms.md)) and under the
 matching `## Slide N` heading in
 each slide file. Lecture 1 has 45. Lecture 2 has 18: 15 from its main deck and 3 pages of the
 handwritten backprop example, which are named `backprop-N` rather than `slide-N`. Lecture 3 has 13 in
@@ -284,7 +314,14 @@ about building GPT and BPE (slides 41 and 67) are excluded by OCW; the GPT-3 pap
 (slide 39) and the OpenAI Playground screenshots (slides 47–50) are not rendered, and their slide entries
 transcribe them. For lecture 9's masking and use-case review slides (2 and 37), use lecture 8's images of
 slides 71 and 30, which they repeat. The byte pair encoding slides (61–65) are text and tables, with no
-image. Slides
+image. Lecture 10 has 13, all from its main deck and all the course's own diagrams except one: the
+corrected pipeline, supervised fine-tuning, the Reward Model and its loss, the Reward Model's ratings, the
+RLHF loop, the GPT lineage with the three steps, instruction tuning in five steps, the ladder of
+adaptation, the context window, fine-tuning on an example, what fine-tuning updates, LoRA's low-rank
+matrices, and the survey's "How LLMs Are Built?" flow chart (slide 114, CC BY). Its product pages, the
+GPT-3 paper's few-shot prompt, the RAG figure, Meta's Llama 2 page and Karpathy's effort-benefit curve
+are excluded by OCW; its GPT-3 and ChatGPT screenshots, Playground screenshots and paper figures are not
+rendered, and their slide entries transcribe them. The companion deck 10.5 has no images. Slides
 whose content OCW excludes from its licence (marked `*OCW notice: …*`) are never rendered, and
 neither are slides that reuse an excluded figure without a notice of their own: deck 3A's slides
 24–25 and lecture 4's slide 77, whose ResNet diagram slides 70–73 exclude. So lecture 4 has no image

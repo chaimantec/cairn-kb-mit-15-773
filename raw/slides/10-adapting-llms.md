@@ -378,7 +378,7 @@ Footnote: "\*For ease of exposition, we are describing the slightly simpler vers
 
 Title: "The Reward Model has a single numerical output. We want this number to indicate how good the answer is for that particular instruction" (three lines; the top line is partly cut off by the slide edge in the render).
 
-Diagram. Two parallel branches. Top branch: a box "Instruction" and a box "Preferred Answer" (stacked, white boxes with black outline), each with a black arrow pointing right into a black box "Reward Model" (white text). From the Reward Model a diagonal arrow runs down-right to a meeting point, labelled "$r_P$" (written r with subscript P). Bottom branch: a box "Instruction" and a box "Other Answer", each with an arrow into a second black box "Reward Model", from which a diagonal arrow runs up-right to the same meeting point, labelled "$r_O$". The two arrows converge but nothing is yet drawn at the meeting point.
+Diagram. Two parallel branches. Top branch: a box "Instruction" and a box "Preferred Answer" (stacked, white boxes with black outline), each with a black arrow pointing right into a black box "Reward Model" (white text). From the Reward Model a diagonal arrow runs down-right to a meeting point, labelled $r_P$ (written r with subscript P). Bottom branch: a box "Instruction" and a box "Other Answer", each with an arrow into a second black box "Reward Model", from which a diagonal arrow runs up-right to the same meeting point, labelled $r_O$. The two arrows converge but nothing is yet drawn at the meeting point.
 
 Footnote under the rule: "The two models are exact copies"
 
@@ -1228,7 +1228,7 @@ Title: "Consider the weight matrix $A^K$" (K as a superscript).
 
 Title: "An update to $A^K$ can be thought of as the sum of the original $A^K$ and the change $\Delta A^K$" (two lines).
 
-Two 5x5 tables of numbers side by side, with the labels "$A^K$", a plus sign, and "$\Delta A^K$" beneath them.
+Two 5x5 tables of numbers side by side, with the labels $A^K$, a plus sign, and $\Delta A^K$ beneath them.
 
 Left table ($A^K$):
 
@@ -1326,8 +1326,8 @@ Title: "The effort-benefit curve for adaptation strategies depends on the size o
 
 Chart (third-party figure; described only). Y axis labelled "task accuracy", running from "0%" at the bottom to "100%" at a horizontal line near the top. X axis is an arrow labelled at its end "effort/ complexity", divided into four equal coloured vertical bands with these labels beneath: "zero-shot prompts" (light blue band), "few-shot prompts" (light pink band), "retrieval-augmented few-shot prompting" (light green band), "finetuning" (light yellow band). Text inside the bands: "prompt engineering" in the blue band, and "model training (finetuning, RLHF) data engine" in the yellow band. Two series, each a connected line of arrows:
 
-- Blue line labelled "big base model" at its right end: starts at 0% at the origin, rises steeply to about 50% mid-way through the blue band, about 55% at its end; about 65% at the start of the pink band, about 72% at its end; about 78% at the start of the green band, about 83% at its end; about 88% at the start of the yellow band, rising slowly to about 100% at the right edge.
-- Red line labelled "small base model" at its right end: starts at 0%, stays near 0% through the blue band (about 1% at its end), about 10% at the end of the pink band, about 14% at the end of the green band, about 25% mid-way through the yellow band, about 30% at the right edge.
+- Blue line labelled "big base model" at its right end: starts at 0% at the origin, rises steeply to about 50% mid-way through the blue band, about 55% at its end; about 65% at the start of the pink band, about 72% at its end; about 82% just after the start of the green band, about 85% at its end; about 94% early in the yellow band, rising slowly to about 97% at the right edge, just under the 100% line.
+- Red line labelled "small base model" at its right end: starts at 0%, stays near 0% through the blue band (about 1% at its end), about 10% at the end of the pink band, about 15% at the end of the green band, about 29% three-quarters of the way through the yellow band, about 34% at the right edge.
 
 Below the chart, a source URL: "https://twitter.com/karpathy/status/1655994367033884672?s=20"
 

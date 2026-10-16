@@ -34,10 +34,10 @@ reuses deck 10's excluded rasters.
 - [x] Slides 10 → raw/slides/10-adapting-llms.md (Sonnet, three agents); deck 10.5 → raw/slides/10-finetuning.md (one agent)
 - [x] 10 figure check on rendered images (3, 20, 31, 33, 39, 58, 77, 85, 103, 109, 111, 114; crops of 98 and 100)
 - [x] raw/images/10-adapting-llms/ — render, embed in slide file (13 slides; none from deck 10.5)
-- [ ] wiki/10-adapting-llms.md, with images hand-placed
-- [ ] Topic pages for lecture 10; repoint deck 10 slide 3 citations (lecture 9 page, large-language-models, deck 09 slide file) at the new slide file
-- [ ] INDEX.md — lecture 10 entries, coverage and image sentences
-- [ ] kb.json, BUILD_LOG.md lecture 10 record, AGENTS.md image row, LICENSE.md attribution, sources.md, SEE_ALSO.md
+- [x] wiki/10-adapting-llms.md, with images hand-placed (13 of 13, hand-written captions)
+- [x] Topic pages for lecture 10 (new: instruction-tuning, adapting-llms, retrieval-augmented-generation; extended large-language-models, transfer-learning, loss-functions, decoding-and-sampling, NLP, word-embeddings, transformers, self-supervised-learning); deck 10 slide 3 citations repointed (lecture 9 page, large-language-models, deck 09 slide file)
+- [x] INDEX.md — lecture 10 entries, coverage and image sentences
+- [x] kb.json, BUILD_LOG.md lecture 10 record, AGENTS.md image row and two lessons, LICENSE.md attribution, sources.md, SEE_ALSO.md (CS224N post-training pages)
 - [ ] verify_kb.py clean (with check_math and --github), review section read
 - [ ] Commit and push
 - [ ] Move this section to BUILD_LOG.md

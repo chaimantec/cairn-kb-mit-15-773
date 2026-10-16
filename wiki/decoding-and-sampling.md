@@ -111,10 +111,22 @@ language model". People use these controls heavily for debugging, and "when you'
 on top of these large language models, you've got to be very, very careful with these parameters". Bing's
 "creative, balanced, precise" settings, the lecturer says, adjust them under the hood (≈36:33).
 
+## Sampling as a feature: several answers to rank
+
+Random sampling also has a use beyond variety. To build the Reward Model of
+[instruction tuning](instruction-tuning.md), OpenAI needed several different answers to each question for
+people to rank, and GPT-3 can give them because it samples. "The fact that we had these stochastic
+outputs because of sampling is now a feature, not a bug": run it three times "with a nice temperature of 1
+or 1.1 or something so that it's nice and random" ([lecture 10](10-adapting-llms.md), slides 25–27;
+≈10:08). The same randomness shows in lecture 10's RAG Colab, where a rerun of the same prompt left out
+part of the answer: "Welcome to stochasticity" (≈58:04).
+
 ## Where this comes up
 
 - [Lecture 9](09-large-language-models.md): decoding, greedy and random sampling, the GPT-3.5 examples,
   top-K, top-P, temperature and the Playground demo.
+- [Lecture 10](10-adapting-llms.md): sampling several answers for people to rank, and a stochastic RAG
+  answer.
 - See also [large language models](large-language-models.md) and
   [multi-class classification and softmax](multiclass-classification.md), the softmax that temperature
   rescales.
