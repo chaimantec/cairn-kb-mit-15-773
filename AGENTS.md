@@ -66,7 +66,12 @@ printed slips, which slides were rendered and why) goes in
   and three-digit numbers are also often split across two text spans ("1"+"0", "10"+"0").
   `slide_number_map.py` misreads both, so derive the mapping from raw span positions, check the
   outliers on page crops, and verify headings with a plain `1..N` sequence check rather than
-  `--verify`. Each deck's last page is OCW's end page, which is not lecture content.
+  `--verify`. Each deck's last page is OCW's end page, which is not lecture content. A slide the lecturer
+  says he hid can still be in the export (lecture 9's slide 11, "unhidden" at 10:58), so narration about
+  hidden slides is no evidence of a numbering gap.
+- **A later deck can correct an earlier lecture.** Deck 10's slide 3 corrects lecture 9's "Dense (ReLU)"
+  layer. Before writing a lecture page, read the next deck's first few titles in the text layer, and
+  carry any correction into the page, cited to that deck.
 - **OCW notices.** Excluded third-party material carries "© … All rights reserved. This content is
   excluded from our Creative Commons license". Each such slide gets an `*OCW notice: …*` line in the
   slide file and is **never rendered**. A notice may lack "All rights reserved" (lecture 1, slide 87)
@@ -131,6 +136,7 @@ What was rendered and why goes in `BUILD_LOG.md`.
 | 6 Word Embeddings | 8 of 70 pages | rendered from `mit15_773_s24_lec06.pdf` |
 | 7 Transformers | 7 of 78 pages | rendered from `mit15_773_s24_lec07.pdf` |
 | 8 Transformers (2/2) and Self-Supervised Learning | 19 of 99 pages | rendered from `mit15_773_s24_lec08.pdf` |
+| 9 Large Language Models (1/2) | 10 of 68 pages | rendered from `mit15_773_s24_lec09.pdf` |
 
 ## Conventions
 

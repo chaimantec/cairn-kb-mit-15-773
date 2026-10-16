@@ -15,6 +15,8 @@ self-attention, multi-head attention, the feed-forward layers and positional enc
 lecture 7 left out: the matrices that make self-attention tunable, residual connections and layer
 normalization (lecture 8, slide 12). Then it turns to using encoders: the `<CLS>` token for classifying
 a sentence, BERT, and transformers for images, tables and multi-modal data.
+[Lecture 9](09-large-language-models.md) makes the
+attention causal, which turns the encoder into the decoder behind GPT.
 
 ## Self-attention
 
@@ -161,7 +163,8 @@ matters, since most words are O (lecture 8, ≈3:53–5:25).
 
 Transformers serve three common uses: **sequence classification**, one label per sentence;
 **sequence labeling**, one label per word, as in slot filling; and **sequence generation**, continuing a
-sequence, which needs the causal encoder of lecture 9 (lecture 8, slide 30). To classify a sentence,
+sequence, which needs the causal encoder of [lecture 9](09-large-language-models.md) (lecture 8, slide 30; see
+[below](#causal-self-attention-and-the-decoder)). To classify a sentence,
 the encoder's contextual embeddings must become one vector. Averaging them works but "is going to lose
 some richness" (slide 37; ≈43:35–44:20). The better way adds an artificial **class token**, `<CLS>`, at
 the start of every sentence. Trained with everything else, its contextual embedding comes to represent
@@ -177,6 +180,25 @@ Transformer encoder" in its paper's words (lecture 8, slides 77–80; ≈55:57�
 blocks, 768-long embeddings and 12 heads; BERT-Large 24 blocks, 1024 and 16. It was trained with a
 `<CLS>` token, so it classifies sentences "out of the box", and it suits sequence labeling too
 (slides 82–83).
+
+## Causal self-attention and the decoder
+
+For **next word prediction**, the self-supervised task behind GPT, the encoder cannot be used as it is
+([lecture 9](09-large-language-models.md), slides 12–16; ≈7:03–9:24). Self-attention computes each word's contextual
+embedding from all the words in the sentence, so a model asked to predict "sat" from "the cat" can see
+"sat" in its input and copy it. **Causal self-attention**, also called **masked self-attention**, gives
+zero weight to "future" words. In the table of attention weights every cell above the diagonal is zeroed,
+and each row is renormalized to add up to 1 (slides 17–20; ≈11:47–14:05). Making every attention head
+causal gives the **Transformer Causal Encoder**. It is also called the **Transformer Decoder**, after the
+decoder half of the original paper's encoder-decoder, built for translation, which uses masked attention
+(slides 26–29; ≈14:52–17:12). "Bidirectional", as in BERT, means each word can see every other word; the
+causal encoder looks only backward (≈16:26). The bidirectional encoder serves masked prediction and
+BERT, the causal one next word prediction and GPT (≈17:12–20:19). See
+[large language models](large-language-models.md).
+
+![Slide 26 of lecture 9: a red box holding two khaki "Causal Attention Head" boxes whose arrows meet in "Concatenate and Project", which feeds a tall "Feed-Forward Layer"; grey positional input embeddings w1 to w6 enter on the left and blue contextual embeddings ŵ1 to ŵ6 leave on the right. Title: "By replacing Self-Attention with Causal Self-Attention in the Transformer block, we get a Transformer Causal Encoder".](../raw/images/09-large-language-models/slide-26.png)
+
+*Lecture 9, slide 26 — a transformer block with causal attention heads is a Transformer Causal Encoder. [Deck](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec09.pdf)*
 
 ## Beyond text
 
@@ -199,7 +221,9 @@ question (slides 92–93; ≈1:13:54–1:16:13). See
   queries and values, residual connections, layer normalization, the `<CLS>` token, BERT, and the Vision
   Transformer and TabTransformer.
 - [Lecture 6](06-word-embeddings.md): stand-alone embeddings, and why contextual ones need transformers.
-- See also [self-supervised learning](self-supervised-learning.md),
+- [Lecture 9](09-large-language-models.md): causal self-attention, the Transformer Causal Encoder (the decoder), and GPT.
+- See also [large language models](large-language-models.md),
+  [self-supervised learning](self-supervised-learning.md),
   [natural language processing](natural-language-processing.md),
   [word embeddings](word-embeddings.md) and
   [multi-class classification and softmax](multiclass-classification.md).

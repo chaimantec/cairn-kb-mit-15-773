@@ -8,16 +8,18 @@ transfer learning) and natural language (embeddings, transformers), to generativ
 parameter-efficient fine-tuning, text-to-image diffusion). It deliberately "skips the math" and
 focuses on concepts and on coding models in Keras/TensorFlow.
 
-**Coverage: lectures 1–8 of 11.** This knowledge base is being built lecture by lecture. Only
-lectures 1 to 8 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
-covering lectures 9–11. On language it covers lectures 5 (text vectorization and the Bag of Words
+**Coverage: lectures 1–9 of 11.** This knowledge base is being built lecture by lecture. Only
+lectures 1 to 9 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
+covering lectures 10–11. On language it covers lectures 5 (text vectorization and the Bag of Words
 model), 6 (word embeddings and GloVe), 7 (the transformer encoder: self-attention, multi-head
-attention, positional encoding, applied to slot filling) and 8 (the encoder completed with key, query
+attention, positional encoding, applied to slot filling), 8 (the encoder completed with key, query
 and value matrices, residual connections and layer normalization; the `<CLS>` token; self-supervised
-learning and BERT; Hugging Face pipelines; the Vision Transformer and TabTransformer). For anything
-after lecture 8, including causal (decoder) transformers, large language models, decoding and
-sampling, byte-pair encoding, retrieval-augmented generation, parameter-efficient fine-tuning and
-text-to-image models, say that the KB does not cover it yet.
+learning and BERT; Hugging Face pipelines; the Vision Transformer and TabTransformer) and 9 (the first
+of two lectures on large language models: next word prediction, causal self-attention and the
+decoder, text generation and GPT-3, decoding and sampling, byte pair encoding). Retrieval-augmented
+generation is in the title of video 9 but not in the lecture; it belongs to lecture 10. For anything
+after lecture 9, including adapting LLMs (prompting, retrieval-augmented generation, fine-tuning),
+parameter-efficient fine-tuning and text-to-image models, say that the KB does not cover it yet.
 
 ## Contents
 
@@ -68,7 +70,7 @@ text-to-image models, say that the KB does not cover it yet.
   multi-hot encoding, which make the Bag of Words model, and its shortcomings. In Colab, Keras's text
   vectorization layer and a song-genre classifier (hip-hop, rock or pop) with eight ReLUs and a
   softmax: 72% on the test set against a 55% baseline, 75% with bigrams. Dropout is finally
-  explained. Byte-pair encoding is deferred to the LLM lectures.
+  explained. Byte-pair encoding is deferred to the LLM lectures and explained in lecture 9.
 - [Lecture 6 — Word Embeddings](wiki/06-word-embeddings.md): why one-hot vectors fail (as long as the
   vocabulary; any two are $\sqrt{2}$ apart), what word vectors should do (close for related words,
   directions for relationships; the apple and cow quizzes), and why context needs transformers
@@ -105,6 +107,15 @@ text-to-image models, say that the KB does not cover it yet.
   sentiment, named-entity and question-answering demos; and transformers beyond text: the Vision
   Transformer, the TabTransformer and a multi-modal classifier. The deck's contrastive-learning slides
   (94–98) are not presented and are summarized from the slides alone.
+- [Lecture 9 — Large Language Models (1/2): Next Word Prediction, Decoding and Tokenization](wiki/09-large-language-models.md):
+  next word prediction as a second self-supervised task; why a plain encoder cheats by seeing the next
+  word; causal (masked) self-attention, which zeroes the weights of future words; the Transformer Causal
+  Encoder, also called the Transformer Decoder; generating text one word at a time; autoregressive
+  language models and GPT-3 (96 layers of 96 heads, about 30 billion sentences); decoding: greedy
+  decoding versus random sampling, the head and the tail, GPT-3.5 going "off the rails", top-K and top-P
+  (nucleus) sampling, temperature (with the formula) and the OpenAI Playground demo; and byte pair
+  encoding worked through on "the cat sat on the mat", with the token visualizer. RAG, in the video's
+  catalog title, is not in this lecture.
 
 ### Topics
 
@@ -158,8 +169,9 @@ text-to-image models, say that the KB does not cover it yet.
   to stretch a small data set without changing what they mean, the Keras layers for it, and augmented
   pairs in contrastive learning.
 - [Multi-class classification and softmax](wiki/multiclass-classification.md): why ten sigmoids fail,
-  the softmax formula, why softmax rather than the maximum, its role in GPT-4, sparse versus one-hot
-  labels and the matching Keras loss, and the table of output layers and losses.
+  the softmax formula, why softmax rather than the maximum, its role in GPT-4, a softmax per position
+  in a language model and temperature, sparse versus one-hot labels and the matching Keras loss, and
+  the table of output layers and losses.
 - [Backpropagation](wiki/backpropagation.md): computational graphs and the chain rule, why it is
   fast, GPUs, and the lecturer's handwritten worked example.
 - [Keras](wiki/keras.md): what TensorFlow and Keras each provide, why not PyTorch, the three APIs,
@@ -173,12 +185,12 @@ text-to-image models, say that the KB does not cover it yet.
 - [Natural language processing](wiki/natural-language-processing.md): why text matters, the range
   of "text in, text out" applications, how to represent text, from one-hot vectors to stand-alone
   and contextual embeddings, the transformer encoder and ATIS slot filling, sequence classification,
-  labeling and generation, BERT and Hugging Face pipelines, the arc of NLP progress from rules to
-  transformers, and the course's NLP roadmap (lectures 5–10).
+  labeling and generation, BERT and Hugging Face pipelines, causal language models for generation, the
+  arc of NLP progress from rules to transformers, and the course's NLP roadmap (lectures 5–10).
 - [Text vectorization](wiki/text-vectorization.md): standardize, tokenize, index, encode (STIE);
   stop words and stemming; the vocabulary and the `<UNK>` token; one-hot vectors and the vocabulary
-  size; choosing `max_tokens`; and Keras's text vectorization layer, including integer output,
-  padding and truncation.
+  size; choosing `max_tokens`; Keras's text vectorization layer, including integer output,
+  padding and truncation; and byte pair encoding, the subword tokenization LLMs use instead.
 - [The Bag of Words model](wiki/bag-of-words.md): why a sentence's table is not flattened, count
   versus multi-hot encoding, what the bag throws away, bigrams and n-grams, and the song-genre
   results, with lecture 6's embedding models alongside.
@@ -189,12 +201,20 @@ text-to-image models, say that the KB does not cover it yet.
 - [Transformers](wiki/transformers.md): self-attention as a softmax-weighted average of embeddings
   and as matrix multiplication, key, query and value matrices and the paper's attention formula,
   multi-head attention, feed-forward layers, positional encoding, residual connections and layer
-  normalization, the transformer encoder and stacking, slot filling, the `<CLS>` token, BERT, and
-  transformers for images, tables and multi-modal data.
+  normalization, the transformer encoder and stacking, slot filling, the `<CLS>` token, BERT, causal
+  self-attention and the decoder, and transformers for images, tables and multi-modal data.
 - [Self-supervised learning](wiki/self-supervised-learning.md): why text needs labels it does not
   have, masking ("fill in the blanks"), why it learns a representation, masked learning as sequence
-  labeling with a transformer, BERT, and contrastive learning for images (from lecture 8's slides
-  only).
+  labeling with a transformer, BERT, next word prediction (the task behind GPT), and contrastive
+  learning for images (from lecture 8's slides only).
+- [Large language models](wiki/large-language-models.md): next word prediction, why the plain encoder
+  cheats, causal self-attention and the Transformer Causal Encoder (decoder), generating text one word
+  at a time, autoregressive language models, GPT-3's size and training data, what an LLM's answer is
+  and is not, and tokens rather than words.
+- [Decoding and sampling](wiki/decoding-and-sampling.md): choosing the next token from the softmax:
+  greedy decoding versus random sampling and when to use each, the head and the tail of the
+  distribution, top-K and top-P (nucleus) sampling with the slides' worked numbers, temperature and its
+  formula, and the OpenAI Playground's settings.
 
 ## Raw materials
 
@@ -212,7 +232,7 @@ text-to-image models, say that the KB does not cover it yet.
   deck 3A in [`raw/slides/03-keras-tensorflow.md`](raw/slides/03-keras-tensorflow.md) and deck 3B in
   [`raw/slides/03-vision-basics.md`](raw/slides/03-vision-basics.md). Cite them as "deck 3A, slide N"
   and "deck 3B, slide N". From page 16 on, deck 3B prints a number one higher than the page where it
-  prints one. The decks of lectures 4, 5, 6 and 8 print their own page number wherever they print one.
+  prints one. The decks of lectures 4, 5, 6, 8 and 9 print their own page number wherever they print one.
   From page 10 on, lecture 7's deck prints a number one higher than the page.
   The Colab notebooks of lectures 3 to 8 are not published on OCW; the KB knows them only from
   the lecturer's narration.
@@ -225,13 +245,14 @@ text-to-image models, say that the KB does not cover it yet.
 
 ## Images
 
-**Lectures 1 to 8 have images. No other lecture does yet.** Their figure slides are rendered
+**Lectures 1 to 9 have images. No other lecture does yet.** Their figure slides are rendered
 as whole slides and shown inline, both in the lecture pages ([lecture 1](wiki/01-introduction.md),
 [lecture 2](wiki/02-training-deep-nns.md), [lecture 3](wiki/03-keras-and-vision-basics.md),
 [lecture 4](wiki/04-cnns-and-transfer-learning.md),
 [lecture 5](wiki/05-text-vectorization-and-bag-of-words.md),
 [lecture 6](wiki/06-word-embeddings.md), [lecture 7](wiki/07-transformers.md),
-[lecture 8](wiki/08-transformers-and-self-supervised-learning.md)) and under the
+[lecture 8](wiki/08-transformers-and-self-supervised-learning.md),
+[lecture 9](wiki/09-large-language-models.md)) and under the
 matching `## Slide N` heading in
 each slide file. Lecture 1 has 45. Lecture 2 has 18: 15 from its main deck and 3 pages of the
 handwritten backprop example, which are named `backprop-N` rather than `slide-N`. Lecture 3 has 13 in
@@ -255,7 +276,15 @@ slides), extracting an encoder, and masked learning as sequence labeling. Its fi
 Vision Transformer and SimCLR papers, the ResNet-34 diagram, the learned-feature grids and a product
 photo (slides 28, 41, 50, 51, 56, 79–83, 90, 93, 96–98) are excluded by OCW, and its Hugging Face Hub
 screenshot (slide 86) is not rendered. For lecture 8's slot-filling and self-attention review slides
-(10, 13, 29), use lecture 7's images, which they repeat. Slides
+(10, 13, 29), use lecture 7's images, which they repeat. Lecture 9 has 10, all the course's own diagrams:
+next word prediction, the next-word-prediction pipeline, the problem of seeing the next word, causal
+self-attention (two slides), the Transformer Causal Encoder, generating text, decoding, and the top-K and
+top-P bar charts. Its figures from "Attention Is All You Need" (slides 27 and 29) and its screenshots
+about building GPT and BPE (slides 41 and 67) are excluded by OCW; the GPT-3 paper's training-data table
+(slide 39) and the OpenAI Playground screenshots (slides 47–50) are not rendered, and their slide entries
+transcribe them. For lecture 9's masking and use-case review slides (2 and 37), use lecture 8's images of
+slides 71 and 30, which they repeat. The byte pair encoding slides (61–65) are text and tables, with no
+image. Slides
 whose content OCW excludes from its licence (marked `*OCW notice: …*`) are never rendered, and
 neither are slides that reuse an excluded figure without a notice of their own: deck 3A's slides
 24–25 and lecture 4's slide 77, whose ResNet diagram slides 70–73 exclude. So lecture 4 has no image

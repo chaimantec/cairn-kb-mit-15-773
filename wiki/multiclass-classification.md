@@ -64,6 +64,13 @@ they are going to be positive, non-negative, and they add up to 1?" (lecture 7, 
 needs its own label, a separate 123-way softmax sits on each of the transformer's outputs, one
 classification per word (lecture 7, slides 13 and 75; ≈9:17–10:05).
 
+[Lecture 9](09-large-language-models.md) puts a softmax on every position of a language model, each over the whole vocabulary
+of about 50,000 words, and generates text from the last one (slides 10 and 31–32). It also adds a
+parameter, **temperature** $T$, that divides every input of the softmax before exponentiating. As $T$
+approaches 0 the largest input's probability goes to 1, which makes sampling greedy, and as $T$ grows the
+probabilities flatten towards equal (≈51:21–56:01). See
+[decoding and sampling](decoding-and-sampling.md#temperature).
+
 ## Encoding the labels, and choosing the loss
 
 A multi-class label can arrive in two forms (deck 3B, slides 20–22; ≈1:11:19). **Sparse encoding**
@@ -102,4 +109,5 @@ cross-entropy to match the labels.
   softmax rather than the maximum.
 - [Lecture 7](07-transformers.md): the softmax that makes attention weights, and a softmax per word for
   slot filling.
-- See also [activation functions](activation-functions.md).
+- [Lecture 9](09-large-language-models.md): a softmax per position over the vocabulary, and temperature.
+- See also [activation functions](activation-functions.md) and [decoding and sampling](decoding-and-sampling.md).

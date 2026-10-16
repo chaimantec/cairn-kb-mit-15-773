@@ -9,7 +9,7 @@ slide file or transcript it concerns. The rules every build follows are in
 [`AGENTS.md`](AGENTS.md).
 
 One section per run: lectures 1, 2 and 3 (built 2026-10-11), lecture 4 (2026-10-14), lecture 5
-(2026-10-14), lecture 6 (2026-10-14), lecture 7 (2026-10-14), lecture 8 (2026-10-16), and at the end the ticked build checklists of those runs,
+(2026-10-14), lecture 6 (2026-10-14), lecture 7 (2026-10-14), lecture 8 (2026-10-16), lecture 9 (2026-10-16), and at the end the ticked build checklists of those runs,
 moved from `TODO.md`.
 
 ## Lecture 1 — Introduction to Neural Networks and Deep Learning
@@ -597,6 +597,89 @@ networks; lecture 7's page now links forward in four places, including the train
 lecture page notes, without recomputing, that lecture 7's parameter count assumed 512-to-512 value
 matrices, while lecture 8 says value matrices are often smaller. `sources.md`'s row for deck 08 is no
 longer provisional.
+
+## Lecture 9 — Large Language Models (1/2)
+
+Built 2026-10-16. Video `KGDe1QvfKJ8` (75 min); deck `mit15_773_s24_lec09.pdf`, 68 pages.
+
+**Video ↔ deck.** The recording presents slides 2–66 in order, from the masking review (0:00) to the
+token-visualizer demo of slide 66 (≈1:10:54–1:14:30). Slide 1 is the roadmap ("Lecture 9: Large Language
+Models (1/2)"), slide 67, a sidebar on coding BPE, is not mentioned, and 68 is OCW's end page. At ≈10:58
+the lecturer "unhides" the loss slide. It is slide 11 of the export, so the hidden slide did not shift the
+numbering. Material outside the deck: the iPad derivation of temperature (slide 56 says only "iPad";
+≈51:21–56:01), the OpenAI Playground demo (slide 57) and the token visualizer (slide 66). The catalog
+title's "Retrieval Augmented Generation" is not reached. RAG is deck 10's slides 76–82, so it falls to
+video 10, and sources.md now gives deck 10 as "10 (provisional)" rather than "9–10". Deck 10's slide 3 is
+a correction of this lecture: the dense layer before the softmax has linear activations, not ReLU. The
+lecture 9 page, the large-language-models page and the slide file's header carry it, cited to deck 10.
+
+**Numbering.** Slide N = PDF page N. Every page that prints a number prints its own, one span each;
+1–4, 44, 45 and 68 print none. `slide_number_map.py` reported 1:1, and `--verify` passed on the finished
+file.
+
+**OCW notices (4):** 27 and 29 (figures from "Attention is All You Need"), 41 and 67 ("GPT Tokenizer, Byte
+Pair Encoding (BPE) related images, screenshots © Andrej Karpathy"). The agents found no drawn notices.
+Slide 41's notice credits Karpathy, but its upper screenshot is the header of Jay Mody's blog post; the
+notice covers the page. Slide 28, between the two "Attention" pages, is plain text. Unmarked third-party
+content: slide 39 (the GPT-3 paper's table of training data) and 47–50 (OpenAI Playground screenshots),
+transcribed and not rendered, following lectures 5, 7 and 8. Hyperlinks whose targets are not printed:
+slide 61's "Source" and slide 67's two "Link"s.
+
+**Shared rasters.** As the TODO predicted, slides 2–4 share deck 08's masking rasters (70, 71, 76). Slide 2
+is lecture 8's 71 under a review title; 3 and 4 are new (prefix tables). Slide 26 shares encoder pieces with
+deck 08's 14, 21 and 22 but is new (causal heads). Slide 37 shares 08's 30–32 and is 08's 30 with
+generation ticked and no footnote. Slide 59's pipeline raster is lecture 5's (28, 34; rendered there as
+27). Slide 29's paper figure also appears in deck 07 (65–69); all of those carry notices.
+
+**Transcription.** Sonnet, two agents in parallel (pages 1–34, 35–68), reading 1400px PNGs pre-rendered
+into the scratchpad and appending with quoted heredocs; each took about two and a half minutes. No `$`
+gaps. Agent B read slides 61–64's BPE strings off the text layer, which the rules forbid for tables; the
+renders of 61 and 64 confirmed them, missing commas included. Parent fixes: slide 11's formula moved to a
+`$$` block, with `\lt`/`\gt` for the end marker and the marker in backticks in prose; slide 26's arrow
+count (five, not four); slide 54's claim that the page prints the 0.9 sum (it does not); slide 49's
+"invited = 3.19%" format noted; the figure lines of slides 13 and 26 de-mathed, since math inside italics
+does not render on github.com.
+
+**Transcript edit.** OCW human captions with `AUDIENCE:` labels, done inline in the parent as a scripted
+list of 19 changes. Restorations (12): "expert prediction" → next word prediction (14:52, 17:12, 25:45);
+"mass prediction" → mask prediction (25:45); "feature words" → future words (18:02); "what elements do"
+→ what LLMs do (45:58); "GPT 3.5" → GPT-3.5 (40:30, 42:52, 58:24); "wordpiece" → WordPiece (1:03:10); a
+stray "$" before "30 billion sentences" (28:51); "96 blocks,." (28:05). `[Ed:]` notes (7) at 15:39
+(slide 28 says the Causal Encoder is called the decoder), 18:48 ("puzzle", presumably causal), 38:07
+("night" at 0.3, where slide 44 gives 0.3 to "rainy"), 46:44 ("red", where slide 52's last bar is
+"wet"), 54:29 ("add up to 0"), 56:01 ("1.52", perhaps 1.5, 2) and 1:10:54 ("And", presumably "ands").
+Checks: 96 timestamps identical, number inventory (153) identical once notes are removed, paragraph word
+ratios 0.99–1.01. Both restored proper nouns, WordPiece and GPT-3.5, are printed in the deck.
+
+**Figure check.** Done in the parent on renders: slides 19, 26, 39 (the GPT-3 table), 43 (the
+spell-check squiggles under "Softmax" and "ReLU" are on the slide), 49, 52, 54, 61 and 64. Fixes as above;
+the rest agreed.
+
+**Printed slips.** Slide 11's factor 1/7 and its seven terms ending in `<E>`, against five output words;
+slide 43's "TCE\*" with no footnote; slide 61's starting corpus missing commas ("_o,n,_t,h,e_m"), and the
+1st-merge corpus "e_,m" on 62–64; slide 41's notice credit; the "Dense (ReLU)" box, corrected by deck 10.
+Spoken: "night … 0.3"; "the transformer encoder … also referred to … as the transformer decoder"; "add up
+to 0"; Fashion MNIST's "10 digits".
+
+**Images: 10 of 68 pages.** Rendered: 3, 10, 16, 19, 20, 26, 36, 43, 52, 54 (1.1 MB; 6 PNG, 4 JPEG). Not
+rendered: the four noticed slides (27, 29, 41, 67); 39 and 47–50 (unmarked third-party, transcribed);
+repeats of earlier lectures' rendered figures: 2 (lecture 8's 71), 37 (lecture 8's 30) and 59 (lecture
+5's 27); build steps superseded by a rendered slide (4 → 3; 5–9, 12, 14 and 30 → 10; 15 → 16; 18 → 19
+and 20; 31 and 34 → 36 and 43); 11 (slide 10 plus a transcribed formula); 32, 33, 35 and 44 (probability
+tables transcribed exactly); 21–25 (word columns with a bracket and one arrow); 13 (a single-box drawing);
+the BPE slides 61–65 (text and tables); text-only slides and dividers. The wiki lecture page hand-places all
+10 with hand-written captions. Slides 19 and 36 are also on the new large-language-models page, 52 and 54
+on decoding-and-sampling, and 26 on transformers.
+
+**Wiki.** A lecture page and two new topic pages (large-language-models, decoding-and-sampling). Extended:
+transformers (causal self-attention and the decoder), self-supervised learning (next word prediction; its
+"does not cover lecture 9 yet" sentence replaced), text vectorization (byte pair encoding), natural
+language processing (sequence generation; coverage now lectures 5–9), multi-class classification (a
+softmax per position, temperature), loss functions (cross-entropy averaged over positions), and AI, ML, DL
+and GenAI (a link). Lectures 5, 7 and 8 now link forward to lecture 9 where they deferred byte-pair
+encoding or the causal transformer. SEE_ALSO's CS224N entry no longer says this KB covers language only as
+far as lecture 5, a sentence stale since lecture 6. Anchors of the new section links were checked by
+script.
 
 ## Build checklists, lectures 1–4
 

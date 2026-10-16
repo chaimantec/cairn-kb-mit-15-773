@@ -3,7 +3,7 @@
 **Self-supervised learning** builds a pretrained model from data that has **no labels**, by making the
 labels out of the data itself. Its key idea, in [lecture 8](08-transformers-and-self-supervised-learning.md)'s
 words: "Predict a subset of the input data using the rest of the input" (slide 68; ≈52:51). It is how
-models such as BERT learn language from raw text, and it is the step that lets transfer learning, which
+models such as BERT and GPT learn language from raw text, and it is the step that lets transfer learning, which
 the course first meets with images, work for text.
 
 ## Why it is needed
@@ -71,9 +71,18 @@ suits sequence labeling too (slides 82–83). To use it on a problem with natura
 'a few hundred' examples, attach the right final layers to BERT and fine-tune" (slide 85). See
 [lecture 8](08-transformers-and-self-supervised-learning.md#part-8--bert).
 
-Lecture 8 previews another self-supervised task: in a causal transformer, each word attends only to the
-words before it, and lecture 9 covers it (≈57:36; slide 30). This knowledge base does not cover
-lecture 9 yet.
+## Next word prediction
+
+Lecture 8 previews a second self-supervised task, in which each word attends only to the words before
+it (≈57:36; slide 30), and [lecture 9](09-large-language-models.md) builds it: **next word prediction**, "weirdly more
+interesting and powerful" than masking (lecture 9, slides 2–3; ≈1:32–2:20). In a sense it is a special
+case of masking in which the blank is always the **last** word. Every prefix of a sentence is an input
+and the word after it is the label, so the labels again come from the text itself: "The" → "mission",
+"The mission" → "of", and so on. Slides 2 and 3 call the two tasks "Masked Language Modeling" and "Causal
+Language Modeling". A transformer can learn it only if each word's contextual embedding ignores the words
+after it, which is **causal self-attention** (slides 12–20). Trained on vast amounts of text, the result
+is an autoregressive language model such as GPT-3 (slides 37–39). See
+[large language models](large-language-models.md).
 
 ## Images: contrastive learning
 
@@ -91,5 +100,6 @@ masking (slide 98).
 
 - [Lecture 8](08-transformers-and-self-supervised-learning.md): representations, the transfer-learning
   recipe, masking, BERT, and the unpresented contrastive-learning slides.
-- See also [transfer learning](transfer-learning.md), [representation learning](representation-learning.md)
-  and [transformers](transformers.md).
+- [Lecture 9](09-large-language-models.md): next word prediction, and the causal language models trained on it.
+- See also [transfer learning](transfer-learning.md), [representation learning](representation-learning.md),
+  [transformers](transformers.md) and [large language models](large-language-models.md).

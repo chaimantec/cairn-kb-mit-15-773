@@ -365,7 +365,7 @@ Slide 30 names the common use cases (≈41:17–42:48). In **sequence classifica
 gets one label, the canonical example being movie-review sentiment: "I loved the movie" → Positive. In
 **sequence labeling** every word gets a label, as in lecture 7's slot filling. In **sequence
 generation** the model continues the sequence, "large language models and all that good stuff", using
-a "Transformer Causal Encoder" covered in lecture 9. Labeling is done (slide 31); classification is
+a "Transformer Causal Encoder" covered in [lecture 9](09-large-language-models.md). Labeling is done (slide 31); classification is
 next (slide 32).
 
 ![Slide 30: three use cases side by side. "Sequence classification": "I loved the movie" into a dark-red "Transformer Encoder" box, out "Positive". "Sequence labeling": "fly from Boston to Denver" into a "Transformer Encoder", out a Token/Label table: fly O, from O, Boston B-fromloc.city_name, to O, Denver B-toloc.city_name. "Sequence generation": "I loved the movie" into a "Transformer Causal Encoder*", out "I loved the movie, especially the cinematography and the background score", the continuation in red. Footer: "*covered in Lecture 9".](../raw/images/08-transformers-and-self-supervised-learning/slide-30.png)
@@ -562,7 +562,7 @@ The embeddings are 768 long, and the feed-forward layer is four times as wide (�
 paper's footnote on slide 80 sets that size to $4H$, "3072 for the $H = 768$ and 4096 for the
 $H = 1024$". The lecturer says "4,096" for the 768-long model, which is BERT-Large's figure.
 **Bidirectional** means each word can pay attention to every other word in the sentence. On Monday, in
-lecture 9, comes the causal transformer, in which a word attends only to the words before it (≈57:36).
+[lecture 9](09-large-language-models.md#part-3--causal-self-attention), comes the causal transformer, in which a word attends only to the words before it (≈57:36).
 The same slide quotes the paper on GPT, whose transformer "uses constrained self-attention where every
 token can only attend to context to its left".
 
@@ -729,6 +729,7 @@ it (slide 98). The photographs on slides 96–98 are excluded from OCW's licence
 - [Preparing data for a network](data-preprocessing.md): standardization, which layer normalization
   applies inside the encoder.
 - [Images and computer-vision tasks](images-and-vision-tasks.md): the Vision Transformer's patches.
+- [Lecture 9](09-large-language-models.md): the causal transformer and next word prediction, which follow.
 - [Lecture 7](07-transformers.md): the first half of the transformer, and the slot-filling Colab this
   lecture trains.
 - [Lecture 4](04-cnns-and-transfer-learning.md): ResNet and the handbags-and-shoes classifier.

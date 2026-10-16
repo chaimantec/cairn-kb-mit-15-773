@@ -9,12 +9,12 @@
     "courseUrl": "https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/"
   },
   "coverage": {
-    "lecturesCovered": 8,
+    "lecturesCovered": 9,
     "lecturesTotal": 11,
-    "transcripts": 8,
-    "wikiLecturePages": 8,
-    "wikiTopicPages": 23,
-    "note": "Lectures 1-8. The 11 videos use 14 OCW decks whose numbering does not follow the videos; video 1 covers deck 01 alone, video 2 deck 02 alone plus its handwritten backprop-example deck, video 3 decks 03a and 03b, video 4 deck 04 alone, video 5 deck 05 alone, video 6 deck 06 alone, video 7 deck 07 alone, video 8 deck 08 alone (slides 2-93; its contrastive-learning section, slides 94-98, is not presented)."
+    "transcripts": 9,
+    "wikiLecturePages": 9,
+    "wikiTopicPages": 25,
+    "note": "Lectures 1-9. The 11 videos use 14 OCW decks whose numbering does not follow the videos; video 1 covers deck 01 alone, video 2 deck 02 alone plus its handwritten backprop-example deck, video 3 decks 03a and 03b, video 4 deck 04 alone, video 5 deck 05 alone, video 6 deck 06 alone, video 7 deck 07 alone, video 8 deck 08 alone (slides 2-93; its contrastive-learning section, slides 94-98, is not presented), video 9 deck 09 alone (slides 2-66; the retrieval-augmented generation in its catalog title is in deck 10)."
   },
   "license": {
     "file": "LICENSE.md",
@@ -25,21 +25,21 @@
     "primary": "slides",
     "slideDecks": {
       "available": 14,
-      "transcribed": 10
+      "transcribed": 11
     },
     "method": "page-images",
     "figuresAudited": true,
     "figureAudit": {
-      "decksAudited": 10,
-      "decksTotal": 10,
-      "note": "decksTotal counts transcribed decks. Each was transcribed by Sonnet and checked by the parent model against 1400px renders. Lecture 1: six pages (51, 59, 80, 93, 94, 100); slide 59's sigmoid corrected. Lecture 2 deck 02: six pages (4, 33, 42, 55, 69, 79); slide 52's minimum corrected. Lecture 2 backprop example: pages 7 and 12, both agreed. Numeric tables and worked examples were also checked by arithmetic. Lecture 3 deck 3A: four pages (10, 15, 17, 18); deck 3B: three (6 on a scratch crop of its excluded tables, 16, 18). All agreed; one unprinted identification on deck 3B slide 6 was removed. Lecture 4 deck 04: six pages (21, 31, 40, 47, 75, 80); slide 40's description of the dashed projections corrected. The pooling grids (slides 44-47) and the worked convolution (slides 15-21) were also checked by arithmetic. Lecture 5 deck 05: six pages (21, 37, 40, 50, 56, 65), all agreed; slide 37's table and slides 22-25's box hide text-layer text under shapes, which the slide file notes. Lecture 6 deck 06: seven pages (37, 45, 48, 59, 63, 67, 68), all agreed; one handwritten label on slide 37 is marked hard to read. Lecture 7 deck 07: seven pages (33, 42, 51, 53, 61, 64, 75) and slide 1; slide 59's change of 'sit' to 'sat' was added and slide 51's line-by-line description was cut back to what the render settles. The positional-encoding tables (slides 58-61) were also checked against the text layer and by arithmetic. Lecture 8 deck 08: eleven pages (18, 20, 24, 29, 47, 69, 80, 81, 86, 91, and a zoomed crop of 93); slide 20's claimed cut-off sentence corrected, formulas on slides 26, 28 and 29 repaired, slide 93's review text read from the crop, and slide 81's notice found to sit over the course's own diagram from slide 38."
+      "decksAudited": 11,
+      "decksTotal": 11,
+      "note": "decksTotal counts transcribed decks. Each was transcribed by Sonnet and checked by the parent model against 1400px renders. Lecture 1: six pages (51, 59, 80, 93, 94, 100); slide 59's sigmoid corrected. Lecture 2 deck 02: six pages (4, 33, 42, 55, 69, 79); slide 52's minimum corrected. Lecture 2 backprop example: pages 7 and 12, both agreed. Numeric tables and worked examples were also checked by arithmetic. Lecture 3 deck 3A: four pages (10, 15, 17, 18); deck 3B: three (6 on a scratch crop of its excluded tables, 16, 18). All agreed; one unprinted identification on deck 3B slide 6 was removed. Lecture 4 deck 04: six pages (21, 31, 40, 47, 75, 80); slide 40's description of the dashed projections corrected. The pooling grids (slides 44-47) and the worked convolution (slides 15-21) were also checked by arithmetic. Lecture 5 deck 05: six pages (21, 37, 40, 50, 56, 65), all agreed; slide 37's table and slides 22-25's box hide text-layer text under shapes, which the slide file notes. Lecture 6 deck 06: seven pages (37, 45, 48, 59, 63, 67, 68), all agreed; one handwritten label on slide 37 is marked hard to read. Lecture 7 deck 07: seven pages (33, 42, 51, 53, 61, 64, 75) and slide 1; slide 59's change of 'sit' to 'sat' was added and slide 51's line-by-line description was cut back to what the render settles. The positional-encoding tables (slides 58-61) were also checked against the text layer and by arithmetic. Lecture 8 deck 08: eleven pages (18, 20, 24, 29, 47, 69, 80, 81, 86, 91, and a zoomed crop of 93); slide 20's claimed cut-off sentence corrected, formulas on slides 26, 28 and 29 repaired, slide 93's review text read from the crop, and slide 81's notice found to sit over the course's own diagram from slide 38. Lecture 9 deck 09: nine pages (19, 26, 39, 43, 49, 52, 54, 61, 64); slide 26's arrow count and slide 54's claim of a printed sum corrected, and the byte pair encoding strings of slides 61-64, which the agent had taken from the text layer, confirmed on the renders, missing commas included."
     },
     "images": {
-      "lecturesWithImages": 8,
+      "lecturesWithImages": 9,
       "lecturesWithoutImages": [],
-      "lecturesTotal": 8,
-      "files": 133,
-      "megabytes": 14.2,
+      "lecturesTotal": 9,
+      "files": 143,
+      "megabytes": 15.3,
       "format": "whole slides rendered at 1400px, JPEG q85 or PNG whichever is smaller, named slide-N by PDF page number, or with a per-deck prefix (backprop-N, 3a-N, 3b-N) where a lecture has more than one deck",
       "discovery": "inline in wiki/ and raw/slides/; no index file",
       "byLecture": {
@@ -50,9 +50,10 @@
         "5": 7,
         "6": 8,
         "7": 7,
-        "8": 19
+        "8": 19,
+        "9": 10
       },
-      "note": "Lecture 1: 45 of 110 pages. Lecture 2: 15 of deck 02's 95 pages (slide-N) and 3 of the 14-page handwritten backprop example (backprop-N), in one directory. Lecture 3: 9 of deck 3A's 44 pages (3a-N) and 4 of deck 3B's 29 (3b-N), in one directory. Lecture 4: 16 of deck 04's 84 pages. Lecture 5: 7 of deck 05's 67 pages. Lecture 6: 8 of deck 06's 70 pages. Lecture 7: 7 of deck 07's 78 pages. Lecture 8: 19 of deck 08's 99 pages. Not rendered: slides with an OCW exclusion notice, slides that reuse an excluded figure without a notice (deck 3A slides 24-25; lecture 4 slide 77), superseded build steps and repeats, transcribed tables, unmarked third-party screenshots and logo graphics (lecture 5 slides 3, 4, 16; lecture 7 slides 21-22, Google search results; lecture 8 slides 84 and 86, the Sentence-Transformers logo and a Hugging Face Hub screenshot), a figure already rendered for an earlier lecture (lecture 6 slide 3, lecture 5's slide 50; lecture 8 slides 10, 13 and 29, lecture 7's 75, 43 and 76; lecture 8 slides 42, 43 and 57, lecture 4's 75), single-box text diagrams, logistics and text-only slides; the lists are in BUILD_LOG.md. No lecture after 8 is in this KB yet, so none has images."
+      "note": "Lecture 1: 45 of 110 pages. Lecture 2: 15 of deck 02's 95 pages (slide-N) and 3 of the 14-page handwritten backprop example (backprop-N), in one directory. Lecture 3: 9 of deck 3A's 44 pages (3a-N) and 4 of deck 3B's 29 (3b-N), in one directory. Lecture 4: 16 of deck 04's 84 pages. Lecture 5: 7 of deck 05's 67 pages. Lecture 6: 8 of deck 06's 70 pages. Lecture 7: 7 of deck 07's 78 pages. Lecture 8: 19 of deck 08's 99 pages. Lecture 9: 10 of deck 09's 68 pages. Not rendered: slides with an OCW exclusion notice, slides that reuse an excluded figure without a notice (deck 3A slides 24-25; lecture 4 slide 77), superseded build steps and repeats, transcribed tables, unmarked third-party screenshots and logo graphics (lecture 5 slides 3, 4, 16; lecture 7 slides 21-22, Google search results; lecture 8 slides 84 and 86, the Sentence-Transformers logo and a Hugging Face Hub screenshot; lecture 9 slides 47-50, OpenAI Playground screenshots, and slide 39, the GPT-3 paper's data table, transcribed), a figure already rendered for an earlier lecture (lecture 6 slide 3, lecture 5's slide 50; lecture 8 slides 10, 13 and 29, lecture 7's 75, 43 and 76; lecture 8 slides 42, 43 and 57, lecture 4's 75; lecture 9 slides 2 and 37, lecture 8's 71 and 30, and slide 59, lecture 5's 27), single-box text diagrams, logistics and text-only slides; the lists are in BUILD_LOG.md. No lecture after 9 is in this KB yet, so none has images."
     }
   },
   "provenance": {
@@ -61,9 +62,9 @@
       "claude-sonnet-5-5"
     ],
     "caveats": [
-      "Covers lectures 1-8 of 11 only.",
+      "Covers lectures 1-9 of 11 only.",
       "Slide numbers are PDF page numbers. Some lecture 1 pages visibly print stale numbers from an older deck (page 13 prints 20), lecture 2's deck prints N+1 from page 50 on, and lecture 7's from page 10 on; the slide files list them.",
-      "Catalog video titles misstate coverage: video 1 ends before training, video 2 shows only the four-line Keras model definition, video 3, titled for convolutional networks, never reaches them, and video 4, titled for transfer learning and Hugging Face, spends its first hour building CNNs from scratch.",
+      "Catalog video titles misstate coverage: video 1 ends before training, video 2 shows only the four-line Keras model definition, video 3, titled for convolutional networks, never reaches them, and video 4, titled for transfer learning and Hugging Face, spends its first hour building CNNs from scratch; video 9, titled for LLMs and retrieval-augmented generation, does not reach RAG, which is in deck 10.",
       "Lecture 2's backprop example is a handwritten deck that the video points to but does not present; it is transcribed from the handwriting in its own slide file.",
       "Figure checks were done by the parent model on rendered images, not by an independent agent.",
       "Lecture 2 renders slides 55-58 and 69, which reproduce plots from a web page whose gradient-descent figures OCW excludes on slide 75 only; LICENSE.md names the source.",
@@ -79,7 +80,9 @@
       "Lecture 7's wiki page counts the transformer encoder's parameters (5,319,232, matching the lecture's 'about 5.3 million') by its own arithmetic, under assumptions it names (query, key and value projections of 512 per head; two layer normalizations); neither lecture gives the breakdown, and lecture 8 adds that value matrices are often smaller than the embeddings when several heads are concatenated.",
       "Lecture 8's figures from the BERT, Vision Transformer and SimCLR papers, 'Attention Is All You Need', the ResNet-34 diagram, two learned-feature visualisations and a Wayfair product photo (slides 28, 41, 50, 51, 56, 79-83, 90, 93, 96-98) are excluded by OCW and described in prose only. Slide 81's notice names a BERT figure, but the page shows the course's own CLS-token diagram, which is rendered from slide 38, where it carries no notice.",
       "Lecture 8's video does not present its deck's contrastive-learning section (slides 94-98); the wiki summarizes it from the slides and says so. Its matrix derivation of self-attention was drawn on an iPad and is not in the deck; the wiki describes it from the narration.",
-      "Lecture 8 renders slide 91, the TabTransformer paper's Figure 1, which the slide marks 'Figure license: CC0 1.0'; LICENSE.md says so."
+      "Lecture 8 renders slide 91, the TabTransformer paper's Figure 1, which the slide marks 'Figure license: CC0 1.0'; LICENSE.md says so.",
+      "Lecture 9's figures from 'Attention Is All You Need' (slides 27, 29) and its screenshots about building GPT and BPE (slides 41, 67) are excluded by OCW and described in prose only; the GPT-3 paper's data table (slide 39) and the OpenAI Playground screenshots (slides 47-50) are transcribed, not rendered.",
+      "Lecture 9's temperature derivation (drawn on an iPad; slide 56 says only 'iPad'), its OpenAI Playground demo and its token-visualizer demo are not in the deck; the wiki describes them from the narration, and the token numbers it quotes are as the lecturer reads them off the screen."
     ]
   },
   "entryPoint": "INDEX.md",

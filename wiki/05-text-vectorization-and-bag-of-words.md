@@ -31,7 +31,7 @@ calls the lecture "Text Vectorization and the Bag-of-Words Model" (slide 1). The
 the whole deck, slides 1–66, then spends its last half hour in Colab (from ≈45:53). Embeddings are
 next ([lecture 6](06-word-embeddings.md)), then two lectures on transformers and two on LLMs (slide 1; ≈0:00–0:46).
 Byte-pair encoding, the tokenization LLMs use, is deferred twice (≈23:19, ≈1:14:44); its slides are
-in deck 09 (slides 58–60), not this deck.
+in deck 09 (slides 58–60), not this deck, and [lecture 9](09-large-language-models.md#part-9--tokenization-byte-pair-encoding) presents them.
 
 The Colab notebook is not published on OCW and is not in this knowledge base. Everything said below
 about the code follows the lecturer's narration, and only the functions and arguments he names are
@@ -201,7 +201,8 @@ NLP use cases", text classification among them. It does not work for generating 
 ≈22:34–23:19). ChatGPT answers with perfect punctuation and correct capitals, so neither was
 stripped, and it will happily use a word you just made up, so it does not recognize only a finite
 set. LLMs use "a very clever scheme called byte-pair encoding". The lecturer had slides on it at the
-end and does not reach them; they are deck 09's slides 58–60.
+end and does not reach them; they are deck 09's slides 58–60, presented in
+[lecture 9](09-large-language-models.md#part-9--tokenization-byte-pair-encoding).
 
 ### The vocabulary, indexing and encoding
 
@@ -503,7 +504,7 @@ problem in one shot. See [overfitting and regularization](overfitting-and-regula
 
 **Byte-pair encoding** is deferred to the LLM lectures: a "very clever tokenization scheme used by,
 for example, the GPT family" that keeps punctuation and case and copes with words you just made up
-(≈1:14:44–1:15:30). Its slides are deck 09's 58–60.
+(≈1:14:44–1:15:30). Its slides are deck 09's 58–60, and [lecture 9](09-large-language-models.md#part-9--tokenization-byte-pair-encoding) explains it.
 
 **How do you pick the number of hidden neurons?** Trial and error, which is what the lecturer did for
 the Colabs. To be more systematic, try many values with the Python package **KerasTuner**, which "comes

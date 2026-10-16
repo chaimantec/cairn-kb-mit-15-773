@@ -150,3 +150,16 @@ plus the deck:
   Sentence-Transformers logo and a screenshot of the Hugging Face Hub. Slides 42, 43 and 57 repeat the
   network diagram already rendered for lecture 4 (slide 75 of that deck), and slides 10, 13 and 29
   repeat lecture 7's slides 75, 43 and 76; none is rendered again.
+- **Lecture 9**, `raw/images/09-large-language-models/` (10 images: pages 3, 10, 16, 19, 20, 26, 36,
+  43, 52 and 54) from
+  [`mit15_773_s24_lec09.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec09.pdf).
+  The rendered slides are the course's own diagrams; slide 3 quotes MIT Sloan's mission statement.
+  None of the deck's four slides with an OCW exclusion notice is rendered: 27 and 29 (figures from
+  "Attention Is All You Need", Ashish Vaswani, Noam Shazeer, Niki Parmar, Jakob Uszkoreit, Llion Jones,
+  Aidan N. Gomez, Lukasz Kaiser, Illia Polosukhin) and 41 and 67 (GPT tokenizer and byte pair encoding
+  images and screenshots, credited to Andrej Karpathy; slide 41's upper screenshot is of Jay Mody's blog
+  post "GPT in 60 Lines of NumPy"). Slides 39 and 47–50 are not rendered either: they print no notice,
+  but slide 39 reproduces the GPT-3 paper's table of training data (<http://arxiv.org/abs/2005.14165>)
+  and slides 47–50 are screenshots of the OpenAI Playground; their slide entries transcribe them. Slides
+  2 and 37 repeat lecture 8's slides 71 and 30, and slide 59 repeats lecture 5's slide 27; none is
+  rendered again.

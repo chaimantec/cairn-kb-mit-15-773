@@ -77,6 +77,11 @@ loss has to match how the labels are encoded (deck 3B, slides 20–26; ≈1:11:1
 "These are all equivalent things"; the choice depends only on the encoding the data arrives in. See
 [multi-class classification and softmax](multiclass-classification.md).
 
+In [lecture 9](09-large-language-models.md)'s next-word-prediction model every position of a sentence is its own
+classification, over a vocabulary of about 50,000 words. The loss is the cross-entropy at each
+position, minus the log of the probability given to the right word, averaged over the positions:
+"conceptually, no difference" from classifying into ten classes (slide 11; ≈9:24–11:47).
+
 ## Matching the loss to the output layer
 
 Deck 3B's slide 27 sums up which loss goes with which output layer (lecture 3 ≈1:12:51):
@@ -111,3 +116,4 @@ well-behaved gradients, and accuracy, like the maximum, is not one ([lecture 5](
   label encoding, the output-layer/loss table, and loss versus accuracy.
 - [Lecture 5](05-text-vectorization-and-bag-of-words.md): `categorical_crossentropy` for one-hot genre labels, and why not
   maximize accuracy directly.
+- [Lecture 9](09-large-language-models.md): cross-entropy averaged over the positions of a next-word-prediction model.

@@ -33,7 +33,10 @@ post. Unmarked third-party material, not rendered: slide 39's table of GPT-3's t
 GPT-3 paper, which is transcribed below; and the OpenAI Playground screenshots on slides 47–50, whose
 prompts, continuations and probabilities are transcribed. The "Source" hyperlink on slide 61 and the
 two "Link" hyperlinks on slide 67 do not print their targets. Words the slides print in colour are
-given plainly, with a note in parentheses.
+given plainly, with a note in parentheses. The next lecture's deck corrects the "Dense (ReLU)" box of this
+deck's pipeline diagrams: its slide 3 is titled "Correction: The contextual embeddings flow into a Dense
+layer with linear activations (not ReLU) followed by a Softmax"
+([`mit15_773_s24_lec10.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec10.pdf)).
 
 **Images.** Ten figure slides carry a 1400px render under their heading: 3, 10, 16, 19, 20, 26, 36,
 43, 52 and 54. The other figure-bearing slides are not rendered. Slides 27, 29, 41 and 67 carry OCW
@@ -202,7 +205,7 @@ Diagram, centred. A khaki (olive-yellow) rounded rectangle with a dark red outli
 
 Large text below: "The contextual embedding for a word is based on ALL the words in the sentence" ("ALL" in red).
 
-*Figure: yes — self-attention block Attention($A^Q$, $A^K$, $A^V$) taking $w_1$ to $w_6$ and producing $\hat w_1$ to $\hat w_6$*
+*Figure: yes — self-attention block Attention(A^Q, A^K, A^V) taking w1 to w6 and producing ŵ1 to ŵ6*
 
 ## Slide 14 — The problem: To predict the next word, the architecture below can simply copy it from the input since it can “see” the whole sentence!
 
@@ -298,7 +301,7 @@ Title: "By replacing Self-Attention with Causal Self-Attention in the Transforme
 
 Diagram, left to right. At left, a grey rounded label "Positional input embeddings" (white text) above six rows of four grey rounded squares, each row followed by a pale grey label and a pale grey arrow pointing right: $w_1, w_2, w_3, w_4, w_5, w_6$ (top to bottom). In the centre, a large rectangle with a thick red outline encloses the Transformer block, built from khaki (olive-yellow) rounded boxes with white inner text areas: at top a box "Causal Attention Head" ("Causal" in red, "Attention Head" in black); at bottom a second, identical box "Causal Attention Head"; between them, slightly right, a box "Concatenate and Project"; and at right a tall khaki box with a white text area "Feed-Forward Layer" (printed as "Feed- / Forward / Layer"). Five thin khaki arrows leave each Causal Attention Head diagonally toward the "Concatenate and Project" box (top head's arrows point down-right, bottom head's point up-right), and five short khaki arrows run from "Concatenate and Project" right into the Feed-Forward box. At right, a bright blue rounded label "Contextual embeddings" (white text) above six rows of four blue rounded squares, each row preceded by a thin blue arrow pointing right from the red box and followed by a blue label $\hat w_1, \hat w_2, \hat w_3, \hat w_4, \hat w_5, \hat w_6$.
 
-*Figure: yes — Transformer Causal Encoder block: two Causal Attention Heads, Concatenate and Project, and a Feed-Forward Layer inside a red box, with grey inputs $w_1$ to $w_6$ and blue outputs $\hat w_1$ to $\hat w_6$*
+*Figure: yes — Transformer Causal Encoder block: two Causal Attention Heads, Concatenate and Project, and a Feed-Forward Layer inside a red box, with grey inputs w1 to w6 and blue outputs ŵ1 to ŵ6*
 
 ## Slide 27 — The original Transformer paper has what’s called an encoder-decoder architecture
 

@@ -224,7 +224,8 @@ one; the original is not kept alongside it. As the vectors flow up through the t
 
 Two side questions (≈24:45–26:19). The context is always the query itself: a search engine gets a
 full sentence and uses only that sentence as the context. A brand-new word with no stand-alone
-embedding at all is a question the lecturer "punts on" until he has explained byte-pair encoding.
+embedding at all is a question the lecturer "punts on" until he has explained byte-pair encoding
+(lecture 9; see [text vectorization](text-vectorization.md#beyond-stie-byte-pair-encoding)).
 Search autocomplete uses a different mechanism, and he is not privy to how Google does it now.
 
 ### Where the weights come from: relatedness as a dot product
@@ -447,7 +448,8 @@ how it should work, and whether you should just throw it into the meat grinder o
 backprop "will actually do a pretty good job" (≈56:22–57:09).
 
 Two questions about tokens (≈55:35–58:41). Filler words in transcribed speech, "um" and "uh", are
-handled by **byte-pair encoding**, still to come, which makes tokens of characters, word fragments and
+handled by **byte-pair encoding**, still to come
+([lecture 9](09-large-language-models.md#part-9--tokenization-byte-pair-encoding)), which makes tokens of characters, word fragments and
 words, and such fillers become tokens like any other. And the starting point is always tokens, however
 the tokenizer defines them: this lecture assumes a simple tokenizer of whole words, while GPT-4's
 tokens may be parts of words, single characters or punctuation marks. The sentence about whether the

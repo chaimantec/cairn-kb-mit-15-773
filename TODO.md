@@ -33,10 +33,10 @@ notices: 27, 29, 41, 67.
 - [x] Slides 09 → raw/slides/09-large-language-models.md (Sonnet, two agents)
 - [x] 09 figure check on rendered images (19, 26, 39, 43, 49, 52, 54, 61, 64)
 - [x] raw/images/09-large-language-models/ — render, embed in slide file (10 slides)
-- [ ] wiki/09-large-language-models.md, with images hand-placed
-- [ ] Topic pages for lecture 9
-- [ ] INDEX.md — lecture 9 entries, coverage and image sentences
-- [ ] kb.json, BUILD_LOG.md lecture 9 record, AGENTS.md image row, LICENSE.md attribution, sources.md
-- [ ] verify_kb.py clean (with check_math and --github), review section read
+- [x] wiki/09-large-language-models.md, with images hand-placed (10 of 10, hand-written captions)
+- [x] Topic pages for lecture 9 (new: large-language-models, decoding-and-sampling; extended transformers, self-supervised-learning, text-vectorization, NLP, multiclass-classification, loss-functions, ai-ml-dl-genai; lectures 5, 7, 8 link forward; deck 10's ReLU correction carried)
+- [x] INDEX.md — lecture 9 entries, coverage and image sentences
+- [x] kb.json, BUILD_LOG.md lecture 9 record, AGENTS.md image row and two lessons, LICENSE.md attribution, sources.md, SEE_ALSO.md
+- [x] verify_kb.py clean (with check_math and --github), review section read (two italic-math figure lines in the slide file fixed; anchors checked by script)
 - [ ] Commit and push
 - [ ] Move this section to BUILD_LOG.md

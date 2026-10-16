@@ -46,7 +46,8 @@ languages that have very long words (≈20:11–22:34). It is good enough for ma
 classification among them, but not for generating text (slide 33; ≈22:34–23:19). ChatGPT writes with
 punctuation and capitals, so neither was stripped, and it will use a word you have just made up.
 LLMs therefore use other schemes, such as **byte-pair encoding**, which lecture 5 defers to the LLM
-lectures (≈23:19, ≈1:14:44); its slides are deck 09's 58–60.
+lectures (≈23:19, ≈1:14:44) and [lecture 9](09-large-language-models.md) explains; see
+[below](#beyond-stie-byte-pair-encoding).
 
 ## 3. Index: the vocabulary and `<UNK>`
 
@@ -117,6 +118,32 @@ Keras implements all four steps "as a single, simple layer called the text vecto
   side (lecture 7, ≈1:06:29–1:07:14). On the input side the ATIS queries give a vocabulary of 888
   tokens, and every query is padded or truncated to 30 (≈1:05:41, ≈1:12:41).
 
+## Beyond STIE: byte pair encoding
+
+[Lecture 9](09-large-language-models.md) returns to what the STIE pipeline loses (slide 59; ≈1:01:31–1:03:10). GPT keeps
+punctuation and case, and it will use a word made up on the spot. Given "reldoh", "hodler backwards",
+defined as "a student who understands deep learning backwards", it wrote a sentence in which "Jane was a
+true reldoh". Modern generative models therefore tokenize differently: the GPT family with **Byte Pair
+Encoding** (BPE), BERT with **WordPiece** (slide 60).
+
+The idea is a middle ground between characters and words. Characters alone can spell any word but tell
+the model nothing about words, while a vocabulary of every word cannot handle new ones and spends an
+embedding vector on each rare one. So the vocabulary holds **characters** (letters of both cases, digits
+and punctuation), **full words** frequent enough to be worth adding, and **sub-words**, fragments such as
+"ize" that are frequent enough to be worth adding (slide 60; ≈1:03:10–1:05:30).
+
+BPE builds this vocabulary from a training corpus. "Start with each character as a token, and 'merge'
+tokens that most frequently occur next to each other. Don't merge across whitespace. Stop when the size
+of your vocabulary reaches a user-defined limit" (slide 61). On the corpus "the cat sat on the mat",
+with a limit of 12, the pair a,t occurs three times and is merged first, into "at". Then t,h, tied with
+h,e at two ("just pick one randomly"), becomes "th", and th,e becomes "the" (slides 62–64;
+≈1:06:16–1:09:23). The algorithm came from data compression. GPT-2 and GPT-3 stopped at about 50,000
+tokens and GPT-4 at about 100,000 (≈1:09:23–1:10:08). New text is tokenized by applying the merges in
+the same order, so "the rat" becomes "the", the space, "r" and "at" (slide 65). In GPT's tokenizer a word
+usually carries the space before it, so " deep" and "deep" are different tokens, as are "Deep" and
+"deep" (≈1:10:54–1:12:25). See
+[lecture 9, Part 9](09-large-language-models.md#part-9--tokenization-byte-pair-encoding).
+
 ## Where this comes up
 
 - [Lecture 5](05-text-vectorization-and-bag-of-words.md): STIE, one-hot encoding, `<UNK>` and the
@@ -125,5 +152,6 @@ Keras implements all four steps "as a single, simple layer called the text vecto
   and padding for an Embedding layer.
 - [Lecture 7](07-transformers.md): vectorizing both the queries and their slot labels, with
   standardization turned off for the labels.
+- [Lecture 9](09-large-language-models.md): what STIE loses for generation, and byte pair encoding worked through.
 - See also [word embeddings](word-embeddings.md), [natural language processing](natural-language-processing.md) and
   [Keras](keras.md).

@@ -63,3 +63,4 @@ including mixtures (≈23:54; slide 52).
 ## Where this comes up
 
 - [Lecture 1](01-introduction.md): the whole landscape, in the first 25 minutes.
+- See also [large language models](large-language-models.md), the LLM circle as lecture 9 builds it.
