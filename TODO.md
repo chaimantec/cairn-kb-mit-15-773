@@ -4,13 +4,15 @@ Catalog id `5935cc5f-a533-4ded-a08f-6fac61ded777`. Course site:
 <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/>. Decks are linked from
 `lists/lecture-notes/` as `mit15_773_s24_lecNN.pdf`, and their numbering does **not** follow the
 11 videos: there are decks 01, 02, 02-backprop-example, 03a, 03b, 04–10, 10.5 and 11. Work out
-which deck(s) each video covers from the transcript before reading anything. Video 1 covers deck 01
-only (it ends on deck 01's last slide; deck 02 opens video 2). Videos 1–8 are built (see BUILD_LOG.md);
-video 8 presented deck 08 to its slide 93 and skipped its contrastive-learning section (94–98). Deck 09
-(LLMs 1/2) opens with a review of masking, so video 9 probably starts there; confirm from the transcript,
-and work out how videos 9–10 split decks 09, 10 and 10.5. Deck 09 shares rasters with deck 08 on its
-pages 2–4 (deck 08's masking diagram, 70–71 and 76), 26 (encoder pieces of 14, 21, 22) and 37 (the use
-cases, 30–32): check those on renders before rendering.
+which deck(s) each video covers from the transcript before reading anything. Video 1 covers deck 01 only
+(it ends on deck 01's last slide; deck 02 opens video 2). Videos 1–9 are built (see BUILD_LOG.md);
+video 9 presented deck 09 to its slide 66 and did not reach the RAG of its catalog title. Deck 10
+("LLMs (2/2)", 115 pages) opens by reviewing video 9 (slide 2) and correcting its "Dense (ReLU)" layer to
+linear activations (slide 3), so video 10 probably starts there; confirm from the transcript. Deck 10 runs
+through prompting, RAG (slides 76–82) and fine-tuning, and deck 10.5 ("Finetuning") repeats some of its
+fine-tuning slides: work out how videos 10 and 11 split decks 10, 10.5 and 11 before reading any of them.
+Lecture 9's wiki page, the large-language-models page and the deck 09 slide file cite deck 10's slide 3 by
+URL; once deck 10 is transcribed, point those citations at its slide file.
 
 Images are opted in: every figure-bearing slide, rendered per Step 1c, never a slide with an OCW notice.
 
@@ -20,23 +22,3 @@ to [`BUILD_LOG.md`](BUILD_LOG.md).
 ## Transcripts
 - [ ] 10 Generative AI – Adapting LLMs with PEFT — video d-tngNnaG4U
 - [ ] 11 Generative AI – Text-to-Image Models — video NQBhhRG-Pe4
-
-## Lecture 9 run (2026-10-16)
-
-Video 9 (`KGDe1QvfKJ8`, 75 min) presents deck 09 (`mit15_773_s24_lec09.pdf`, 68 pages; page 68 is
-OCW's end page) from slide 2 to slide 66, ending on the token-visualizer demo; slide 67 (a sidebar) is
-not mentioned. RAG, in the catalog title, is deck 10's slides 76–82, so it falls to video 10.
-Numbering: every printed number equals its page; 1–4, 44, 45 and 68 print none. Text-layer OCW
-notices: 27, 29, 41, 67.
-
-- [x] 09 Generative AI – LLMs and RAG — video KGDe1QvfKJ8 → raw/transcripts/09-large-language-models.md (+ original/)
-- [x] Slides 09 → raw/slides/09-large-language-models.md (Sonnet, two agents)
-- [x] 09 figure check on rendered images (19, 26, 39, 43, 49, 52, 54, 61, 64)
-- [x] raw/images/09-large-language-models/ — render, embed in slide file (10 slides)
-- [x] wiki/09-large-language-models.md, with images hand-placed (10 of 10, hand-written captions)
-- [x] Topic pages for lecture 9 (new: large-language-models, decoding-and-sampling; extended transformers, self-supervised-learning, text-vectorization, NLP, multiclass-classification, loss-functions, ai-ml-dl-genai; lectures 5, 7, 8 link forward; deck 10's ReLU correction carried)
-- [x] INDEX.md — lecture 9 entries, coverage and image sentences
-- [x] kb.json, BUILD_LOG.md lecture 9 record, AGENTS.md image row and two lessons, LICENSE.md attribution, sources.md, SEE_ALSO.md
-- [x] verify_kb.py clean (with check_math and --github), review section read (two italic-math figure lines in the slide file fixed; anchors checked by script)
-- [ ] Commit and push
-- [ ] Move this section to BUILD_LOG.md

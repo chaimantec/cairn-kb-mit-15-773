@@ -843,3 +843,28 @@ equals its page; 38 pages print none. Text-layer OCW notices: 28, 41, 50, 51, 56
 - [x] verify_kb.py clean (with check_math and --github), review section read (three formulas on transformers.md repaired after a Python-escape slip; one BUILD_LOG line de-mathed)
 - [x] Commit and push
 - [x] Move this section to BUILD_LOG.md
+
+## Build checklist, lecture 9
+
+The ticked lines of `TODO.md` for the lecture 9 run, moved here verbatim on 2026-10-16 once it was
+committed and pushed.
+
+### Lecture 9 run (2026-10-16)
+
+Video 9 (`KGDe1QvfKJ8`, 75 min) presents deck 09 (`mit15_773_s24_lec09.pdf`, 68 pages; page 68 is
+OCW's end page) from slide 2 to slide 66, ending on the token-visualizer demo; slide 67 (a sidebar) is
+not mentioned. RAG, in the catalog title, is deck 10's slides 76–82, so it falls to video 10.
+Numbering: every printed number equals its page; 1–4, 44, 45 and 68 print none. Text-layer OCW
+notices: 27, 29, 41, 67.
+
+- [x] 09 Generative AI – LLMs and RAG — video KGDe1QvfKJ8 → raw/transcripts/09-large-language-models.md (+ original/)
+- [x] Slides 09 → raw/slides/09-large-language-models.md (Sonnet, two agents)
+- [x] 09 figure check on rendered images (19, 26, 39, 43, 49, 52, 54, 61, 64)
+- [x] raw/images/09-large-language-models/ — render, embed in slide file (10 slides)
+- [x] wiki/09-large-language-models.md, with images hand-placed (10 of 10, hand-written captions)
+- [x] Topic pages for lecture 9 (new: large-language-models, decoding-and-sampling; extended transformers, self-supervised-learning, text-vectorization, NLP, multiclass-classification, loss-functions, ai-ml-dl-genai; lectures 5, 7, 8 link forward; deck 10's ReLU correction carried)
+- [x] INDEX.md — lecture 9 entries, coverage and image sentences
+- [x] kb.json, BUILD_LOG.md lecture 9 record, AGENTS.md image row and two lessons, LICENSE.md attribution, sources.md, SEE_ALSO.md
+- [x] verify_kb.py clean (with check_math and --github), review section read (two italic-math figure lines in the slide file fixed; anchors checked by script)
+- [x] Commit and push
+- [x] Move this section to BUILD_LOG.md
