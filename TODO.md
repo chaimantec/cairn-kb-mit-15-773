@@ -15,8 +15,28 @@ Images are opted in: every figure-bearing slide, rendered per Step 1c, never a s
 This file holds **open work only**. When a run is committed and pushed, its finished lines move
 to [`BUILD_LOG.md`](BUILD_LOG.md).
 
+## Lecture 8 run (2026-10-16)
+
+Video 8 (`v-lHsawHyaI`, 76 min) presents deck 08 (`mit15_773_s24_lec08.pdf`, 99 pages; page 99 is
+OCW's end page) from slide 2 to slide 93, after finishing lecture 7's Colab (≈3:53–5:25) and with an
+iPad derivation in place of slides 15–19 (≈7:46–24:08) and the Hugging Face Colab at slide 87. Slides
+94–98 (contrastive learning, "time permitting") are not presented. Numbering: every printed number
+equals its page; 38 pages print none. Text-layer OCW notices: 28, 41, 50, 51, 56, 79, 80, 81, 82, 83,
+90, 93, 96, 97, 98 (81's names a BERT figure but shows the course's slide-38 diagram).
+
+- [x] 08 DL for Natural Language – Transformers, Self-Supervised Learning — video v-lHsawHyaI → raw/transcripts/08-transformers-and-self-supervised-learning.md (+ original/)
+- [x] Slides 08 → raw/slides/08-transformers-and-self-supervised-learning.md (Sonnet, three agents)
+- [x] 08 figure check on rendered images (18, 20, 24, 29, 47, 69, 80, 81, 86, 91, 93 crop)
+- [x] raw/images/08-transformers-and-self-supervised-learning/ — render, embed in slide file (19 slides)
+- [ ] wiki/08-transformers-and-self-supervised-learning.md, with images hand-placed
+- [ ] Topic pages for lecture 8
+- [ ] INDEX.md — lecture 8 entries, coverage and image sentences
+- [ ] kb.json, BUILD_LOG.md lecture 8 record, AGENTS.md image row, LICENSE.md attribution, sources.md
+- [ ] verify_kb.py clean (with check_math and --github), review section read
+- [ ] Commit and push
+- [ ] Move this section to BUILD_LOG.md
+
 ## Transcripts
-- [ ] 08 DL for Natural Language – Transformers, Self-Supervised Learning — video v-lHsawHyaI
 - [ ] 09 Generative AI – LLMs and RAG — video KGDe1QvfKJ8
 - [ ] 10 Generative AI – Adapting LLMs with PEFT — video d-tngNnaG4U
 - [ ] 11 Generative AI – Text-to-Image Models — video NQBhhRG-Pe4
