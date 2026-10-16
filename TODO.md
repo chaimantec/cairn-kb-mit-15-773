@@ -18,6 +18,25 @@ This file holds **open work only**. When a run is committed and pushed, its fini
 to [`BUILD_LOG.md`](BUILD_LOG.md).
 
 ## Transcripts
-- [ ] 09 Generative AI – LLMs and RAG — video KGDe1QvfKJ8
 - [ ] 10 Generative AI – Adapting LLMs with PEFT — video d-tngNnaG4U
 - [ ] 11 Generative AI – Text-to-Image Models — video NQBhhRG-Pe4
+
+## Lecture 9 run (2026-10-16)
+
+Video 9 (`KGDe1QvfKJ8`, 75 min) presents deck 09 (`mit15_773_s24_lec09.pdf`, 68 pages; page 68 is
+OCW's end page) from slide 2 to slide 66, ending on the token-visualizer demo; slide 67 (a sidebar) is
+not mentioned. RAG, in the catalog title, is deck 10's slides 76–82, so it falls to video 10.
+Numbering: every printed number equals its page; 1–4, 44, 45 and 68 print none. Text-layer OCW
+notices: 27, 29, 41, 67.
+
+- [x] 09 Generative AI – LLMs and RAG — video KGDe1QvfKJ8 → raw/transcripts/09-large-language-models.md (+ original/)
+- [x] Slides 09 → raw/slides/09-large-language-models.md (Sonnet, two agents)
+- [x] 09 figure check on rendered images (19, 26, 39, 43, 49, 52, 54, 61, 64)
+- [x] raw/images/09-large-language-models/ — render, embed in slide file (10 slides)
+- [ ] wiki/09-large-language-models.md, with images hand-placed
+- [ ] Topic pages for lecture 9
+- [ ] INDEX.md — lecture 9 entries, coverage and image sentences
+- [ ] kb.json, BUILD_LOG.md lecture 9 record, AGENTS.md image row, LICENSE.md attribution, sources.md
+- [ ] verify_kb.py clean (with check_math and --github), review section read
+- [ ] Commit and push
+- [ ] Move this section to BUILD_LOG.md
