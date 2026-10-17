@@ -1097,3 +1097,32 @@ reuses deck 10's excluded rasters.
 - [x] verify_kb.py clean (with check_math and --github), review section read (quotes before inline math and plain-text × fixed; 44 anchor links checked by script)
 - [x] Commit and push
 - [x] Move this section to BUILD_LOG.md
+
+## Build checklist, lecture 11
+
+The ticked lines of `TODO.md` for the lecture 11 run, moved here verbatim on 2026-10-17 once it was
+committed and pushed.
+
+### Lecture 11 run (2026-10-16–17)
+
+Video 11 (`NQBhhRG-Pe4`, 75 min) presents deck 11 (`mit15_773_s24_lec11.pdf`, 90 pages; 90 is OCW's end
+page) from slide 2 (the ChatGPT classroom image, 0:00) to slide 89 (the lightning tour of Hugging Face
+computer-vision pipelines, ≈1:09:49 to the end). Slide 1 is the title page. The captions label the speaker
+only `PROFESSOR:`; he refers to "when I did the quick lightning tour of the Hugging Face ecosystem for
+language" (1:04:07), which lecture 8's captions attribute to Rama Ramakrishnan. Numbering: slide N = PDF
+page N. Pages 2, 3 and 6–48 print their own number, 49–89 print N+1 (a hidden slide between 48 and 49), and
+1, 4, 5 and 90 print none. Text-layer OCW notices (22): 9, 38–41, 47, 48, 50, 51, 59, 62–64, 68, 70, 73,
+82–85, 87, 88. Raster hashes: the Labrador photo appears only on noticed pages; page 60 shares only a black
+shape mask with them; no figure is shared with an earlier deck.
+
+- [x] 11 Generative AI – Text-to-Image Models — video NQBhhRG-Pe4 → raw/transcripts/11-diffusion-models.md (+ original/)
+- [x] Slides 11 → raw/slides/11-diffusion-models.md (Sonnet, three agents: 1–30, 31–60, 61–90)
+- [x] 11 figure check on rendered images (20, 34, 37, 38 on a crop, 41, 64, 70, 73, 81, 82; renders of 2 and 72)
+- [x] raw/images/11-diffusion-models/ — render, embed in slide file (16 slides)
+- [x] wiki/11-diffusion-models.md, with images hand-placed (16 of 16, hand-written captions)
+- [x] Topic pages for lecture 11 (new: diffusion-models, clip; extended images-and-vision-tasks, convolutional-neural-networks, loss-functions, self-supervised-learning, ai-ml-dl-genai, transfer-learning, representation-learning, word-embeddings, large-language-models, transformers, keras); lecture 4's U-Net and Hugging Face deferrals and lecture 1's text-to-image slide linked forward
+- [x] INDEX.md — lecture 11 entries, coverage and image sentences (11 of 11)
+- [x] kb.json, BUILD_LOG.md lecture 11 record, AGENTS.md image row and three lessons, LICENSE.md attribution, sources.md (deck 11 no longer provisional), SEE_ALSO.md (6.7960 coverage corrected; diffusion and CLIP pages)
+- [x] verify_kb.py clean (with check_math and --github), review section read (double-wrapped CLIP labels and quoted math fixed; plain-text × on the new page written in words; 51 anchor links checked by script)
+- [x] Commit and push
+- [x] Move this section to BUILD_LOG.md
