@@ -448,9 +448,10 @@ Three questions along the way shaped how to use this:
   black box to you" (≈49:08–49:55).
 - **What about tasks other than classification, such as semantic segmentation?** The input side
   stays a stack of convolutional layers, but if every pixel must be classified, the output must have
-  the same dimensions as the input, which needs a different architecture, such as one called U-Net,
-  not covered here. He planned an optional walkthrough on using the Hugging Face Hub for such tasks
-  (≈51:30–52:15). See [images and computer-vision tasks](images-and-vision-tasks.md).
+  the same dimensions as the input, which needs a different architecture, such as one called U-Net, not covered here (lecture 11 explains
+  it: [Part 7](11-diffusion-models.md#part-7--the-u-net)). He planned an optional walkthrough on using
+  the Hugging Face Hub for such tasks (≈51:30–52:15), which lecture 11 gives at its end
+  ([Part 16](11-diffusion-models.md#part-16--a-lightning-tour-of-hugging-face-computer-vision-pipelines)). See [images and computer-vision tasks](images-and-vision-tasks.md).
 
 Asked whether neural networks always beat other machine learning, he says they are very good for
 unstructured data like images. For structured data, like the heart-disease problem, methods such as

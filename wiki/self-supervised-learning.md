@@ -93,8 +93,12 @@ found to be very effective (slide 96, citing Chen et al., 2020). For every origi
 pair of "augmented" images, and train the network to "maximize agreement": the representations of each
 augmented pair should be close to each other and far from those of the other pairs. The augmentations on
 slide 97 include crops, flips, colour distortion, rotation, cutout, noise, blur and Sobel filtering
-(compare [data augmentation](data-augmentation.md)). Then extract the encoder and fine-tune it, as with
-masking (slide 98).
+(compare [data augmentation](data-augmentation.md)). Then extract the encoder and fine-tune it, as with masking (slide 98).
+
+Lecture 11's [CLIP](clip.md) is trained on the same pattern with two encoders: an image and its own
+caption are a matching pair whose embeddings should be close, and every other caption in the batch
+should be far (lecture 11, slides 62–69). Its 400 million pairs needed no labelling, because the captions
+were the alt text people had already attached to images on the web (≈47:52–48:39).
 
 ## Where this comes up
 
@@ -104,5 +108,7 @@ masking (slide 98).
 - [Lecture 10](10-adapting-llms.md): next word prediction reused for fine-tuning: on instruction-answer
   pairs in supervised fine-tuning, or on a company's own text to make a model "generally smart about the
   company's business details" (≈1:08:08).
+- [Lecture 11](11-diffusion-models.md): CLIP, trained to pull each image and its caption together and push mismatched
+  pairs apart, on 400 million pairs whose captions came from alt text.
 - See also [transfer learning](transfer-learning.md), [representation learning](representation-learning.md),
   [transformers](transformers.md) and [large language models](large-language-models.md).

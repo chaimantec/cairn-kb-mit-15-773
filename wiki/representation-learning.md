@@ -109,3 +109,6 @@ work at higher levels of abstraction, as later layers of a convolutional network
 - [Lecture 7](07-transformers.md): contextual embeddings from a transformer encoder.
 - [Lecture 8](08-transformers-and-self-supervised-learning.md): networks as representation learners,
   encoders, and representations learned by self-supervised learning.
+- [Lecture 11](11-diffusion-models.md): CLIP's text and image encoders, trained so that their representations share one
+  "concept space" (see [CLIP](clip.md)); and latent diffusion, which denoises an image's embedding
+  instead of its pixels.

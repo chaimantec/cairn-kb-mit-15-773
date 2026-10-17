@@ -33,10 +33,10 @@ shape mask with them; no figure is shared with an earlier deck.
 - [x] Slides 11 → raw/slides/11-diffusion-models.md (Sonnet, three agents: 1–30, 31–60, 61–90)
 - [x] 11 figure check on rendered images (20, 34, 37, 38 on a crop, 41, 64, 70, 73, 81, 82; renders of 2 and 72)
 - [x] raw/images/11-diffusion-models/ — render, embed in slide file (16 slides)
-- [ ] wiki/11-diffusion-models.md, with images placed
-- [ ] Topic pages for lecture 11 (new and extended)
-- [ ] INDEX.md — lecture 11 entries, coverage and image sentences (11 of 11)
-- [ ] kb.json, BUILD_LOG.md lecture 11 record, AGENTS.md image row, LICENSE.md attribution, sources.md (deck 11 no longer provisional)
-- [ ] verify_kb.py clean (with check_math and --github), review section read
+- [x] wiki/11-diffusion-models.md, with images hand-placed (16 of 16, hand-written captions)
+- [x] Topic pages for lecture 11 (new: diffusion-models, clip; extended images-and-vision-tasks, convolutional-neural-networks, loss-functions, self-supervised-learning, ai-ml-dl-genai, transfer-learning, representation-learning, word-embeddings, large-language-models, transformers, keras); lecture 4's U-Net and Hugging Face deferrals and lecture 1's text-to-image slide linked forward
+- [x] INDEX.md — lecture 11 entries, coverage and image sentences (11 of 11)
+- [x] kb.json, BUILD_LOG.md lecture 11 record, AGENTS.md image row and three lessons, LICENSE.md attribution, sources.md (deck 11 no longer provisional), SEE_ALSO.md (6.7960 coverage corrected; diffusion and CLIP pages)
+- [x] verify_kb.py clean (with check_math and --github), review section read (double-wrapped CLIP labels and quoted math fixed; plain-text × on the new page written in words; 51 anchor links checked by script)
 - [ ] Commit and push
 - [ ] Move this section to BUILD_LOG.md

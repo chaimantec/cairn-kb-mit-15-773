@@ -9,7 +9,7 @@ slide file or transcript it concerns. The rules every build follows are in
 [`AGENTS.md`](AGENTS.md).
 
 One section per run: lectures 1, 2 and 3 (built 2026-10-11), lecture 4 (2026-10-14), lecture 5
-(2026-10-14), lecture 6 (2026-10-14), lecture 7 (2026-10-14), lecture 8 (2026-10-16), lecture 9 (2026-10-16), lecture 10 (2026-10-16), and at the end the ticked build checklists of those runs,
+(2026-10-14), lecture 6 (2026-10-14), lecture 7 (2026-10-14), lecture 8 (2026-10-16), lecture 9 (2026-10-16), lecture 10 (2026-10-16), lecture 11 (2026-10-16–17), and at the end the ticked build checklists of those runs,
 moved from `TODO.md`.
 
 ## Lecture 1 — Introduction to Neural Networks and Deep Learning
@@ -784,6 +784,103 @@ Model loss's behaviour, and 32,768 = 2 × 2 × 8192 ≈ 0.05% of 64M. SEE_ALSO's
 its post-training, prompting, instruction-finetuning, RLHF and LoRA pages, each confirmed tracked in that
 repo. Four plain-text "×" in the new pages were rewritten in words; verify_kb's math-warning list is capped
 and did not show them.
+
+## Lecture 11 — Diffusion Models for Image Generation
+
+Built 2026-10-16–17. Video `NQBhhRG-Pe4` (75 min); deck `mit15_773_s24_lec11.pdf`, 90 pages.
+
+**Video ↔ deck.** The recording presents deck 11's slides 2–89 in order, from the ChatGPT classroom image
+(0:00) to the lightning tour of Hugging Face computer-vision pipelines (slide 89, ≈1:09:49 to the end).
+Slide 1 is the title page and slide 90 OCW's end page. The lecturer calls it "the last lecture of the
+class" (the next session was project presentations). The catalog title, "Generative AI – Text-to-Image
+Models", matches the content. Material outside the deck: the noise Colab (slides 15–16, ≈7:05–10:58), the
+Diffusers Colab (slide 88, ≈1:04:07–1:09:49) and the vision-pipelines Colab (slide 89), all described from
+the narration. Deck 11 has no next deck to check for corrections.
+
+**Speaker.** The captions label the lecturer only `PROFESSOR:` and students `STUDENT:`; the OCW transcript
+PDF does the same. He says "when I did the quick lightning tour of the Hugging Face ecosystem for language"
+(≈1:04:07), and lecture 8's captions attribute that tour to `RAMA RAMAKRISHNAN:`, so the transcript
+header, wiki page and kb.json name him with that evidence. The lesson went into AGENTS.md in general form.
+
+**Numbering.** Slide N = PDF page N. Pages 2, 3 and 6–48 print their own number, 49–89 print N+1 (a
+hidden slide between 48 and 49), and 1, 4, 5 and 90 print none. The mapping was read from span positions
+in the bottom-right corner; the headings were checked as a plain 1..90 sequence.
+
+**OCW notices (22):** 9 (a Google Image Search grid, with credits to John Simpson Architects, Michael
+Hickey, Getty Images, the University of South Carolina, Rex Harris, iStock and "all other © sources
+unknown"; the block also names a CC BY Flickr image and a public-domain one), 38–41 (U-Net figures, LMB,
+University of Freiburg), 47, 48, 50, 51 (Labrador photo, © unknown), 59, 62–64, 68 (Labrador and train
+photos, © source unknown; blue jay, © Timber Press), 70, 73 (CLIP paper figures, Alec Radford et
+al./ArXiv), 82–85 (latent diffusion figure, Robin Rombach et al./ArXiv), 87 (protein images, Namruta
+Anand/The New York Times Company), 88 (Hugging Face Diffusers logo and page). A first regex on raw text
+found 21; page 39's notice is split around its page-number span ("excluded | 39 | from our Creative"), and
+normalising the text found all 22. The lesson went into AGENTS.md. The agents found no drawn notices.
+Raster hashes: the Labrador photo (212×163) appears only on noticed pages; the 385×159 raster that page 60
+shares with the noticed pages is a solid black PowerPoint shape mask (extracted and looked at), and page 60
+shows no photo. No figure is shared with an earlier deck beyond the title-page assets and one small icon.
+Credits that are not exclusions: the MIT Dome "Photo by Muzammil Soorma on Unsplash" (printed on 8, 10–16,
+18–25, 28, 30, 35 and 76; the photo also appears uncredited on 32–34, 75 and 79–81), the Rotunda at UVA
+"in the public domain" via Wikimedia Commons (10, 11), and OCW's AI-image credits on 2 (ChatGPT/DALL-E 3,
+instructor's prompt), 3 (Midjourney, Alex Serban on MSPowerUser) and 5–6 (Sora, Brooks, Peebles et al. on
+OpenAI). Unmarked third-party content: the title blocks of the Sohl-Dickstein et al. and CLIP papers (36,
+57), the DDPM paper's title block beside the course's diagram (37), and a lexica.art screenshot (86).
+Hyperlinks whose targets are not printed: 15 and 16 ("(Colab link)"), 88 ("Colab"), 89 ("Colab link").
+
+**Transcription.** Sonnet, three agents in parallel (pages 1–30, 31–60, 61–90), reading 1400px PNGs
+pre-rendered into the scratchpad and appending with quoted heredocs; each took 2–2.5 minutes. No `$` gaps
+(the one grep hit, $z$ to $z_T$ on slide 82, is prose). Parent fixes: slide 82's lower row of the
+latent-diffusion figure (the agent put the ×(T−1) loop between $z_{T-1}$ and $z_T$; it leads from
+$z_{T-1}$ to $z$, which the decoder turns into $\tilde{x}$); hidden text-layer bullets noted on slides 43
+and 44 (the text layer holds the build's later bullets); the CLIP figures' labels on 70, 73 and 75 put
+into math (a first regex pass double-wrapped them, and check_math caught it); quotes removed before
+inline math on 20–22 and 75; math taken out of the italic figure lines; stray footnote asterisks escaped
+on 4, 40, 57–61 so they cannot pair into italics; nested brackets removed from three image alt texts.
+
+**Transcript edit.** OCW human captions, done inline in the parent as a scripted list of 11 changes.
+Restorations (7): "clean code" → Killian Court (5:32, and twice at 10:13); "Pretaining" → Pretraining
+(42:24); "clip" → CLIP (43:11, 55:37); "Why continues" → "Y continues" (54:51); "the diffuse library" →
+"the diffusers library" (1:09:30). `[Ed:]` notes (4) at 14:49 ("suggest informative", presumably "a
+formula"), 28:37 ("y is the noisy image", against slides 24 and 37), 34:42 ("spin up a network", unclear)
+and 1:09:30 ("9:49", the time of day). Left as captioned: "model collapse", "Deep and Wide Network …
+DenseNet", "conv 2D transpose", both spellings of Hugging Face, student names. Checks: 98 timestamps
+identical, number inventory (302) identical once notes are removed, paragraph word ratios 1.00. Every
+restored name (Killian, Pretraining, CLIP, Diffusers) is printed in the deck.
+
+**Figure check.** In the parent on renders: 20, 34, 37, 41, 64, 70, 73, 81 and 82, a high-resolution crop
+of slide 38's U-Net figure (every printed size and channel count agreed), and the finished images of
+slides 2 and 72. Fix as above (slide 82); the rest agreed.
+
+**Printed slips.** Slide 1's "15.S04"; slide 2's credit "from the prompt from the prompt quoted above";
+slide 9's "Toeldo Courthouse"; slide 76's "What if expand x to include its caption"; slide 87's caption
+"Namrata Anand" against its notice's "Namruta Anand"; slide 85's double space. Spoken: "y is the noisy
+image" (≈28:37); "make all the embeddings 0" (≈46:20) for slide 67's "the same"; "model collapse", which
+the slides do not name.
+
+**Images: 16 of 90 pages.** Rendered: 2, 3, 5, 11, 14, 15, 16, 20, 24, 28, 34, 35, 37, 72, 77, 81 (2.0 MB;
+13 JPEG, 3 PNG). Rendered under the lecture 1 precedent (its Stable Diffusion slide 45): the AI-generated
+images OCW credits without excluding (2, 3, 5); LICENSE.md names their credits. Not rendered: the 22
+noticed slides; the unmarked paper title blocks (36, 57) and lexica.art screenshot (86); build steps and
+repeats superseded by a rendered slide (6 → 5, with its quotation transcribed; 8, 10, 12, 13, 30 → 11;
+18, 19, 25, 75 → 16, 20, 24; 21–23 → 20, 24; 26, 27 → 28; 32, 33 → 34; 60 → 72; 76 → 77; 79, 80 → 81);
+4 (a single box with an empty output area, where the class saw the Sora video); text-only slides and the
+title and end pages. The wiki lecture page hand-places all 16 with hand-written captions. Slides 16, 34,
+37 and 77 are also on the new diffusion-models page, and 72 on the new clip page.
+
+**Wiki.** A lecture page and two new topic pages, diffusion-models and clip. Extended:
+images-and-vision-tasks (the U-Net, and the classification, detection and segmentation pipelines; its
+"names but does not cover" U-Net sentence replaced), convolutional-neural-networks (a U-Net section),
+loss-functions (CLIP's loss), self-supervised-learning (CLIP beside lecture 8's contrastive slides),
+ai-ml-dl-genai (how text-to-image works), transfer-learning (Hugging Face vision models, Diffusers), and
+"where this comes up" in representation-learning, word-embeddings, large-language-models, transformers
+and keras. Lecture 4's page links its U-Net and Hugging Face deferrals to lecture 11, and lecture 1's
+text-to-image slide links forward. The lecture and clip pages write slide 69's loss as a formula in the
+notation of slide 70's CLIP figure, labelled as the page's own, and note (also labelled) that a zero
+vector has no cosine similarity, so slide 67's "the same" is the precise version of the spoken "0". The
+U-Net dimensions were written in words ("572 by 572") where check_math flagged a plain-text ×. 51
+section-anchor links were checked by script against GitHub's heading slugs. SEE_ALSO: the 6.7960 entry's
+stale "Partial: lectures 1–19" corrected to its kb.json's 24 of 24, with its diffusion-models,
+conditional-generative-models and contrastive-learning pages; the CS224N entry gains its
+contrastive-vision-language-models page and lecture 19 (Douwe Kiela). All five URLs returned 200.
 
 ## Build checklists, lectures 1–4
 

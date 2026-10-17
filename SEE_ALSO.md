@@ -9,7 +9,7 @@ Pass the **repo URL** as the `kb` argument to `kb_read` / `kb_list`. The
 ---
 
 - **MIT 6.7960 — Deep Learning** (MIT, Phillip Isola, Sara Beery and Jeremy Bernstein, Fall 2024).
-  Partial: lectures 1–19 of its 24 catalog recordings.
+  Complete: all 24 of its catalog recordings.
   KB: `https://github.com/chaimantec/cairn-kb-mit-6-7960` — pass this as `kb`.
 
   The mathematical counterpart to 15.773, which deliberately "skips the math". Where 15.773
@@ -24,7 +24,12 @@ Pass the **repo URL** as the `kb` argument to `kb_read` / `kb_list`. The
   [convolution](https://raw.githubusercontent.com/chaimantec/cairn-kb-mit-6-7960/main/wiki/convolution.md),
   [transfer learning](https://raw.githubusercontent.com/chaimantec/cairn-kb-mit-6-7960/main/wiki/transfer-learning.md)
   and [data augmentation](https://raw.githubusercontent.com/chaimantec/cairn-kb-mit-6-7960/main/wiki/data-augmentation.md)
-  pages give the more formal treatment. Its notation and depth differ: use 15.773's own pages first
+  pages give the more formal treatment. For 15.773 lecture 11, its
+  [diffusion models](https://raw.githubusercontent.com/chaimantec/cairn-kb-mit-6-7960/main/wiki/diffusion-models.md)
+  page covers the same noise-to-data idea with the mathematics this course skips, and its
+  [conditional generative models](https://raw.githubusercontent.com/chaimantec/cairn-kb-mit-6-7960/main/wiki/conditional-generative-models.md)
+  and [contrastive learning](https://raw.githubusercontent.com/chaimantec/cairn-kb-mit-6-7960/main/wiki/contrastive-learning.md)
+  pages cover conditioning on text and the contrastive objective behind CLIP. Its notation and depth differ: use 15.773's own pages first
   for this course's framing and examples.
   Start at [INDEX](https://raw.githubusercontent.com/chaimantec/cairn-kb-mit-6-7960/main/INDEX.md).
 
@@ -48,5 +53,8 @@ Pass the **repo URL** as the `kb` argument to `kb_read` / `kb_list`. The
   [RLHF](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/wiki/rlhf.md) (the objective,
   with its penalty for drifting from the starting model) and
   [LoRA](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/wiki/lora.md), developed in
-  full there. Its examples come from NLP.
+  full there. Its examples come from NLP. For 15.773 lecture 11's CLIP, its
+  [contrastive vision-language models](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/wiki/contrastive-vision-language-models.md)
+  page and its [multimodal deep learning](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/wiki/19-multimodal-deep-learning.md)
+  lecture (a guest lecture by Douwe Kiela) place CLIP among earlier image-text embedding models.
   Start at [INDEX](https://raw.githubusercontent.com/chaimantec/cairn-kb-cs224n/main/INDEX.md).

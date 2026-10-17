@@ -44,9 +44,16 @@ that OCW excludes from its licence, so they are described here in words only.
   category, so that each sheep gets its own label.
 
 For segmentation, the output must have the same dimensions as the input, so the output side of the
-network gets "much more complicated" than a classifier's. It needs a different architecture, such as
-one called U-Net, which the course names but does not cover
-([lecture 4](04-cnns-and-transfer-learning.md) ≈51:30–52:15).
+network gets "much more complicated" than a classifier's. It needs a different architecture, such as one called U-Net
+([lecture 4](04-cnns-and-transfer-learning.md) ≈51:30–52:15). Lecture 11 explains the U-Net as the
+dominant architecture for image-to-image problems, from colorizing to classifying every pixel (slides
+38–41; see [diffusion models](diffusion-models.md#the-network-a-u-net)).
+
+Lecture 11 also runs three of these tasks off the shelf with Hugging Face pipelines (slide 89;
+≈1:09:49–1:14:58): **image classification** ("Egyptian cat" at 94%), **object detection**, which draws
+a **bounding box** around each object it finds (a cat, remotes, a couch), and **image segmentation**,
+which gives each object a **mask**, the set of pixels that belong to it. See
+[lecture 11, Part 16](11-diffusion-models.md#part-16--a-lightning-tour-of-hugging-face-computer-vision-pipelines).
 
 The course's first vision problem is image classification, on Fashion MNIST (deck 3B, slide 14). Its
 70,000 small grayscale images show clothing items in 10 balanced categories, so a naive baseline
@@ -105,3 +112,6 @@ patches have no vocabulary: every image simply gives nine embeddings (≈1:11:31
 - [Lecture 4](04-cnns-and-transfer-learning.md): why flattening falls short, convolutional networks,
   colour images from folders, and transfer learning.
 - [Lecture 8](08-transformers-and-self-supervised-learning.md): the Vision Transformer, which treats an image as a sequence of patches.
+- [Lecture 11](11-diffusion-models.md): an image as a NumPy array scaled to 0–1 and made noisy pixel by pixel, the U-Net for
+  image-to-image problems, and Hugging Face pipelines for classification, object detection and
+  segmentation (see [diffusion models](diffusion-models.md)).

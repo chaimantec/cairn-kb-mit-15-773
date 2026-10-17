@@ -9,12 +9,12 @@
     "courseUrl": "https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/"
   },
   "coverage": {
-    "lecturesCovered": 10,
+    "lecturesCovered": 11,
     "lecturesTotal": 11,
-    "transcripts": 10,
-    "wikiLecturePages": 10,
-    "wikiTopicPages": 28,
-    "note": "Lectures 1-10. The 11 videos use 14 OCW decks whose numbering does not follow the videos; video 1 covers deck 01 alone, video 2 deck 02 alone plus its handwritten backprop-example deck, video 3 decks 03a and 03b, video 4 deck 04 alone, video 5 deck 05 alone, video 6 deck 06 alone, video 7 deck 07 alone, video 8 deck 08 alone (slides 2-93; its contrastive-learning section, slides 94-98, is not presented), video 9 deck 09 alone (slides 2-66; the retrieval-augmented generation in its catalog title is in deck 10), video 10 deck 10 alone (slides 2-112). Deck 10.5 ('Finetuning'), a variant of deck 10's slides 82-114, is presented by no video and is transcribed as lecture 10's companion deck; video 11 opens on deck 11."
+    "transcripts": 11,
+    "wikiLecturePages": 11,
+    "wikiTopicPages": 30,
+    "note": "All 11 lectures. The 11 videos use 14 OCW decks whose numbering does not follow the videos; video 1 covers deck 01 alone, video 2 deck 02 alone plus its handwritten backprop-example deck, video 3 decks 03a and 03b, video 4 deck 04 alone, video 5 deck 05 alone, video 6 deck 06 alone, video 7 deck 07 alone, video 8 deck 08 alone (slides 2-93; its contrastive-learning section, slides 94-98, is not presented), video 9 deck 09 alone (slides 2-66; the retrieval-augmented generation in its catalog title is in deck 10), video 10 deck 10 alone (slides 2-112). Deck 10.5 ('Finetuning'), a variant of deck 10's slides 82-114, is presented by no video and is transcribed as lecture 10's companion deck; video 11 covers deck 11 alone (slides 2-89)."
   },
   "license": {
     "file": "LICENSE.md",
@@ -25,21 +25,21 @@
     "primary": "slides",
     "slideDecks": {
       "available": 14,
-      "transcribed": 13
+      "transcribed": 14
     },
     "method": "page-images",
     "figuresAudited": true,
     "figureAudit": {
-      "decksAudited": 13,
-      "decksTotal": 13,
-      "note": "decksTotal counts transcribed decks. Each was transcribed by Sonnet and checked by the parent model against 1400px renders. Lecture 1: six pages (51, 59, 80, 93, 94, 100); slide 59's sigmoid corrected. Lecture 2 deck 02: six pages (4, 33, 42, 55, 69, 79); slide 52's minimum corrected. Lecture 2 backprop example: pages 7 and 12, both agreed. Numeric tables and worked examples were also checked by arithmetic. Lecture 3 deck 3A: four pages (10, 15, 17, 18); deck 3B: three (6 on a scratch crop of its excluded tables, 16, 18). All agreed; one unprinted identification on deck 3B slide 6 was removed. Lecture 4 deck 04: six pages (21, 31, 40, 47, 75, 80); slide 40's description of the dashed projections corrected. The pooling grids (slides 44-47) and the worked convolution (slides 15-21) were also checked by arithmetic. Lecture 5 deck 05: six pages (21, 37, 40, 50, 56, 65), all agreed; slide 37's table and slides 22-25's box hide text-layer text under shapes, which the slide file notes. Lecture 6 deck 06: seven pages (37, 45, 48, 59, 63, 67, 68), all agreed; one handwritten label on slide 37 is marked hard to read. Lecture 7 deck 07: seven pages (33, 42, 51, 53, 61, 64, 75) and slide 1; slide 59's change of 'sit' to 'sat' was added and slide 51's line-by-line description was cut back to what the render settles. The positional-encoding tables (slides 58-61) were also checked against the text layer and by arithmetic. Lecture 8 deck 08: eleven pages (18, 20, 24, 29, 47, 69, 80, 81, 86, 91, and a zoomed crop of 93); slide 20's claimed cut-off sentence corrected, formulas on slides 26, 28 and 29 repaired, slide 93's review text read from the crop, and slide 81's notice found to sit over the course's own diagram from slide 38. Lecture 9 deck 09: nine pages (19, 26, 39, 43, 49, 52, 54, 61, 64); slide 26's arrow count and slide 54's claim of a printed sum corrected, and the byte pair encoding strings of slides 61-64, which the agent had taken from the text layer, confirmed on the renders, missing commas included. Lecture 10 deck 10: twelve pages (3, 20, 31, 33, 39, 58, 77, 85, 103, 109, 111, 114) plus crops of the printed powers of ten on slides 98 and 100; slide 31's subscript, a missing word in slide 111's table and slide 113's curve values corrected. Deck 10.5: pages 3 and 25, both agreed, and its distinctive text checked against the text layer; the seven-item weights list of its slide 5 confirmed."
+      "decksAudited": 14,
+      "decksTotal": 14,
+      "note": "decksTotal counts transcribed decks. Each was transcribed by Sonnet and checked by the parent model against 1400px renders. Lecture 1: six pages (51, 59, 80, 93, 94, 100); slide 59's sigmoid corrected. Lecture 2 deck 02: six pages (4, 33, 42, 55, 69, 79); slide 52's minimum corrected. Lecture 2 backprop example: pages 7 and 12, both agreed. Numeric tables and worked examples were also checked by arithmetic. Lecture 3 deck 3A: four pages (10, 15, 17, 18); deck 3B: three (6 on a scratch crop of its excluded tables, 16, 18). All agreed; one unprinted identification on deck 3B slide 6 was removed. Lecture 4 deck 04: six pages (21, 31, 40, 47, 75, 80); slide 40's description of the dashed projections corrected. The pooling grids (slides 44-47) and the worked convolution (slides 15-21) were also checked by arithmetic. Lecture 5 deck 05: six pages (21, 37, 40, 50, 56, 65), all agreed; slide 37's table and slides 22-25's box hide text-layer text under shapes, which the slide file notes. Lecture 6 deck 06: seven pages (37, 45, 48, 59, 63, 67, 68), all agreed; one handwritten label on slide 37 is marked hard to read. Lecture 7 deck 07: seven pages (33, 42, 51, 53, 61, 64, 75) and slide 1; slide 59's change of 'sit' to 'sat' was added and slide 51's line-by-line description was cut back to what the render settles. The positional-encoding tables (slides 58-61) were also checked against the text layer and by arithmetic. Lecture 8 deck 08: eleven pages (18, 20, 24, 29, 47, 69, 80, 81, 86, 91, and a zoomed crop of 93); slide 20's claimed cut-off sentence corrected, formulas on slides 26, 28 and 29 repaired, slide 93's review text read from the crop, and slide 81's notice found to sit over the course's own diagram from slide 38. Lecture 9 deck 09: nine pages (19, 26, 39, 43, 49, 52, 54, 61, 64); slide 26's arrow count and slide 54's claim of a printed sum corrected, and the byte pair encoding strings of slides 61-64, which the agent had taken from the text layer, confirmed on the renders, missing commas included. Lecture 10 deck 10: twelve pages (3, 20, 31, 33, 39, 58, 77, 85, 103, 109, 111, 114) plus crops of the printed powers of ten on slides 98 and 100; slide 31's subscript, a missing word in slide 111's table and slide 113's curve values corrected. Deck 10.5: pages 3 and 25, both agreed, and its distinctive text checked against the text layer; the seven-item weights list of its slide 5 confirmed. Lecture 11 deck 11: ten pages (20, 34, 37, 41, 64, 70, 73, 81, 82, and a crop of slide 38's U-Net figure) and the renders of slides 2 and 72; slide 82's account of the latent-diffusion figure's lower row corrected, and the U-Net's printed sizes and channel counts confirmed on the crop."
     },
     "images": {
-      "lecturesWithImages": 10,
+      "lecturesWithImages": 11,
       "lecturesWithoutImages": [],
-      "lecturesTotal": 10,
-      "files": 156,
-      "megabytes": 16.6,
+      "lecturesTotal": 11,
+      "files": 172,
+      "megabytes": 18.7,
       "format": "whole slides rendered at 1400px, JPEG q85 or PNG whichever is smaller, named slide-N by PDF page number, or with a per-deck prefix (backprop-N, 3a-N, 3b-N) where a lecture has more than one deck",
       "discovery": "inline in wiki/ and raw/slides/; no index file",
       "byLecture": {
@@ -52,9 +52,10 @@
         "7": 7,
         "8": 19,
         "9": 10,
-        "10": 13
+        "10": 13,
+        "11": 16
       },
-      "note": "Lecture 1: 45 of 110 pages. Lecture 2: 15 of deck 02's 95 pages (slide-N) and 3 of the 14-page handwritten backprop example (backprop-N), in one directory. Lecture 3: 9 of deck 3A's 44 pages (3a-N) and 4 of deck 3B's 29 (3b-N), in one directory. Lecture 4: 16 of deck 04's 84 pages. Lecture 5: 7 of deck 05's 67 pages. Lecture 6: 8 of deck 06's 70 pages. Lecture 7: 7 of deck 07's 78 pages. Lecture 8: 19 of deck 08's 99 pages. Lecture 9: 10 of deck 09's 68 pages. Lecture 10: 13 of deck 10's 115 pages, and none of deck 10.5's 33 (its figures are repeats of deck 10's or reuse excluded images). Not rendered: slides with an OCW exclusion notice, slides that reuse an excluded figure without a notice (deck 3A slides 24-25; lecture 4 slide 77; lecture 10 slide 96 and deck 10.5's copies), superseded build steps and repeats, transcribed tables, unmarked third-party screenshots and logo graphics (lecture 5 slides 3, 4, 16; lecture 7 slides 21-22, Google search results; lecture 8 slides 84 and 86, the Sentence-Transformers logo and a Hugging Face Hub screenshot; lecture 9 slides 47-50, OpenAI Playground screenshots, and slide 39, the GPT-3 paper's data table, transcribed; lecture 10's GPT-3, ChatGPT and Playground screenshots and paper figures), a figure already rendered for an earlier lecture (lecture 6 slide 3, lecture 5's slide 50; lecture 8 slides 10, 13 and 29, lecture 7's 75, 43 and 76; lecture 8 slides 42, 43 and 57, lecture 4's 75; lecture 9 slides 2 and 37, lecture 8's 71 and 30, and slide 59, lecture 5's 27), single-box text diagrams, logistics and text-only slides; the lists are in BUILD_LOG.md. Lecture 11 is not in this KB yet, so it has no images."
+      "note": "Lecture 1: 45 of 110 pages. Lecture 2: 15 of deck 02's 95 pages (slide-N) and 3 of the 14-page handwritten backprop example (backprop-N), in one directory. Lecture 3: 9 of deck 3A's 44 pages (3a-N) and 4 of deck 3B's 29 (3b-N), in one directory. Lecture 4: 16 of deck 04's 84 pages. Lecture 5: 7 of deck 05's 67 pages. Lecture 6: 8 of deck 06's 70 pages. Lecture 7: 7 of deck 07's 78 pages. Lecture 8: 19 of deck 08's 99 pages. Lecture 9: 10 of deck 09's 68 pages. Lecture 10: 13 of deck 10's 115 pages, and none of deck 10.5's 33 (its figures are repeats of deck 10's or reuse excluded images). Lecture 11: 16 of deck 11's 90 pages, three of them AI-generated images that OCW credits and does not exclude (slides 2, 3, 5). Not rendered: slides with an OCW exclusion notice, slides that reuse an excluded figure without a notice (deck 3A slides 24-25; lecture 4 slide 77; lecture 10 slide 96 and deck 10.5's copies), superseded build steps and repeats, transcribed tables, unmarked third-party screenshots and logo graphics (lecture 5 slides 3, 4, 16; lecture 7 slides 21-22, Google search results; lecture 8 slides 84 and 86, the Sentence-Transformers logo and a Hugging Face Hub screenshot; lecture 9 slides 47-50, OpenAI Playground screenshots, and slide 39, the GPT-3 paper's data table, transcribed; lecture 10's GPT-3, ChatGPT and Playground screenshots and paper figures; lecture 11 slides 36 and 57, paper title blocks, and 86, a lexica.art screenshot), a figure already rendered for an earlier lecture (lecture 6 slide 3, lecture 5's slide 50; lecture 8 slides 10, 13 and 29, lecture 7's 75, 43 and 76; lecture 8 slides 42, 43 and 57, lecture 4's 75; lecture 9 slides 2 and 37, lecture 8's 71 and 30, and slide 59, lecture 5's 27), single-box text diagrams, logistics and text-only slides; the lists are in BUILD_LOG.md."
     }
   },
   "provenance": {
@@ -63,14 +64,14 @@
       "claude-sonnet-5-5"
     ],
     "caveats": [
-      "Covers lectures 1-10 of 11 only.",
-      "Slide numbers are PDF page numbers. Some lecture 1 pages visibly print stale numbers from an older deck (page 13 prints 20), lecture 2's deck prints N+1 from page 50 on, lecture 7's from page 10 on, and lecture 10's from page 76 on; the slide files list them.",
+      "Lecture 11's captions label the lecturer only 'PROFESSOR'; he is taken to be Rama Ramakrishnan because he refers to his own Hugging Face tour of lecture 8, which lecture 8's captions attribute to him.",
+      "Slide numbers are PDF page numbers. Some lecture 1 pages visibly print stale numbers from an older deck (page 13 prints 20), lecture 2's deck prints N+1 from page 50 on, lecture 7's from page 10 on, lecture 10's from page 76 on, and lecture 11's from page 49 on; the slide files list them.",
       "Catalog video titles misstate coverage: video 1 ends before training, video 2 shows only the four-line Keras model definition, video 3, titled for convolutional networks, never reaches them, and video 4, titled for transfer learning and Hugging Face, spends its first hour building CNNs from scratch; video 9, titled for LLMs and retrieval-augmented generation, does not reach RAG, which is in deck 10. Video 10's 'Adapting LLMs with PEFT' never uses the term PEFT; LoRA is the method taught.",
       "Lecture 2's backprop example is a handwritten deck that the video points to but does not present; it is transcribed from the handwriting in its own slide file.",
       "Figure checks were done by the parent model on rendered images, not by an independent agent.",
       "Lecture 2 renders slides 55-58 and 69, which reproduce plots from a web page whose gradient-descent figures OCW excludes on slide 75 only; LICENSE.md names the source.",
       "Lecture 3 spans two decks, cited as 'deck 3A, slide N' and 'deck 3B, slide N'; deck 3B prints N+1 from page 16 where it prints a number.",
-      "The course's Colab notebooks are not published on OCW. The Colab walkthroughs of lectures 3 to 8 and 10 are described from the lecturer's narration only.",
+      "The course's Colab notebooks are not published on OCW. The Colab walkthroughs of lectures 3 to 8, 10 and 11 are described from the lecturer's narration only.",
       "Lecture 4 renders slides whose figures OCW does not mark as excluded but which credit third parties: deeplearning.ai (31, 32), Fig 14-2 of Hands-On Machine Learning (40), the CS231n notes (47), and screenshots of the TensorFlow, PyTorch and Hugging Face hubs (78-80); LICENSE.md names them.",
       "Lecture 4's wiki page checks the Fashion-MNIST CNN's 302,000 parameters by its own arithmetic, under assumptions (no padding, pooling rounding down) that the lecture does not state; the page labels it as such.",
       "Lecture 5's slide 63 prints copyrighted song lyrics; the slide file describes them and does not reproduce them.",
@@ -86,9 +87,11 @@
       "Lecture 9's temperature derivation (drawn on an iPad; slide 56 says only 'iPad'), its OpenAI Playground demo and its token-visualizer demo are not in the deck; the wiki describes them from the narration, and the token numbers it quotes are as the lecturer reads them off the screen.",
       "Lecture 10's published deck is a later revision than the one shown in class: the lecturer reads older numbers for Llama-2-70b's memory and GPUs (slides 97, 98, 102) and LoRA's parameter count (slide 109). The transcript marks each with an [Ed:] note giving the printed number, and the wiki gives the printed numbers and notes the spoken ones. Deck 10.5, never presented, keeps the class's LoRA numbers.",
       "Lecture 10's product pages (rag & bone, Urban Outfitters, Wayfair), the GPT-3 paper's few-shot prompt, a ChatGPT conversation screenshot, Sebastian Raschka's RAG figure, Meta's Llama 2 page and Karpathy's effort-benefit curve are excluded by OCW and described in prose only; slide 96 and deck 10.5 reuse some of them without a notice and are not rendered either. Its GPT-3, ChatGPT and Playground screenshots and paper figures (unmarked) are transcribed, not rendered. Slide 114, a CC BY flow chart from 'Large Language Models: A Survey', is rendered and attributed in LICENSE.md.",
-      "Lecture 10's wiki page checks the Reward Model's loss and LoRA's 32,768 parameters by its own arithmetic, labelled as such; its LoRA Colab was deferred to a video walkthrough that is not on OCW or in this KB."
+      "Lecture 10's wiki page checks the Reward Model's loss and LoRA's 32,768 parameters by its own arithmetic, labelled as such; its LoRA Colab was deferred to a video walkthrough that is not on OCW or in this KB.",
+      "Lecture 11's U-Net figure (University of Freiburg), CLIP paper figures, latent-diffusion figure, Google Image Search grid, the Labrador, blue jay and train photos of its embedding and CLIP-grid slides, a New York Times protein-design article and the Hugging Face Diffusers page are excluded by OCW and described in prose only; its paper title blocks (slides 36, 57) and a lexica.art screenshot (slide 86) are transcribed, not rendered. It renders AI-generated images that OCW credits without excluding (slide 2, ChatGPT/DALL-E 3 from the instructor's prompt; slide 3, Midjourney; slide 5, a Sora frame), the MIT Dome photo by Muzammil Soorma on Unsplash, and the public-domain UVA Rotunda photo; LICENSE.md names them.",
+      "Lecture 11's wiki and CLIP pages write slide 69's CLIP loss ('minimize [sum of red cells - sum of green cells]') as a formula in the notation of the CLIP paper's figure (slide 70), labelled as the page's own rendering; its Diffusers and Hugging Face pipeline Colabs are described from the narration."
     ]
   },
   "entryPoint": "INDEX.md",
-  "updated": "2026-10-16"
+  "updated": "2026-10-17"
 }

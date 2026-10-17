@@ -129,6 +129,18 @@ The same pattern with a single sigmoid output, and a `Rescaling` layer in place 
 classifies colour photos of handbags and shoes at 87% from fewer than 100 training images
 (≈58:32–1:03:11). See [Keras](keras.md).
 
+## Image in, image out: the U-Net
+
+A classifier's convolutional layers shrink the image to a label. When the output must be an image the
+size of the input, [lecture 11](11-diffusion-models.md) uses the **U-Net** (slides 38–41; ≈30:09–36:13).
+Its left half is "a good, old convolutional neural network": convolutional blocks and max pooling, the
+image getting "much smaller but much deeper". Its right half reverses that with **up-convolution** (or
+de-convolution) layers, "an 'inverse' of the convolution layer", implemented as `Conv2DTranspose` in
+Keras, until the output is the input's size again. Cross-connections attach each level of the left half
+to the mirror level of the right, "like residual connections". It was invented for medical segmentation
+and is now used for any image-to-image task: colorizing, raising resolution, or classifying every pixel.
+A diffusion model's denoiser is a U-Net (see [diffusion models](diffusion-models.md#the-network-a-u-net)).
+
 ## Where this comes up
 
 - [Lecture 3](03-keras-and-vision-basics.md): images as pixel tables, and the flattened network
@@ -140,5 +152,7 @@ classifies colour photos of handbags and shoes at 87% from fewer than 100 traini
 - [Lecture 8](08-transformers-and-self-supervised-learning.md): ResNet, the Residual Net, named for the residual connections that transformers
   also use (≈31:12); more attention heads compared to more filters (≈28:04); and the Vision
   Transformer, which classifies an image from its patches with a transformer.
+- [Lecture 11](11-diffusion-models.md): the U-Net, whose left half is a CNN and whose right half up-convolves back to the
+  input's size, as the denoiser of a diffusion model; and ResNet-50 as CLIP's image encoder.
 - See also [images and computer-vision tasks](images-and-vision-tasks.md) and
   [transformers](transformers.md).

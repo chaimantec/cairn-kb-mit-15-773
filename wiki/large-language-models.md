@@ -155,6 +155,8 @@ and punctuation and can use a word made up on the spot (lecture 9, slides 58–6
   vocabulary (see [multi-class classification and softmax](multiclass-classification.md#softmax-and-language-models)).
 - [Lecture 1](01-introduction.md): LLMs as one circle inside generative AI (see
   [AI, machine learning, deep learning and generative AI](ai-ml-dl-genai.md)).
+- [Lecture 11](11-diffusion-models.md): CLIP's text encoder, a 12-layer, 8-head Transformer Causal Encoder; why diffusion
+  models are slower than LLMs; and multimodal LLMs built on CLIP's shared embedding space.
 - See also [transformers](transformers.md), [self-supervised learning](self-supervised-learning.md),
   [decoding and sampling](decoding-and-sampling.md), [instruction tuning](instruction-tuning.md),
   [adapting LLMs](adapting-llms.md), [retrieval-augmented generation](retrieval-augmented-generation.md)

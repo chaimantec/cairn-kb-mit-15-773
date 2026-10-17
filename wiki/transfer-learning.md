@@ -69,8 +69,12 @@ Pre-trained models are on the TensorFlow Hub, the PyTorch Hub and the Hugging Fa
 78–80). The Hugging Face Hub listed 505,594 models on February 13, 2024. The lecturer recalls about
 50,000 a year earlier (≈1:10:09).
 
-One caution came up in questions: weights that everyone can download carry "some adversarial risk"
-(≈1:10:09–1:10:54).
+One caution came up in questions: weights that everyone can download carry "some adversarial risk" (≈1:10:09–1:10:54).
+
+Lecture 11 uses the Hugging Face Hub for vision: its image-classification task lists 10,487 models, and
+any of them, such as Microsoft's ResNet, can be named in a `pipeline` (≈1:11:03–1:11:48). It also loads
+a pretrained Stable Diffusion model through Hugging Face's Diffusers library (slide 88; see
+[diffusion models](diffusion-models.md#in-code-hugging-face-diffusers)).
 
 ## Pretrained word embeddings
 
@@ -141,4 +145,6 @@ of gigabytes of memory, so the lecture fine-tunes only low-rank changes to the a
 - [Lecture 8](08-transformers-and-self-supervised-learning.md): why transfer learning works, the general
   recipe, BERT, and the Hugging Face pipelines.
 - [Lecture 10](10-adapting-llms.md): fine-tuning LLMs, supervised fine-tuning, and LoRA.
+- [Lecture 11](11-diffusion-models.md): pretrained vision models from the Hugging Face Hub in pipelines, Stable Diffusion
+  from the Diffusers library, and CLIP built from a transformer and ResNet-50.
 - See also [data augmentation](data-augmentation.md), the other remedy for a small data set.

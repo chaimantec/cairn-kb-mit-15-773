@@ -60,7 +60,15 @@ The circles inside generative AI are merging into multimodal models (slide 51), 
 **X-to-Y**: with enough data you can learn a mapping from any kind of input to any kind of output,
 including mixtures (≈23:54; slide 52).
 
+[Lecture 11](11-diffusion-models.md) explains how text-to-image models work. A
+[diffusion model](diffusion-models.md) learns to turn random noise into an image by removing a little
+noise at a time, and [CLIP](clip.md) gives it an embedding of the prompt that lives in the same space as
+the images the prompt describes. Text-to-video models such as Sora are "text-conditional diffusion
+models" built on a transformer (lecture 11, slide 6). The lecturer calls CLIP's shared space the basis of
+"the modern multimodal large language models" (≈56:22).
+
 ## Where this comes up
 
 - [Lecture 1](01-introduction.md): the whole landscape, in the first 25 minutes.
+- [Lecture 11](11-diffusion-models.md): text-to-image and text-to-video: diffusion models steered by CLIP.
 - See also [large language models](large-language-models.md), the LLM circle as lecture 9 builds it.

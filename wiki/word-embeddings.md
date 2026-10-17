@@ -152,6 +152,8 @@ are the input to that process: random ones, GloVe, it "doesn't matter" (lecture 
 - [Lecture 10](10-adapting-llms.md): contextual embeddings of document chunks and of a question,
   compared by cosine similarity, to retrieve passages for an LLM (see
   [retrieval-augmented generation](retrieval-augmented-generation.md)); OpenAI's embeddings are 1536 long.
+- [Lecture 11](11-diffusion-models.md): text and image embeddings in one space, compared by cosine similarity (see
+  [CLIP](clip.md)).
 - See also [text vectorization](text-vectorization.md),
   [representation learning](representation-learning.md),
   [natural language processing](natural-language-processing.md) and [transformers](transformers.md).

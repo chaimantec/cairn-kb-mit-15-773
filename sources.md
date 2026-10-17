@@ -9,15 +9,15 @@ link to the URLs below. OCW publishes the course under CC BY-NC-SA 4.0; see
 
 OCW lists the decks under *Lecture Notes* (<https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/lists/lecture-notes/>). Their numbering does
 **not** follow the 11 lecture videos, so the "Video" column records which recording uses each
-deck. Videos 1–10 have been checked against their transcripts. Video 1 covers deck 01 alone,
+deck. All 11 videos have been checked against their transcripts. Video 1 covers deck 01 alone,
 from its slide 10 to its last content slide, 109. Video 2 covers deck 02 alone, slides 2–94, and
 points students to the backprop example without presenting it. Video 3 covers deck 03A (slides
 2–43) and deck 03B (slides 2–28). Video 4 covers deck 04, slides 2–81. Video 5 covers deck 05,
 slides 1–66. Video 6 covers deck 06, slides 2–68. Video 7 covers deck 07, slides 2–76. Video 8 covers deck 08, slides 2–93; its slides 94–98 are not presented. Video 9 covers deck 09, slides
 2–66; slide 67 is not mentioned, and the RAG of its catalog title is in deck 10. Video 10 covers deck
 10, slides 2–112; slides 113–114 are not reached. No video presents deck 10.5, a variant of deck 10's
-fine-tuning section (its slides 82–114); it is transcribed as lecture 10's companion deck. Video 11
-opens on deck 11. Deck 11's assignment is provisional until lecture 11 is built.
+fine-tuning section (its slides 82–114); it is transcribed as lecture 10's companion deck. Video 11 covers deck
+11, slides 2–89; slide 90 is OCW's end page.
 
 | Deck | Title | Video | URL |
 | ---- | ----- | ----- | --- |
@@ -34,7 +34,7 @@ opens on deck 11. Deck 11's assignment is provisional until lecture 11 is built.
 | `mit15_773_s24_lec09.pdf` | Lecture 09: Large Language Models I | 9 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec09.pdf> |
 | `mit15_773_s24_lec10.pdf` | Lecture 10: Large Language Models II | 10 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec10.pdf> |
 | `mit15_773_s24_lec105.pdf` | Lecture 10.5: Finetuning | 10 (not presented; companion to deck 10) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec105.pdf> |
-| `mit15_773_s24_lec11.pdf` | Lecture 11: Diffusion Models for Image Generation (Gen AI) | 11 (provisional) | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec11.pdf> |
+| `mit15_773_s24_lec11.pdf` | Lecture 11: Diffusion Models for Image Generation (Gen AI) | 11 | <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec11.pdf> |
 
 Lecture 04 also has a spreadsheet, *Convolution Example (XLSX)*, listed on its resource page:
 <https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/resources/mit15_773_s24_lec04_convolution_example_xlsx/>.

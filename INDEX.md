@@ -8,9 +8,8 @@ transfer learning) and natural language (embeddings, transformers), to generativ
 parameter-efficient fine-tuning, text-to-image diffusion). It deliberately "skips the math" and
 focuses on concepts and on coding models in Keras/TensorFlow.
 
-**Coverage: lectures 1–10 of 11.** This knowledge base is being built lecture by lecture. Only
-lectures 1 to 10 have wiki pages, transcripts and slide transcriptions so far. Do not cite it as
-covering lecture 11. On language it covers lectures 5 (text vectorization and the Bag of Words
+**Coverage: all 11 lectures.** Every lecture has a wiki page, a transcript and a slide transcription. On
+language it covers lectures 5 (text vectorization and the Bag of Words
 model), 6 (word embeddings and GloVe), 7 (the transformer encoder: self-attention, multi-head
 attention, positional encoding, applied to slot filling), 8 (the encoder completed with key, query
 and value matrices, residual connections and layer normalization; the `<CLS>` token; self-supervised
@@ -18,9 +17,8 @@ learning and BERT; Hugging Face pipelines; the Vision Transformer and TabTransfo
 of two lectures on large language models: next word prediction, causal self-attention and the
 decoder, text generation and GPT-3, decoding and sampling, byte pair encoding) and 10 (the second:
 instruction tuning, the Reward Model and RLHF behind ChatGPT, and adapting LLMs by zero-shot and few-shot
-prompting, retrieval-augmented generation and fine-tuning with LoRA). Retrieval-augmented generation is in
-the title of video 9 but is taught in lecture 10. For lecture 11, text-to-image (diffusion) models, say
-that the KB does not cover it yet.
+prompting, retrieval-augmented generation and fine-tuning with LoRA). Retrieval-augmented generation is in the title of video 9 but is taught in lecture 10. Lecture 11, the
+last, covers text-to-image generation: diffusion models, the U-Net, CLIP and latent diffusion.
 
 ## Contents
 
@@ -128,13 +126,27 @@ that the KB does not cover it yet.
   synthetic product reviews, why Llama-2-70b is hard to fine-tune (memory and GPUs), and LoRA (low-rank
   adaptation, 32,768 parameters instead of 64 million per matrix). Several numbers said in class come
   from an earlier version of the deck than OCW's; the page gives the printed ones. Also summarises the
-  unpresented companion deck 10.5, "Finetuning". The catalog title's "PEFT" is never said; LoRA is the
-  method taught.
+  unpresented companion deck 10.5, "Finetuning". The catalog title's "PEFT" is never said; LoRA is the method taught.
+- [Lecture 11 — Diffusion Models for Image Generation (Text-to-Image)](wiki/11-diffusion-models.md): the
+  last lecture. Text-to-image and text-to-video (ChatGPT's DALL-E 3, Midjourney, Sora); generating stately
+  college buildings from random noise; adding noise to an image in a Colab (NumPy, a standard deviation
+  of 0.3, clipping); training pairs one noise step apart and the de-noising model; generating by
+  repeatedly denoising pure noise (1,000 steps once, 50 to 100 now); the forward and reverse processes;
+  predicting the noise, $y = x - \epsilon$; the U-Net (convolution and pooling, up-convolution,
+  cross-connections); then steering by text: text and image embeddings that must be close for a matching
+  caption and far for an unrelated one, cosine similarity, CLIP (a 12-layer Transformer Causal Encoder
+  and ResNet-50, the image-caption grid, the loss that stops collapse, 400 million pairs from alt text),
+  zero-shot classification, the CLIP text embedding as a second input to the denoiser, and latent
+  diffusion (attention and latent space). Ends with Stable Diffusion in Hugging Face's Diffusers library
+  (seeds, 50 steps, negative prompting) and Hugging Face pipelines for image classification, object
+  detection and segmentation. The captions label the lecturer only "PROFESSOR".
+
 
 ### Topics
 
 - [AI, machine learning, deep learning and generative AI](wiki/ai-ml-dl-genai.md): the nested
-  circles the course uses, what bottleneck each layer removed, and X-to-Y multimodality.
+  circles the course uses, what bottleneck each layer removed, X-to-Y multimodality, and how
+  text-to-image models work.
 - [Representation learning](wiki/representation-learning.md): why raw unstructured data needs a
   representation, hand-made features versus learned ones, hidden layers as the learned
   representation, the feature hierarchy in a CNN, reusing a pre-trained network's
@@ -151,8 +163,8 @@ that the KB does not cover it yet.
   validation and test sets, weight initialization, and what the weights are worth.
 - [Loss functions](wiki/loss-functions.md): what a loss measures, mean squared error, binary
   cross-entropy derived step by step, categorical cross-entropy and the Keras loss for each label
-  encoding, the output-layer/loss table, why accuracy and loss can disagree, and the Reward Model's loss
-  for ranked answers.
+  encoding, the output-layer/loss table, why accuracy and loss can disagree, the Reward Model's loss for ranked answers, and CLIP's loss for
+  matching image-caption pairs.
 - [Gradient descent](wiki/gradient-descent.md): the derivative's three cases, the update rule, the
   learning rate, gradients in many variables, local minima and saddle points, stochastic
   (minibatch) gradient descent, epochs, batches and batch size, and fitting models that are not
@@ -170,12 +182,13 @@ that the KB does not cover it yet.
   splitting before standardizing, NumPy arrays, and random seeds.
 - [Images and computer-vision tasks](wiki/images-and-vision-tasks.md): pixels and 0–255 intensities,
   colour channels, classification, localization, object detection, semantic and instance
-  segmentation, flattening an image into a vector and why that falls short, loading colour
-  images from one folder per class, and the Vision Transformer's patches.
+  segmentation, the U-Net and Hugging Face pipelines for detection (bounding boxes) and segmentation
+  (masks), flattening an image into a vector and why that falls short, loading colour images from one
+  folder per class, and the Vision Transformer's patches.
 - [Convolutional neural networks](wiki/convolutional-neural-networks.md): the three problems with
   flattening, filters and the convolution operation, layers and tensor shapes, colour images,
-  learned filters, the feature hierarchy, max and average pooling, the basic CNN architecture, and
-  the course's Keras CNN.
+  learned filters, the feature hierarchy, max and average pooling, the basic CNN architecture, the
+  course's Keras CNN, and the U-Net for image-to-image problems.
 - [Transfer learning](wiki/transfer-learning.md): the two research trends behind it, ImageNet and
   ResNet, headless ResNet as a feature extractor, fine-tuning, the model hubs, the
   handbags-vs-shoes results, pretrained word embeddings (GloVe) as the same idea for text, why it
@@ -221,8 +234,8 @@ that the KB does not cover it yet.
   self-attention and the decoder, and transformers for images, tables and multi-modal data.
 - [Self-supervised learning](wiki/self-supervised-learning.md): why text needs labels it does not
   have, masking ("fill in the blanks"), why it learns a representation, masked learning as sequence
-  labeling with a transformer, BERT, next word prediction (the task behind GPT), and contrastive
-  learning for images (from lecture 8's slides only).
+  labeling with a transformer, BERT, next word prediction (the task behind GPT), contrastive learning
+  for images (from lecture 8's slides only), and CLIP's matching of images and captions.
 - [Large language models](wiki/large-language-models.md): next word prediction, why the plain encoder
   cheats, causal self-attention and the Transformer Causal Encoder (decoder), the linear dense layer
   before the softmax, generating text one word at a time, autoregressive language models, GPT, GPT-2 and
@@ -241,7 +254,18 @@ that the KB does not cover it yet.
 - [Decoding and sampling](wiki/decoding-and-sampling.md): choosing the next token from the softmax:
   greedy decoding versus random sampling and when to use each, the head and the tail of the
   distribution, top-K and top-P (nucleus) sampling with the slides' worked numbers, temperature and its
-  formula, the OpenAI Playground's settings, and sampling several answers for people to rank.
+    formula, the OpenAI Playground's settings, and sampling several answers for people to rank.
+- [Diffusion models](wiki/diffusion-models.md): generating an image from noise; adding noise; training
+  pairs one step apart and the de-noising model; generating by repeated denoising, and why it is slow;
+  the forward and reverse processes; predicting the noise; the U-Net; steering with a CLIP text
+  embedding; latent diffusion and Stable Diffusion; the Diffusers library and negative prompting; and
+  uses beyond images, such as protein design.
+- [CLIP](wiki/clip.md): text and image embeddings in one concept space; the two requirements (close for
+  a matching caption, far for an unrelated one); CLIP's encoders and training; the grid of
+  image-caption cosine similarities and the loss that prevents collapse; 400 million pairs from alt
+  text; using its text encoder to steer a diffusion model; zero-shot image classification; and
+  multimodal models.
+
 
 ## Raw materials
 
@@ -260,11 +284,11 @@ that the KB does not cover it yet.
   [`raw/slides/03-vision-basics.md`](raw/slides/03-vision-basics.md). Cite them as "deck 3A, slide N"
   and "deck 3B, slide N". From page 16 on, deck 3B prints a number one higher than the page where it
   prints one. The decks of lectures 4, 5, 6, 8 and 9 print their own page number wherever they print one.
-  From page 10 on, lecture 7's deck prints a number one higher than the page, and from page 76 on so
-  does lecture 10's. Lecture 10 also has a companion deck that no video presents, deck 10.5
+  From page 10 on, lecture 7's deck prints a number one higher than the page, and so do lecture 10's
+  from page 76 and lecture 11's from page 49. Lecture 10 also has a companion deck that no video presents, deck 10.5
   ("Finetuning"), in its own file, [`raw/slides/10-finetuning.md`](raw/slides/10-finetuning.md); cite
   it as "deck 10.5, slide N".
-  The Colab notebooks of lectures 3 to 8 and 10 are not published on OCW; the KB knows them only from
+  The Colab notebooks of lectures 3 to 8, 10 and 11 are not published on OCW; the KB knows them only from
   the lecturer's narration.
 - [`raw/images/`](raw/images/): rendered figure slides (see below).
 - [`sources.md`](sources.md): every course document on the OCW site with its canonical URL. The
@@ -275,14 +299,15 @@ that the KB does not cover it yet.
 
 ## Images
 
-**Lectures 1 to 10 have images. Lecture 11 does not yet.** Their figure slides are rendered
+**All 11 lectures have images.** Their figure slides are rendered
 as whole slides and shown inline, both in the lecture pages ([lecture 1](wiki/01-introduction.md),
 [lecture 2](wiki/02-training-deep-nns.md), [lecture 3](wiki/03-keras-and-vision-basics.md),
 [lecture 4](wiki/04-cnns-and-transfer-learning.md),
 [lecture 5](wiki/05-text-vectorization-and-bag-of-words.md),
 [lecture 6](wiki/06-word-embeddings.md), [lecture 7](wiki/07-transformers.md),
 [lecture 8](wiki/08-transformers-and-self-supervised-learning.md),
-[lecture 9](wiki/09-large-language-models.md), [lecture 10](wiki/10-adapting-llms.md)) and under the
+[lecture 9](wiki/09-large-language-models.md), [lecture 10](wiki/10-adapting-llms.md),
+[lecture 11](wiki/11-diffusion-models.md)) and under the
 matching `## Slide N` heading in
 each slide file. Lecture 1 has 45. Lecture 2 has 18: 15 from its main deck and 3 pages of the
 handwritten backprop example, which are named `backprop-N` rather than `slide-N`. Lecture 3 has 13 in
@@ -321,7 +346,14 @@ adaptation, the context window, fine-tuning on an example, what fine-tuning upda
 matrices, and the survey's "How LLMs Are Built?" flow chart (slide 114, CC BY). Its product pages, the
 GPT-3 paper's few-shot prompt, the RAG figure, Meta's Llama 2 page and Karpathy's effort-benefit curve
 are excluded by OCW; its GPT-3 and ChatGPT screenshots, Playground screenshots and paper figures are not
-rendered, and their slide entries transcribe them. The companion deck 10.5 has no images. Slides
+rendered, and their slide entries transcribe them. The companion deck 10.5 has no images. Lecture 11 has 16: the AI-generated opening examples (ChatGPT's
+classroom, the Midjourney seaside village and a frame of Sora's tidal wave, each credited by OCW), and
+the course's own diagrams of noise in and a building out, the reverse, adding noise, the noisy sequence,
+two training pairs, the de-noising model, repeated denoising (two slides), predicting the noise, CLIP's
+text encoder, the denoiser with a CLIP embedding, and denoising with a prompt. Its U-Net, CLIP and latent
+diffusion figures, the photos in its embedding and CLIP-grid slides, the Google Image Search grid, the
+protein-design article and the Diffusers page are excluded by OCW, and its paper title blocks and the
+lexica.art screenshot are not rendered; their slide entries describe them in prose. Slides
 whose content OCW excludes from its licence (marked `*OCW notice: …*`) are never rendered, and
 neither are slides that reuse an excluded figure without a notice of their own: deck 3A's slides
 24–25 and lecture 4's slide 77, whose ResNet diagram slides 70–73 exclude. So lecture 4 has no image

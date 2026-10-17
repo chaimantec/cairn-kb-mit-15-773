@@ -184,3 +184,25 @@ plus the deck:
   has no images here: it prints no exclusion notices, but its rag & bone, Urban Outfitters, Llama 2 and
   effort-benefit pages reuse the material deck 10 marks as excluded, and its other figures repeat deck
   10's.
+- **Lecture 11**, `raw/images/11-diffusion-models/` (16 images: pages 2, 3, 5, 11, 14, 15, 16, 20, 24, 28,
+  34, 35, 37, 72, 77 and 81) from
+  [`mit15_773_s24_lec11.pdf`](https://ocw.mit.edu/courses/15-773-hands-on-deep-learning-spring-2024/mit15_773_s24_lec11.pdf).
+  Third-party material on the rendered slides, as credited there. Slide 2 is a ChatGPT conversation whose
+  image was generated with DALL-E 3 from the instructor's prompt ("OpenAI (2024). ChatGPT (DALL-E 3)").
+  Slide 3's image was generated with Midjourney from a prompt by Alex Serban on MSPowerUser ("Midjourney
+  (2024). Midjourney (V6)", <https://mspoweruser.com/best-midjourney-prompts/>). Slide 5 is a frame of a
+  video generated with Sora from a prompt by Brooks, Peebles et al. at OpenAI ("OpenAI (2024). ChatGPT Plus
+  (SORA)"). OCW credits these AI-generated images and does not mark them as excluded. The MIT Dome
+  photograph on slides 11, 14–16, 20, 24, 28, 34, 35 and 81 is by Muzammil Soorma on Unsplash, as the
+  deck credits it on most of the pages that show it. The Rotunda at UVA on slide 11 is in the public domain,
+  from Wikimedia Commons. Slide 37 carries the title block of "Denoising Diffusion Probabilistic Models"
+  (Jonathan Ho, Ajay Jain, Pieter Abbeel, <https://arxiv.org/abs/2006.11239>) beside the course's own
+  diagram. None of the deck's 22 slides with an OCW exclusion notice is rendered: 9 (a Google Image Search
+  grid of college buildings, with credits to John Simpson Architects, Michael Hickey, Getty Images, the
+  University of South Carolina, Rex Harris, iStock and others), 38–41 (U-Net figures, LMB, University of
+  Freiburg), 47, 48, 50 and 51 (a photo of a Labrador retriever, © unknown), 59, 62–64 and 68 (the Labrador
+  and train photos, © source unknown, and a blue jay photo, © Timber Press), 70 and 73 (CLIP paper figures,
+  Alec Radford et al./ArXiv), 82–85 (the latent diffusion figure, Robin Rombach et al./ArXiv), 87 (protein
+  images, Namruta Anand/The New York Times Company) and 88 (the Hugging Face Diffusers logo and page).
+  Unmarked third-party material is transcribed and not rendered: the title blocks of the first diffusion
+  paper (36) and the CLIP paper (57), and a screenshot of lexica.art (86).

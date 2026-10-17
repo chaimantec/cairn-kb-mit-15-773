@@ -152,7 +152,8 @@ do well was *generate* unstructured data: pictures, text, audio (slide 41).
 **Generative AI** is the ability to create unstructured output, and it sits inside deep learning
 (≈18:32; slides 42–43). It "still runs on deep learning, but it's just one kind of deep learning",
 and plenty of deep learning has nothing to do with it. The examples run through image-to-text
-captioning (slide 44), text-to-image with a Stable Diffusion prompt (slide 45), text-to-music with
+captioning (slide 44), text-to-image with a Stable Diffusion prompt (slide 45; [lecture 11](11-diffusion-models.md) explains how such
+models work), text-to-music with
 MusicLM (slide 46), text-to-text as in ChatGPT (slide 47), and **multimodal** input (slide 48). In
 that example someone sends GPT-4 a photo of a tangle of San Francisco parking signs and asks "It's
 Wednesday at 4 pm. Can I park at this spot right now? Tell me in 1 line." It answers that you can

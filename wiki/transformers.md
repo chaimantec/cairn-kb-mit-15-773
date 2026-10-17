@@ -225,6 +225,10 @@ question (slides 92–93; ≈1:13:54–1:16:13). See
 - [Lecture 10](10-adapting-llms.md): the dense layer after a causal encoder is linear, not ReLU (slide 3);
   sliding-window attention, mentioned in answer to a question (≈23:17); and LoRA, which fine-tunes only
   low-rank changes to the attention matrices $A^K$, $A^Q$, $A^V$ (slides 104–111).
+- [Lecture 11](11-diffusion-models.md): Sora's transformer over spacetime patches (slide 6); residual connections
+  recalled for the U-Net's cross-connections, and their two places in a transformer block (≈35:28);
+  the key, query and value attention that weaves a prompt's CLIP embedding into a diffusion model's
+  U-Net (slide 84); and CLIP's Transformer Causal Encoder as a text encoder.
 - See also [large language models](large-language-models.md),
   [self-supervised learning](self-supervised-learning.md),
   [natural language processing](natural-language-processing.md),

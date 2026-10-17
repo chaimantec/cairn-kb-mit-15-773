@@ -218,5 +218,8 @@ is not on OCW; what follows is what the lecturer names.
   library's `pipeline` function rather than Keras.
 - [Lecture 6](06-word-embeddings.md): `TextVectorization` with integer output and padding, `Embedding`,
   `GlobalAveragePooling1D`, and freezing pretrained embeddings.
+- [Lecture 11](11-diffusion-models.md): `Conv2DTranspose`, the up-convolution layer of a U-Net (slide 40; named only). The
+  Diffusers Colab uses PyTorch, because "a lot of these models, unfortunately, happen to be in PyTorch"
+  (≈1:05:38).
 - See also [anatomy of a neural network](neural-network-anatomy.md) for the design choices the code
   expresses.

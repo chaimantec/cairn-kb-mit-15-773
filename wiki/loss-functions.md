@@ -118,8 +118,16 @@ $$\text{Loss} = -\log(\sigma(r_p - r_O))$$
 
 where $\sigma$ is the sigmoid (lecture 10, slide 31; ≈13:13–14:00). The loss is near 0 when $r_p$ is well
 above $r_O$ and large when it is below. The lecturer leaves that check to the students; it is worked on the
-[lecture 10 page](10-adapting-llms.md#the-reward-model-and-its-loss). See
-[instruction tuning](instruction-tuning.md).
+[lecture 10 page](10-adapting-llms.md#the-reward-model-and-its-loss). See [instruction tuning](instruction-tuning.md).
+
+## A loss for matching pairs: CLIP
+
+[Lecture 11](11-diffusion-models.md) trains CLIP's text and image encoders on a batch of image-caption
+pairs, scoring every image against every caption by cosine similarity. Maximizing only the matching
+(diagonal) scores fails: "The optimizer can simply ignore the input, make all the embeddings the same and
+achieve a perfect cosine similarity of 1.0 for all pairs" (slide 67). So the loss also pushes the
+mismatched scores down: "minimize [sum of red cells – sum of green cells]" (slide 69). The
+[CLIP](clip.md#how-clip-is-trained) page writes it as a formula.
 
 ## Where this comes up
 
@@ -131,3 +139,5 @@ above $r_O$ and large when it is below. The lecturer leaves that check to the st
   maximize accuracy directly.
 - [Lecture 9](09-large-language-models.md): cross-entropy averaged over the positions of a next-word-prediction model.
 - [Lecture 10](10-adapting-llms.md): the Reward Model's loss on a preferred and another answer.
+- [Lecture 11](11-diffusion-models.md): CLIP's loss on the grid of image-caption similarities, and why rewarding only the
+  matching pairs collapses every embedding to the same one.

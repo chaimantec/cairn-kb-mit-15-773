@@ -80,16 +80,20 @@ printed slips, which slides were rendered and why) goes in
 - **OCW notices.** Excluded third-party material carries "© … All rights reserved. This content is
   excluded from our Creative Commons license". Each such slide gets an `*OCW notice: …*` line in the
   slide file and is **never rendered**. A notice may lack "All rights reserved" (lecture 1, slide 87)
-  and is still an exclusion. A CC BY-SA credit (lecture 1, slide 32) is not an exclusion; render it
-  and attribute it in `LICENSE.md`.
+  and is still an exclusion. A CC BY-SA credit (lecture 1, slide 32) is not an exclusion; render it and attribute it in `LICENSE.md`.
+  So is OCW's credit for an AI-generated image ("OpenAI (2024). ChatGPT (DALL-E 3).", Midjourney, Sora;
+  lecture 1's slide 45, lecture 11's slides 2, 3 and 5). List notices from whitespace-normalised text with
+  the page-number span removed, because a notice can be split across lines or around the page number
+  (lecture 11's page 39).
 
 ## Transcripts
 
 The YouTube captions on these videos are OCW's **human-made** captions: punctuated, with speaker
 labels (`RAMA RAMAKRISHNAN:`, `AUDIENCE:`) and sound tags. So the edit is light, done inline: a short
 list of restorations checked against the slide file, plus `[Ed: …]` notes where the captions are
-garbled or the speaker misstates a printed number. Every change is listed in the file's header. The
-verbatim text stays in `raw/transcripts/original/`. Verify by script against `original/`: the
+garbled or the speaker misstates a printed number. Every change is listed in the file's header. The verbatim text stays in `raw/transcripts/original/`.
+A caption may label the lecturer only `PROFESSOR:` (lecture 11). Name him only on evidence from the
+recording, and give that evidence in the header. Verify by script against `original/`: the
 `[MM:SS]` sequence must be identical, the number inventory identical once `[Ed: …]` notes are
 removed, and every paragraph's word ratio within 0.72–1.10 (with notes removed).
 
@@ -104,9 +108,7 @@ for notices on every page, because some are drawn rather than typed. Each slide 
 checked against **rendered images** (1400px renders are cheap), never against full PDF page images
 in the parent's context. When build steps repeat a table, diff each step's cells against the
 previous page's text layer: an agent that writes "every other value is unchanged" can miss a
-renamed row (lecture 7, slide 59). The text layer can hold text that the rendered page hides under
-a shape (lecture 5's slide 37 table header, slides 22–25's `f(x, w)`): describe what the render shows, and note the
-hidden text. **Do not ask an agent to copy creative text a slide prints**, such as song lyrics or
+renamed row (lecture 7, slide 59). The text layer can hold text that the rendered page hides under a shape (lecture 5's slide 37 table header, slides 22–25's `f(x, w)`), or a build's later bullets (lecture 11's slides 43–44): describe what the render shows, and note the hidden text. **Do not ask an agent to copy creative text a slide prints**, such as song lyrics or
 poems. Have it describe them instead. A content filter stopped an agent mid-deck when it was told
 to copy lyrics verbatim, and the KB should not reproduce them anyway.
 
@@ -143,6 +145,7 @@ What was rendered and why goes in `BUILD_LOG.md`.
 | 8 Transformers (2/2) and Self-Supervised Learning | 19 of 99 pages | rendered from `mit15_773_s24_lec08.pdf` |
 | 9 Large Language Models (1/2) | 10 of 68 pages | rendered from `mit15_773_s24_lec09.pdf` |
 | 10 Large Language Models (2/2) | 13 | 13 of `mit15_773_s24_lec10.pdf`'s 115 pages as `slide-N`, and none of `mit15_773_s24_lec105.pdf`'s 33 |
+| 11 Diffusion Models for Image Generation | 16 of 90 pages | rendered from `mit15_773_s24_lec11.pdf` |
 
 ## Conventions
 
